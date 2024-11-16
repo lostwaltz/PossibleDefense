@@ -9,29 +9,19 @@ namespace Achievement
 {
     public class EventAchievement : EventBase
     {
-        public Achievement.Action Action;
-        public Achievement.Target Target;
+        public readonly Achievement.Action Action;
+        public readonly Achievement.Target Target;
     
-        public float ProgressValue;
+        public readonly float ProgressValue;
+        public readonly int TargetId;
 
-        public EventAchievement(Action action, Target target, float progressValue)
+        public EventAchievement(Action action, Target target, float progressValue, int targetId = 0)
         {
             Action = action;
             Target = target;
             ProgressValue = progressValue;
+            TargetId = targetId;
         }
     }
-    
-    public class EventAchievementWithId : EventAchievement
-    {
-        public int Id;
-        
-        public EventAchievementWithId(Action action, Target target, float progressValue, int id) : base(action, target, progressValue)
-        {
-            Action = action;
-            Target = target;
-            ProgressValue = progressValue;
-            Id = id;
-        }
-    }
+
 }

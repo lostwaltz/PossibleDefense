@@ -13,33 +13,48 @@ MonoBehaviour:
   m_Name: AchievementsData
   m_EditorClassIdentifier: 
   achievementsDataList:
-  - name: "\uC5C5\uC801 \uB370\uC774\uD130_01"
+  - currentValue: 0
+    name: "\uC5C5\uC801 \uB370\uC774\uD130_01"
     description: "\uC5C5\uC801 \uB370\uC774\uD130 \uCCAB\uBC88\uC9F8\uC785\uB2C8\uB2E4.
       \uBAA9\uD45C\uCE58\uB294 10\uC785\uB2C8\uB2E4."
     targetValue: 10
+    targetId: 100
+    isReset: 0
     action: 500
     target: 100
-  - name: "\uC5C5\uC801 \uB370\uC774\uD130_02"
+  - currentValue: 0
+    name: "\uC5C5\uC801 \uB370\uC774\uD130_02"
     description: "\uC5C5\uC801 \uB370\uC774\uD130 \uB450\uBC88\uC9F8\uC785\uB2C8\uB2E4..
       \uBAA9\uD45C\uCE58\uB294 15\uC785\uB2C8\uB2E4."
     targetValue: 15
+    targetId: 0
+    isReset: 0
     action: 500
     target: 100
-  - name: "\uC5C5\uC801 \uB370\uC774\uD130_03"
+  - currentValue: 0
+    name: "\uC5C5\uC801 \uB370\uC774\uD130_03"
     description: "\uC5C5\uC801 \uB370\uC774\uD130 \uC138\uBC88\uC9F8\uC785\uB2C8\uB2E4..
       \uBAA9\uD45C\uCE58\uB294 20\uC785\uB2C8\uB2E4.."
     targetValue: 20
+    targetId: 0
+    isReset: 0
     action: 500
     target: 100
-  - name: "\uC5C5\uC801 \uB370\uC774\uD130_04"
+  - currentValue: 0
+    name: "\uC5C5\uC801 \uB370\uC774\uD130_04"
     description: "\uC5C5\uC801 \uB370\uC774\uD130 \uB124\uBC88\uC9F8. \uD589\uB3D9\uC774
       Interaction\uC785\uB2C8\uB2E4."
     targetValue: 5
+    targetId: 0
+    isReset: 0
     action: 100
     target: 100
-  - name: "\uC5C5\uC801 \uB370\uC774\uD130_05"
+  - currentValue: 0
+    name: "\uC5C5\uC801 \uB370\uC774\uD130_05"
     description: "\uC5C5\uC801 \uB370\uC774\uD130 \uB2E4\uC12F\uBC88\uC9F8\uC785\uB2C8\uB2E4.
       \uD0C0\uAC9F\uC774 Tower\uC785\uB2C8\uB2E4."
     targetValue: 5
+    targetId: 0
+    isReset: 0
     action: 100
     target: 200

@@ -6,6 +6,6 @@ namespace Achievement
     [CreateAssetMenu(fileName = "AchievementsData", menuName = "AchievementsData/AchievementsData", order = int.MaxValue)]
     public class AchievementInfoContainer : ScriptableObject
     {
-        public List<AchievementInfo> achievementsDataList;
+        public List<AchievementData> achievementsDataList;
     }
 }
