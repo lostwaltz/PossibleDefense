@@ -8,32 +8,30 @@ namespace Achievement
     public class AchievementManager : SingletonDontDestroy<AchievementManager>
     {
         public AchievementInfoContainer achievementInfoContainer;
-        private readonly Dictionary<Action, Dictionary<Target, Dictionary<int, List<AchievementData>>>> _achievementDictionary = new();
-
         private Dictionary<int, List<AchievementData>>[,] _achievementDataArray;
-        
+        private EventManager _eventManager;
         
         private void Start()
         {
-            var actionLength = Enum.GetValues(typeof(Action)).Length;
-            var targetLength = Enum.GetValues(typeof(Target)).Length;
-            _achievementDataArray = new Dictionary<int, List<AchievementData>>[actionLength, targetLength];
+            _achievementDataArray = new Dictionary<int, List<AchievementData>>[(int)Action.Count, (int)Target.Count];
             
             EventManager.Instance.Subscribe<EventAchievement>(EventManager.Channel.Achievement, OnAchievement);
 
             foreach (var info in achievementInfoContainer.achievementsDataList)
                 GetOrAddList(info.action, info.target, info.targetId).Add(new AchievementData(info));
+            
+            _eventManager = EventManager.Instance;
         }
 
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                EventManager.Instance.Publish(EventManager.Channel.Achievement, new EventAchievement(Achievement.Action.Kill, Achievement.Target.Monster, 1f));
+                _eventManager.Publish(EventManager.Channel.Achievement, new EventAchievement(Achievement.Action.Kill, Achievement.Target.Monster, 1f));
             }
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                EventManager.Instance.Publish(EventManager.Channel.Achievement, new EventAchievement(Achievement.Action.Kill, Achievement.Target.Monster, 1f, 100));
+                _eventManager.Publish(EventManager.Channel.Achievement, new EventAchievement(Achievement.Action.Kill, Achievement.Target.Monster, 1f, 100));
             }
         }
 
@@ -60,21 +58,13 @@ namespace Achievement
         {
             var actionIndex = (int)action;
             var targetIndex = (int)target;
-
-            if (_achievementDataArray[actionIndex, targetIndex].TryGetValue(key, out var achievementDataList))
+            
+            _achievementDataArray[actionIndex, targetIndex] ??= new Dictionary<int, List<AchievementData>>();
+            
+            if (!_achievementDataArray[actionIndex, targetIndex].TryGetValue(key, out var achievementDataList))
                 _achievementDataArray[actionIndex, targetIndex][key] = achievementDataList = new List<AchievementData>();
             
-            
-            if (false == _achievementDictionary.TryGetValue(action, out var achievementsTargetDictionary))
-                _achievementDictionary[action] = new Dictionary<Target, Dictionary<int, List<AchievementData>>>();
-
-            if (false == _achievementDictionary[action].TryGetValue(target, out var achievementsKeyDic))
-                _achievementDictionary[action][target] = new Dictionary<int, List<AchievementData>>();
-
-            if (false == _achievementDictionary[action][target].TryGetValue(key, out var achievementsList))
-                _achievementDictionary[action][target][key] = achievementsList = new List<AchievementData>();
-
-            return achievementsList;
+            return achievementDataList;
         }
     }
 }
