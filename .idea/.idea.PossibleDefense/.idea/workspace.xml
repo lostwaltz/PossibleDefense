@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37757908-2c54-49be-8d2e-c87ce56dd95e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/KMC/Data/DeafultMapData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/KMC/Data/DeafultMapData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/KMC/Prefabs/Ground.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/KMC/Prefabs/Ground.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/KMC/Prefabs/Tower.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/KMC/Prefabs/Tower.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/KMC/TowerCreater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/KMC/TowerCreater.cs" afterDir="false" />
-    </list>
+    <list default="true" id="37757908-2c54-49be-8d2e-c87ce56dd95e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,9 +15,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/02.Scripts/KMC/TileMapData.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -92,7 +84,7 @@
       <option name="presentableId" value="Default" />
       <updated>1731668693616</updated>
       <workItem from="1731668693698" duration="12531000" />
-      <workItem from="1731731470324" duration="2638000" />
+      <workItem from="1731731470324" duration="3588000" />
     </task>
     <servers />
   </component>
