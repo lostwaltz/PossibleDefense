@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37757908-2c54-49be-8d2e-c87ce56dd95e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/EnumType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/EnumType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04.Sos/AchievementDataSheet/AchievementsData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04.Sos/AchievementDataSheet/AchievementsData.asset" afterDir="false" />
-    </list>
+    <list default="true" id="37757908-2c54-49be-8d2e-c87ce56dd95e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,7 +95,7 @@
       <workItem from="1731668693698" duration="12531000" />
       <workItem from="1731731470324" duration="3588000" />
       <workItem from="1731752668937" duration="4264000" />
-      <workItem from="1731788515180" duration="2499000" />
+      <workItem from="1731788515180" duration="2629000" />
     </task>
     <servers />
   </component>
