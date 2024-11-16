@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8683e74b57e14f1a92a6e88013683b79, type: 3}
+  m_Name: AchievementsData
+  m_EditorClassIdentifier: 
+  achievementsDataList:
+  - name: "\uC5C5\uC801 \uB370\uC774\uD130_01"
+    description: "\uC5C5\uC801 \uB370\uC774\uD130 \uCCAB\uBC88\uC9F8\uC785\uB2C8\uB2E4.
+      \uBAA9\uD45C\uCE58\uB294 10\uC785\uB2C8\uB2E4."
+    targetValue: 10
+    action: 500
+    target: 100
+  - name: "\uC5C5\uC801 \uB370\uC774\uD130_02"
+    description: "\uC5C5\uC801 \uB370\uC774\uD130 \uB450\uBC88\uC9F8\uC785\uB2C8\uB2E4..
+      \uBAA9\uD45C\uCE58\uB294 15\uC785\uB2C8\uB2E4."
+    targetValue: 15
+    action: 500
+    target: 100
+  - name: "\uC5C5\uC801 \uB370\uC774\uD130_03"
+    description: "\uC5C5\uC801 \uB370\uC774\uD130 \uC138\uBC88\uC9F8\uC785\uB2C8\uB2E4..
+      \uBAA9\uD45C\uCE58\uB294 20\uC785\uB2C8\uB2E4.."
+    targetValue: 20
+    action: 500
+    target: 100
+  - name: "\uC5C5\uC801 \uB370\uC774\uD130_04"
+    description: "\uC5C5\uC801 \uB370\uC774\uD130 \uB124\uBC88\uC9F8. \uD589\uB3D9\uC774
+      Interaction\uC785\uB2C8\uB2E4."
+    targetValue: 5
+    action: 100
+    target: 100
+  - name: "\uC5C5\uC801 \uB370\uC774\uD130_05"
+    description: "\uC5C5\uC801 \uB370\uC774\uD130 \uB2E4\uC12F\uBC88\uC9F8\uC785\uB2C8\uB2E4.
+      \uD0C0\uAC9F\uC774 Tower\uC785\uB2C8\uB2E4."
+    targetValue: 5
+    action: 100
+    target: 200
