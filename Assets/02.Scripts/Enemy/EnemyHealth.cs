@@ -21,7 +21,6 @@ public class EnemyHealth : MonoBehaviour
 
         if(curHealth <= 0f)
         {
-            Debug.LogAssertion("Monster Dead Event Invoke");
             return true;
         }
         else

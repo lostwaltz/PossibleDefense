@@ -18,13 +18,14 @@ public interface IDamagable
 
 public class Enemy : MonoBehaviour, IDamagable
 {
-    [field: SerializeField] public EnemySO EnemyData {  get; private set; }
+    [field: SerializeField] public EnemySO EnemyData { get; private set; }
     private EnemyMovement movement;
     private EnemyHealth health;
 
     //부활할때마다 바뀔 것들
     private Animator anim;
-    private Transform[] wayPoints;
+    //테스트용 퍼블릭
+    public Transform[] wayPoints;
     private GameObject model;
 
     //애니메이션 해쉬, 추후에 타워애니메이션의 데이터가 있으면 합치기
@@ -33,7 +34,7 @@ public class Enemy : MonoBehaviour, IDamagable
     private int OnHitAnimationHash;
     private int OnDieAnimationHash;
     private float DisappearAfterDie = 1f;   //죽고나서 사라지기까지의 시간
-    
+
 
     private void Awake()
     {
@@ -43,12 +44,17 @@ public class Enemy : MonoBehaviour, IDamagable
         OnDieAnimationHash = Animator.StringToHash(onDieAnimationName);
     }
 
+    private void Start()
+    {
+        //테스트
+        Initialize(wayPoints, EnemyType.Slime, wayPoints[1].position);
+    }
+
 
     public void Initialize(Transform[] waypoints, EnemyType enemyType, Vector3 position)
     {
         //해당 타입의 오브젝트를 자식으로두고 해당 위치에 오브젝트풀에서 받기
         anim = GetComponentInChildren<Animator>();  //해당 오브젝트의 animator 가져오기
-        this.wayPoints = waypoints;
         SetModel(enemyType);
         movement.SetUp(waypoints, EnemyData);
         health.SetUp(EnemyData);
@@ -66,7 +72,8 @@ public class Enemy : MonoBehaviour, IDamagable
         //죽으면 true를 반환
         if (health.TakeDamage(damage))
         {
-            Invoke(nameof(OnDie), DisappearAfterDie);
+            OnDie();
+            Invoke(nameof(Disappear), DisappearAfterDie);
         }
         else
         {
@@ -83,6 +90,13 @@ public class Enemy : MonoBehaviour, IDamagable
     public void OnDie()
     {
         anim.SetBool(OnDieAnimationHash, true);
+
+        //적 죽음 이벤트 발생
+        //적 죽었을 때의 이펙트
+    }
+
+    private void Disappear()
+    {
         ReturnToPool();
     }
 
