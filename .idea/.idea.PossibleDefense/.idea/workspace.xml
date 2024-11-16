@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37757908-2c54-49be-8d2e-c87ce56dd95e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementInfo.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementInfoContainer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementInfoContainer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/EnumType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/EnumType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/Event/EventManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/Event/EventManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,24 +109,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementManager.cs</url>
-          <line>17</line>
-          <properties documentPath="C:\WorkSpace\Unity\UnityLearning\3D_Project\PossibleDefense\Assets\02.Scripts\Achievement\AchievementManager.cs" containingFunctionPresentation="Method 'Start'">
-            <startOffsets>
-              <option value="712" />
-            </startOffsets>
-            <endOffsets>
-              <option value="713" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
