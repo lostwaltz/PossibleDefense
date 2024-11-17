@@ -28,7 +28,7 @@ namespace Achievement
             if (Input.GetKeyDown(KeyCode.Space))
                 _eventManager.Publish(EventManager.Channel.Achievement, new EventAchievement(Achievement.Action.Kill, Achievement.Target.Monster, 1f));
             if (Input.GetKeyDown(KeyCode.Escape))
-                _eventManager.Publish(EventManager.Channel.Achievement, new EventAchievement(Achievement.Action.Kill, Achievement.Target.Cash, 1f, 1000));
+                _eventManager.Publish(EventManager.Channel.Achievement, new EventAchievement(Achievement.Action.Kill, Achievement.Target.Cash, 1f, 100));
         }
 
         private void OnAchievement(EventAchievement data)
