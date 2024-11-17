@@ -36,7 +36,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         Move();
     }
@@ -71,6 +71,7 @@ public class EnemyMovement : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
         }
     }
+
     private void OnDead()
     {
         isDead = true;
