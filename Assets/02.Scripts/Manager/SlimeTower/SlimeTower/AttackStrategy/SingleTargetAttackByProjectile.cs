@@ -10,6 +10,12 @@ public class SingleTargetAttackByProjectile : IAttackStrategy
     private Transform targetPos;
     private Transform towerTransform;
 
+    
+    
+    //Transform targetPos 이 부분은 SingleTargetAttackByProjectile여기서 감지 하도록 변경
+    //targetPos대신 감지 범위를 가져와서 감지 범위에서 감지 후 해당 target을 향해 발사 하도록 수정 
+    
+    
     public SingleTargetAttackByProjectile(Transform towerTransform , Transform targetPos)
     {
         this.targetPos = targetPos;

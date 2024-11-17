@@ -5,49 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="786d4d7f-6565-4eb2-bafb-1618cb383218" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/Controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/Controller/SlimeTowerStatController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/Controller/SlimeTowerStatController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/Data.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/Data/SlimeTowerData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/Data/SlimeTowerData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/Data/Stat/SlimeTowerStatSo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/Data/Stat/SlimeTowerStatSo.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/PoolManagerForTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/PoolManagerForTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/AttackStrategy.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/AttackStrategy/IAttackStrategy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/AttackStrategy/IAttackStrategy.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/AttackStrategy/SingleTargetAttackByProjectile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/AttackStrategy/SingleTargetAttackByProjectile.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/CoroutineRunner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/CoroutineRunner.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/BaseProjectile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/BaseProjectile.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/IStrategy.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/IStrategy/IFireStrategy/FireAtTarget.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/IStrategy/IFireStrategy/FireAtTarget.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/IStrategy/IFireStrategy/IFireStrategy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/IStrategy/IFireStrategy/IFireStrategy.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/IStrategy/IHitStrategy.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/IStrategy/IHitStrategy/BasicHitStrategy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/IStrategy/IHitStrategy/BasicHitStrategy.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/IStrategy/IHitStrategy/IHitStrategy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/IStrategy/IHitStrategy/IHitStrategy.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/SlimeStateMachine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/SlimeStateMachine.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/State.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/State/IState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/State/IState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/State/SlimeTowerBaseState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/State/SlimeTowerBaseState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/State/SlimeTowerIdleState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/State/SlimeTowerIdleState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/StateMachine.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/StateMachine/BaseStateMachine.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/StateMachine/BaseStateMachine.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/Kawaii Slimes/Render Pipelines/Built-in.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/Kawaii Slimes/Render Pipelines/URP.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-Balanced.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URP-Balanced.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-Performant.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URP-Performant.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/BaseSlimeTower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/BaseSlimeTower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/Data/Stat/SlimeTowerStatSo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/Data/Stat/SlimeTowerStatSo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/AttackStrategy.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/AttackStrategy.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/AttackStrategy/IAttackStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/AttackStrategy/IAttackStrategy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/AttackStrategy/IAttackStrategy.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/AttackStrategy/IAttackStrategy.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/AttackStrategy/SingleTargetAttackByProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/AttackStrategy/SingleTargetAttackByProjectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/AttackStrategy/SingleTargetAttackByProjectile.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/AttackStrategy/SingleTargetAttackByProjectile.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/CoroutineRunner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/CoroutineRunner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/CoroutineRunner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/CoroutineRunner.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/Projectile.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/BaseProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/Projectile/BaseProjectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/BaseProjectile.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/Projectile/BaseProjectile.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/IStrategy.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/Projectile/IStrategy.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/IStrategy/IFireStrategy.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/Projectile/IStrategy/IFireStrategy.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/IStrategy/IFireStrategy/FireAtTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/Projectile/IStrategy/IFireStrategy/FireAtTarget.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/IStrategy/IFireStrategy/FireAtTarget.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/Projectile/IStrategy/IFireStrategy/FireAtTarget.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/IStrategy/IFireStrategy/IFireStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/Projectile/IStrategy/IFireStrategy/IFireStrategy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/IStrategy/IFireStrategy/IFireStrategy.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/Projectile/IStrategy/IFireStrategy/IFireStrategy.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/IStrategy/IHitStrategy.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/Projectile/IStrategy/IHitStrategy.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/IStrategy/IHitStrategy/BasicHitStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/Projectile/IStrategy/IHitStrategy/BasicHitStrategy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/IStrategy/IHitStrategy/BasicHitStrategy.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/Projectile/IStrategy/IHitStrategy/BasicHitStrategy.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/IStrategy/IHitStrategy/IHitStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/Projectile/IStrategy/IHitStrategy/IHitStrategy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/Projectile/IStrategy/IHitStrategy/IHitStrategy.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/Projectile/IStrategy/IHitStrategy/IHitStrategy.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/SlimeStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/SlimeStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/SlimeStateMachine.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/SlimeStateMachine.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/State.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/State.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/State/IState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/State/IState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTowerState/State/IState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/SlimeTower/SlimeTower/State/IState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/98.Animations/SlimeTower.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/98.Animations/SlimeTower.controller" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +135,7 @@
       <updated>1731668693616</updated>
       <workItem from="1731668693698" duration="12531000" />
       <workItem from="1731731470324" duration="3588000" />
-      <workItem from="1731748788791" duration="22450000" />
+      <workItem from="1731748788791" duration="25245000" />
     </task>
     <servers />
   </component>

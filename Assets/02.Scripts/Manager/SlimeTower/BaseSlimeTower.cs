@@ -9,15 +9,22 @@ using UnityEngine;
 public class BaseSlimeTower : MonoBehaviour
 {
     [SerializeField] private Transform Target;
-
     [SerializeField] private GameObject[] slimeDecoArray;
-    private SlimeTowerStatSo slimeTowerData;
-
+    public SlimeTowerStatSo slimeTowerData;
+    
+    // AttackState에서 정의하도록 함. 
     private IAttackStrategy _strategy;
     
     private SlimeStateMachine slimeStateMachine;
 
-    
+    public Animator animator;
+
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     private void Start()
     {
         _strategy = new SingleTargetAttackByProjectile(transform,Target);
