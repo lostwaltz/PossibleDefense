@@ -31,7 +31,7 @@ namespace Achievement
             }
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                _eventManager.Publish(EventManager.Channel.Achievement, new EventAchievement(Achievement.Action.Kill, Achievement.Target.Monster, 1f, 100));
+                _eventManager.Publish(EventManager.Channel.Achievement, new EventAchievement(Achievement.Action.Kill, Achievement.Target.Monster, 1f, 1000));
             }
         }
 
