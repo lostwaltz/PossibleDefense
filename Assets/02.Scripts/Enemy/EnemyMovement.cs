@@ -12,20 +12,22 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 dir;
     private Transform targetWayPoint;
 
+    private Transform model;
+
     private bool isDead = false;
 
-    public void SetUp(Transform[] waypoints, EnemySO data)
+    public void SetUp(Transform[] waypoints, EnemySO data, GameObject model)
     {
         this.wayPoints = waypoints;
         speed = data.baseSpeed * data.speedModifier;
+        this.model = model.transform;
 
         // 초기 웨이포인트 설정
         curWayPointIndex = 0;
         targetWayPoint = wayPoints[curWayPointIndex];
         UpdateDirection();
 
-        //몬스터죽음 이벤트에 OnDead함수 등록해서 몬스터가 죽으면 움직이지 않도록
-        //모든 몬스터가 한번에 멈추는걸 방지하기위해 제네릭으로 EnemyMovement를하여 인수로 this를?
+        isDead = false;
     }
 
     private void UpdateDirection()
@@ -38,12 +40,13 @@ public class EnemyMovement : MonoBehaviour
 
     public void FixedUpdate()
     {
+        if(!isDead)
         Move();
     }
 
     public void Move()
     {
-        if (wayPoints == null || wayPoints.Length == 0 || isDead)
+        if (wayPoints == null || wayPoints.Length == 0)
             return;
 
         // 이동
@@ -68,11 +71,11 @@ public class EnemyMovement : MonoBehaviour
         if (dir != Vector3.zero)
         {
             Quaternion targetRotation = Quaternion.LookRotation(dir);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+            model.transform.rotation = Quaternion.Slerp(model.transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
         }
     }
 
-    private void OnDead()
+    public void OnDead()
     {
         isDead = true;
     }
@@ -81,15 +84,13 @@ public class EnemyMovement : MonoBehaviour
     private bool IsCloseToPoint(Vector3 point)
     {
         // 거리가 0.2 이하이면 도달한 것으로 간주
-        return (point - transform.position).sqrMagnitude < 1f;
+        return (point - transform.position).sqrMagnitude < 0.04 * speed;
     }
 
     private void OnDisable()
     {
         curWayPointIndex = 0;
         targetWayPoint = null;
-        isDead = false;
-        //이벤트 등록한거 해제해주기
     }
 }
 

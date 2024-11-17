@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <baseMaxHP>k__BackingField: 100
   <baseDamage>k__BackingField: 1
-  <baseSpeed>k__BackingField: 50
+  <baseSpeed>k__BackingField: 10
   <maxHPModifier>k__BackingField: 1
   <speedModifier>k__BackingField: 1
