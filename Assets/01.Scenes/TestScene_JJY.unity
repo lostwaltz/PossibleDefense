@@ -467,7 +467,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: be4fadb40c54934419fd624cd0021acf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.624
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: be4fadb40c54934419fd624cd0021acf,
         type: 3}
@@ -614,6 +614,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1724552438}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1865942120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865942121}
+  m_Layer: 0
+  m_Name: FirePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865942121
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865942120}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.436, z: 0.291}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3467851700313860640}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1905266636
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,7 +1006,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: -2659932603334005503, guid: 9981a4f80fb95b04fb9d36e07baa17cb, type: 3}
+  m_Mesh: {fileID: 9117543207126802746, guid: a2f1a2a97ec26bb47825031d7f3e94f3, type: 3}
   m_Bones:
   - {fileID: 1921477321826072307}
   - {fileID: 1929267802597363333}
@@ -1011,8 +1042,8 @@ Transform:
   m_GameObject: {fileID: 4281683081879974042}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.19, y: 0, z: -1.5}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1130853570517820427}
@@ -1020,6 +1051,7 @@ Transform:
   - {fileID: 8552337673384106214}
   - {fileID: 1724552439}
   - {fileID: 1303930426}
+  - {fileID: 1865942121}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &3657418620692767819
@@ -1104,8 +1136,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bffdf674982a3d479b21787f9924622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 1965427790}
+  target: {fileID: 1965427790}
+  firePos: {fileID: 1865942121}
   slimeDecoArray: []
+  slimeTowerData: {fileID: 11400000, guid: 7a5d82db9d1f4d749b10cad90b9d1391, type: 2}
+  animator: {fileID: 0}
 --- !u!1 &6226777813141937728
 GameObject:
   m_ObjectHideFlags: 0

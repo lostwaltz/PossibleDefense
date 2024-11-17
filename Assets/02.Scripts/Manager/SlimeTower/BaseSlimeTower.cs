@@ -8,13 +8,12 @@ using UnityEngine;
 //rig와 model이 모두 다른 경우에는 어떻게 해야할지 생각해봐야함.
 public class BaseSlimeTower : MonoBehaviour
 {
-    [SerializeField] private Transform Target;
+    [SerializeField] private Transform target;
+    [SerializeField] private Transform firePos;
     [SerializeField] private GameObject[] slimeDecoArray;
     public SlimeTowerStatSo slimeTowerData;
     
-    // AttackState에서 정의하도록 함. 
     private IAttackStrategy _strategy;
-    
     private SlimeStateMachine slimeStateMachine;
 
     public Animator animator;
@@ -27,14 +26,10 @@ public class BaseSlimeTower : MonoBehaviour
 
     private void Start()
     {
-        _strategy = new SingleTargetAttackByProjectile(transform,Target);
+        _strategy = new SingleTargetAttackByProjectile(firePos.position,target,slimeTowerData.SlimeTowerStats.AttackPower);
         _strategy.Execute();
     }
-
-    private void OnEnable()
-    {
-    }
-
+    
     private void SetSlimeTowerData(SlimeTowerStatSo _slimeTowerData)
     {
         slimeTowerData = _slimeTowerData;
@@ -63,9 +58,4 @@ public class BaseSlimeTower : MonoBehaviour
     }
 
     
-
-    private void OnDisable()
-    {
-        slimeTowerData = null;
-    }
 }
