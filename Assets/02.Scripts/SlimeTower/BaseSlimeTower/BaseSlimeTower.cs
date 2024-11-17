@@ -30,11 +30,13 @@ public class BaseSlimeTower : MonoBehaviour
         _strategy.Execute();
     }
     
+    
     private void SetSlimeTowerData(SlimeTowerStatSo _slimeTowerData)
     {
         slimeTowerData = _slimeTowerData;
     }
 
+    
     private void SetSlimeAppearance()
     {
         foreach (var deco in slimeDecoArray)
