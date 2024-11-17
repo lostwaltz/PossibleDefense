@@ -12,6 +12,8 @@ public class StageManager : Singleton<StageManager>
 
     [SerializeField] private MapDataSO[] MapData;
 
+    [SerializeField] private int CallStageNum = 0;
+
     protected override void Awake()
     {
         base.Awake();
@@ -32,7 +34,7 @@ public class StageManager : Singleton<StageManager>
     {
         GameObject obj = new GameObject("Stage");
         stage = obj.AddComponent<Stage>();
-        stage.curMapData = MapData[0]; //Stage1번의 데이터 세팅
+        stage.curMapData = MapData[CallStageNum-1]; //Stage1번의 데이터 세팅
         stage.MapInitialize();
     }
     
