@@ -23,5 +23,4 @@ namespace Achievement
             TargetId = targetId;
         }
     }
-
 }
