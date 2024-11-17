@@ -8,6 +8,7 @@ public class EventManager : SingletonDontDestroy<EventManager>
 {
     public enum Channel
     {
+        Achievement
         
     }
     private readonly Dictionary<Channel, List<Delegate>> _eventHandlers = new Dictionary<Channel, List<Delegate>>();
