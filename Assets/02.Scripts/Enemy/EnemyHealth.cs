@@ -37,7 +37,10 @@ public class EnemyHealth : MonoBehaviour
     {
         curHealth = Mathf.Clamp(curHealth -= damage, 0f, MaxHealth);
 
-        if(curHealth <= 0f)
+        //Hp는 즉각적으로
+        HPBar.fillAmount = curHealth / MaxHealth;
+
+        if (curHealth <= 0f)
         {
             return true;
         }
@@ -50,9 +53,6 @@ public class EnemyHealth : MonoBehaviour
 
     private void HPDecrase()
     {
-        //Hp는 즉각적으로
-        HPBar.fillAmount = curHealth / MaxHealth;
-
         //backHP는 점차
         backHP.fillAmount = Mathf.Lerp(backHP.fillAmount, curHealth / MaxHealth, Time.deltaTime * decreaseSpeed);
 

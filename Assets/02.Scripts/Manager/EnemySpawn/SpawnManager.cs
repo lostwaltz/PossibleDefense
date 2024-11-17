@@ -12,11 +12,9 @@ public class SpawnManager : Singleton<SpawnManager> //DestroyµÇ´Â ½Ì±ÛÅæ
     public Transform[] SpawnPoints;
     public float SpawnDelay = 2f;
     public int maxSpawnCount = 10;
-    public int spawnCount = 0;
 
     private Coroutine coroutine;
     private WaitForSeconds spawnTime;
-
 
     private void Start()
     {
