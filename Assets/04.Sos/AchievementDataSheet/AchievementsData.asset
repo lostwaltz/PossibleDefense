@@ -23,11 +23,11 @@ MonoBehaviour:
     action: 4
     target: 0
   - currentValue: 0
-    name: "\uC5C5\uC801 \uB370\uC774\uD130_01"
+    name: "\uC5C5\uC801 \uB370\uC774\uD130_03"
     description: "\uC5C5\uC801 \uB370\uC774\uD130 \uCCAB\uBC88\uC9F8\uC785\uB2C8\uB2E4.
       \uBAA9\uD45C\uCE58\uB294 10\uC785\uB2C8\uB2E4."
     targetValue: 10
-    targetId: 100
+    targetId: 0
     isReset: 0
-    action: 0
+    action: 4
     target: 0
