@@ -1,83 +1,78 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Stage : MonoBehaviour
 {
-    private Enemy[] Enemies; //ÇØ´ç ½ºÅ×ÀÌÁö¿¡ µîÀåÇÒ Àû Ä³¸¯ÅÍ , ³ªÁß¿¡ ¿ÀºêÁ§Æ® Ç®¸µÀ¸·Î ±¸ÇöÇØ¾ßÇÔ 
-    private int EnemyIndex; //µîÀå ¸ó½ºÅÍ ÀÎµ¦½º
+    [SerializeField] private float tileHalfWidth = 5f; // íƒ€ì¼ì˜ ì ˆë°˜ ê°€ë¡œ
+    [SerializeField] private float tileHalfHeight = 5f; // íƒ€ì¼ì˜ ì ˆë°˜ ì„¸ë¡œ
 
-    public int SpacingRow; // Å¸ÀÏ°ú Å¸ÀÏ »çÀÌ ¿©¹é yÃà
-    public int SpacingColumn; // Å¸ÀÏ°ú Å¸ÀÏ »çÀÌ ¿©¹é xÃà
+    public int SpacingRow; // íƒ€ì¼ê³¼ íƒ€ì¼ ì‚¬ì´ ì—¬ë°± yì¶•
+    public int SpacingColumn; // íƒ€ì¼ê³¼ íƒ€ì¼ ì‚¬ì´ ì—¬ë°± xì¶•
 
-    public float offsetRow;//¿­ , ¼¼·Î
-    public float offsetColumn;//Çà ,°¡·Î
+    public float offsetRow;//ì—´ , ì„¸ë¡œ
+    public float offsetColumn;//í–‰ ,ê°€ë¡œ
 
-    [SerializeField] private Vector3 StartPosition;
+    [SerializeField] private List<List<BaseTile>> stageTiles = new List<List<BaseTile>>();
+    [SerializeField] private List<TowerTile> towerTiles = new List<TowerTile>(); // í”Œë ˆì´ì–´ê°€ ë°°ì¹˜í•  ìˆ˜ ìˆëŠ” íƒ€ì¼ì˜ ì›”ë“œì¢Œí‘œë¡œ ì €ì¥í•œ ë¦¬ìŠ¤íŠ¸ 
+    [SerializeField] private List<SpawnTile> spawnTiles = new List<SpawnTile>(); //Enemyë“¤ì´ ë“±ì¥í•  ì›”ë“œ ì¢Œí‘œ ë°ì´í„° 
+    [SerializeField] private List<EnemyWayTile> enemyWayTiles = new List<EnemyWayTile>(); // Enemyì˜ WayPointë¥¼ ì›”ë“œì¢Œí‘œë¡œ ì €ì¥í•œ ë¦¬ìŠ¤íŠ¸
 
-    [SerializeField] private List<List<Vector3>> StageTileWorldPos = new List<List<Vector3>>();
+    public List<TowerTile> TowerTiles { get => towerTiles; }
+    public List<SpawnTile> SpawnTiles { get => spawnTiles; }
+    public List<EnemyWayTile> EemyWayTiles { get => enemyWayTiles; }
+    
 
-    [SerializeField] private List<Vector3> WayPointWorldPos = new List<Vector3>(); // ³ªÁß¿¡´Â Queue·Î ÀÛ¼ºÇÏ¿© µ¿Àû»ı¼º ÇÒ¼ö ÀÖ°Ô »ç¿ëÇÒ°Å
-    [SerializeField] private List<Vector3> PlayerTilePointWorldPos = new List<Vector3>(); // ÇÃ·¹ÀÌ¾î°¡ ¹èÄ¡ÇÒ ¼ö ÀÖ´Â Å¸ÀÏ 
-
+    //ë§µ ì„¸íŒ… : Tileì„ ì›”ë“œì¢Œí‘œë¡œ ë³€í™˜í•˜ì—¬ ì›”ë“œì¢Œí‘œì— ì„¤ì¹˜í•˜ê¸° ê¸°ëŠ¥ 
     public void MapInitialize(List<List<StageTileTag>> curMapMatrix)
     {
-        GameObject tile = null;
+
         for (int z = 0; z < curMapMatrix.Count; z++)
         {
-            List<Vector3> CoulumnTileWorldPos = new List<Vector3>();
+            List<BaseTile> CoulumnTileWorldPos = new List<BaseTile>();
 
             for (int x = 0; x < curMapMatrix[z].Count; x++)
             {
-                tile = StageManager.Instance.TileObjectPool.SpawnFromPool(curMapMatrix[z][x].ToString());
+                BaseTile tile = StageManager.Instance.TileObjectPool.SpawnFromPool(curMapMatrix[z][x].ToString()).GetComponent<BaseTile>();
+                tile.transform.position = SetTileWorldPos(x, z);
 
-                CoulumnTileWorldPos.Add(SetTileWorldPos(tile, x, z));
+                CoulumnTileWorldPos.Add(tile);
 
                 switch (curMapMatrix[z][x])
                 {
-                    case StageTileTag.PlayerTile:
-                        PlayerTilePointWorldPos.Add(tile.transform.position);
+                    case StageTileTag.TowerTile:
+                        towerTiles.Add(tile as TowerTile);
                         break;
-                    case StageTileTag.EnemyMoveStartTile:
-                        StartPosition = tile.transform.position;
+
+                    case StageTileTag.SpawnTile:
+                        spawnTiles.Add(tile as SpawnTile);
                         break;
-                    case StageTileTag.EnemyMoveEndTile:
+
+                    case StageTileTag.EnemyWayTile:
+                        enemyWayTiles.Add(tile as EnemyWayTile);
                         break;
                 }
             }
 
-            StageTileWorldPos.Add(CoulumnTileWorldPos);
+            stageTiles.Add(CoulumnTileWorldPos);
         }
 
     }
 
-    public void EnemyWayPointInitialize(List<Vector3> curEnemyWayPoint)
+
+    //Tileì˜ positionê°’ì„ ë°°ì—´ì¢Œí‘œ -> ì›”ë“œì¢Œí‘œë¡¤ ë³€ê²½í•˜ëŠ” ì½”ë“œ + í•´ë‹¹ íƒ€ì¼ì˜ ìœ„ì¹˜ ì´ë™ 
+    private Vector3 SetTileWorldPos(Vector3 tile, int x, int z)
     {
-        //Enemy WayPoint ÃÊ±âÈ­
-        for (int i = 0; i < curEnemyWayPoint.Count; i++)
-        {
-            WayPointWorldPos[i] = SetTileWorldPos((int)curEnemyWayPoint[i].x, (int)curEnemyWayPoint[i].z);
-        }
-
-        //Debug
-        foreach(Vector3 pos in WayPointWorldPos)
-        {
-            Debug.Log($"EnemyWayPoint : {pos}");
-        }
-        //
-    }
-
-    private Vector3 SetTileWorldPos(GameObject tile, int x, int z)
-    {
-        Vector3 worldPos = new Vector3((x * 5) + SpacingColumn + offsetColumn, 0, (-z * 5) + SpacingRow + offsetRow);
-        tile.transform.position = worldPos;
-
+        Vector3 worldPos = new Vector3((x * tileHalfWidth) + SpacingColumn + offsetColumn, 0, (-z * tileHalfHeight) + SpacingRow + offsetRow);
         return worldPos;
     }
-    private Vector3 SetTileWorldPos(int x, int z)
+
+    //Tileì˜ positionê°’ì„ ë°°ì—´ì¢Œí‘œ -> ì›”ë“œì¢Œí‘œë¡¤ ë³€ê²½í•˜ëŠ” ì½”ë“œ
+    public Vector3 SetTileWorldPos(int x, int z)
     {
-        Vector3 worldPos = new Vector3((x * 5) + SpacingColumn + offsetColumn, 0, (-z * 5) + SpacingRow + offsetRow);
+        Vector3 worldPos = new Vector3((x * tileHalfWidth) + SpacingColumn + offsetColumn, 0, (-z * tileHalfHeight) + SpacingRow + offsetRow);
         return worldPos;
     }
 }
