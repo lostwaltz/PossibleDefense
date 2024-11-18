@@ -7,20 +7,28 @@ namespace Achievement
 {
     public class AchievementManager : SingletonDontDestroy<AchievementManager>
     {
-        public AchievementInfoContainer achievementInfoContainer;
+        public  SO.AchievementDataContainer achievementDataContainer;
         private Dictionary<int, List<AchievementData>>[,] _achievementDataArray;
         private EventManager _eventManager;
         
-        private void Start()
+        public int AchievementCount { get; private set; }
+
+        protected override void Awake()
         {
+            base.Awake();
+
             _achievementDataArray = new Dictionary<int, List<AchievementData>>[(int)Action.Count, (int)Target.Count];
             
-            EventManager.Instance.Subscribe<EventAchievement>(EventManager.Channel.Achievement, OnAchievement);
-
-            foreach (var info in achievementInfoContainer.achievementsDataList)
+            foreach (var info in achievementDataContainer.achievementsDataList)
                 GetOrAddList(info.action, info.target, info.targetId).Add(new AchievementData(info));
-            
+
+            AchievementCount = achievementDataContainer.achievementsDataList.Count;
+        }
+
+        private void Start()
+        {
             _eventManager = EventManager.Instance;
+            EventManager.Instance.Subscribe<EventAchievement>(EventManager.Channel.Achievement, OnAchievement);
         }
 
         private void Update()
@@ -61,6 +69,30 @@ namespace Achievement
                 _achievementDataArray[actionIndex, targetIndex][key] = achievementDataList = new List<AchievementData>();
             
             return achievementDataList;
+        }
+
+        public Dictionary<int, List<AchievementData>>[,] GetDataArray()
+        {
+            return _achievementDataArray;
+        }
+
+        public AchievementData[] GetAchievementData()
+        {
+            List<AchievementData> achievementDataList = new();
+            
+            foreach (var dataDictionary in _achievementDataArray)
+            {
+                if(null == dataDictionary) continue;
+                
+                foreach (var keyValuePair in dataDictionary)
+                {
+                    foreach (AchievementData data in keyValuePair.Value)
+                        achievementDataList.Add(data);
+                    
+                }
+            }
+
+            return achievementDataList.ToArray();
         }
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Achievement
 {
@@ -16,6 +17,8 @@ namespace Achievement
             targetValue = achievementData.targetValue;
             targetId = achievementData.targetId;
             
+            icon = achievementData.icon;;
+            
             isReset = achievementData.isReset;
             
             currentValue = 0;
@@ -30,7 +33,23 @@ namespace Achievement
 
         public bool isReset;
         
+        public Sprite icon;
+        
+        
         public Action action;
         public Target target;
+
+        public void IncrementValue(float value)
+        {
+            switch (isReset)
+            {
+                case true when currentValue < value:
+                    currentValue = value;
+                    break;
+                case false:
+                    currentValue += value;
+                    break;
+            }
+        }
     }
 }
