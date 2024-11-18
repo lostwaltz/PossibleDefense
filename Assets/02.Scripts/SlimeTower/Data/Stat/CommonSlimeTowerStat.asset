@@ -16,3 +16,4 @@ MonoBehaviour:
   SlimeTowerStats:
     AttackSpeed: 1
     AttackPower: 1
+    AttackRange: 20

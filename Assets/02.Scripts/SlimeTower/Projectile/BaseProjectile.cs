@@ -10,12 +10,11 @@ public class BaseProjectile : MonoBehaviour
     private IFireStrategy _fireStrategy;
     private Transform _target;
     private float _damage;
-    private int _enemyLayer;
-
-
+    private int _enemyLayerMask;
+    
     private void Start()
     {
-        _enemyLayer = LayerMask.NameToLayer("Enemy");
+        _enemyLayerMask = 1 << LayerMask.NameToLayer("Enemy"); // 비트마스크로 변환
     }
 
 
@@ -44,7 +43,7 @@ public class BaseProjectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == _enemyLayer)
+        if ((_enemyLayerMask & (1 << other.gameObject.layer)) != 0)
         {
             _hitStrategy.Execute();
             other.GetComponent<EnemyHealth>().TakeDamage(_damage);

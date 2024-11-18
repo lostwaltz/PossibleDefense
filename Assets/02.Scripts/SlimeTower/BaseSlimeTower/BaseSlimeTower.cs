@@ -26,7 +26,6 @@ public class BaseSlimeTower : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        Debug.Log(slimeTowerData.SlimeTowerStats.AttackSpeed);
         _slimeStateMachine = new SlimeStateMachine(this);
     }
 

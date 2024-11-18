@@ -2,50 +2,52 @@ using UnityEngine;
 
 public class SlimeTowerIdleState : SlimeTowerBaseState
 {
-    private int _targetLayer = LayerMask.GetMask("Enemy");
-    private RaycastHit[] _hits = new RaycastHit[10];
-    
-    
-    float radius = 20f; // 나중에 공격 범위를 가져와서 하도록 처리! 
+    private  int _targetLayerMask = LayerMask.GetMask("Enemy");
+    private Collider[] _results = new Collider[10];  //상수 ? 사용 
+
+
 
     public SlimeTowerIdleState(SlimeStateMachine _stateMachine) : base(_stateMachine)
     {
-        
-        
-        
     }
-    
+
     public override void Enter()
     {
         base.Enter();
         StartAnimation(stateMachine.SlimeTower.animatorHashData.IdleParameterHash);
-     }
+    }
 
     public override void Exit()
     {
+        base.Exit();
         StopAnimation(stateMachine.SlimeTower.animatorHashData.IdleParameterHash);
     }
 
     public override void Update()
     {
-        Collider[] colliders = Physics.OverlapSphere(stateMachine.SlimeTower.transform.position, radius);
+        int count = Physics.OverlapSphereNonAlloc(stateMachine.SlimeTower.transform.position, _attackRange, _results);
 
-        if (colliders.Length > 0)
+        if (count <= 0) return;
+
+        // 충돌한 경우 처리
+        for (int i = 0; i < count; i++)
         {
-            // 충돌한 경우 처리 , TODO 타겟             // 충돌한 경우 처리 , TODO 타겟 
-            foreach (var collider in colliders)
-            {
-                stateMachine.SlimeTower.Target = collider.transform;
-                stateMachine.ChangeState(stateMachine.AttackState);
-            }
-        }
+            var collider = _results[i];
+            if ((_targetLayerMask & (1 << collider.gameObject.layer)) == 0) continue;
 
+            stateMachine.SlimeTower.Target = collider.transform;
+            stateMachine.ChangeState(stateMachine.AttackState);
+            break; 
+        }
     }
 
+    
     public override void FixedUpdate()
     {
-        
     }
-    
-    
+
 }
+
+
+
+
