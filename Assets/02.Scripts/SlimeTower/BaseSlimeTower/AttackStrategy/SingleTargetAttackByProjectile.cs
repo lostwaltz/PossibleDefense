@@ -7,7 +7,6 @@ public class SingleTargetAttackByProjectile : IAttackStrategy
 
     private IFireStrategy _fireStrategy;
     private IHitStrategy _hitStrategy;
-    private Transform _targetPos;
     private Vector3 _firePos;
     private float _damage;
 
@@ -15,19 +14,21 @@ public class SingleTargetAttackByProjectile : IAttackStrategy
     
      public SingleTargetAttackByProjectile(Vector3 firePos , Transform targetPos , float damage)
     {
-        _targetPos = targetPos;
         _firePos = firePos;
         _damage = damage;
-
         _fireStrategy = new FireAtTarget();
         _hitStrategy  = new BasicHitStrategy(_damage);
     }
-    
-    
+
+
     public void Execute()
+    {
+    }
+
+    public void Execute(Transform target)
     { 
         GameObject projectile = PoolManagerForTest.Instance.Pool.SpawnFromPool("Bullet");
         projectile.transform.position = _firePos;
-        projectile.GetComponent<BaseProjectile>().SetProjectile(_fireStrategy,_hitStrategy,_targetPos);
-     }
+        projectile.GetComponent<BaseProjectile>().SetProjectile(_fireStrategy,_hitStrategy,target,_damage);
+    }
 }

@@ -1,4 +1,7 @@
+using UnityEngine;
+
 public interface IAttackStrategy
 {
-    void Execute();
+     
+    void Execute(Transform target);
 }

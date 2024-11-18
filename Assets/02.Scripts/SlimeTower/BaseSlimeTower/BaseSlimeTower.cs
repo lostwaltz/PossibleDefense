@@ -8,34 +8,50 @@ using UnityEngine;
 //rig와 model이 모두 다른 경우에는 어떻게 해야할지 생각해봐야함.
 public class BaseSlimeTower : MonoBehaviour
 {
-    [SerializeField] private Transform target;
     [SerializeField] private Transform firePos;
     [SerializeField] private GameObject[] slimeDecoArray;
-    public SlimeTowerStatSo slimeTowerData;
     
-    private IAttackStrategy _strategy;
-    private SlimeStateMachine slimeStateMachine;
+    public SlimeTowerStatSo slimeTowerData;
+    private SlimeStateMachine _slimeStateMachine;
 
-    public Animator animator;
+    public Transform Target { get;  set; }
 
+    public Animator animator { get; private set;}
+    public AnimatorHashData animatorHashData = new AnimatorHashData();
+    public IAttackStrategy AttackStrategy { get;  set; }
 
+    
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        Debug.Log(slimeTowerData.SlimeTowerStats.AttackSpeed);
+        _slimeStateMachine = new SlimeStateMachine(this);
     }
 
     private void Start()
     {
-        _strategy = new SingleTargetAttackByProjectile(firePos.position,target,slimeTowerData.SlimeTowerStats.AttackPower);
-        _strategy.Execute();
+        animatorHashData.Initialize();
+        _slimeStateMachine.ChangeState(_slimeStateMachine.IdleState);
+        
+        AttackStrategy = new SingleTargetAttackByProjectile(firePos.position,Target,slimeTowerData.SlimeTowerStats.AttackPower);
     }
     
+    
+    private void Update()
+    {
+        _slimeStateMachine.Update();
+    }
+
+    private void FixedUpdate()
+    {
+        _slimeStateMachine.FixedUpdateState();
+    }
     
     private void SetSlimeTowerData(SlimeTowerStatSo _slimeTowerData)
     {
         slimeTowerData = _slimeTowerData;
     }
-
+    
     
     private void SetSlimeAppearance()
     {

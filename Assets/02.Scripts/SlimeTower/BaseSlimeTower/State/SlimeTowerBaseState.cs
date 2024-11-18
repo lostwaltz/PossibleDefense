@@ -24,17 +24,21 @@ public class SlimeTowerBaseState : IState
     public virtual void FixedUpdate()
     {
     }
-
-
+    
     protected void StartAnimation(int animatorHash)
     {
-        stateMachine.slimeTower.animator.SetBool(animatorHash, true);
+        stateMachine.SlimeTower.animator.SetBool(animatorHash, true);
+    }
+    
+    protected void StartAnimationTrigger(int animatorHash)
+    {
+        stateMachine.SlimeTower.animator.SetTrigger(animatorHash);
     }
 
     protected void StopAnimation(int animatorHash)
     {
-        stateMachine.slimeTower.animator.SetBool(animatorHash, false);
+        stateMachine.SlimeTower.animator.SetBool(animatorHash, false);
     }
   
 
-}
+}                                         

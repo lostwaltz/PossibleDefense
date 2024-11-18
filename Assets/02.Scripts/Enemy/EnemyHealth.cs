@@ -9,12 +9,12 @@ public class EnemyHealth : MonoBehaviour
 
     public void SetUp(EnemySO enemy)
     {
-        //ÀÌ·¯¸é ¼ÒÈ¯ µÉ ¶§ ´ç½ÃÀÇ enenmySOÀÇ Modifier·Î »ı¼ºµÇ°ÚÁö
+        //ì´ëŸ¬ë©´ ì†Œí™˜ ë  ë•Œ ë‹¹ì‹œì˜ enenmySOì˜ Modifierë¡œ ìƒì„±ë˜ê² ì§€
         MaxHealth = enemy.baseMaxHP * enemy.maxHPModifier;
         curHealth = MaxHealth;
     }
 
-    //Á×À»¶§ true¸¦ ¹İÈ¯ÇÏ´Â ÇÔ¼ö
+    //ì£½ì„ë•Œ trueë¥¼ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜
     public bool TakeDamage(float damage)
     {
         curHealth = Mathf.Clamp(curHealth -= damage, 0f, MaxHealth);
