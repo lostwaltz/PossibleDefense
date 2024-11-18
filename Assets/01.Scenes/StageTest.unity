@@ -541,9 +541,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stage: {fileID: 7579750480079828766, guid: 6d7a9d68a4729454386ad0de83da7955, type: 3}
   tileObjectPool: {fileID: 527513481}
-  MapData:
-  - {fileID: 11400000, guid: 51eee5c55b44a7b41a44bd9aaf2c72d4, type: 2}
-  - {fileID: 11400000, guid: bb5ea6696ef3a8d40980c7fcc26a3f59, type: 2}
   CallStageNum: 2
 --- !u!4 &527513480
 Transform:
@@ -576,19 +573,19 @@ MonoBehaviour:
   - tag: EnemyTile
     prefab: {fileID: 6414579781571261687, guid: 10da8d3decc49e74fb92772f5841ae8b,
       type: 3}
-    size: 20
+    size: 50
   - tag: PlayerTile
     prefab: {fileID: 6414579781571261687, guid: 6eed7e551e14d55439a0ad10d092028f,
       type: 3}
-    size: 20
+    size: 50
   - tag: EnemyMoveStartTile
     prefab: {fileID: 6414579781571261687, guid: 6cdfa3c8d71929b43b9efce7b7f35dc8,
       type: 3}
-    size: 20
+    size: 50
   - tag: EnemyMoveEndTile
     prefab: {fileID: 6414579781571261687, guid: 148eaa3808672c743b66b88f26435e8f,
       type: 3}
-    size: 20
+    size: 50
 --- !u!1 &1545226837
 GameObject:
   m_ObjectHideFlags: 0

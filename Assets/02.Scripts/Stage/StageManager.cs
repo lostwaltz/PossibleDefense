@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
@@ -10,9 +11,8 @@ public class StageManager : Singleton<StageManager>
     public Stage Stage { get => stage; set => stage = value; }
     public ObjectPool TileObjectPool { get => tileObjectPool; }
 
-    [SerializeField] private MapDataSO[] MapData;
-
     [SerializeField] private int CallStageNum = 0;
+    StringBuilder stringBuilder = new StringBuilder();
 
     protected override void Awake()
     {
@@ -32,10 +32,13 @@ public class StageManager : Singleton<StageManager>
 
     public void MapSetting()
     {
+        stringBuilder.Clear();
+        stringBuilder.Append(StageConstain.MapMatrixDBPath);
+        stringBuilder.Append(CallStageNum.ToString());
+
         GameObject obj = new GameObject("Stage");
         stage = obj.AddComponent<Stage>();
-        stage.curMapData = MapData[CallStageNum-1]; //Stage1번의 데이터 세팅
-        stage.MapInitialize();
+        stage.MapInitialize(CSVReader.LoadMapMatrixFromCSV(stringBuilder.ToString()));
     }
     
 }
