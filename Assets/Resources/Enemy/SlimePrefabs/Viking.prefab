@@ -820,8 +820,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e88d8cad893624c8dcea6e34b0a7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <EnemyData>k__BackingField: {fileID: 11400000, guid: 7df46c68f9ad6a04cb196b8274ca9455,
-    type: 2}
   HPCanvas: {fileID: 6992331707084527340}
   wayPoints:
   - {x: -0.000012934324, y: 9.56e-43, z: -15222640}
@@ -841,6 +839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af00cb996d633b4690030698478e750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HPCanvas: {fileID: 6992331707084527340}
   HPBar: {fileID: 5405166982708393578}
   backHP: {fileID: 7076231209685776000}
   shield: {fileID: 4644282026808661980}

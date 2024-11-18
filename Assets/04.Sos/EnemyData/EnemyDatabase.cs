@@ -10,6 +10,11 @@ public class EnemyDatabase : ScriptableObject
 
     public EnemySO GetEnemy(int id)
     {
-        return enemyDataList.FirstOrDefault<EnemySO>(x => x.id == id);
+        return enemyDataList.FirstOrDefault<EnemySO>(x => x.id.Equals(id));
+    }
+
+    public int GetEnemyId(EnemySO enemy)
+    {
+        return enemyDataList.FirstOrDefault(x => x.id.Equals(enemy.id)).id;
     }
 }

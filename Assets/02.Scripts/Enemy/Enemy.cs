@@ -2,6 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ResultOfDamage
+{
+    HealthReduced,
+    OnlyShield,
+    Evasion,
+    Dead
+}
+
 public interface IDamagable
 {
     void TakeDamage(float damage);
@@ -9,10 +17,8 @@ public interface IDamagable
 
 public class Enemy : MonoBehaviour, IDamagable
 {
-    [field: SerializeField] private Canvas HPCanvas;
     private EnemyMovement movement;
     private EnemyHealth health;
-    private Camera cam;
 
     private Animator anim;
     //for test
@@ -28,9 +34,10 @@ public class Enemy : MonoBehaviour, IDamagable
 
     private void Awake()
     {
-        cam = Camera.main;
         movement = GetComponent<EnemyMovement>();
         health = GetComponent<EnemyHealth>();
+        anim = GetComponentInChildren<Animator>();
+
         OnHitAnimationHash = Animator.StringToHash(onHitAnimationName);
         OnDieAnimationHash = Animator.StringToHash(onDieAnimationName);
     }
@@ -39,31 +46,28 @@ public class Enemy : MonoBehaviour, IDamagable
     public void Initialize(Vector3[] waypoints, EnemySO enemySO)
     {
         this.wayPoints = waypoints;
-        anim = GetComponentInChildren<Animator>();
         health.SetUp(enemySO);
         movement.SetUp(waypoints, enemySO, model);
-
-        HPCanvas.transform.rotation = Quaternion.LookRotation(cam.transform.position);
     }
 
     public void TakeDamage(float damage)
     {
-        int result = health.TakeDamage(damage);
-        if (result > 0)                                      
+        ResultOfDamage result = health.TakeDamage(damage);
+
+        switch (result)
         {
-            //1 damaged
-            OnHit();        
-        }
-        else if(result < 0)                                  
-        {
-            //-1 only damaged shield (nothing to do)
-            return;
-        }
-        else                                                 
-        {
-            //0 dead
-            OnDie();
-            Invoke(nameof(ReturnToPool), DisappearAfterDie);
+            case ResultOfDamage.Evasion:
+            case ResultOfDamage.OnlyShield:
+                break;
+
+            case ResultOfDamage.HealthReduced:
+                OnHit();
+                break;
+
+            case ResultOfDamage.Dead:
+                OnDie();
+                Invoke(nameof(ReturnToPool), DisappearAfterDie);
+                break;
         }
     }
 
@@ -74,15 +78,10 @@ public class Enemy : MonoBehaviour, IDamagable
 
     public void OnDie()
     {
-        if (anim == null)
-        {
-            Debug.Log("animator null");
-            return;
-        }
-
         anim.SetBool(OnDieAnimationHash, true);
         movement.OnDead();
     }
+
     private void ReturnToPool()
     {
         gameObject.SetActive(false);

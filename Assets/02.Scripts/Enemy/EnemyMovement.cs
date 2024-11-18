@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public interface ISlowable
+{
+    void SlowEffect(float percentage, float time);
+}
+
+public class EnemyMovement : MonoBehaviour, ISlowable
 {
     public float rotationSpeed = 10f;
     private Vector3[] wayPoints;
@@ -75,7 +80,6 @@ public class EnemyMovement : MonoBehaviour
         isDead = true;
     }
 
-
     private bool IsCloseToPoint(Vector3 point)
     {
         return (point - transform.position).sqrMagnitude < 0.04 * speed;
@@ -87,6 +91,18 @@ public class EnemyMovement : MonoBehaviour
         targetWayPoint = Vector3.zero;
     }
 
-    //Slow Effect (float percent, float time)
+    //change to coroutine
+    public void SlowEffect (float percent, float time)
+    {
+        float curSpeed = speed;
+        speed = speed - (speed * percent * 0.01f);
+
+        //Invoke(ResetSpeed(speed), time);
+    }
+
+    private void ResetSpeed(float speed)
+    {
+        this.speed = speed;
+    }
 }
 

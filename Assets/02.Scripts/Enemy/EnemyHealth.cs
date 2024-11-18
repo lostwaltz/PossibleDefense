@@ -14,6 +14,7 @@ public class EnemyHealth : MonoBehaviour
     private float curShield;
     private float evasion;
 
+    [SerializeField] private Canvas HPCanvas;
     [SerializeField] private Image HPBar;
     [SerializeField] private Image backHP;
     [SerializeField] private Image shield;
@@ -21,6 +22,12 @@ public class EnemyHealth : MonoBehaviour
     private float decreaseSpeed = 2;
     private bool isDamaging = false;
     private bool hasShield = false;
+    private Camera cam;
+
+    private void Awake()
+    {
+        cam = Camera.main;
+    }
 
     private void Update()
     {
@@ -29,7 +36,6 @@ public class EnemyHealth : MonoBehaviour
             HPDecrase();
         }
     }
-
 
     public void SetUp(EnemySO enemy)
     {
@@ -46,17 +52,19 @@ public class EnemyHealth : MonoBehaviour
 
         hasShield = maxShield > 0;
         shield.fillAmount = hasShield ? 1f : 0f;
+
+        HPCanvas.transform.rotation = Quaternion.LookRotation(cam.transform.position);
     }
 
-    public int TakeDamage(float damage)
+    public ResultOfDamage TakeDamage(float damage)
     {
         float evasionPecentage = Random.Range(0, 100f);
-        if (evasionPecentage < evasion) return -1;
+        if (evasionPecentage < evasion) return ResultOfDamage.Evasion;  //evasion
 
         float remainingDamage = HandleShield(damage);
         if (remainingDamage < 0)
         {
-            return -1;  //only shield damaged
+            return ResultOfDamage.OnlyShield;  //only shield damaged
         }
 
         return HandleHP(remainingDamage);
@@ -87,7 +95,7 @@ public class EnemyHealth : MonoBehaviour
         return damage;
     }
 
-    private int HandleHP(float damage)
+    private ResultOfDamage HandleHP(float damage)
     {
 
         if (damage > 0f)
@@ -98,12 +106,12 @@ public class EnemyHealth : MonoBehaviour
 
         if (curHealth <= 0f)
         {
-            return 0;   //dead
+            return ResultOfDamage.Dead;   //dead
         }
         else
         {
             isDamaging = true;
-            return 1;   //damaged
+            return ResultOfDamage.HealthReduced;   //damaged
         }
     }
 
@@ -115,5 +123,10 @@ public class EnemyHealth : MonoBehaviour
         {
             isDamaging = false;
         }
+    }
+
+    public void Heal(float amount)
+    {
+        curHealth += amount;
     }
 }
