@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public struct RowLine
 {
-    public int[] index; // 피드백 : int 데이터를 enum으로 변경해서 사용할것 
+    public StageTileTag[] ColumnLineData; // 피드백 : int 데이터를 enum으로 변경해서 사용할것 
 }
 
 [CreateAssetMenu(fileName = "MapDataSO", menuName = "MapDataSO/Default", order = 0)]
