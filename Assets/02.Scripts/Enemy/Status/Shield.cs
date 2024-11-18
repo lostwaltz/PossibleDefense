@@ -1,0 +1,21 @@
+using UnityEngine;
+
+public class Shield
+{
+    public float MaxShield { get; private set; }
+    public float CurrentShield { get; private set; }
+
+    public void Initialize(float maxShield)
+    {
+        MaxShield = maxShield;
+        CurrentShield = MaxShield;
+    }
+
+    public float AbsorbDamage(float damage)
+    {
+        float remainingDamage = damage - CurrentShield;
+        CurrentShield = Mathf.Clamp(CurrentShield - damage, 0, MaxShield);
+        return remainingDamage > 0 ? remainingDamage : 0;
+    }
+}
+

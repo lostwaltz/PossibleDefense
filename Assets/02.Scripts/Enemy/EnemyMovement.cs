@@ -10,6 +10,8 @@ public interface ISlowable
 
 public class EnemyMovement : MonoBehaviour, ISlowable
 {
+    [SerializeField] private Transform model;
+
     public float rotationSpeed = 10f;
     private Vector3[] wayPoints;
     private int curWayPointIndex = 0;
@@ -17,15 +19,13 @@ public class EnemyMovement : MonoBehaviour, ISlowable
     private Vector3 dir;
     private Vector3 targetWayPoint;
 
-    private Transform model;
-
     private bool isDead = false;
+    private Coroutine slowCoroutine;
 
-    public void SetUp(Vector3[] waypoints, EnemySO data, GameObject model)
+    public void SetUp(Vector3[] waypoints, EnemySO data)
     {
         this.wayPoints = waypoints;
         speed = data.baseSpeed * data.speedModifier;
-        this.model = model.transform;
 
         curWayPointIndex = 0;
         targetWayPoint = wayPoints[curWayPointIndex];
@@ -91,18 +91,22 @@ public class EnemyMovement : MonoBehaviour, ISlowable
         targetWayPoint = Vector3.zero;
     }
 
-    //change to coroutine
-    public void SlowEffect (float percent, float time)
+    IEnumerator ApplySlow(float percent, float time)
     {
         float curSpeed = speed;
         speed = speed - (speed * percent * 0.01f);
-
-        //Invoke(ResetSpeed(speed), time);
+        yield return new WaitForSeconds(percent);
+        speed = curSpeed;
     }
 
-    private void ResetSpeed(float speed)
+    public void SlowEffect(float percentage, float time)
     {
-        this.speed = speed;
+        if(slowCoroutine != null)
+        {
+            StopCoroutine(slowCoroutine);
+        }
+
+        slowCoroutine = StartCoroutine(ApplySlow(percentage, time));
     }
 }
 

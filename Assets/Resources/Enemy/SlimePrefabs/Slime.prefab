@@ -627,13 +627,14 @@ GameObject:
   - component: {fileID: 7828803840892043849}
   - component: {fileID: 3279153676310049088}
   - component: {fileID: 6881144292237507114}
+  - component: {fileID: 7718310433577088650}
   m_Layer: 6
   m_Name: Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9072035073685527740
 Transform:
   m_ObjectHideFlags: 0
@@ -663,13 +664,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e88d8cad893624c8dcea6e34b0a7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HPCanvas: {fileID: 3580886250986430425}
+  enemyData: {fileID: 11400000, guid: 0ff66f10d2814354991b51338a4be9c5, type: 2}
   wayPoints:
   - {x: -0.000012934324, y: 9.56e-43, z: -15222640}
   - {x: 9.56e-43, y: -1.1187568e-18, z: 9.53e-43}
   - {x: 4.6e-44, y: 3910.7786, z: -0.000012934324}
   - {x: 9.56e-43, y: -0.000012934361, z: 9.56e-43}
-  model: {fileID: 6873028814098561235}
 --- !u!114 &7828803840892043849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,7 +685,7 @@ MonoBehaviour:
   HPCanvas: {fileID: 3580886250986430425}
   HPBar: {fileID: 3352198072853523566}
   backHP: {fileID: 4960980208432773088}
-  shield: {fileID: 2062537281485671846}
+  shieldImage: {fileID: 2062537281485671846}
 --- !u!114 &3279153676310049088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,6 +698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2e5da57415a914d82327fc91fcda27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  model: {fileID: 2769059203399186835}
   rotationSpeed: 5
 --- !u!136 &6881144292237507114
 CapsuleCollider:
@@ -722,6 +723,18 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!114 &7718310433577088650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6326314167467352298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e2169502b40ed4dbab70a58ad2b09c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6873028814098561235
 GameObject:
   m_ObjectHideFlags: 0
