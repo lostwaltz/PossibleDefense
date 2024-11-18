@@ -10,7 +10,7 @@ public class EnemyMovement : MonoBehaviour
     private int curWayPointIndex = 0;
     private float speed;
     private Vector3 dir;
-    private Transform targetWayPoint;
+    private Vector3 targetWayPoint;
 
     private Transform model;
 
@@ -22,9 +22,8 @@ public class EnemyMovement : MonoBehaviour
         speed = data.baseSpeed * data.speedModifier;
         this.model = model.transform;
 
-        // 초기 웨이포인트 설정
         curWayPointIndex = 0;
-        targetWayPoint.position = wayPoints[curWayPointIndex];
+        targetWayPoint = wayPoints[curWayPointIndex];
         UpdateDirection();
 
         isDead = false;
@@ -34,7 +33,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (targetWayPoint != null)
         {
-            dir = (targetWayPoint.position - transform.position).normalized;
+            dir = (targetWayPoint - transform.position).normalized;
         }
     }
 
@@ -49,17 +48,13 @@ public class EnemyMovement : MonoBehaviour
         if (wayPoints == null || wayPoints.Length == 0)
             return;
 
-        // 이동
         transform.Translate(Time.deltaTime * speed * dir, Space.World);
 
-        // 웨이포인트 도달 체크
-        if (IsCloseToPoint(targetWayPoint.position))
+        if (IsCloseToPoint(targetWayPoint))
         {
-            // 다음 웨이포인트로 전환
             curWayPointIndex = (curWayPointIndex + 1) % wayPoints.Length;
-            targetWayPoint.position = wayPoints[curWayPointIndex];
+            targetWayPoint = wayPoints[curWayPointIndex];
 
-            // 방향 업데이트
             UpdateDirection();
         }
 
@@ -83,14 +78,15 @@ public class EnemyMovement : MonoBehaviour
 
     private bool IsCloseToPoint(Vector3 point)
     {
-        // 거리가 0.2 이하이면 도달한 것으로 간주
         return (point - transform.position).sqrMagnitude < 0.04 * speed;
     }
 
     private void OnDisable()
     {
         curWayPointIndex = 0;
-        targetWayPoint = null;
+        targetWayPoint = Vector3.zero;
     }
+
+    //Slow Effect (float percent, float time)
 }
 

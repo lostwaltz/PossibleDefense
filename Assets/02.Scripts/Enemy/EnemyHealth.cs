@@ -8,11 +8,17 @@ public class EnemyHealth : MonoBehaviour
     public float MaxHealth {  get; private set; }
     public float curHealth { get; private set; }
 
+    private float maxShield;
+    private float curShield;
+    private float evasion;
+
     [SerializeField] private Image HPBar;
     [SerializeField] private Image backHP;
+    [SerializeField] private Image shield;
 
     private float decreaseSpeed = 2;
     private bool isDamaging = false;
+    private bool hasShield = false;
 
     private void Update()
     {
@@ -25,19 +31,26 @@ public class EnemyHealth : MonoBehaviour
 
     public void SetUp(EnemySO enemy)
     {
-        //ÀÌ·¯¸é ¼ÒÈ¯ µÉ ¶§ ´ç½ÃÀÇ enenmySOÀÇ Modifier·Î »ı¼ºµÇ°ÚÁö
+        //ì´ëŸ¬ë©´ ì†Œí™˜ ë  ë•Œ ë‹¹ì‹œì˜ enenmySOì˜ Modifierë¡œ ìƒì„±ë˜ê² ì§€
         MaxHealth = enemy.baseMaxHP * enemy.maxHPModifier;
         curHealth = MaxHealth;
+
+        maxShield = enemy.shield;
+        curShield = maxShield;
+
+        evasion = enemy.evasion;
+
         HPBar.fillAmount = 1f;
         backHP.fillAmount = 1f;
     }
 
-    //Á×À»¶§ true¸¦ ¹İÈ¯ÇÏ´Â ÇÔ¼ö
+    //ì£½ì„ë•Œ trueë¥¼ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜
+    //Shield
     public bool TakeDamage(float damage)
     {
         curHealth = Mathf.Clamp(curHealth -= damage, 0f, MaxHealth);
 
-        //Hp´Â Áï°¢ÀûÀ¸·Î
+        //HpëŠ” ì¦‰ê°ì ìœ¼ë¡œ
         HPBar.fillAmount = curHealth / MaxHealth;
 
         if (curHealth <= 0f)
@@ -53,10 +66,10 @@ public class EnemyHealth : MonoBehaviour
 
     private void HPDecrase()
     {
-        //backHP´Â Á¡Â÷
+        //backHPëŠ” ì ì°¨
         backHP.fillAmount = Mathf.Lerp(backHP.fillAmount, curHealth / MaxHealth, Time.deltaTime * decreaseSpeed);
 
-        //backHPµµ ´Ù ÁÙ¾úÀ¸¸é ¸ØÃã
+        //backHPë„ ë‹¤ ì¤„ì—ˆìœ¼ë©´ ë©ˆì¶¤
         if (HPBar.fillAmount.Equals(backHP.fillAmount))
         {
             isDamaging = false;

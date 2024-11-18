@@ -18,24 +18,23 @@ public interface IDamagable
 
 public class Enemy : MonoBehaviour, IDamagable
 {
+    //this data required?
     [field: SerializeField] public EnemySO EnemyData { get; private set; }
     [field: SerializeField] private Canvas HPCanvas;
     private EnemyMovement movement;
     private EnemyHealth health;
     private Camera cam;
 
-    //부활할때마다 바뀔 것들
     private Animator anim;
-    //테스트용 퍼블릭
+    //for test
     public Vector3[] wayPoints;
     public GameObject model;
 
-    //애니메이션 해쉬, 추후에 타워애니메이션의 데이터가 있으면 합치기
     private string onHitAnimationName = "OnHit";
     private string onDieAnimationName = "OnDie";
     private int OnHitAnimationHash;
     private int OnDieAnimationHash;
-    private float DisappearAfterDie = 1f;   //죽고나서 사라지기까지의 시간
+    private float DisappearAfterDie = 1f;   
 
 
     private void Awake()
@@ -46,6 +45,18 @@ public class Enemy : MonoBehaviour, IDamagable
         OnHitAnimationHash = Animator.StringToHash(onHitAnimationName);
         OnDieAnimationHash = Animator.StringToHash(onDieAnimationName);
     }
+
+    //not require id, but SO
+    public void Initialize(Vector3[] waypoints, EnemySO enemySO)
+    {
+        this.wayPoints = waypoints;
+        anim = GetComponentInChildren<Animator>();
+        health.SetUp(enemySO);
+        movement.SetUp(waypoints, enemySO, model);
+
+        HPCanvas.transform.rotation = Quaternion.LookRotation(cam.transform.position);
+    }
+
 
 
     public void Initialize(Vector3[] waypoints, EnemyType enemyType)
@@ -58,17 +69,15 @@ public class Enemy : MonoBehaviour, IDamagable
 
         HPCanvas.transform.rotation = Quaternion.LookRotation(cam.transform.position);
 
-        //해당 타입의 프리팹을 자식프리팹으로?
     }
 
     public void SetModel(EnemyType enemyType)
     {
-        //해당 타입에 맞는 모델을 자식오브젝트로 => 오브젝트 풀?
+        //don't need anymore
     }
 
     public void TakeDamage(float damage)
     {
-        //죽으면 true를 반환
         if (health.TakeDamage(damage))
         {
             OnDie();
@@ -77,7 +86,6 @@ public class Enemy : MonoBehaviour, IDamagable
         else
         {
             OnHit();
-            //파티클재생
         }
     }
 
@@ -96,9 +104,6 @@ public class Enemy : MonoBehaviour, IDamagable
 
         anim.SetBool(OnDieAnimationHash, true);
         movement.OnDead();
-
-        //적 죽음 이벤트 발생
-        //적 죽었을 때의 이펙트
     }
 
     private void Disappear()
@@ -108,7 +113,6 @@ public class Enemy : MonoBehaviour, IDamagable
 
     public void ReturnToPool()
     {
-        //오브젝트 풀로 다시 반환
         gameObject.SetActive(false);
     }
 }

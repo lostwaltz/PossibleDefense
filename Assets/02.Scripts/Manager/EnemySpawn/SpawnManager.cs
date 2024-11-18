@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class SpawnManager : Singleton<SpawnManager> //Destroy되는 싱글톤
+public class SpawnManager : Singleton<SpawnManager> 
 {
-    //임시 오브젝트 풀
     public ObjectPool ObjectPool {  get; private set; }
+    [SerializeField] private EnemyDatabase enemyDatabase;
+    private EnemyFactory enemyFactory;
 
     [field: SerializeField] public Vector3 SpawnPoint {  get; private set; }
     public Vector3[] wayPoints;
@@ -19,25 +20,26 @@ public class SpawnManager : Singleton<SpawnManager> //Destroy되는 싱글톤
     private void Start()
     {
         ObjectPool = GetComponent<ObjectPool>();
+        enemyFactory = new EnemyFactory(enemyDatabase);
 
-        spawnTime = new WaitForSeconds(SpawnDelay);
-        coroutine = StartCoroutine(SpawnEnemy());
+        SetSpawner(SpawnPoint, SpawnDelay, wayPoints, 100, maxSpawnCount);
     }
 
-    IEnumerator SpawnEnemy()
+    IEnumerator SpawnEnemy(int id)
     {
         for(int i = 0; i < maxSpawnCount; i++)
-        { 
-            //오브젝트풀에서 캐릭터 받아와서 초기화
-            GameObject newEnemy = ObjectPool.SpawnFromPool("Enemy");
-            newEnemy.transform.position = SpawnPoint;
+        {
+            //TODO :: factory instead factory.spawn(int id)
+            enemyFactory.CreateEnemy(100, SpawnPoint, wayPoints);
+            //GameObject newEnemy = ObjectPool.SpawnFromPool("100");
+            //newEnemy.transform.position = SpawnPoint;
 
-            if (newEnemy.TryGetComponent<Enemy>(out Enemy enemy))
-            {
-                enemy.Initialize(wayPoints, EnemyType.Slime);
-            }
+            //if (newEnemy.TryGetComponent<Enemy>(out Enemy enemy))
+            //{
+            //    enemy.Initialize(wayPoints, EnemyType.Slime);
+            //}
 
-            newEnemy.SetActive(true);
+            //newEnemy.SetActive(true);
             yield return spawnTime;
         }
     }
@@ -52,8 +54,9 @@ public class SpawnManager : Singleton<SpawnManager> //Destroy되는 싱글톤
             StopCoroutine(coroutine);
         }
 
-        coroutine = StartCoroutine(SpawnEnemy());
+        //coroutine = StartCoroutine(SpawnEnemy());
     }
+
     public void SetSpawner(Vector3 spawnPos, float SpawnDelay, Vector3[] waypoints, int id, int spawnCount)
     {
         this.maxSpawnCount = spawnCount;
@@ -66,6 +69,6 @@ public class SpawnManager : Singleton<SpawnManager> //Destroy되는 싱글톤
             StopCoroutine(coroutine);
         }
 
-        coroutine = StartCoroutine(SpawnEnemy());
+        coroutine = StartCoroutine(SpawnEnemy(id));
     }
 }
