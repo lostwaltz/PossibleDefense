@@ -2,15 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EnemyType
-{
-    Slime,
-    Rabit,
-    MetalHelmet,
-    Viking,
-    King
-}
-
 public interface IDamagable
 {
     void TakeDamage(float damage);
@@ -18,8 +9,6 @@ public interface IDamagable
 
 public class Enemy : MonoBehaviour, IDamagable
 {
-    //this data required?
-    [field: SerializeField] public EnemySO EnemyData { get; private set; }
     [field: SerializeField] private Canvas HPCanvas;
     private EnemyMovement movement;
     private EnemyHealth health;
@@ -57,35 +46,24 @@ public class Enemy : MonoBehaviour, IDamagable
         HPCanvas.transform.rotation = Quaternion.LookRotation(cam.transform.position);
     }
 
-
-
-    public void Initialize(Vector3[] waypoints, EnemyType enemyType)
-    {
-        this.wayPoints = waypoints;
-        anim = GetComponentInChildren<Animator>();
-        SetModel(enemyType);
-        health.SetUp(EnemyData);
-        movement.SetUp(waypoints, EnemyData, model);
-
-        HPCanvas.transform.rotation = Quaternion.LookRotation(cam.transform.position);
-
-    }
-
-    public void SetModel(EnemyType enemyType)
-    {
-        //don't need anymore
-    }
-
     public void TakeDamage(float damage)
     {
-        if (health.TakeDamage(damage))
+        int result = health.TakeDamage(damage);
+        if (result > 0)                                      
         {
-            OnDie();
-            Invoke(nameof(Disappear), DisappearAfterDie);
+            //1 damaged
+            OnHit();        
         }
-        else
+        else if(result < 0)                                  
         {
-            OnHit();
+            //-1 only damaged shield (nothing to do)
+            return;
+        }
+        else                                                 
+        {
+            //0 dead
+            OnDie();
+            Invoke(nameof(ReturnToPool), DisappearAfterDie);
         }
     }
 
@@ -105,13 +83,7 @@ public class Enemy : MonoBehaviour, IDamagable
         anim.SetBool(OnDieAnimationHash, true);
         movement.OnDead();
     }
-
-    private void Disappear()
-    {
-        ReturnToPool();
-    }
-
-    public void ReturnToPool()
+    private void ReturnToPool()
     {
         gameObject.SetActive(false);
     }

@@ -22,7 +22,7 @@ public class SpawnManager : Singleton<SpawnManager>
         ObjectPool = GetComponent<ObjectPool>();
         enemyFactory = new EnemyFactory(enemyDatabase);
 
-        SetSpawner(SpawnPoint, SpawnDelay, wayPoints, 100, maxSpawnCount);
+        SetSpawner(SpawnPoint, SpawnDelay, wayPoints, 103, maxSpawnCount);
     }
 
     IEnumerator SpawnEnemy(int id)
@@ -30,7 +30,7 @@ public class SpawnManager : Singleton<SpawnManager>
         for(int i = 0; i < maxSpawnCount; i++)
         {
             //TODO :: factory instead factory.spawn(int id)
-            enemyFactory.CreateEnemy(100, SpawnPoint, wayPoints);
+            enemyFactory.CreateEnemy(id, SpawnPoint, wayPoints);
             //GameObject newEnemy = ObjectPool.SpawnFromPool("100");
             //newEnemy.transform.position = SpawnPoint;
 

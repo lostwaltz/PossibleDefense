@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -31,7 +33,6 @@ public class EnemyHealth : MonoBehaviour
 
     public void SetUp(EnemySO enemy)
     {
-        //이러면 소환 될 때 당시의 enenmySO의 Modifier로 생성되겠지
         MaxHealth = enemy.baseMaxHP * enemy.maxHPModifier;
         curHealth = MaxHealth;
 
@@ -42,34 +43,74 @@ public class EnemyHealth : MonoBehaviour
 
         HPBar.fillAmount = 1f;
         backHP.fillAmount = 1f;
+
+        hasShield = maxShield > 0;
+        shield.fillAmount = hasShield ? 1f : 0f;
     }
 
-    //죽을때 true를 반환하는 함수
-    //Shield
-    public bool TakeDamage(float damage)
+    public int TakeDamage(float damage)
     {
-        curHealth = Mathf.Clamp(curHealth -= damage, 0f, MaxHealth);
+        float evasionPecentage = Random.Range(0, 100f);
+        if (evasionPecentage < evasion) return -1;
 
-        //Hp는 즉각적으로
-        HPBar.fillAmount = curHealth / MaxHealth;
+        float remainingDamage = HandleShield(damage);
+        if (remainingDamage < 0)
+        {
+            return -1;  //only shield damaged
+        }
+
+        return HandleHP(remainingDamage);
+    }
+
+    private float HandleShield(float damage)
+    {
+        if (hasShield)
+        {
+            curShield -= damage;
+
+            //shield crashed
+            if (curShield < 0f)
+            {
+                float remainingDamage = -curShield;
+                curShield = 0f;
+                hasShield = false;
+                shield.fillAmount = 0f;
+                return remainingDamage;
+            }
+
+            //remain shield
+            shield.fillAmount = curShield / maxShield;
+            return -1;
+        }
+
+        //don't have shield
+        return damage;
+    }
+
+    private int HandleHP(float damage)
+    {
+
+        if (damage > 0f)
+        {
+            curHealth = Mathf.Clamp(curHealth - damage, 0f, MaxHealth);
+            HPBar.fillAmount = curHealth / MaxHealth;
+        }
 
         if (curHealth <= 0f)
         {
-            return true;
+            return 0;   //dead
         }
         else
         {
             isDamaging = true;
-            return false;
+            return 1;   //damaged
         }
     }
 
     private void HPDecrase()
     {
-        //backHP는 점차
         backHP.fillAmount = Mathf.Lerp(backHP.fillAmount, curHealth / MaxHealth, Time.deltaTime * decreaseSpeed);
 
-        //backHP도 다 줄었으면 멈춤
         if (HPBar.fillAmount.Equals(backHP.fillAmount))
         {
             isDamaging = false;
