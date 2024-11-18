@@ -24,18 +24,18 @@ public class Enemy : MonoBehaviour, IDamagable
     private EnemyHealth health;
     private Camera cam;
 
-    //ºÎÈ°ÇÒ¶§¸¶´Ù ¹Ù²ğ °Íµé
+    //ë¶€í™œí• ë•Œë§ˆë‹¤ ë°”ë€” ê²ƒë“¤
     private Animator anim;
-    //Å×½ºÆ®¿ë ÆÛºí¸¯
-    public Transform[] wayPoints;
+    //í…ŒìŠ¤íŠ¸ìš© í¼ë¸”ë¦­
+    public Vector3[] wayPoints;
     public GameObject model;
 
-    //¾Ö´Ï¸ŞÀÌ¼Ç ÇØ½¬, ÃßÈÄ¿¡ Å¸¿ö¾Ö´Ï¸ŞÀÌ¼ÇÀÇ µ¥ÀÌÅÍ°¡ ÀÖÀ¸¸é ÇÕÄ¡±â
+    //ì• ë‹ˆë©”ì´ì…˜ í•´ì‰¬, ì¶”í›„ì— íƒ€ì›Œì• ë‹ˆë©”ì´ì…˜ì˜ ë°ì´í„°ê°€ ìˆìœ¼ë©´ í•©ì¹˜ê¸°
     private string onHitAnimationName = "OnHit";
     private string onDieAnimationName = "OnDie";
     private int OnHitAnimationHash;
     private int OnDieAnimationHash;
-    private float DisappearAfterDie = 1f;   //Á×°í³ª¼­ »ç¶óÁö±â±îÁöÀÇ ½Ã°£
+    private float DisappearAfterDie = 1f;   //ì£½ê³ ë‚˜ì„œ ì‚¬ë¼ì§€ê¸°ê¹Œì§€ì˜ ì‹œê°„
 
 
     private void Awake()
@@ -48,8 +48,9 @@ public class Enemy : MonoBehaviour, IDamagable
     }
 
 
-    public void Initialize(Transform[] waypoints, EnemyType enemyType)
+    public void Initialize(Vector3[] waypoints, EnemyType enemyType)
     {
+        this.wayPoints = waypoints;
         anim = GetComponentInChildren<Animator>();
         SetModel(enemyType);
         health.SetUp(EnemyData);
@@ -57,17 +58,17 @@ public class Enemy : MonoBehaviour, IDamagable
 
         HPCanvas.transform.rotation = Quaternion.LookRotation(cam.transform.position);
 
-        //ÇØ´ç Å¸ÀÔÀÇ ÇÁ¸®ÆÕÀ» ÀÚ½ÄÇÁ¸®ÆÕÀ¸·Î?
+        //í•´ë‹¹ íƒ€ì…ì˜ í”„ë¦¬íŒ¹ì„ ìì‹í”„ë¦¬íŒ¹ìœ¼ë¡œ?
     }
 
     public void SetModel(EnemyType enemyType)
     {
-        //ÇØ´ç Å¸ÀÔ¿¡ ¸Â´Â ¸ğµ¨À» ÀÚ½Ä¿ÀºêÁ§Æ®·Î => ¿ÀºêÁ§Æ® Ç®?
+        //í•´ë‹¹ íƒ€ì…ì— ë§ëŠ” ëª¨ë¸ì„ ìì‹ì˜¤ë¸Œì íŠ¸ë¡œ => ì˜¤ë¸Œì íŠ¸ í’€?
     }
 
     public void TakeDamage(float damage)
     {
-        //Á×À¸¸é true¸¦ ¹İÈ¯
+        //ì£½ìœ¼ë©´ trueë¥¼ ë°˜í™˜
         if (health.TakeDamage(damage))
         {
             OnDie();
@@ -76,7 +77,7 @@ public class Enemy : MonoBehaviour, IDamagable
         else
         {
             OnHit();
-            //ÆÄÆ¼Å¬Àç»ı
+            //íŒŒí‹°í´ì¬ìƒ
         }
     }
 
@@ -96,8 +97,8 @@ public class Enemy : MonoBehaviour, IDamagable
         anim.SetBool(OnDieAnimationHash, true);
         movement.OnDead();
 
-        //Àû Á×À½ ÀÌº¥Æ® ¹ß»ı
-        //Àû Á×¾úÀ» ¶§ÀÇ ÀÌÆåÆ®
+        //ì  ì£½ìŒ ì´ë²¤íŠ¸ ë°œìƒ
+        //ì  ì£½ì—ˆì„ ë•Œì˜ ì´í™íŠ¸
     }
 
     private void Disappear()
@@ -107,7 +108,7 @@ public class Enemy : MonoBehaviour, IDamagable
 
     public void ReturnToPool()
     {
-        //¿ÀºêÁ§Æ® Ç®·Î ´Ù½Ã ¹İÈ¯
+        //ì˜¤ë¸Œì íŠ¸ í’€ë¡œ ë‹¤ì‹œ ë°˜í™˜
         gameObject.SetActive(false);
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public float rotationSpeed = 10f;
-    private Transform[] wayPoints;
+    private Vector3[] wayPoints;
     private int curWayPointIndex = 0;
     private float speed;
     private Vector3 dir;
@@ -16,15 +16,15 @@ public class EnemyMovement : MonoBehaviour
 
     private bool isDead = false;
 
-    public void SetUp(Transform[] waypoints, EnemySO data, GameObject model)
+    public void SetUp(Vector3[] waypoints, EnemySO data, GameObject model)
     {
         this.wayPoints = waypoints;
         speed = data.baseSpeed * data.speedModifier;
         this.model = model.transform;
 
-        // ÃÊ±â ¿şÀÌÆ÷ÀÎÆ® ¼³Á¤
+        // ì´ˆê¸° ì›¨ì´í¬ì¸íŠ¸ ì„¤ì •
         curWayPointIndex = 0;
-        targetWayPoint = wayPoints[curWayPointIndex];
+        targetWayPoint.position = wayPoints[curWayPointIndex];
         UpdateDirection();
 
         isDead = false;
@@ -49,17 +49,17 @@ public class EnemyMovement : MonoBehaviour
         if (wayPoints == null || wayPoints.Length == 0)
             return;
 
-        // ÀÌµ¿
+        // ì´ë™
         transform.Translate(Time.deltaTime * speed * dir, Space.World);
 
-        // ¿şÀÌÆ÷ÀÎÆ® µµ´Ş Ã¼Å©
+        // ì›¨ì´í¬ì¸íŠ¸ ë„ë‹¬ ì²´í¬
         if (IsCloseToPoint(targetWayPoint.position))
         {
-            // ´ÙÀ½ ¿şÀÌÆ÷ÀÎÆ®·Î ÀüÈ¯
+            // ë‹¤ìŒ ì›¨ì´í¬ì¸íŠ¸ë¡œ ì „í™˜
             curWayPointIndex = (curWayPointIndex + 1) % wayPoints.Length;
-            targetWayPoint = wayPoints[curWayPointIndex];
+            targetWayPoint.position = wayPoints[curWayPointIndex];
 
-            // ¹æÇâ ¾÷µ¥ÀÌÆ®
+            // ë°©í–¥ ì—…ë°ì´íŠ¸
             UpdateDirection();
         }
 
@@ -83,7 +83,7 @@ public class EnemyMovement : MonoBehaviour
 
     private bool IsCloseToPoint(Vector3 point)
     {
-        // °Å¸®°¡ 0.2 ÀÌÇÏÀÌ¸é µµ´ŞÇÑ °ÍÀ¸·Î °£ÁÖ
+        // ê±°ë¦¬ê°€ 0.2 ì´í•˜ì´ë©´ ë„ë‹¬í•œ ê²ƒìœ¼ë¡œ ê°„ì£¼
         return (point - transform.position).sqrMagnitude < 0.04 * speed;
     }
 

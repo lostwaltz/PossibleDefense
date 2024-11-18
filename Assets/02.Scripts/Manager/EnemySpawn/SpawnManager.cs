@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class SpawnManager : Singleton<SpawnManager> //DestroyµÇ´Â ½Ì±ÛÅæ
+public class SpawnManager : Singleton<SpawnManager> //Destroyë˜ëŠ” ì‹±ê¸€í†¤
 {
-    //ÀÓ½Ã ¿ÀºêÁ§Æ® Ç®
+    //ì„ì‹œ ì˜¤ë¸Œì íŠ¸ í’€
     public ObjectPool ObjectPool {  get; private set; }
 
     [field: SerializeField] public Vector3 SpawnPoint {  get; private set; }
-    public Transform[] SpawnPoints;
+    public Vector3[] SpawnPoints;
     public float SpawnDelay = 2f;
     public int maxSpawnCount = 10;
 
@@ -28,7 +28,7 @@ public class SpawnManager : Singleton<SpawnManager> //DestroyµÇ´Â ½Ì±ÛÅæ
     {
         for(int i = 0; i < maxSpawnCount; i++)
         { 
-            //¿ÀºêÁ§Æ®Ç®¿¡¼­ Ä³¸¯ÅÍ ¹Ş¾Æ¿Í¼­ ÃÊ±âÈ­
+            //ì˜¤ë¸Œì íŠ¸í’€ì—ì„œ ìºë¦­í„° ë°›ì•„ì™€ì„œ ì´ˆê¸°í™”
             GameObject newEnemy = ObjectPool.SpawnFromPool("Enemy");
             newEnemy.transform.position = SpawnPoint;
 
@@ -54,8 +54,4 @@ public class SpawnManager : Singleton<SpawnManager> //DestroyµÇ´Â ½Ì±ÛÅæ
 
         coroutine = StartCoroutine(SpawnEnemy());
     }
-
-
-    
-
 }
