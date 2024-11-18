@@ -7,6 +7,8 @@ public static class StageConstain
     public static readonly string EnemyMoveEndTile = "EnemyMoveEndTile";
 
     public static readonly string MapMatrixDBPath = "StageDB/MapMatrixDB/StageMatrix";
+    public static readonly string StageWayPointDBPath = "StageDB/StageWayPointDB/StageWayPoint";
+    
 }
 
 public enum StageTileTag

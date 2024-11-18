@@ -21,11 +21,9 @@ public class Stage : MonoBehaviour
     [SerializeField] private List<Vector3> WayPointWorldPos = new List<Vector3>(); // 나중에는 Queue로 작성하여 동적생성 할수 있게 사용할거
     [SerializeField] private List<Vector3> PlayerTilePointWorldPos = new List<Vector3>(); // 플레이어가 배치할 수 있는 타일 
 
-    public MapDataSO curMapData;//현재 게임에서 사용할 맵 데이터를 저장하고 있는 Class 데이터 
-
     public void MapInitialize(List<List<StageTileTag>> curMapMatrix)
     {
-        GameObject tile = new GameObject();
+        GameObject tile = null;
         for (int z = 0; z < curMapMatrix.Count; z++)
         {
             List<Vector3> CoulumnTileWorldPos = new List<Vector3>();
@@ -52,11 +50,22 @@ public class Stage : MonoBehaviour
             StageTileWorldPos.Add(CoulumnTileWorldPos);
         }
 
+    }
+
+    public void EnemyWayPointInitialize(List<Vector3> curEnemyWayPoint)
+    {
         //Enemy WayPoint 초기화
-        for (int i = 0; i < WayPointWorldPos.Count; i++)
+        for (int i = 0; i < curEnemyWayPoint.Count; i++)
         {
-            WayPointWorldPos[i] = SetTileWorldPos((int)curMapData.WayPoint[i].x, (int)curMapData.WayPoint[i].z);
+            WayPointWorldPos[i] = SetTileWorldPos((int)curEnemyWayPoint[i].x, (int)curEnemyWayPoint[i].z);
         }
+
+        //Debug
+        foreach(Vector3 pos in WayPointWorldPos)
+        {
+            Debug.Log($"EnemyWayPoint : {pos}");
+        }
+        //
     }
 
     private Vector3 SetTileWorldPos(GameObject tile, int x, int z)

@@ -14,8 +14,11 @@ public class StageManager : Singleton<StageManager>
     [SerializeField] private int CallStageNum = 0;
     StringBuilder stringBuilder = new StringBuilder();
 
-    private List<List<StageTileTag>> curMapMatrixData; 
+    private List<List<StageTileTag>> curMapMatrixData;
+    private List<Vector3> curStageEnmeyWayPointData;
+
     public StageTileTag[][] curStageMapData; //현재 진행중인 스테이지의 맵 2차월 배열 
+    public Vector3[] curEnmeyWayPointData; //현재 진행중인 스테이지의 웨이포인트 배열
 
     protected override void Awake()
     {
@@ -35,16 +38,31 @@ public class StageManager : Singleton<StageManager>
 
     public void MapSetting()
     {
+
+
+        GameObject obj = new GameObject("Stage");
+        Stage Collstage = obj.AddComponent<Stage>();
+        stage = Collstage;
+
+        //
         stringBuilder.Clear();
         stringBuilder.Append(StageConstain.MapMatrixDBPath);
         stringBuilder.Append(CallStageNum.ToString());
 
-        GameObject obj = new GameObject("Stage");
-        stage = obj.AddComponent<Stage>();
-
         curMapMatrixData = CSVReader.LoadMapMatrixFromCSV(stringBuilder.ToString());
         curStageMapData = convertToArray(curMapMatrixData);
+
         stage.MapInitialize(curMapMatrixData);
+
+        //
+
+        stringBuilder.Clear();
+        stringBuilder.Append(StageConstain.StageWayPointDBPath);
+        stringBuilder.Append(CallStageNum.ToString());
+
+        curStageEnmeyWayPointData = CSVReader.LoadStageWayPointFromCSV(stringBuilder.ToString());
+
+        stage.EnemyWayPointInitialize(curStageEnmeyWayPointData);
     }
 
     public static StageTileTag[][] convertToArray(List<List<StageTileTag>> list)
