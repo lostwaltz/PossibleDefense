@@ -9,7 +9,7 @@ public class SpawnManager : Singleton<SpawnManager> //Destroy되는 싱글톤
     public ObjectPool ObjectPool {  get; private set; }
 
     [field: SerializeField] public Vector3 SpawnPoint {  get; private set; }
-    public Vector3[] SpawnPoints;
+    public Vector3[] wayPoints;
     public float SpawnDelay = 2f;
     public int maxSpawnCount = 10;
 
@@ -34,7 +34,7 @@ public class SpawnManager : Singleton<SpawnManager> //Destroy되는 싱글톤
 
             if (newEnemy.TryGetComponent<Enemy>(out Enemy enemy))
             {
-                enemy.Initialize(SpawnPoints, EnemyType.Slime);
+                enemy.Initialize(wayPoints, EnemyType.Slime);
             }
 
             newEnemy.SetActive(true);
@@ -48,6 +48,20 @@ public class SpawnManager : Singleton<SpawnManager> //Destroy되는 싱글톤
         this.SpawnPoint = spawnPos;
 
         if(coroutine != null)
+        {
+            StopCoroutine(coroutine);
+        }
+
+        coroutine = StartCoroutine(SpawnEnemy());
+    }
+    public void SetSpawner(Vector3 spawnPos, float SpawnDelay, Vector3[] waypoints, int id, int spawnCount)
+    {
+        this.maxSpawnCount = spawnCount;
+        this.wayPoints = waypoints;
+        spawnTime = new WaitForSeconds(SpawnDelay);
+        this.SpawnPoint = spawnPos;
+
+        if (coroutine != null)
         {
             StopCoroutine(coroutine);
         }
