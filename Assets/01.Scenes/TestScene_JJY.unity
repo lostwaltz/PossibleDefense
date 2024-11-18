@@ -1044,7 +1044,7 @@ Transform:
   m_GameObject: {fileID: 4281683081879974042}
   serializedVersion: 2
   m_LocalRotation: {x: 0.012327792, y: 0.986471, z: -0.13731618, w: 0.08869824}
-  m_LocalPosition: {x: 4.28, y: -1.3, z: 19.53}
+  m_LocalPosition: {x: -13, y: -1.7, z: 14.9}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1141,6 +1141,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePos: {fileID: 1865942121}
   slimeDecoArray: []
+  _attackStrategyData: {fileID: 11400000, guid: 19d1ec56337a8da48b45917491d5335b,
+    type: 2}
   slimeTowerData: {fileID: 11400000, guid: 7a5d82db9d1f4d749b10cad90b9d1391, type: 2}
 --- !u!114 &4281683081879974045
 MonoBehaviour:
@@ -1402,7 +1404,7 @@ Transform:
   m_GameObject: {fileID: 7742023578712968119}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.37, y: 0, z: 1.7}
+  m_LocalPosition: {x: 2.37, y: -0, z: 1.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

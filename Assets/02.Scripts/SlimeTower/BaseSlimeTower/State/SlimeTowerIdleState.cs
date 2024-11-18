@@ -32,7 +32,7 @@ public class SlimeTowerIdleState : SlimeTowerBaseState
 
         if (colliders.Length > 0)
         {
-            // 충돌한 경우 처리
+            // 충돌한 경우 처리 , TODO 타겟             // 충돌한 경우 처리 , TODO 타겟 
             foreach (var collider in colliders)
             {
                 stateMachine.SlimeTower.Target = collider.transform;

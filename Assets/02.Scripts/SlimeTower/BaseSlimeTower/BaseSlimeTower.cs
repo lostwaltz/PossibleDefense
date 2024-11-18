@@ -10,16 +10,18 @@ public class BaseSlimeTower : MonoBehaviour
 {
     [SerializeField] private Transform firePos;
     [SerializeField] private GameObject[] slimeDecoArray;
+    [SerializeField] private AttackStrategySO _attackStrategyData;
     
     public SlimeTowerStatSo slimeTowerData;
     private SlimeStateMachine _slimeStateMachine;
 
-    public Transform Target { get;  set; }
-
+    public Transform  Target { get;  set; }
     public Animator animator { get; private set;}
     public AnimatorHashData animatorHashData = new AnimatorHashData();
-    public IAttackStrategy AttackStrategy { get;  set; }
-
+    public IAttackStrategy AttackStrategy { get;  private set; }
+    
+    
+    
     
     private void Awake()
     {
@@ -33,7 +35,8 @@ public class BaseSlimeTower : MonoBehaviour
         animatorHashData.Initialize();
         _slimeStateMachine.ChangeState(_slimeStateMachine.IdleState);
         
-        AttackStrategy = new SingleTargetAttackByProjectile(firePos.position,Target,slimeTowerData.SlimeTowerStats.AttackPower);
+        AttackStrategy = _attackStrategyData.GetAttackStrategy();
+        AttackStrategy.Setting(firePos,Target,slimeTowerData.SlimeTowerStats.AttackPower);
     }
     
     
@@ -52,28 +55,6 @@ public class BaseSlimeTower : MonoBehaviour
         slimeTowerData = _slimeTowerData;
     }
     
-    
-    private void SetSlimeAppearance()
-    {
-        foreach (var deco in slimeDecoArray)
-        {
-            deco.SetActive(false);
-        }
-
-        //TODO 어드레서블 혹은 리소시스에 넣어두고 id 값에 맞게 가져와서 사용하면 case 없어도 됨!
-        switch (slimeTowerData.SlimeTowerData.id)
-        {
-            case 0:
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            default:
-                Debug.LogWarning("Unknown slime ID");
-                break;
-        }
-    }
 
     
 }
