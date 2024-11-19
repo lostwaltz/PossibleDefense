@@ -35,7 +35,7 @@ public class ForceReceiver : MonoBehaviour  //only speed about
         if (SpeedUp)
             currentSpeed = currentSpeed + (currentSpeed * percentage * 0.01f);  //speed up
         else
-            currentSpeed = currentSpeed - (currentSpeed * percentage * 0.01f);  //speed down
+            currentSpeed = Mathf.Clamp(currentSpeed - (currentSpeed * percentage * 0.01f), 0, currentSpeed);  //speed down
 
         yield return new WaitForSeconds(duration);
 

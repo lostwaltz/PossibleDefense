@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MainScene : SceneBase
+public class GameScene : SceneBase
 {
     public override void OnEnter()
     {

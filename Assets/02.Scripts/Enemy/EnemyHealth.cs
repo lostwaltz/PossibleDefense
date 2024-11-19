@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
 using Random = UnityEngine.Random;
 
 public class EnemyHealth : MonoBehaviour
@@ -21,6 +18,7 @@ public class EnemyHealth : MonoBehaviour
     private float decreaseSpeed = 2;
     private bool isDamaging = false;
     private Camera cam;
+    private Vector3 camDirection;
 
     public event Action OnDamage;
     public event Action OnDead;
@@ -28,6 +26,7 @@ public class EnemyHealth : MonoBehaviour
     private void Awake()
     {
         cam = Camera.main;
+
     }
 
     private void Update()
@@ -46,7 +45,7 @@ public class EnemyHealth : MonoBehaviour
         Evasion = enemy.evasion;
 
         UpdateUI();
-        HPCanvas.transform.LookAt(cam.transform);
+        HPCanvas.transform.rotation = Quaternion.LookRotation(-cam.transform.forward, Vector3.up);
     }
 
     public void TakeDamage(float damage)

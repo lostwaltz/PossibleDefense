@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ShieldRecharge
   m_EditorClassIdentifier: 
   cooldown: 5
-  radius: 5
+  radius: 10
   TargetLayer:
     serializedVersion: 2
     m_Bits: 64
