@@ -28,4 +28,11 @@ public class TestScriptForEnemy : MonoBehaviour
                 
         }
     }
+
+    public void SpawnMonster(int id)
+    {
+        Vector3 start = Vector3.zero;
+        Vector3[] ways = SpawnManager.Instance.wayPoints;
+        SpawnManager.Instance.SetSpawner(start, 2, ways, id, 10);
+    }
 }
