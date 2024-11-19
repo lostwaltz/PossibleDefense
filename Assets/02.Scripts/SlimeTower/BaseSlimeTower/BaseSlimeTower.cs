@@ -62,6 +62,7 @@ public class BaseSlimeTower : MonoBehaviour , IPointerDownHandler , IPointerUpHa
     public void ExecuteTowerSell()
     {
         OnTowerSoldEvent?.Invoke(slimeTowerDataSo.SlimeTowerInfo.sellPrice);
+        Debug.Log("판매 가격"  + slimeTowerDataSo.SlimeTowerInfo.sellPrice);
         Destroy(gameObject);
     }
 
