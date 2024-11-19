@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
 using Random = UnityEngine.Random;
 
 public class EnemyHealth : MonoBehaviour
@@ -48,7 +45,7 @@ public class EnemyHealth : MonoBehaviour
         Evasion = enemy.evasion;
 
         UpdateUI();
-        HPLookAtCamera();
+        HPBar.transform.rotation = Quaternion.LookRotation(-cam.transform.forward, Vector3.up);
     }
 
     public void TakeDamage(float damage)
@@ -97,16 +94,6 @@ public class EnemyHealth : MonoBehaviour
     {
         HPBar.fillAmount = Health.CurrentHealth / Health.MaxHealth;
         shieldImage.fillAmount = Shield.CurrentShield / Shield.MaxShield;
-    }
-
-    private void HPLookAtCamera()
-    {
-        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
-        {
-            HPCanvas.transform.LookAt((hit.point - transform.position).normalized);
-        }
     }
 }
 
