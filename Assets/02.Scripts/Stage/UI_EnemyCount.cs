@@ -1,11 +1,16 @@
-﻿using TMPro;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_EnemyCount  : MonoBehaviour //UIBase
 {
     [SerializeField] private TextMeshProUGUI enemyCount;
-    public void UIPrint(float waveTime, int wave, int enemyCount)
+    [SerializeField] private TextMeshProUGUI deathCount;
+    [SerializeField] private Image enemyCountGauge;
+    public void UIPrint(int DeathCount, int enemyCount)
     {
-        this.enemyCount.text = "Enemy Count : " + enemyCount.ToString();
+        enemyCountGauge.rectTransform.localScale = new Vector3((float)enemyCount / (float)DeathCount, 1, 1);
+        this.enemyCount.text = enemyCount.ToString();
+        this.deathCount.text = DeathCount.ToString();
     }
 }

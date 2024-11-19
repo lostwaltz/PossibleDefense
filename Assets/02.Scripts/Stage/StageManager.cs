@@ -14,7 +14,7 @@ public class StageManager : Singleton<StageManager>
     [SerializeField] private int callStageNum = 0; //호출할 스테이지 넘버링 
 
     private int curEnemyCount = 0; // 현재 필드에 있는 적의 갯수
-    private int finishEnemyCount; // 필드에 해당 Enemy 갯수 이상되면 게임오버되는 갯수
+    private int finishEnemyCount = 100; // 필드에 해당 Enemy 갯수 이상되면 게임오버되는 갯수
 
     private Enemy[] Enemies; //해당 스테이지에 등장할 적 캐릭터 , 나중에 오브젝트 풀링으로 구현해야함 
     private int EnemyIndex; //등장 몬스터 인덱스
@@ -182,7 +182,6 @@ public class StageManager : Singleton<StageManager>
     private void Update()
     {
         waveTimer -= Time.deltaTime;
-        Debug.Log($"{waveTimer}");
 
         if (waveTimer <= 0)
         {
@@ -192,10 +191,12 @@ public class StageManager : Singleton<StageManager>
 
     //Debug : UI 매니저가 없기에 현재 Inspector로 연결 해놓은상태 
     public UI_WaveIndicator uI_WaveIndicator;
+    public UI_EnemyCount uI_EnemyCount;
     private void LateUpdate()
     {
         //UIManager.Instance.UIContainer[UI_WaveIndicator].UI_Print;
         uI_WaveIndicator.UIPrint(waveTimer, curWave.WaveNum, curEnemyCount);
+        uI_EnemyCount.UIPrint(finishEnemyCount, curEnemyCount);
     }
     IEnumerator OperateWave(WaveStageData waveData)
     {
@@ -219,4 +220,33 @@ public class StageManager : Singleton<StageManager>
         }
     }
 
+
+    //게임 오버 조건
+    private bool GameOverCheck()
+    {
+        //필드에 적갯수가 초과 됬을때
+        if(finishEnemyCount <= curEnemyCount)
+        {
+            Debug.Log("게임 오버");
+            this.enabled = false;
+            return true;
+        }
+        //해당 Wave의 Boss가 시간내에 잡히지 않았을때
+
+        return false;
+    }
+
+    //게임 클리어 조건
+    private bool GameClearCheck()
+    {
+        if (finishEnemyCount <= curEnemyCount)
+        {
+            Debug.Log("게임 클리어");
+            this.enabled = false;
+            return true;
+        }
+
+        return false;
+    }
+    //스테이지의 유닛 강화 조건
 }

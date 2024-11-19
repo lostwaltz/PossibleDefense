@@ -9,7 +9,6 @@ public class UI_WaveIndicator : MonoBehaviour //UIBase
     [SerializeField] private TextMeshProUGUI waveTime;
     [SerializeField] private TextMeshProUGUI wave;
 
-
     StringBuilder strbuilder = new StringBuilder();
 
     public void UIPrint(float waveTime , int wave , int enemyCount)
