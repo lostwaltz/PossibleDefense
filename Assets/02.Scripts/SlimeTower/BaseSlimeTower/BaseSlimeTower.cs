@@ -11,28 +11,31 @@ using UnityEngine.Serialization;
 public class BaseSlimeTower : MonoBehaviour , IPointerDownHandler , IPointerUpHandler
 {
     [SerializeField] private Transform firePos;
-    [SerializeField] private GameObject[] slimeDecoArray;
-    [SerializeField] private AttackStrategySO _attackStrategyData; //인게임 스탯 변화는 스탯핸들러 통해서 적용 
-    
-    public SlimeTowerDataSO slimeTowerDataSo; //SO 게임 꺼도 강화 되면 
+    [SerializeField] private AttackStrategySO attackStrategyData; //인게임 스탯 변화는 스탯핸들러 통해서 적용 
+    [SerializeField] private SlimeTowerDataSO slimeTowerDataSo;  
     public Transform  Target { get;  set; }
     public Animator Animator { get; private set;}
     public SlimeStateMachine SlimeStateMachine { get; private set;}
 
     public AnimatorHashData animatorHashData = new AnimatorHashData();
     public IAttackStrategy AttackStrategy { get;  private set; }
-    
+
+    public SlimeTowerStatHandler StatHandler { get;  private set;}
     
     //오브젝트 클릭 처리 
     private float _pressStartTime;
     private float _pressDuration;
     private Coroutine _pressCheckCoroutine;
+
+
+    //타워 판매시 호출 
     private event Action<int> OnTowerSoldEvent; 
     
     
     private void Awake()
     {
         Animator = GetComponent<Animator>();
+        StatHandler = new SlimeTowerStatHandler(slimeTowerDataSo.SlimeTowerStats,slimeTowerDataSo.SlimeTowerUpgradeDataData);
         SlimeStateMachine = new SlimeStateMachine(this);
     }
 
@@ -41,7 +44,7 @@ public class BaseSlimeTower : MonoBehaviour , IPointerDownHandler , IPointerUpHa
         animatorHashData.Initialize();
         SlimeStateMachine.ChangeState(SlimeStateMachine.IdleState);
         
-        AttackStrategy = _attackStrategyData.GetAttackStrategy();
+        AttackStrategy = attackStrategyData.GetAttackStrategy();
         AttackStrategy.Setting(firePos,Target,slimeTowerDataSo.SlimeTowerStats.AttackPower);
     }
     

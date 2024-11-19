@@ -24,6 +24,6 @@
         private void DrawAttackRange()
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position,  _slimeTower.slimeTowerDataSo.SlimeTowerStats.AttackRange);
+            Gizmos.DrawWireSphere(transform.position,  _slimeTower.StatHandler.AttackRange);
         }
     }

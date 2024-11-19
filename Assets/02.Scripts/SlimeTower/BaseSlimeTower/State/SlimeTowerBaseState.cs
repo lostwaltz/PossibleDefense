@@ -13,7 +13,7 @@ public class SlimeTowerBaseState : IState
 
     public virtual void Enter()
     {
-        _attackRange = stateMachine.SlimeTower.slimeTowerDataSo.SlimeTowerStats.AttackRange;
+        _attackRange = stateMachine.SlimeTower.StatHandler.AttackRange;
     }
 
     public virtual void Exit()

@@ -10,6 +10,5 @@ public class BasicHitStrategy : IHitStrategy
 
     public void Execute()
     {
-        Debug.Log("단일 대상 데미지");
     }
 }

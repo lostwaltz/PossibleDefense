@@ -8,6 +8,6 @@ using UnityEngine.Serialization;
 public class SlimeTowerInfo : ScriptableObject
 {
      public int id;
-     public int grade;
+     public TowerGrade grade;
      public int sellPrice;
 }
