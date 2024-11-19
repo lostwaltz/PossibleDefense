@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="786d4d7f-6565-4eb2-bafb-1618cb383218" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/BaseSlimeTower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/BaseSlimeTower.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/CuteSlimeTowerData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/CuteSlimeTowerData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/NotCuteSlimeTowerData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/NotCuteSlimeTowerData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StageDB/MapMatrixDB.xlsx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/StageDB/MapMatrixDB.xlsx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StageDB/StageEnemyWapPointDB.xlsx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/StageDB/StageEnemyWapPointDB.xlsx.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +114,8 @@
       <workItem from="1731816689927" duration="26019000" />
       <workItem from="1731892080228" duration="3938000" />
       <workItem from="1731900006053" duration="23792000" />
-      <workItem from="1731977476187" duration="11820000" />
+      <workItem from="1731977476187" duration="12327000" />
+      <workItem from="1731993190549" duration="93000" />
     </task>
     <servers />
   </component>
