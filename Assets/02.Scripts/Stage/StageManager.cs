@@ -190,6 +190,14 @@ public class StageManager : Singleton<StageManager>
         }
     }
 
+    //Debug
+    public UI_WaveIndicator uI_WaveIndicator;
+    private void LateUpdate()
+    {
+        //UIManager.Instance.UIContainer[UI_WaveIndicator].UI_Print;
+
+        uI_WaveIndicator.UIPrint(waveTimer, curWave.WaveNum, curEnemyCount);
+    }
     IEnumerator OperateWave(WaveStageData waveData)
     {
         float spawnTime = waveData.WaveSpawnData[EnemyType.Rabit].EnemySpawnTimer;
@@ -199,14 +207,14 @@ public class StageManager : Singleton<StageManager>
         while (count < waveData.WaveSpawnData[EnemyType.Rabit].EnemyCount)
         {
             //ToDoCode : EnemySpawnManager를 통해서 Enemy를 오브젝트 풀링하고 Way를 설정해주는 코드 입력
-           
+            count++;
+            curEnemyCount++;
+
             ////Debug : WayPoint Test Code
             TestEnemyMovement newEnemy = Instantiate(TestEnemyPrefeb);
             newEnemy.transform.position = stage.SpawnTiles[0].transform.position;
             newEnemy.Initialize(curEnmeyWayPointData);
             newEnemy.OperateEnemy();
-            count++;
-            curEnemyCount++;
 
             yield return SpawnTimer;
         }
