@@ -3,7 +3,6 @@
 public class SlimeTowerBaseState : IState
 {
     protected SlimeStateMachine stateMachine;
-    protected float _attackRange; // 나중에 공격 범위를 가져와서 하도록 처리! 
 
     
     public SlimeTowerBaseState(SlimeStateMachine _stateMachine)
@@ -13,7 +12,6 @@ public class SlimeTowerBaseState : IState
 
     public virtual void Enter()
     {
-        _attackRange = stateMachine.SlimeTower.StatHandler.AttackRange;
     }
 
     public virtual void Exit()

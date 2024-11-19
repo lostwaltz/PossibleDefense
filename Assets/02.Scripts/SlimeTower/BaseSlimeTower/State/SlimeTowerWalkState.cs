@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class SlimeTowerWalkState : SlimeTowerBaseState
 {
-    public Transform target;
+    public Transform target; // íƒ€ì›Œ ì»¨íŠ¸ë¡¤ëŸ¬ì—ì„œ ì„¤ì • í•´ì¤Œ! 
     private float moveSpeed = 5f;
+    private float threshold = 0.1f;
 
     public SlimeTowerWalkState(SlimeStateMachine _stateMachine) : base(_stateMachine)
     {
@@ -12,45 +13,32 @@ public class SlimeTowerWalkState : SlimeTowerBaseState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("¿öÅ©½ºÅ×ÀÌÆ®");
-        StartAnimation(stateMachine.SlimeTower.animatorHashData.WalkParameterHash);
+        StartAnimation(stateMachine.SlimeTower.AnimatorHashData.WalkParameterHash);
     }
 
     public override void Exit()
     {
         base.Exit();
-        StopAnimation(stateMachine.SlimeTower.animatorHashData.WalkParameterHash);
+        StopAnimation(stateMachine.SlimeTower.AnimatorHashData.WalkParameterHash);
     }
 
-    
-    //°­È­, ½ºÆù , ÆÇ¸Å, Ä«¸Þ¶ó 
-    
-    // ½½¶óÀÓÀÌ ±æ°Ô ´­¸®¸é ½Ã³×¸Ó½Å ÅëÇØ ÇÏ´Ã¿¡¼­ ¹Ù¶óº¸´Â ½ÃÁ¡ (0.3 ÃÊ ÀÌµ¿ ¸ðµå) , 
-    // Å¸ÀÏÀÌ ´­·Á¼­ ½½¶óÀÓÀÌ ÀÌµ¿ ½ÃÀÛÇÏ¸é ½ÃÁ¡ ¿ø»óÅÂ 
-    
-    //½½¶óÀÓÀ» ºü¸£°Ô Å¬¸®ÇÏ¸é -> ½Ã³×¸Ó½Å 
-    // À¯Àú Å¿ÀÌ´Ù. , ¿Ö ºü¸£°Ô ´­·¶³Ä ? 
-    // º¸°£ ÀÌµ¿ ¾øÀÌ ¹Ù·Î È­¸é ÀüÈ¯ ÇØº¾½Ã´Ù. up VCam  origin VCam
-    
-    
-    
+
     public override void Update()
     {
-        Vector3 targetPosition = new Vector3(target.position.x, stateMachine.SlimeTower.transform.position.y,
-            target.position.z);
+        Vector3 currentPosition = stateMachine.SlimeTower.transform.position;
+        Vector3 targetPosition = new Vector3(target.position.x, currentPosition.y, target.position.z);
 
-        stateMachine.SlimeTower.transform.LookAt(target);
+        stateMachine.SlimeTower.transform.LookAt(targetPosition);
 
         stateMachine.SlimeTower.transform.position = Vector3.MoveTowards(
-            stateMachine.SlimeTower.transform.position, 
+            currentPosition,
             targetPosition,
-            moveSpeed * Time.deltaTime 
+            moveSpeed * Time.deltaTime
         );
 
-        if (Vector3.Distance(stateMachine.SlimeTower.transform.position, targetPosition) <= 0.01f)
+        if (Vector3.Distance(currentPosition, targetPosition) <= threshold)
         {
             stateMachine.ChangeState(stateMachine.IdleState);
         }
     }
-
 }

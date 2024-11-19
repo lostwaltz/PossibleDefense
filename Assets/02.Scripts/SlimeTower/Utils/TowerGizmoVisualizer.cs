@@ -7,7 +7,7 @@
         
         private BaseSlimeTower _slimeTower;
         private SlimeTowerDataSO _dataSo;
-
+        
          private void Awake()
          {
              _slimeTower = GetComponent<BaseSlimeTower>();
@@ -17,10 +17,10 @@
          {
              if(_slimeTower ==null)
                 return;
-
+        
              DrawAttackRange();
          }
-
+        
         private void DrawAttackRange()
         {
             Gizmos.color = Color.red;

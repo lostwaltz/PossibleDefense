@@ -4,7 +4,7 @@ public class SlimeTowerAttackState : SlimeTowerBaseState
 {
     private float _attackSpeed;
     private float _attackCoolTime = 0f;
-    private float _lastAttackTime = 0f;
+    private float _lastAttackTime = 0f;  
 
     public SlimeTowerAttackState(SlimeStateMachine _stateMachine) : base(_stateMachine)
     {
@@ -14,15 +14,15 @@ public class SlimeTowerAttackState : SlimeTowerBaseState
     {
         base.Enter();
         SetAttackSpeed();
-        stateMachine.SlimeTower.StatHandler.OnIncreaseStatEvent += SetAttackSpeed;
-    }
+         stateMachine.SlimeTower.StatHandler.OnIncreaseStatEvent += SetAttackSpeed;
+     }
 
 
     public override void Exit()
     {
         base.Exit();
         stateMachine.SlimeTower.StatHandler.OnIncreaseStatEvent -= SetAttackSpeed;
-        StopAnimation(stateMachine.SlimeTower.animatorHashData.AttackParameterHash);
+        StopAnimation(stateMachine.SlimeTower.AnimatorHashData.AttackParameterHash);
     }
 
     public override void Update()
@@ -31,24 +31,32 @@ public class SlimeTowerAttackState : SlimeTowerBaseState
         {
             CheckAndAttackTarget();
         }
-
-        if (!stateMachine.SlimeTower.Target.gameObject.activeSelf)
-        {
-            stateMachine.ChangeState(stateMachine.IdleState);
-        }
     }
 
     private void CheckAndAttackTarget()
     {
-        bool isTargetInRange = Physics.CheckSphere(stateMachine.SlimeTower.transform.position, _attackRange,
-            1 << stateMachine.SlimeTower.Target.gameObject.layer);
-
-        if (!isTargetInRange)
+        if (stateMachine.SlimeTower.Target == null || !stateMachine.SlimeTower.Target.gameObject.activeSelf)
         {
             stateMachine.ChangeState(stateMachine.IdleState);
             return;
         }
 
+        var distanceToTarget = Vector3.Distance(stateMachine.SlimeTower.transform.position,
+            stateMachine.SlimeTower.Target.position);
+
+        Collider targetCollider = stateMachine.SlimeTower.Target.GetComponent<Collider>();
+        var adjustedAttackRange = stateMachine.SlimeTower.StatHandler.AttackRange;
+
+        if (targetCollider != null)
+        {
+            adjustedAttackRange += targetCollider.bounds.extents.magnitude;
+        }
+
+        if (distanceToTarget > adjustedAttackRange)
+        {
+            stateMachine.ChangeState(stateMachine.IdleState);
+            return;
+        }
 
         stateMachine.SlimeTower.transform.LookAt(stateMachine.SlimeTower.Target);
         Attack();
@@ -61,10 +69,10 @@ public class SlimeTowerAttackState : SlimeTowerBaseState
         _attackCoolTime = 1f / _attackSpeed;
 
         if (_attackSpeed > 1)
-            stateMachine.SlimeTower.Animator.SetFloat(stateMachine.SlimeTower.animatorHashData.AttackSpeedParameterHash,
+            stateMachine.SlimeTower.Animator.SetFloat(stateMachine.SlimeTower.AnimatorHashData.AttackSpeedParameterHash,
                 _attackSpeed);
         else
-            stateMachine.SlimeTower.Animator.SetFloat(stateMachine.SlimeTower.animatorHashData.AttackSpeedParameterHash,
+            stateMachine.SlimeTower.Animator.SetFloat(stateMachine.SlimeTower.AnimatorHashData.AttackSpeedParameterHash,
                 1);
     }
 
@@ -72,7 +80,7 @@ public class SlimeTowerAttackState : SlimeTowerBaseState
     private void Attack()
     {
         _lastAttackTime = Time.time;
-        StartAnimationTrigger(stateMachine.SlimeTower.animatorHashData.AttackParameterHash);
+        StartAnimationTrigger(stateMachine.SlimeTower.AnimatorHashData.AttackParameterHash);
         stateMachine.SlimeTower.AttackStrategy.Execute(stateMachine.SlimeTower.Target);
     }
 }

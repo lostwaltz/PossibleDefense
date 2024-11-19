@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemySkillController : MonoBehaviour
@@ -26,6 +27,7 @@ public class EnemySkillController : MonoBehaviour
 
     private void OnDisable()
     {
+        isAlive = false;
         if(SkillCoroutine != null)
         {
             StopCoroutine(SkillCoroutine);

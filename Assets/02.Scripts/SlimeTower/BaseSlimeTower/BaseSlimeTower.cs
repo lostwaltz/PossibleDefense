@@ -5,50 +5,52 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 
-// 장식을 통해서만 Slime을 구분 해주고 있음.  
-// 지금은 slime rig와 model이 모두 똑같음 
-//rig와 model이 모두 다른 경우에는 어떻게 해야할지 생각해봐야함.
-public class BaseSlimeTower : MonoBehaviour , IPointerDownHandler , IPointerUpHandler
+public class BaseSlimeTower : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    [SerializeField] private Transform firePos;
-    [SerializeField] private AttackStrategySO attackStrategyData; //인게임 스탯 변화는 스탯핸들러 통해서 적용 
-    [SerializeField] private SlimeTowerDataSO slimeTowerDataSo;  
-    public Transform  Target { get;  set; }
-    public Animator Animator { get; private set;}
-    public SlimeStateMachine SlimeStateMachine { get; private set;}
+    // --- SerializeField 변수들 (인스펙터 설정) ---
+    [SerializeField] private Transform firePos; 
+    [SerializeField] private AttackStrategySO attackStrategyData; 
+    [SerializeField] private SlimeTowerDataSO slimeTowerDataSo; 
 
-    public AnimatorHashData animatorHashData = new AnimatorHashData();
-    public IAttackStrategy AttackStrategy { get;  private set; }
+    // --- 프로퍼티 ---
+    public Transform Target { get; set; } 
+    public Animator Animator { get; private set; } 
+    public SlimeStateMachine SlimeStateMachine { get; private set; } 
+    public IAttackStrategy AttackStrategy { get; private set; } 
+    public SlimeTowerStatHandler StatHandler { get; private set; } 
 
-    //Tower 스텟 호출 여기서하면됨 
-    public SlimeTowerStatHandler StatHandler { get;  private set;}
+    // --- 읽기 전용 데이터 ---
+    public readonly AnimatorHashData AnimatorHashData = new AnimatorHashData(); 
     
-    //오브젝트 클릭 처리 
-    private float _pressStartTime;
-    private float _pressDuration;
-    private Coroutine _pressCheckCoroutine;
-
-
-    //타워 판매시 호출 
-    private event Action<int> OnTowerSoldEvent; 
+    // --- IPointer 관련 변수들 ---
+    private float _pressStartTime; // 클릭 시작 시간
+    private float _pressDuration; // 클릭 지속 시간
+    private Coroutine _pressCheckCoroutine; // 클릭 체크 코루틴
     
     
+    
+    // --- 이벤트 ---
+    // private event Action<int> OnTowerSoldEvent; 
+    // 타워 판매 시 호출되는 이벤트, 이벤트 호출로 늘리는 것 보다 판매 될 때 그냥 StageManager 재화를 올려주는 게 더 좋을듯 함.
+
+
     private void Awake()
     {
-        Animator = GetComponent<Animator>();
-        StatHandler = new SlimeTowerStatHandler(slimeTowerDataSo.SlimeTowerStats,slimeTowerDataSo.SlimeTowerUpgradeDataData);
+        Animator = GetComponentInChildren<Animator>();
+        StatHandler =
+            new SlimeTowerStatHandler(slimeTowerDataSo.SlimeTowerStats, slimeTowerDataSo.SlimeTowerUpgradeDataData);
         SlimeStateMachine = new SlimeStateMachine(this);
     }
 
+    
     private void Start()
     {
-        animatorHashData.Initialize();
+        AnimatorHashData.Initialize();
         SlimeStateMachine.ChangeState(SlimeStateMachine.IdleState);
-        
+
         AttackStrategy = attackStrategyData.GetAttackStrategy();
-        AttackStrategy.Setting(firePos,Target,slimeTowerDataSo.SlimeTowerStats.AttackPower);
+        AttackStrategy.Setting(firePos, Target, slimeTowerDataSo.SlimeTowerStats.AttackPower);
     }
-    
     
     private void Update()
     {
@@ -60,19 +62,23 @@ public class BaseSlimeTower : MonoBehaviour , IPointerDownHandler , IPointerUpHa
         SlimeStateMachine.FixedUpdateState();
     }
 
+    
     public void ExecuteTowerSell()
     {
-        OnTowerSoldEvent?.Invoke(slimeTowerDataSo.SlimeTowerInfo.sellPrice);
-        Debug.Log("판매 가격"  + slimeTowerDataSo.SlimeTowerInfo.sellPrice);
+        //StageManager 재화를 올려주기 
+        Debug.Log("판매 가격" + slimeTowerDataSo.SlimeTowerGradeInfo.sellPrice);
         Destroy(gameObject);
     }
-
+    
+    
     public void OnPointerDown(PointerEventData eventData)
     {
-        _pressStartTime = Time.time; 
+        _pressStartTime = Time.time;
         _pressCheckCoroutine = StartCoroutine(CheckPressDuration());
     }
 
+    //Stage에서 데이터를 가져오기 보다는 
+    //
     public void OnPointerUp(PointerEventData eventData)
     {
         if (_pressCheckCoroutine != null)
@@ -81,10 +87,11 @@ public class BaseSlimeTower : MonoBehaviour , IPointerDownHandler , IPointerUpHa
             _pressCheckCoroutine = null;
         }
     }
-
     
     
-    // POPUP UI 통해서 판매!  
+    //여기서 그냥 UI를 열어 줌
+    //기획에 따라서 예외 처리가 필요할 수 있음. 
+    
     private IEnumerator CheckPressDuration()
     {
         while (true)
@@ -93,10 +100,10 @@ public class BaseSlimeTower : MonoBehaviour , IPointerDownHandler , IPointerUpHa
             if (Time.time - _pressStartTime >= 0.3f)
             {
                 TowerController.Instance.SetSlimeTower(gameObject);
-                 yield break;  
+                yield break;
             }
-            yield return null;  
+
+            yield return null;
         }
     }
-
 }

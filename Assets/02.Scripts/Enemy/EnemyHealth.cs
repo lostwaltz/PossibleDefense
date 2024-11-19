@@ -45,7 +45,7 @@ public class EnemyHealth : MonoBehaviour
         Evasion = enemy.evasion;
 
         UpdateUI();
-        HPBar.transform.rotation = Quaternion.LookRotation(-cam.transform.forward, Vector3.up);
+        HPCanvas.transform.rotation = Quaternion.LookRotation(-cam.transform.forward, Vector3.up);
     }
 
     public void TakeDamage(float damage)
