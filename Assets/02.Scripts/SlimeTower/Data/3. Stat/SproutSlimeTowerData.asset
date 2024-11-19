@@ -15,9 +15,9 @@ MonoBehaviour:
   name: SproutSlime
   slimeTowerGradeInfo: {fileID: 11400000, guid: 9fbf50f968f4bdd4f8828a0dbd2d1cdc,
     type: 2}
-  slimeTowerUpgradeDataData: {fileID: 11400000, guid: a521e1271f0b12442ae525fbda2d36bc,
+  slimeTowerUpgradeDataData: {fileID: 11400000, guid: 61042a82a4f415e4fa2fa6c894e9e03b,
     type: 2}
   SlimeTowerStats:
-    AttackSpeed: 5
-    AttackPower: 1
+    AttackSpeed: 1
+    AttackPower: 10
     AttackRange: 50

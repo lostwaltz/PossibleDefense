@@ -6,43 +6,64 @@
   <component name="ChangeListManager">
     <list default="true" id="786d4d7f-6565-4eb2-bafb-1618cb383218" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/TestScene_JJY.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scenes/TestScene_JJY.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/TestScene_KMC.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scenes/TestScene_KMC.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/01.Core/Scene/SceneLoadManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/01.Core/Scene/SceneLoadManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Scene/MainScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Scene/GameScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Scene/MainScene.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Scene/GameScene.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/UI/Achievements/UIAchievements.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/UI/Achievements/UIAchievements.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/UI/UIConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/UI/UIConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_ID_PW.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_ID_PW.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_coin1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_coin1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_coin2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_coin2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_coin3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_coin3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_event1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_event1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_event2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_event2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_event3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_event3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_exp1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_exp1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_exp2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_exp2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_exp3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_exp3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_login1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_login1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_login2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_login2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_login3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_login3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_map name.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_map name.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_option1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_option1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_option2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_option2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_option3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_option3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_option4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_option4.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_select1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_select1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_select2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_select2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_select3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_select3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_user information.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_user information.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/circle_1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/circle_1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/circle_2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/circle_2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/circle_3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/circle_3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/icons/icon_07.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/icons/icon_07.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DataSheet/SceneData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DataSheet/SceneData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/StageTest_JJY.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/StageTest_JJY.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/SproutSlimeTowerData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/SproutSlimeTowerData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/Strategy/AttackStrategy/AllEnemyAttackSO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/Strategy/AttackStrategy/AllEnemyAttackSO.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/Strategy/AttackStrategy/SplashAttackByProjectileSO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/Strategy/AttackStrategy/SplashAttackByProjectileSO.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Particle.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Particle/ShieldBuff.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Particle/ShieldBuff.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Particle/SpeedBuff.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Particle/SpeedBuff.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Projectile.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Projectile/BaseProjectile.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Projectile/BaseProjectile.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Sound.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Sound/SoundSource.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Sound/SoundSource.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Material.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Material/BulletMaterial.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Material/BulletMaterial.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Material/EnemyMoveEndTileMaterial.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Material/EnemyMoveEndTileMaterial.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Material/EnemyMoveStartTileMaterial.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Material/EnemyMoveStartTileMaterial.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Material/EnemyTileMaterial.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Material/EnemyTileMaterial.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Stage.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Stage.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Test.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Test/EnemtTest.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Test/EnemtTest.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Test/TestEnemyMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Test/TestEnemyMovement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Test/TestEnemyMovement.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Test/TestEnemyMovement.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Tile.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Tile/EndTile.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Tile/EndTile.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Tile/EnemyWayTile.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Tile/EnemyWayTile.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Tile/SpawnTile.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Tile/SpawnTile.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Tile/TowerTile.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/Tile/TowerTile.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/_Old.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/_Old/Bullet_Old.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/_Old/Bullet_Old.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/_Old/Enemy_Old.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/_Old/Enemy_Old.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/_Old/SlimeNormal_Old.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/Stage/_Old/SlimeNormal_Old.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/UI/UIAchievements.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/UI/UIAchievements.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/UI/UIConfig.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03.Prefabs/UI/UIConfig.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/98.Animations/SlimeTower.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/98.Animations/SlimeTower.controller" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,18 +100,25 @@
     "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature__kmc",
+    "git-widget-placeholder": "Feature__JJY",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\정준영\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\정준영\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\정준영\\AppData\\Local\\Symbols\\src"
+    ]
   }
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.17f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\WorkSpace\Unity\UnityLearning\3D_Project\PossibleDefense -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\WorkSpace\Unity\UnityLearning\3D_Project\PossibleDefense" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -98,7 +126,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.17f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\WorkSpace\Unity\UnityLearning\3D_Project\PossibleDefense -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\WorkSpace\Unity\UnityLearning\3D_Project\PossibleDefense" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -143,6 +171,7 @@
       <workItem from="1731977476187" duration="12327000" />
       <workItem from="1731993190549" duration="93000" />
       <workItem from="1731996393792" duration="5312000" />
+      <workItem from="1732030507717" duration="594000" />
     </task>
     <servers />
   </component>
