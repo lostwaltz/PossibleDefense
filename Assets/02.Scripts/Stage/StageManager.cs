@@ -200,11 +200,12 @@ public class StageManager : Singleton<StageManager>
     }
     IEnumerator OperateWave(WaveStageData waveData)
     {
-        float spawnTime = waveData.WaveSpawnData[EnemyType.Rabit].EnemySpawnTimer;
+        //int(0) 은 Enemy의 DataSO를 호출하면 된다.
+        float spawnTime = waveData.WaveSpawnData[0].EnemySpawnTimer;
         WaitForSeconds SpawnTimer = new WaitForSeconds(spawnTime);
         int count = 0;
         
-        while (count < waveData.WaveSpawnData[EnemyType.Rabit].EnemyCount)
+        while (count < waveData.WaveSpawnData[0].EnemyCount)
         {
             //ToDoCode : EnemySpawnManager를 통해서 Enemy를 오브젝트 풀링하고 Way를 설정해주는 코드 입력
             count++;

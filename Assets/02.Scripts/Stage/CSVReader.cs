@@ -106,7 +106,7 @@ public static class CSVReader
 
             data.WaveNum = int.Parse(values[0]);
             data.WaveTime = float.Parse(values[1]);
-            data.WaveSpawnData = new Dictionary<EnemyType, EnemySpawnData>();
+            data.WaveSpawnData = new Dictionary<int, EnemySpawnData>();
 
             for (int j = 2; j < values.Length; j += 3)
             {
@@ -115,7 +115,7 @@ public static class CSVReader
 
                 EnemySpawnData SpawnData = new EnemySpawnData();
 
-                EnemyType type = (EnemyType)Enum.Parse(typeof(EnemyType),values[j]);
+                int type = (int)Enum.Parse(typeof(int),values[j]);
                 SpawnData.EnemyCount = int.Parse(values[j + 1]);
                 SpawnData.EnemySpawnTimer = float.Parse(values[j + 2]);
 
