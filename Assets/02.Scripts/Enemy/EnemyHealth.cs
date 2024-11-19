@@ -21,6 +21,7 @@ public class EnemyHealth : MonoBehaviour
     private float decreaseSpeed = 2;
     private bool isDamaging = false;
     private Camera cam;
+    private Vector3 camDirection;
 
     public event Action OnDamage;
     public event Action OnDead;
@@ -28,6 +29,7 @@ public class EnemyHealth : MonoBehaviour
     private void Awake()
     {
         cam = Camera.main;
+
     }
 
     private void Update()
@@ -46,7 +48,7 @@ public class EnemyHealth : MonoBehaviour
         Evasion = enemy.evasion;
 
         UpdateUI();
-        HPCanvas.transform.LookAt(cam.transform);
+        HPLookAtCamera();
     }
 
     public void TakeDamage(float damage)
@@ -95,6 +97,16 @@ public class EnemyHealth : MonoBehaviour
     {
         HPBar.fillAmount = Health.CurrentHealth / Health.MaxHealth;
         shieldImage.fillAmount = Shield.CurrentShield / Shield.MaxShield;
+    }
+
+    private void HPLookAtCamera()
+    {
+        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            HPCanvas.transform.LookAt((hit.point - transform.position).normalized);
+        }
     }
 }
 
