@@ -5,58 +5,62 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    [SerializeField] private Transform model;
+
     public float rotationSpeed = 10f;
-    private Transform[] wayPoints;
+    private Vector3[] wayPoints;
     private int curWayPointIndex = 0;
-    private float speed;
     private Vector3 dir;
-    private Transform targetWayPoint;
+    private Vector3 targetWayPoint;
 
     private bool isDead = false;
 
-    public void SetUp(Transform[] waypoints, EnemySO data)
+    private ForceReceiver forceReceiver;
+    private float speed => forceReceiver.GetSpeed();
+    
+    private void Awake()
+    {
+        forceReceiver = GetComponent<ForceReceiver>();
+    }
+
+    public void SetUp(Vector3[] waypoints, EnemySO data)
     {
         this.wayPoints = waypoints;
-        speed = data.baseSpeed * data.speedModifier;
+        forceReceiver.Initialize(data.baseSpeed * data.speedModifier);
 
-        // 초기 웨이포인트 설정
         curWayPointIndex = 0;
         targetWayPoint = wayPoints[curWayPointIndex];
         UpdateDirection();
 
-        //몬스터죽음 이벤트에 OnDead함수 등록해서 몬스터가 죽으면 움직이지 않도록
-        //모든 몬스터가 한번에 멈추는걸 방지하기위해 제네릭으로 EnemyMovement를하여 인수로 this를?
+        isDead = false;
     }
 
     private void UpdateDirection()
     {
         if (targetWayPoint != null)
         {
-            dir = (targetWayPoint.position - transform.position).normalized;
+            dir = (targetWayPoint - transform.position).normalized;
         }
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
+        if(!isDead)
         Move();
     }
 
     public void Move()
     {
-        if (wayPoints == null || wayPoints.Length == 0 || isDead)
+        if (wayPoints == null || wayPoints.Length == 0)
             return;
 
-        // 이동
         transform.Translate(Time.deltaTime * speed * dir, Space.World);
 
-        // 웨이포인트 도달 체크
-        if (IsCloseToPoint(targetWayPoint.position))
+        if (IsCloseToPoint(targetWayPoint))
         {
-            // 다음 웨이포인트로 전환
             curWayPointIndex = (curWayPointIndex + 1) % wayPoints.Length;
             targetWayPoint = wayPoints[curWayPointIndex];
 
-            // 방향 업데이트
             UpdateDirection();
         }
 
@@ -68,27 +72,25 @@ public class EnemyMovement : MonoBehaviour
         if (dir != Vector3.zero)
         {
             Quaternion targetRotation = Quaternion.LookRotation(dir);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+            model.transform.rotation = Quaternion.Slerp(model.transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
         }
     }
-    private void OnDead()
+
+    public void OnDead()
     {
         isDead = true;
     }
 
-
     private bool IsCloseToPoint(Vector3 point)
     {
-        // 거리가 0.2 이하이면 도달한 것으로 간주
-        return (point - transform.position).sqrMagnitude < 1f;
+        return (point - transform.position).sqrMagnitude < 0.04 * speed;
     }
 
     private void OnDisable()
     {
         curWayPointIndex = 0;
-        targetWayPoint = null;
-        isDead = false;
-        //이벤트 등록한거 해제해주기
+        targetWayPoint = Vector3.zero;
     }
+
 }
 

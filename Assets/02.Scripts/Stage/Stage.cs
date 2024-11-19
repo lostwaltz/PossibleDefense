@@ -1,83 +1,78 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Stage : MonoBehaviour
 {
-    private Enemy[] Enemies; //ÇØ´ç ½ºÅ×ÀÌÁö¿¡ µîÀåÇÒ Àû Ä³¸¯ÅÍ , ³ªÁß¿¡ ¿ÀºêÁ§Æ® Ç®¸µÀ¸·Î ±¸ÇöÇØ¾ßÇÔ 
-    private int EnemyIndex; //µîÀå ¸ó½ºÅÍ ÀÎµ¦½º
+    [SerializeField] private float tileHalfWidth = 5f; // íƒ€ì¼ì˜ ì ˆë°˜ ê°€ë¡œ
+    [SerializeField] private float tileHalfHeight = 5f; // íƒ€ì¼ì˜ ì ˆë°˜ ì„¸ë¡œ
 
-    public int SpacingRow; // Å¸ÀÏ°ú Å¸ÀÏ »çÀÌ ¿©¹é yÃà
-    public int SpacingColumn; // Å¸ÀÏ°ú Å¸ÀÏ »çÀÌ ¿©¹é xÃà
+    public int SpacingRow; // íƒ€ì¼ê³¼ íƒ€ì¼ ì‚¬ì´ ì—¬ë°± yì¶•
+    public int SpacingColumn; // íƒ€ì¼ê³¼ íƒ€ì¼ ì‚¬ì´ ì—¬ë°± xì¶•
 
-    public float offsetRow;//¿­ , ¼¼·Î
-    public float offsetColumn;//Çà ,°¡·Î
+    public float offsetRow;//ì—´ , ì„¸ë¡œ
+    public float offsetColumn;//í–‰ ,ê°€ë¡œ
 
-    public Vector3 StartPosition;
+    [SerializeField] private List<List<BaseTile>> stageTiles = new List<List<BaseTile>>();
+    [SerializeField] private List<TowerTile> towerTiles = new List<TowerTile>(); // í”Œë ˆì´ì–´ê°€ ë°°ì¹˜í•  ìˆ˜ ìˆëŠ” íƒ€ì¼ì˜ ì›”ë“œì¢Œí‘œë¡œ ì €ì¥í•œ ë¦¬ìŠ¤íŠ¸ 
+    [SerializeField] private List<SpawnTile> spawnTiles = new List<SpawnTile>(); //Enemyë“¤ì´ ë“±ì¥í•  ì›”ë“œ ì¢Œí‘œ ë°ì´í„° 
+    [SerializeField] private List<EnemyWayTile> enemyWayTiles = new List<EnemyWayTile>(); // Enemyì˜ WayPointë¥¼ ì›”ë“œì¢Œí‘œë¡œ ì €ì¥í•œ ë¦¬ìŠ¤íŠ¸
 
-    private List<Vector3> WayPointWorldPos; // ³ªÁß¿¡´Â Queue·Î ÀÛ¼ºÇÏ¿© µ¿Àû»ı¼º ÇÒ¼ö ÀÖ°Ô »ç¿ëÇÒ°Å
-    private List<Vector3> PlayerTilePointWorldPos; // ÇÃ·¹ÀÌ¾î°¡ ¹èÄ¡ÇÒ ¼ö ÀÖ´Â Å¸ÀÏ 
+    public List<TowerTile> TowerTiles { get => towerTiles; }
+    public List<SpawnTile> SpawnTiles { get => spawnTiles; }
+    public List<EnemyWayTile> EemyWayTiles { get => enemyWayTiles; }
+    
 
-    public MapDataSO curMapData;//ÇöÀç °ÔÀÓ¿¡¼­ »ç¿ëÇÒ ¸Ê µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ°í ÀÖ´Â Class µ¥ÀÌÅÍ 
-
-    public void MapInitialize()
+    //ë§µ ì„¸íŒ… : Tileì„ ì›”ë“œì¢Œí‘œë¡œ ë³€í™˜í•˜ì—¬ ì›”ë“œì¢Œí‘œì— ì„¤ì¹˜í•˜ê¸° ê¸°ëŠ¥ 
+    public void MapInitialize(List<List<StageTileTag>> curMapMatrix)
     {
-        WayPointWorldPos = curMapData.WayPoint;
-        PlayerTilePointWorldPos = curMapData.PlayerTilePoint;
 
-        GameObject tile = new GameObject();
-        for (int z = 0; z < curMapData.Row; z++)
+        for (int z = 0; z < curMapMatrix.Count; z++)
         {
-            for (int x = 0; x < curMapData.Column; x++)
+            List<BaseTile> CoulumnTileWorldPos = new List<BaseTile>();
+
+            for (int x = 0; x < curMapMatrix[z].Count; x++)
             {
-                switch ((StageTileTag)curMapData.MapMatrix[z].index[x])
+                BaseTile tile = StageManager.Instance.TileObjectPool.SpawnFromPool(curMapMatrix[z][x].ToString()).GetComponent<BaseTile>();
+                tile.transform.position = SetTileWorldPos(x, z);
+
+                CoulumnTileWorldPos.Add(tile);
+
+                switch (curMapMatrix[z][x])
                 {
-                    case StageTileTag.EnemyTile:
-                        tile = StageManager.Instance.TileObjectPool.SpawnFromPool(StageTileTag.EnemyTile.ToString());
+                    case StageTileTag.TowerTile:
+                        towerTiles.Add(tile as TowerTile);
                         break;
 
-                    case StageTileTag.PlayerTile:
-                        tile = StageManager.Instance.TileObjectPool.SpawnFromPool(StageTileTag.PlayerTile.ToString());
+                    case StageTileTag.SpawnTile:
+                        spawnTiles.Add(tile as SpawnTile);
                         break;
 
-                    case StageTileTag.EnemyMoveStartTile:
-                        tile = StageManager.Instance.TileObjectPool.SpawnFromPool(StageTileTag.EnemyMoveStartTile.ToString());
+                    case StageTileTag.EnemyWayTile:
+                        enemyWayTiles.Add(tile as EnemyWayTile);
                         break;
-
-                    case StageTileTag.EnemyMoveEndTile:
-                        tile = StageManager.Instance.TileObjectPool.SpawnFromPool(StageTileTag.EnemyMoveEndTile.ToString());
-                        break;
-
                 }
-
-                SetTileWorldPos(tile, x, z);
             }
+
+            stageTiles.Add(CoulumnTileWorldPos);
         }
 
-        //Enemy WayPoint ÃÊ±âÈ­
-        for (int i = 0; i < WayPointWorldPos.Count; i++)
-        {
-            WayPointWorldPos[i] = SetTileWorldPos((int)curMapData.WayPoint[i].x, (int)curMapData.WayPoint[i].z);
-        }
-
-        //Player TilePoint ÃÊ±âÈ­
-        for (int i = 0; i < curMapData.PlayerTilePoint.Count; i++)
-        {
-            PlayerTilePointWorldPos[i] = SetTileWorldPos((int)curMapData.PlayerTilePoint[i].x, (int)curMapData.PlayerTilePoint[i].z);
-        }
     }
 
-    private Vector3 SetTileWorldPos(GameObject tile, int x, int z)
-    {
-        Vector3 worldPos = new Vector3((x * 5) + SpacingColumn + offsetColumn, 0, (-z * 5) + SpacingRow + offsetRow);
-        tile.transform.position = worldPos;
 
+    //Tileì˜ positionê°’ì„ ë°°ì—´ì¢Œí‘œ -> ì›”ë“œì¢Œí‘œë¡¤ ë³€ê²½í•˜ëŠ” ì½”ë“œ + í•´ë‹¹ íƒ€ì¼ì˜ ìœ„ì¹˜ ì´ë™ 
+    private Vector3 SetTileWorldPos(Vector3 tile, int x, int z)
+    {
+        Vector3 worldPos = new Vector3((x * tileHalfWidth) + SpacingColumn + offsetColumn, 0, (-z * tileHalfHeight) + SpacingRow + offsetRow);
         return worldPos;
     }
-    private Vector3 SetTileWorldPos(int x, int z)
+
+    //Tileì˜ positionê°’ì„ ë°°ì—´ì¢Œí‘œ -> ì›”ë“œì¢Œí‘œë¡¤ ë³€ê²½í•˜ëŠ” ì½”ë“œ
+    public Vector3 SetTileWorldPos(int x, int z)
     {
-        Vector3 worldPos = new Vector3((x * 5) + SpacingColumn + offsetColumn, 0, (-z * 5) + SpacingRow + offsetRow);
+        Vector3 worldPos = new Vector3((x * tileHalfWidth) + SpacingColumn + offsetColumn, 0, (-z * tileHalfHeight) + SpacingRow + offsetRow);
         return worldPos;
     }
 }

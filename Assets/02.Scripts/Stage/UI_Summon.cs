@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Jobs;
 using UnityEngine.UI;
 
 public class UI_StartBtn : MonoBehaviour
@@ -9,10 +10,19 @@ public class UI_StartBtn : MonoBehaviour
 
     public void OnClickSummon()
     {
-        Instantiate(Slime).transform.position += Vector3.up *3;
-        //int index = UnityEngine.Random.Range(0,Board.curMap.PlayerTilePoint.Count);
+        List<TowerTile> curTowerTiles =  StageManager.Instance.Stage.TowerTiles;
 
-        //Instantiate(Slime).transform.position = Board.curMap.PlayerTilePoint[index]; 
+        for (int i = 0; i < curTowerTiles.Count;i++)
+        {
+            if (!curTowerTiles[i].IsTower)
+            {
+                curTowerTiles[i].IsTower = true;
+                Instantiate(Slime).transform.position = curTowerTiles[i].transform.position + (Vector3.up * 2);
+                break;
+            }
+           
+        }
+      
     }
 
 }

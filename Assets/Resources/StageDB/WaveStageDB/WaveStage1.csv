@@ -1,0 +1,6 @@
+﻿Wave,WaveTime,EnemyType1,EnemyCount1,EnemySpawnTime1,EnemyType2,EnemyCount2,EnemySpawnTime2,EnemyType3,EnemyCount3,EnemySpawnTime3
+1,30,1,3,1,,,,,,
+2,20,1,5,3,,,,,,
+3,30,1,10,5,,,,,,
+4,30,1,10,10,,,,,,
+5,50,11,1,0,,,,,,
