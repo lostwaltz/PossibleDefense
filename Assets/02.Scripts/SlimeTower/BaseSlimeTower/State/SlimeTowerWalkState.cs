@@ -28,7 +28,7 @@ public class SlimeTowerWalkState : SlimeTowerBaseState
         Vector3 targetPosition = new Vector3(target.position.x, stateMachine.SlimeTower.transform.position.y,
             target.position.z);
 
-        stateMachine.SlimeTower.transform.LookAt(target);
+        stateMachine.SlimeTower.transform.LookAt(new Vector3(target.position.x, stateMachine.SlimeTower.transform.position.y, target.position.z));
 
         stateMachine.SlimeTower.transform.position = Vector3.MoveTowards(
             stateMachine.SlimeTower.transform.position, 

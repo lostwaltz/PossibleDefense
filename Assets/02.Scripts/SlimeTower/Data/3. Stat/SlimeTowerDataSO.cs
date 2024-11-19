@@ -6,6 +6,9 @@ public class SlimeTowerDataSO : ScriptableObject
 {
    [SerializeField] private SlimeTowerInfo slimeTowerInfo;
    [SerializeField] private SlimeTowerStatUpgradeData slimeTowerUpgradeDataData;
+   public SlimeTowerStats SlimeTowerStats;
+
+   
    
     public SlimeTowerInfo SlimeTowerInfo
     {
@@ -17,6 +20,5 @@ public class SlimeTowerDataSO : ScriptableObject
         get { return slimeTowerUpgradeDataData; }
     }
     
-    public SlimeTowerStats SlimeTowerStats;
     
 }

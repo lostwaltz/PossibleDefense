@@ -12,7 +12,7 @@ public class BaseSlimeTower : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     [SerializeField] private AttackStrategySO attackStrategyData; 
     [SerializeField] private SlimeTowerDataSO slimeTowerDataSo; 
 
-    // --- 공개 속성 ---
+    // --- 프로퍼티 ---
     public Transform Target { get; set; } 
     public Animator Animator { get; private set; } 
     public SlimeStateMachine SlimeStateMachine { get; private set; } 
@@ -26,9 +26,12 @@ public class BaseSlimeTower : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     private float _pressStartTime; // 클릭 시작 시간
     private float _pressDuration; // 클릭 지속 시간
     private Coroutine _pressCheckCoroutine; // 클릭 체크 코루틴
-
+    
+    
+    
     // --- 이벤트 ---
-    private event Action<int> OnTowerSoldEvent; // 타워 판매 시 호출되는 이벤트
+    // private event Action<int> OnTowerSoldEvent; 
+    // 타워 판매 시 호출되는 이벤트, 이벤트 호출로 늘리는 것 보다 판매 될 때 그냥 StageManager 재화를 올려주는 게 더 좋을듯 함.
 
 
     private void Awake()
@@ -39,6 +42,7 @@ public class BaseSlimeTower : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         SlimeStateMachine = new SlimeStateMachine(this);
     }
 
+    
     private void Start()
     {
         AnimatorHashData.Initialize();
@@ -61,7 +65,7 @@ public class BaseSlimeTower : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     
     public void ExecuteTowerSell()
     {
-        OnTowerSoldEvent?.Invoke(slimeTowerDataSo.SlimeTowerInfo.sellPrice);
+        //StageManager 재화를 올려주기 
         Debug.Log("판매 가격" + slimeTowerDataSo.SlimeTowerInfo.sellPrice);
         Destroy(gameObject);
     }
@@ -73,6 +77,8 @@ public class BaseSlimeTower : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         _pressCheckCoroutine = StartCoroutine(CheckPressDuration());
     }
 
+    //Stage에서 데이터를 가져오기 보다는 
+    //
     public void OnPointerUp(PointerEventData eventData)
     {
         if (_pressCheckCoroutine != null)
@@ -82,7 +88,10 @@ public class BaseSlimeTower : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         }
     }
     
-
+    
+    //여기서 그냥 UI를 열어 줌
+    //기획에 따라서 예외 처리가 필요할 수 있음. 
+    
     private IEnumerator CheckPressDuration()
     {
         while (true)
