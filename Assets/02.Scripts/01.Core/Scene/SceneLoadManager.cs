@@ -20,9 +20,8 @@ public class SceneLoadManager : SingletonDontDestroy<SceneLoadManager>
     protected override void Awake()
     {
         base.Awake();
-
-        _dataBase = Resources.Load<SceneDataBase>("DataSheet/SceneData"
-            .ToString());
+        
+        _dataBase = Resources.Load<SceneDataBase>("DataSheet/SceneData".ToString());
 
         foreach (var data in _dataBase.sceneDataList)
         {
@@ -78,6 +77,5 @@ public class SceneLoadManager : SingletonDontDestroy<SceneLoadManager>
 
         _sceneDic[PrevScene].OnExit();
         _sceneDic[CurrentScene].OnEnter();
-
     }
 }

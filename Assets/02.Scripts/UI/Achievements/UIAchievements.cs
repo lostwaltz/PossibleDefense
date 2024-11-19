@@ -56,7 +56,7 @@ namespace Achievement
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }   
 }

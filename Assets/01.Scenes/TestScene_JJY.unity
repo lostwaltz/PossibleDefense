@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 66550388}
   - component: {fileID: 66550391}
   - component: {fileID: 66550392}
+  - component: {fileID: 66550393}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -252,7 +253,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 96.03906
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -278,8 +279,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 66550387}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.9966965, z: -0.08121658, w: 0}
-  m_LocalPosition: {x: -5.4, y: 13.7, z: 45.5}
+  m_LocalRotation: {x: -0.00013684988, y: 0.99984866, z: -0.009308521, w: -0.0146978935}
+  m_LocalPosition: {x: 518.1845, y: 875.9927, z: 1706.5743}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -345,6 +346,40 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 160
   m_MaxRayIntersections: 2
+--- !u!114 &66550393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66550387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &146777622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2381,6 +2416,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af00cb996d633b4690030698478e750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HPCanvas: {fileID: 0}
+  HPBar: {fileID: 0}
+  backHP: {fileID: 0}
+  shieldImage: {fileID: 0}
 --- !u!1 &1383826294
 GameObject:
   m_ObjectHideFlags: 0
