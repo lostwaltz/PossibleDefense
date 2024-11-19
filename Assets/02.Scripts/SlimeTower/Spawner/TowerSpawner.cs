@@ -12,20 +12,18 @@ public class TowerSpawner : MonoBehaviour
    
     private List<float> _chanceList;
 
-    // 
+    //TowerSpawner에서 관리 
     public List<BaseSlimeTower> SlimeTowers = new List<BaseSlimeTower>();
     
     
-    
     //TODO TILE정보를 받아와서 처리할 수 있도록 변경
-
     private void Awake()
     {
         NormalizeTowerProbabilities();
         spawnButton.onClick.AddListener(SpawnRandomTower);
     }
 
-    private void SpawnRandomTower()
+    public void SpawnRandomTower()
     {
         float randomValue = UnityEngine.Random.Range(0f, 1f);
         float cumulativeChance = 0f;
@@ -37,12 +35,12 @@ public class TowerSpawner : MonoBehaviour
             {
                 //SlimeTowers.Add(소환된 슬라임 타워 넣기);
                 Debug.Log($"타워 {i} 소환됨");
-                break;
+                break;  
             }
         }
     }
 
-
+    
     private void NormalizeTowerProbabilities()
     {
         float totalProbability = 0f;

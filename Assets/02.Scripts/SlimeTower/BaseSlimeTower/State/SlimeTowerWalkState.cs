@@ -12,27 +12,16 @@ public class SlimeTowerWalkState : SlimeTowerBaseState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("¿öÅ©½ºÅ×ÀÌÆ®");
-        StartAnimation(stateMachine.SlimeTower.animatorHashData.WalkParameterHash);
+        Debug.Log("ì›Œí¬ìŠ¤í…Œì´íŠ¸");
+        StartAnimation(stateMachine.SlimeTower.AnimatorHashData.WalkParameterHash);
     }
 
     public override void Exit()
     {
         base.Exit();
-        StopAnimation(stateMachine.SlimeTower.animatorHashData.WalkParameterHash);
+        StopAnimation(stateMachine.SlimeTower.AnimatorHashData.WalkParameterHash);
     }
 
-    
-    //°­È­, ½ºÆù , ÆÇ¸Å, Ä«¸Ş¶ó 
-    
-    // ½½¶óÀÓÀÌ ±æ°Ô ´­¸®¸é ½Ã³×¸Ó½Å ÅëÇØ ÇÏ´Ã¿¡¼­ ¹Ù¶óº¸´Â ½ÃÁ¡ (0.3 ÃÊ ÀÌµ¿ ¸ğµå) , 
-    // Å¸ÀÏÀÌ ´­·Á¼­ ½½¶óÀÓÀÌ ÀÌµ¿ ½ÃÀÛÇÏ¸é ½ÃÁ¡ ¿ø»óÅÂ 
-    
-    //½½¶óÀÓÀ» ºü¸£°Ô Å¬¸®ÇÏ¸é -> ½Ã³×¸Ó½Å 
-    // À¯Àú Å¿ÀÌ´Ù. , ¿Ö ºü¸£°Ô ´­·¶³Ä ? 
-    // º¸°£ ÀÌµ¿ ¾øÀÌ ¹Ù·Î È­¸é ÀüÈ¯ ÇØº¾½Ã´Ù. up VCam  origin VCam
-    
-    
     
     public override void Update()
     {

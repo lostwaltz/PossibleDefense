@@ -14,13 +14,13 @@ public class SlimeTowerIdleState : SlimeTowerBaseState
     public override void Enter()
     {
         base.Enter();
-        StartAnimation(stateMachine.SlimeTower.animatorHashData.IdleParameterHash);
+        StartAnimation(stateMachine.SlimeTower.AnimatorHashData.IdleParameterHash);
     }
 
     public override void Exit()
     {
         base.Exit();
-        StopAnimation(stateMachine.SlimeTower.animatorHashData.IdleParameterHash);
+        StopAnimation(stateMachine.SlimeTower.AnimatorHashData.IdleParameterHash);
     }
 
     public override void Update()

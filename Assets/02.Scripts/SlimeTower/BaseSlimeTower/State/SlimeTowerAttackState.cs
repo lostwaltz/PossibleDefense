@@ -22,7 +22,7 @@ public class SlimeTowerAttackState : SlimeTowerBaseState
     {
         base.Exit();
         stateMachine.SlimeTower.StatHandler.OnIncreaseStatEvent -= SetAttackSpeed;
-        StopAnimation(stateMachine.SlimeTower.animatorHashData.AttackParameterHash);
+        StopAnimation(stateMachine.SlimeTower.AnimatorHashData.AttackParameterHash);
     }
 
     public override void Update()
@@ -61,10 +61,10 @@ public class SlimeTowerAttackState : SlimeTowerBaseState
         _attackCoolTime = 1f / _attackSpeed;
 
         if (_attackSpeed > 1)
-            stateMachine.SlimeTower.Animator.SetFloat(stateMachine.SlimeTower.animatorHashData.AttackSpeedParameterHash,
+            stateMachine.SlimeTower.Animator.SetFloat(stateMachine.SlimeTower.AnimatorHashData.AttackSpeedParameterHash,
                 _attackSpeed);
         else
-            stateMachine.SlimeTower.Animator.SetFloat(stateMachine.SlimeTower.animatorHashData.AttackSpeedParameterHash,
+            stateMachine.SlimeTower.Animator.SetFloat(stateMachine.SlimeTower.AnimatorHashData.AttackSpeedParameterHash,
                 1);
     }
 
@@ -72,7 +72,7 @@ public class SlimeTowerAttackState : SlimeTowerBaseState
     private void Attack()
     {
         _lastAttackTime = Time.time;
-        StartAnimationTrigger(stateMachine.SlimeTower.animatorHashData.AttackParameterHash);
+        StartAnimationTrigger(stateMachine.SlimeTower.AnimatorHashData.AttackParameterHash);
         stateMachine.SlimeTower.AttackStrategy.Execute(stateMachine.SlimeTower.Target);
     }
 }
