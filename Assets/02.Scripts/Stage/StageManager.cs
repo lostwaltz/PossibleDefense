@@ -17,12 +17,12 @@ public class StageManager : Singleton<StageManager>
     private int curEnemyCount = 0; // 현재 필드에 있는 적의 갯수
     private int finishEnemyCount = 100; // 필드에 해당 Enemy 갯수 이상되면 게임오버되는 갯수
 
-    private Enemy[] Enemies; //해당 스테이지에 등장할 적 캐릭터 , 나중에 오브젝트 풀링으로 구현해야함 
-    private int EnemyIndex; //등장 몬스터 인덱스
-
     private float waveTimer;
     private WaveStageData curWave; //현재 Wave Data
     private Coroutine waveCoroutine;
+
+    private int curGold = 1000;
+    private int summonTowerCost = 100;
 
     private List<List<StageTileTag>> curMapMatrixData; //현재 스테이지 타일 데이터를 저장한 변수 (맵 데이터,월드좌표x,배열좌표o)
     private List<Vector3> curStageEnmeyWayPointData; //현재 스테이지의 Enemy의 WayPoint 데이터를 저장한 변수 (월드좌표x,배열좌표o)
@@ -33,12 +33,11 @@ public class StageManager : Singleton<StageManager>
 
     public Stage Stage { get => stage; }
     public ObjectPool TileObjectPool { get => tileObjectPool; }
+    public int CurGold { get => curGold; set => curGold = value; }
+    public int SummonTowerCost { get => summonTowerCost; }
+    public int CurEnemyCount { get => curEnemyCount; set => curEnemyCount = value; }
 
     StringBuilder stringBuilder = new StringBuilder(); //문자열 최적화를 위한 스트링빌더 멤버변수로 선언
-
-    //debug
-    public TestEnemyMovement TestEnemyPrefeb;
-    //
 
     protected override void Awake()
     {
@@ -63,7 +62,6 @@ public class StageManager : Singleton<StageManager>
         this.callStageNum = callStageNum;
 
         MapSetting();
-
         WaveSetting();
     }
 
@@ -96,9 +94,7 @@ public class StageManager : Singleton<StageManager>
         foreach(int id in keys)
         {
             SpawnEnemy(id);
-        }
-        
-        //waveCoroutine = StartCoroutine(OperateWave(curWave));
+        } 
     }
 
     private void CrateWaveData()
@@ -199,11 +195,14 @@ public class StageManager : Singleton<StageManager>
     //Debug : UI 매니저가 없기에 현재 Inspector로 연결 해놓은상태 
     public UI_WaveIndicator uI_WaveIndicator;
     public UI_EnemyCount uI_EnemyCount;
+    public UI_CurGoldIndicator uI_CurGoldIndicator;
+    public UI_UpgradesBtn uI_UpgradeBtns;
     private void LateUpdate()
     {
         //UIManager.Instance.UIContainer[UI_WaveIndicator].UI_Print;
         uI_WaveIndicator.UIPrint(waveTimer, curWave.WaveNum, curEnemyCount);
         uI_EnemyCount.UIPrint(finishEnemyCount, curEnemyCount);
+        uI_CurGoldIndicator.UIPrint(curGold);
     }
 
 
@@ -216,30 +215,6 @@ public class StageManager : Singleton<StageManager>
 
         SpawnManager.Instance.SetSpawner(spawnWorldPos, SpawnDelay, waypoints, id, spawnCount);
     }
-
-    IEnumerator OperateWave(WaveStageData waveData)
-    {
-        //int(0) 은 Enemy의 DataSO를 호출하면 된다.
-        float spawnTime = waveData.WaveSpawnData[1].EnemySpawnTimer;
-        WaitForSeconds SpawnTimer = new WaitForSeconds(spawnTime);
-        int count = 0;
-        
-        while (count < waveData.WaveSpawnData[1].EnemyCount)
-        {
-            //ToDoCode : EnemySpawnManager를 통해서 Enemy를 오브젝트 풀링하고 Way를 설정해주는 코드 입력
-            count++;
-            curEnemyCount++;
-
-            ////Debug : WayPoint Test Code
-            TestEnemyMovement newEnemy = Instantiate(TestEnemyPrefeb);
-            newEnemy.transform.position = stage.SpawnTiles[0].transform.position;
-            newEnemy.Initialize(curEnmeyWayPointData);
-            newEnemy.OperateEnemy();
-
-            yield return SpawnTimer;
-        }
-    }
-
 
     //게임 오버 조건
     private bool GameOverCheck()

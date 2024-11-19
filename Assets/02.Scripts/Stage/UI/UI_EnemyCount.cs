@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_EnemyCount  : MonoBehaviour //UIBase
+public class UI_EnemyCount  : UIBase
 {
     [SerializeField] private TextMeshProUGUI enemyCount;
     [SerializeField] private TextMeshProUGUI deathCount;

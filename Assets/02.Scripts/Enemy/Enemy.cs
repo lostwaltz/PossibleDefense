@@ -64,6 +64,7 @@ public class Enemy : MonoBehaviour, IDamagable
         this.wayPoints = waypoints;
         health.SetUp(enemySO);
         movement.SetUp(waypoints, enemySO);
+        StageManager.Instance.CurEnemyCount++;
     }
 
     public virtual void TakeDamage(float damage)
@@ -73,6 +74,7 @@ public class Enemy : MonoBehaviour, IDamagable
 
     private void ReturnToPool()
     {
+        StageManager.Instance.CurEnemyCount--;
         gameObject.SetActive(false);
     }
 }

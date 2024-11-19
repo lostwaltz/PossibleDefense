@@ -4,7 +4,7 @@ using System.Text;
 using TMPro;
 using UnityEngine;
 
-public class UI_WaveIndicator : MonoBehaviour //UIBase
+public class UI_WaveIndicator : UIBase
 {
     [SerializeField] private TextMeshProUGUI waveTime;
     [SerializeField] private TextMeshProUGUI wave;
