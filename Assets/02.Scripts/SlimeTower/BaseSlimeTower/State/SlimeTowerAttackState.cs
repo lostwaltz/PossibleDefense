@@ -56,14 +56,14 @@ public class SlimeTowerAttackState : SlimeTowerBaseState
 
     private void SetAttackSpeed()
     {
-        _attackSpeed = stateMachine.SlimeTower.slimeTowerData.SlimeTowerStats.AttackSpeed;
+        _attackSpeed = stateMachine.SlimeTower.slimeTowerDataSo.SlimeTowerStats.AttackSpeed;
         _attackCoolTime = 1f / _attackSpeed;
 
         if (_attackSpeed > 1)
-            stateMachine.SlimeTower.animator.SetFloat(stateMachine.SlimeTower.animatorHashData.AttackSpeedParameterHash,
+            stateMachine.SlimeTower.Animator.SetFloat(stateMachine.SlimeTower.animatorHashData.AttackSpeedParameterHash,
                 _attackSpeed);
         else
-            stateMachine.SlimeTower.animator.SetFloat(stateMachine.SlimeTower.animatorHashData.AttackSpeedParameterHash,
+            stateMachine.SlimeTower.Animator.SetFloat(stateMachine.SlimeTower.animatorHashData.AttackSpeedParameterHash,
                 1);
     }
 

@@ -6,7 +6,7 @@
     {
         
         private BaseSlimeTower _slimeTower;
-        private SlimeTowerStatSo data;
+        private SlimeTowerDataSO _dataSo;
 
          private void Awake()
          {
@@ -24,6 +24,6 @@
         private void DrawAttackRange()
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position,  _slimeTower.slimeTowerData.SlimeTowerStats.AttackRange);
+            Gizmos.DrawWireSphere(transform.position,  _slimeTower.slimeTowerDataSo.SlimeTowerStats.AttackRange);
         }
     }

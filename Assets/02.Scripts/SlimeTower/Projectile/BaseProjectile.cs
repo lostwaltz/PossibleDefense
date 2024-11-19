@@ -14,7 +14,7 @@ public class BaseProjectile : MonoBehaviour
     
     private void Start()
     {
-        _enemyLayerMask = 1 << LayerMask.NameToLayer("Enemy"); // 비트마스크로 변환
+        _enemyLayerMask = 1 << LayerMask.NameToLayer("Enemy");  
     }
 
 

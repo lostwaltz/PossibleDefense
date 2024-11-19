@@ -13,7 +13,7 @@ public class SlimeTowerBaseState : IState
 
     public virtual void Enter()
     {
-        _attackRange = stateMachine.SlimeTower.slimeTowerData.SlimeTowerStats.AttackRange;
+        _attackRange = stateMachine.SlimeTower.slimeTowerDataSo.SlimeTowerStats.AttackRange;
     }
 
     public virtual void Exit()
@@ -30,17 +30,17 @@ public class SlimeTowerBaseState : IState
     
     protected void StartAnimation(int animatorHash)
     {
-        stateMachine.SlimeTower.animator.SetBool(animatorHash, true);
+        stateMachine.SlimeTower.Animator.SetBool(animatorHash, true);
     }
     
     protected void StartAnimationTrigger(int animatorHash)
     {
-        stateMachine.SlimeTower.animator.SetTrigger(animatorHash);
+        stateMachine.SlimeTower.Animator.SetTrigger(animatorHash);
     }
 
     protected void StopAnimation(int animatorHash)
     {
-        stateMachine.SlimeTower.animator.SetBool(animatorHash, false);
+        stateMachine.SlimeTower.Animator.SetBool(animatorHash, false);
     }
   
 
