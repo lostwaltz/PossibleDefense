@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour, IDamagable
     public EnemyMovement movement {  get; private set; }
     public EnemyHealth health { get; private set; }
     public EnemyAnimationController anim { get; private set; }
+    private EnemySkillController skillController;
+    private bool _hasSkillController = false;
 
     //for test
     public Vector3[] wayPoints;
@@ -25,6 +27,7 @@ public class Enemy : MonoBehaviour, IDamagable
         anim = GetComponent<EnemyAnimationController>();
         movement = GetComponent<EnemyMovement>();
         health = GetComponent<EnemyHealth>();
+        _hasSkillController = TryGetComponent<EnemySkillController>(out skillController);
     }
 
     private void Start()
@@ -42,6 +45,10 @@ public class Enemy : MonoBehaviour, IDamagable
     {
         anim.OnDie();
         movement.OnDead();
+        if (_hasSkillController)
+        {
+            skillController.OnDead();
+        }
 
         Invoke(nameof(ReturnToPool), DisappearAfterDie);
     }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rabit
   m_EditorClassIdentifier: 
   <id>k__BackingField: 101
-  <baseMaxHP>k__BackingField: 100
+  <baseMaxHP>k__BackingField: 10
   <baseDamage>k__BackingField: 1
   <baseSpeed>k__BackingField: 20
   <evasion>k__BackingField: 90

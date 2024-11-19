@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: King
   m_EditorClassIdentifier: 
   <id>k__BackingField: 200
-  <baseMaxHP>k__BackingField: 100
+  <baseMaxHP>k__BackingField: 1000
   <baseDamage>k__BackingField: 1
-  <baseSpeed>k__BackingField: 10
+  <baseSpeed>k__BackingField: 5
   <evasion>k__BackingField: 0
-  <shield>k__BackingField: 0
+  <shield>k__BackingField: 100
   <maxHPModifier>k__BackingField: 1
   <speedModifier>k__BackingField: 1

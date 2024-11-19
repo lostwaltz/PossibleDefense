@@ -25,6 +25,11 @@ public class SpawnManager : Singleton<SpawnManager>
         SetSpawner(SpawnPoint, SpawnDelay, wayPoints, 103, maxSpawnCount);
     }
 
+    public void BossSpawn()
+    {
+        enemyFactory.CreateEnemy(200, SpawnPoint, wayPoints);
+    }
+
     IEnumerator SpawnEnemy(int id)
     {
         for(int i = 0; i < maxSpawnCount; i++)

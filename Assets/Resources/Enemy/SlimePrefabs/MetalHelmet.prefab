@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 49234647536640885}
   - component: {fileID: 7087050650755827124}
   - component: {fileID: 3421025834118849631}
+  - component: {fileID: 5552907671502670224}
   m_Layer: 6
   m_Name: MetalHelmet
   m_TagString: Untagged
@@ -289,6 +290,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83e2169502b40ed4dbab70a58ad2b09c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5552907671502670224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992421350420483643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a02d315e7310344a64a2a0a261252f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2787167865150953322

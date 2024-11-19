@@ -15,7 +15,7 @@ MonoBehaviour:
   <id>k__BackingField: 102
   <baseMaxHP>k__BackingField: 100
   <baseDamage>k__BackingField: 1
-  <baseSpeed>k__BackingField: 10
+  <baseSpeed>k__BackingField: 8
   <evasion>k__BackingField: 0
   <shield>k__BackingField: 100
   <maxHPModifier>k__BackingField: 1

@@ -638,13 +638,15 @@ GameObject:
   - component: {fileID: 6403490359216438588}
   - component: {fileID: 4078156820694856383}
   - component: {fileID: 5428585947089245480}
+  - component: {fileID: 6072793087807100760}
+  - component: {fileID: 6188157927894013483}
   m_Layer: 6
   m_Name: King
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8530670451353688513
 Transform:
   m_ObjectHideFlags: 0
@@ -743,6 +745,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83e2169502b40ed4dbab70a58ad2b09c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6072793087807100760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6225746359989207501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fbd3f29376484647b95a7b2e6c55237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Skills>k__BackingField:
+  - {fileID: 11400000, guid: 364c5e0d43f7b7b41aa3752c8ca962f6, type: 2}
+  - {fileID: 11400000, guid: 1d507ae70ef9ac84eaf5ef7b977202db, type: 2}
+--- !u!114 &6188157927894013483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6225746359989207501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a02d315e7310344a64a2a0a261252f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7935297591855912649

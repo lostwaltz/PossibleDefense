@@ -785,6 +785,7 @@ GameObject:
   - component: {fileID: 4030532708439317994}
   - component: {fileID: 9182836005794497637}
   - component: {fileID: 1010222569895656943}
+  - component: {fileID: 451224289051072299}
   m_Layer: 6
   m_Name: Viking
   m_TagString: Untagged
@@ -890,6 +891,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83e2169502b40ed4dbab70a58ad2b09c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &451224289051072299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7482104599443176226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a02d315e7310344a64a2a0a261252f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7969867201612203568

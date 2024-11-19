@@ -3,29 +3,30 @@ using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
 
-public interface ISlowable
-{
-    void SlowEffect(float percentage, float time);
-}
-
-public class EnemyMovement : MonoBehaviour, ISlowable
+public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private Transform model;
 
     public float rotationSpeed = 10f;
     private Vector3[] wayPoints;
     private int curWayPointIndex = 0;
-    private float speed;
     private Vector3 dir;
     private Vector3 targetWayPoint;
 
     private bool isDead = false;
-    private Coroutine slowCoroutine;
+
+    private ForceReceiver forceReceiver;
+    private float speed => forceReceiver.GetSpeed();
+    
+    private void Awake()
+    {
+        forceReceiver = GetComponent<ForceReceiver>();
+    }
 
     public void SetUp(Vector3[] waypoints, EnemySO data)
     {
         this.wayPoints = waypoints;
-        speed = data.baseSpeed * data.speedModifier;
+        forceReceiver.Initialize(data.baseSpeed * data.speedModifier);
 
         curWayPointIndex = 0;
         targetWayPoint = wayPoints[curWayPointIndex];
@@ -91,22 +92,5 @@ public class EnemyMovement : MonoBehaviour, ISlowable
         targetWayPoint = Vector3.zero;
     }
 
-    IEnumerator ApplySlow(float percent, float time)
-    {
-        float curSpeed = speed;
-        speed = speed - (speed * percent * 0.01f);
-        yield return new WaitForSeconds(time);
-        speed = curSpeed;
-    }
-
-    public void SlowEffect(float percentage, float time)
-    {
-        if(slowCoroutine != null)
-        {
-            StopCoroutine(slowCoroutine);
-        }
-
-        slowCoroutine = StartCoroutine(ApplySlow(percentage, time));
-    }
 }
 
