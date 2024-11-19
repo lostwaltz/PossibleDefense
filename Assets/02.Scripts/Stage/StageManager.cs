@@ -190,12 +190,11 @@ public class StageManager : Singleton<StageManager>
         }
     }
 
-    //Debug
+    //Debug : UI 매니저가 없기에 현재 Inspector로 연결 해놓은상태 
     public UI_WaveIndicator uI_WaveIndicator;
     private void LateUpdate()
     {
         //UIManager.Instance.UIContainer[UI_WaveIndicator].UI_Print;
-
         uI_WaveIndicator.UIPrint(waveTimer, curWave.WaveNum, curEnemyCount);
     }
     IEnumerator OperateWave(WaveStageData waveData)
