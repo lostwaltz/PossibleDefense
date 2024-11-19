@@ -20,6 +20,7 @@ public class BaseSlimeTower : MonoBehaviour , IPointerDownHandler , IPointerUpHa
     public AnimatorHashData animatorHashData = new AnimatorHashData();
     public IAttackStrategy AttackStrategy { get;  private set; }
 
+    //Tower 스텟 호출 여기서하면됨 
     public SlimeTowerStatHandler StatHandler { get;  private set;}
     
     //오브젝트 클릭 처리 

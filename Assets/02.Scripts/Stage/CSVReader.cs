@@ -115,7 +115,7 @@ public static class CSVReader
 
                 EnemySpawnData SpawnData = new EnemySpawnData();
 
-                int type = (int)Enum.Parse(typeof(int),values[j]);
+                int type = int.Parse(values[j]);
                 SpawnData.EnemyCount = int.Parse(values[j + 1]);
                 SpawnData.EnemySpawnTimer = float.Parse(values[j + 2]);
 
