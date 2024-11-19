@@ -3,7 +3,8 @@ using UnityEngine.EventSystems;
 
 public class TowerTile : BaseTile
 {
-    //private BaseSlimeTowe SlimeTower = null;
+    //private BaseSlimeTower SlimeTower = null;
+
     public override void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log($"isTower : {isTower}");

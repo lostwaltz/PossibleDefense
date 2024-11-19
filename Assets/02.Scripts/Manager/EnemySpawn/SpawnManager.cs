@@ -22,7 +22,7 @@ public class SpawnManager : Singleton<SpawnManager>
         ObjectPool = GetComponent<ObjectPool>();
         enemyFactory = new EnemyFactory(enemyDatabase);
 
-        SetSpawner(SpawnPoint, SpawnDelay, wayPoints, 103, maxSpawnCount);
+        //SetSpawner(SpawnPoint, SpawnDelay, wayPoints, 103, maxSpawnCount);
     }
 
     public void BossSpawn()

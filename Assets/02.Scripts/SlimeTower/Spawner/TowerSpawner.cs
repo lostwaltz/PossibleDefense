@@ -17,7 +17,7 @@ public class TowerSpawner : MonoBehaviour
     
     
     
-    //TODO TILEÁ¤º¸¸¦ ¹Ş¾Æ¿Í¼­ Ã³¸®ÇÒ ¼ö ÀÖµµ·Ï º¯°æ
+    //TODO TILEì •ë³´ë¥¼ ë°›ì•„ì™€ì„œ ì²˜ë¦¬í•  ìˆ˜ ìˆë„ë¡ ë³€ê²½
 
     private void Awake()
     {
@@ -35,14 +35,14 @@ public class TowerSpawner : MonoBehaviour
             cumulativeChance += _chanceList[i];
             if (randomValue <= cumulativeChance)
             {
-                //SlimeTowers.Add(¼ÒÈ¯µÈ ½½¶óÀÓ Å¸¿ö ³Ö±â);
-                Debug.Log($"Å¸¿ö {i} ¼ÒÈ¯µÊ");
+                //SlimeTowers.Add(ì†Œí™˜ëœ ìŠ¬ë¼ì„ íƒ€ì›Œ ë„£ê¸°);
+                Debug.Log($"íƒ€ì›Œ {i} ì†Œí™˜ë¨");
                 break;
             }
         }
     }
 
-
+    //í™•ë¥  ë³´ì • ì½”ë“œ , í™•ë¥ ì´ ì ì°¨ì ìœ¼ë¡œ ì¦ê°€í•˜ë©° í™•ë¥ ì— ì„±ê³µí–ˆì„ë•Œ í™•ë¥  ì´ˆê¸°í™”ë¥¼ í•´ì£¼ëŠ” ì½”ë“œ
     private void NormalizeTowerProbabilities()
     {
         float totalProbability = 0f;

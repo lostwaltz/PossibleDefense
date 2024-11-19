@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using System.Xml;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
@@ -26,7 +27,6 @@ public class StageManager : Singleton<StageManager>
     private List<List<StageTileTag>> curMapMatrixData; //현재 스테이지 타일 데이터를 저장한 변수 (맵 데이터,월드좌표x,배열좌표o)
     private List<Vector3> curStageEnmeyWayPointData; //현재 스테이지의 Enemy의 WayPoint 데이터를 저장한 변수 (월드좌표x,배열좌표o)
     private Queue<WaveStageData> curWaveStageData; //현재 스테이지의 Wave데이터
-
 
     public StageTileTag[][] curStageMapData; //현재 진행중인 스테이지의 맵 2차월 배열 
     public Vector3[] curEnmeyWayPointData; //현재 진행중인 스테이지의 웨이포인트 배열
@@ -91,7 +91,14 @@ public class StageManager : Singleton<StageManager>
         curWave = curWaveStageData.Dequeue();
         waveTimer = curWave.WaveTime;
 
-        waveCoroutine = StartCoroutine(OperateWave(curWave));
+        ICollection<int> keys = curWave.WaveSpawnData.Keys;
+
+        foreach(int id in keys)
+        {
+            SpawnEnemy(id);
+        }
+        
+        //waveCoroutine = StartCoroutine(OperateWave(curWave));
     }
 
     private void CrateWaveData()
@@ -198,14 +205,26 @@ public class StageManager : Singleton<StageManager>
         uI_WaveIndicator.UIPrint(waveTimer, curWave.WaveNum, curEnemyCount);
         uI_EnemyCount.UIPrint(finishEnemyCount, curEnemyCount);
     }
+
+
+    private void SpawnEnemy(int id)
+    {
+        Vector3 spawnWorldPos = stage.SpawnTiles[0].transform.position;
+        float SpawnDelay = curWave.WaveSpawnData[id].EnemySpawnTimer;
+        Vector3[] waypoints = curEnmeyWayPointData;
+        int spawnCount = curWave.WaveSpawnData[id].EnemyCount;
+
+        SpawnManager.Instance.SetSpawner(spawnWorldPos, SpawnDelay, waypoints, id, spawnCount);
+    }
+
     IEnumerator OperateWave(WaveStageData waveData)
     {
         //int(0) 은 Enemy의 DataSO를 호출하면 된다.
-        float spawnTime = waveData.WaveSpawnData[0].EnemySpawnTimer;
+        float spawnTime = waveData.WaveSpawnData[1].EnemySpawnTimer;
         WaitForSeconds SpawnTimer = new WaitForSeconds(spawnTime);
         int count = 0;
         
-        while (count < waveData.WaveSpawnData[0].EnemyCount)
+        while (count < waveData.WaveSpawnData[1].EnemyCount)
         {
             //ToDoCode : EnemySpawnManager를 통해서 Enemy를 오브젝트 풀링하고 Way를 설정해주는 코드 입력
             count++;
