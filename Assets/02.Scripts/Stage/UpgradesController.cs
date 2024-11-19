@@ -4,7 +4,7 @@ using TMPro;
 using System.Collections.Generic;
 using Unity.Burst.Intrinsics;
 
-public class UpgradesBtn : MonoBehaviour 
+public class UpgradesController : MonoBehaviour 
 {
     [SerializeField] private SlimeTowerStatUpgradeData[] _upgradeDatas;
     [SerializeField] private Button[] buttons;

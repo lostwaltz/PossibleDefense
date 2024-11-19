@@ -6,6 +6,7 @@ using System.Threading;
 using System.Xml;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class StageManager : Singleton<StageManager>
 {
@@ -13,6 +14,7 @@ public class StageManager : Singleton<StageManager>
     [SerializeField] private ObjectPool tileObjectPool; //타일을 꺼내는 오브젝트 Pool
 
     [SerializeField] private int callStageNum = 0; //호출할 스테이지 넘버링 
+    [SerializeField] private UpgradesController upgradeController;
 
     private int curEnemyCount = 0; // 현재 필드에 있는 적의 갯수
     private int finishEnemyCount = 100; // 필드에 해당 Enemy 갯수 이상되면 게임오버되는 갯수
@@ -29,7 +31,8 @@ public class StageManager : Singleton<StageManager>
     private Queue<WaveStageData> curWaveStageData; //현재 스테이지의 Wave데이터
 
     public StageTileTag[][] curStageMapData; //현재 진행중인 스테이지의 맵 2차월 배열 
-    public Vector3[] curEnmeyWayPointData; //현재 진행중인 스테이지의 웨이포인트 배열
+    [HideInInspector] public Vector3[] curEnmeyWayPointData; //현재 진행중인 스테이지의 웨이포인트 배열
+
 
     public Stage Stage { get => stage; }
     public ObjectPool TileObjectPool { get => tileObjectPool; }
@@ -47,6 +50,11 @@ public class StageManager : Singleton<StageManager>
         if (tileObjectPool == null)
         {
             tileObjectPool = GetComponent<ObjectPool>();
+        }
+
+        if(upgradeController == null)
+        {
+            upgradeController = GetComponent<UpgradesController>();
         }
     }
 
@@ -196,7 +204,6 @@ public class StageManager : Singleton<StageManager>
     public UI_WaveIndicator uI_WaveIndicator;
     public UI_EnemyCount uI_EnemyCount;
     public UI_CurGoldIndicator uI_CurGoldIndicator;
-    public UpgradesBtn uI_UpgradeBtns;
     private void LateUpdate()
     {
         //UIManager.Instance.UIContainer[UI_WaveIndicator].UI_Print;
