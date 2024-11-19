@@ -196,7 +196,7 @@ public class StageManager : Singleton<StageManager>
     public UI_WaveIndicator uI_WaveIndicator;
     public UI_EnemyCount uI_EnemyCount;
     public UI_CurGoldIndicator uI_CurGoldIndicator;
-    public UI_UpgradesBtn uI_UpgradeBtns;
+    public UpgradesBtn uI_UpgradeBtns;
     private void LateUpdate()
     {
         //UIManager.Instance.UIContainer[UI_WaveIndicator].UI_Print;
