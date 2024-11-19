@@ -31,6 +31,9 @@ public class Enemy : MonoBehaviour, IDamagable
     {
         health.SetUp(enemyData);
 
+        health.OnDamage -= Damage;
+        health.OnDead -= Die;
+
         health.OnDamage += Damage;
         health.OnDead += Die;
     }

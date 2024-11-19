@@ -34,7 +34,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (isDamaging)
         {
-            HPDecrease();
+            BackHPDecrease();
         }
     }
 
@@ -70,7 +70,7 @@ public class EnemyHealth : MonoBehaviour
         UpdateUI();
     }
 
-    private void HPDecrease()
+    private void BackHPDecrease()
     {
         backHP.fillAmount = Mathf.Lerp(backHP.fillAmount, HPBar.fillAmount, Time.deltaTime * decreaseSpeed);
         if (Mathf.Approximately(HPBar.fillAmount, backHP.fillAmount))
@@ -82,6 +82,12 @@ public class EnemyHealth : MonoBehaviour
     public void Heal(float amount)
     {
         Health.Heal(amount);
+        UpdateUI();
+    }
+
+    public void ShieldRecharge(float amount)
+    {
+        Shield.Recharge(amount);
         UpdateUI();
     }
 

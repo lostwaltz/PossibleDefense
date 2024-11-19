@@ -95,7 +95,7 @@ public class EnemyMovement : MonoBehaviour, ISlowable
     {
         float curSpeed = speed;
         speed = speed - (speed * percent * 0.01f);
-        yield return new WaitForSeconds(percent);
+        yield return new WaitForSeconds(time);
         speed = curSpeed;
     }
 

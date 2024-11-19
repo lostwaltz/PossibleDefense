@@ -17,5 +17,10 @@ public class Shield
         CurrentShield = Mathf.Clamp(CurrentShield - damage, 0, MaxShield);
         return remainingDamage > 0 ? remainingDamage : 0;
     }
+
+    public void Recharge(float amount)
+    {
+        CurrentShield = Mathf.Clamp(CurrentShield + amount, 0, MaxShield);
+    }
 }
 
