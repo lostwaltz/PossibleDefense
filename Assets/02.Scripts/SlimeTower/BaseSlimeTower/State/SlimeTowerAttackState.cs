@@ -4,7 +4,7 @@ public class SlimeTowerAttackState : SlimeTowerBaseState
 {
     private float _attackSpeed;
     private float _attackCoolTime = 0f;
-    private float _lastAttackTime = 0f;
+    private float _lastAttackTime = 0f;  
 
     public SlimeTowerAttackState(SlimeStateMachine _stateMachine) : base(_stateMachine)
     {
@@ -14,8 +14,8 @@ public class SlimeTowerAttackState : SlimeTowerBaseState
     {
         base.Enter();
         SetAttackSpeed();
-        stateMachine.SlimeTower.StatHandler.OnIncreaseStatEvent += SetAttackSpeed;
-    }
+         stateMachine.SlimeTower.StatHandler.OnIncreaseStatEvent += SetAttackSpeed;
+     }
 
 
     public override void Exit()
@@ -31,24 +31,32 @@ public class SlimeTowerAttackState : SlimeTowerBaseState
         {
             CheckAndAttackTarget();
         }
-
-        if (!stateMachine.SlimeTower.Target.gameObject.activeSelf)
-        {
-            stateMachine.ChangeState(stateMachine.IdleState);
-        }
     }
 
     private void CheckAndAttackTarget()
     {
-        bool isTargetInRange = Physics.CheckSphere(stateMachine.SlimeTower.transform.position, _attackRange,
-            1 << stateMachine.SlimeTower.Target.gameObject.layer);
-
-        if (!isTargetInRange)
+        if (stateMachine.SlimeTower.Target == null || !stateMachine.SlimeTower.Target.gameObject.activeSelf)
         {
             stateMachine.ChangeState(stateMachine.IdleState);
             return;
         }
 
+        var distanceToTarget = Vector3.Distance(stateMachine.SlimeTower.transform.position,
+            stateMachine.SlimeTower.Target.position);
+
+        Collider targetCollider = stateMachine.SlimeTower.Target.GetComponent<Collider>();
+        var adjustedAttackRange = stateMachine.SlimeTower.StatHandler.AttackRange;
+
+        if (targetCollider != null)
+        {
+            adjustedAttackRange += targetCollider.bounds.extents.magnitude;
+        }
+
+        if (distanceToTarget > adjustedAttackRange)
+        {
+            stateMachine.ChangeState(stateMachine.IdleState);
+            return;
+        }
 
         stateMachine.SlimeTower.transform.LookAt(stateMachine.SlimeTower.Target);
         Attack();

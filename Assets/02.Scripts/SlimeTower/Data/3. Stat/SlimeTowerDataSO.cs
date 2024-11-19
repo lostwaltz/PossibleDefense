@@ -4,15 +4,16 @@ using UnityEngine.Serialization;
 [CreateAssetMenu(fileName = "SlimeTowerData", menuName = "SlimeTower/Data/SlimeTowerData")]
 public class SlimeTowerDataSO : ScriptableObject
 {
-   [SerializeField] private SlimeTowerInfo slimeTowerInfo;
+    public string name; 
+   [SerializeField] private SlimeTowerGradeInfo slimeTowerGradeInfo;
    [SerializeField] private SlimeTowerStatUpgradeData slimeTowerUpgradeDataData;
    public SlimeTowerStats SlimeTowerStats;
 
    
    
-    public SlimeTowerInfo SlimeTowerInfo
+    public SlimeTowerGradeInfo SlimeTowerGradeInfo
     {
-        get { return slimeTowerInfo; }
+        get { return slimeTowerGradeInfo; }
     }
     
     public SlimeTowerStatUpgradeData SlimeTowerUpgradeDataData

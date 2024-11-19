@@ -36,7 +36,7 @@ public class BaseSlimeTower : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     private void Awake()
     {
-        Animator = GetComponent<Animator>();
+        Animator = GetComponentInChildren<Animator>();
         StatHandler =
             new SlimeTowerStatHandler(slimeTowerDataSo.SlimeTowerStats, slimeTowerDataSo.SlimeTowerUpgradeDataData);
         SlimeStateMachine = new SlimeStateMachine(this);
@@ -66,7 +66,7 @@ public class BaseSlimeTower : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     public void ExecuteTowerSell()
     {
         //StageManager 재화를 올려주기 
-        Debug.Log("판매 가격" + slimeTowerDataSo.SlimeTowerInfo.sellPrice);
+        Debug.Log("판매 가격" + slimeTowerDataSo.SlimeTowerGradeInfo.sellPrice);
         Destroy(gameObject);
     }
     

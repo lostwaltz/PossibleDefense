@@ -16,17 +16,19 @@ public class TowerController : Singleton<TowerController>
     {
         if (_selectedTower == null)
             return;
+        
         _targetTile = tile;
         MoveSlimeTower();
     }
-
-
-    [ContextMenu("������ ������ �׽�Ʈ")]
+    
     public void MoveSlimeTower()
     {
+        
         var stateMachine = _selectedTower.GetComponent<BaseSlimeTower>().SlimeStateMachine;
         stateMachine.WalkState.target = _targetTile;
         stateMachine.ChangeState(stateMachine.WalkState);
+        
+        _selectedTower = null;
     }
     
 }

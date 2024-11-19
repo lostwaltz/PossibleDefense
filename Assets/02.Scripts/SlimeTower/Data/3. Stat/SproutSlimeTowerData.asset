@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 051ef85106d94558a357eeafa44f8f37, type: 3}
-  m_Name: NotCuteSlimeTowerData
+  m_Name: SproutSlimeTowerData
   m_EditorClassIdentifier: 
-  slimeTowerInfo: {fileID: 11400000, guid: 9fbf50f968f4bdd4f8828a0dbd2d1cdc, type: 2}
+  name: SproutSlime
+  slimeTowerGradeInfo: {fileID: 11400000, guid: 9fbf50f968f4bdd4f8828a0dbd2d1cdc,
+    type: 2}
   slimeTowerUpgradeDataData: {fileID: 11400000, guid: a521e1271f0b12442ae525fbda2d36bc,
     type: 2}
   SlimeTowerStats:
     AttackSpeed: 5
     AttackPower: 1
-    AttackRange: 20
+    AttackRange: 50

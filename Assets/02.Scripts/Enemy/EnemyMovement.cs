@@ -17,7 +17,7 @@ public class EnemyMovement : MonoBehaviour
 
     private ForceReceiver forceReceiver;
     private float speed => forceReceiver.GetSpeed();
-    
+
     private void Awake()
     {
         forceReceiver = GetComponent<ForceReceiver>();
@@ -45,8 +45,8 @@ public class EnemyMovement : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if(!isDead)
-        Move();
+        if (!isDead)
+            Move();
     }
 
     public void Move()
@@ -72,7 +72,8 @@ public class EnemyMovement : MonoBehaviour
         if (dir != Vector3.zero)
         {
             Quaternion targetRotation = Quaternion.LookRotation(dir);
-            model.transform.rotation = Quaternion.Slerp(model.transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+            model.transform.rotation =
+                Quaternion.Slerp(model.transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
         }
     }
 
@@ -91,6 +92,4 @@ public class EnemyMovement : MonoBehaviour
         curWayPointIndex = 0;
         targetWayPoint = Vector3.zero;
     }
-
 }
-

@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class SlimeTowerWalkState : SlimeTowerBaseState
 {
-    public Transform target;
+    public Transform target; // 타워 컨트롤러에서 설정 해줌! 
     private float moveSpeed = 5f;
+    private float threshold = 0.1f;
 
     public SlimeTowerWalkState(SlimeStateMachine _stateMachine) : base(_stateMachine)
     {
@@ -12,7 +13,6 @@ public class SlimeTowerWalkState : SlimeTowerBaseState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("워크스테이트");
         StartAnimation(stateMachine.SlimeTower.AnimatorHashData.WalkParameterHash);
     }
 
@@ -22,24 +22,23 @@ public class SlimeTowerWalkState : SlimeTowerBaseState
         StopAnimation(stateMachine.SlimeTower.AnimatorHashData.WalkParameterHash);
     }
 
-    
+
     public override void Update()
     {
-        Vector3 targetPosition = new Vector3(target.position.x, stateMachine.SlimeTower.transform.position.y,
-            target.position.z);
+        Vector3 currentPosition = stateMachine.SlimeTower.transform.position;
+        Vector3 targetPosition = new Vector3(target.position.x, currentPosition.y, target.position.z);
 
-        stateMachine.SlimeTower.transform.LookAt(new Vector3(target.position.x, stateMachine.SlimeTower.transform.position.y, target.position.z));
+        stateMachine.SlimeTower.transform.LookAt(targetPosition);
 
         stateMachine.SlimeTower.transform.position = Vector3.MoveTowards(
-            stateMachine.SlimeTower.transform.position, 
+            currentPosition,
             targetPosition,
-            moveSpeed * Time.deltaTime 
+            moveSpeed * Time.deltaTime
         );
 
-        if (Vector3.Distance(stateMachine.SlimeTower.transform.position, targetPosition) <= 0.01f)
+        if (Vector3.Distance(currentPosition, targetPosition) <= threshold)
         {
             stateMachine.ChangeState(stateMachine.IdleState);
         }
     }
-
 }

@@ -7,6 +7,7 @@ public class TowerTile : BaseTile
 
     public override void OnPointerClick(PointerEventData eventData)
     {
+        TowerController.Instance.SetTargetTile(transform);
         Debug.Log($"isTower : {isTower}");
         Debug.Log($"isTower : {transform.position}");
     }

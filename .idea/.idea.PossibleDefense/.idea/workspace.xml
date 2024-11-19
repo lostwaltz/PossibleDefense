@@ -5,10 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="786d4d7f-6565-4eb2-bafb-1618cb383218" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/AttackStrategy/AllEnemyAttack.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/AttackStrategy/AllEnemyAttack.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/AttackStrategy/SplashAttackByProjectile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/AttackStrategy/SplashAttackByProjectile.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/Strategy/AttackStrategy/AllEnemyAttackSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/Strategy/AttackStrategy/AllEnemyAttackSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/Strategy/AttackStrategy/SplashAttackByProjectileSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/Strategy/AttackStrategy/SplashAttackByProjectileSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/IStrategy/IHitStrategy/SplashHitStrategy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/IStrategy/IHitStrategy/SplashHitStrategy.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Enemy/EnemyMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Enemy/EnemyMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/AttackStrategy/SingleTargetAttackByProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/AttackStrategy/SingleTargetAttackByProjectile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/BaseSlimeTower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/BaseSlimeTower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/State/SlimeTowerAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/State/SlimeTowerAttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/State/SlimeTowerBaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/State/SlimeTowerBaseState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/State/SlimeTowerGrabbedState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/State/SlimeTowerGrabbedState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/State/SlimeTowerIdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/State/SlimeTowerIdleState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/State/SlimeTowerWalkState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/State/SlimeTowerWalkState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Controller/TowerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Controller/TowerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/1. Info/EpicSlimeInfo.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/1. Info/EpicSlimeInfo.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/1. Info/SlimeTowerInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/1. Info/SlimeTowerGradeInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/1. Info/SlimeTowerInfo.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/1. Info/SlimeTowerGradeInfo.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/2. UpgradeData/EpicSlimeUpgradeData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/2. UpgradeData/EpicSlimeUpgradeData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/CuteSlimeTowerData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/CuteSlimeTowerData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/NotCuteSlimeTowerData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/NotCuteSlimeTowerData.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/SlimeTowerDataSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/SlimeTowerDataSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/IStrategy/IHitStrategy/BasicHitStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/IStrategy/IHitStrategy/BasicHitStrategy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Spawner/TowerSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Spawner/TowerSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Utils/TowerGizmoVisualizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Utils/TowerGizmoVisualizer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Stage/Tile/TowerTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Stage/Tile/TowerTile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05.Animations/Controller/EnemyAnimCtrl.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/05.Animations/Controller/EnemyAnimCtrl.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/98.Animations/SlimeTower.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/98.Animations/SlimeTower.controller" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +55,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/Stat/SlimeTowerDataSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/TowerChance/TowerChanceData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Handler/SlimeTowerStatHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.8.11/Tests/Runtime/Shared/084-Loops.cs" root0="SKIP_HIGHLIGHTING" />
@@ -32,6 +63,8 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventTrigger.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Graphic/GraphicTests.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f7237cf7abef49bfbb552d7eb076e422174200/27/9402ab9d/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f7237cf7abef49bfbb552d7eb076e422174200/45/45df1b0b/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f7237cf7abef49bfbb552d7eb076e422174200/52/1ca7a64e/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f7237cf7abef49bfbb552d7eb076e422174200/e1/baba4c12/CreateAssetMenuAttribute.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -92,10 +125,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="23832">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="23832" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -119,7 +152,7 @@
       <workItem from="1731900006053" duration="23792000" />
       <workItem from="1731977476187" duration="12327000" />
       <workItem from="1731993190549" duration="1852000" />
-      <workItem from="1731996247323" duration="3500000" />
+      <workItem from="1731996247323" duration="16773000" />
     </task>
     <servers />
   </component>
