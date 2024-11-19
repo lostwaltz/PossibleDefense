@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 
 namespace Achievement
 {
-    public class UIAchievements : UIBase
+    public class UIAchievements : UIBase, IPointerClickHandler
     {
         private AchievementManager _achievementManager;
         
@@ -37,7 +38,6 @@ namespace Achievement
                         
                 _uiAchievementsSlotArray[i] = slot;
             }
-            
         }
 
         private void UpdateUI()
@@ -52,6 +52,11 @@ namespace Achievement
         {
             if (Input.GetKeyDown(KeyCode.DownArrow))
                 UpdateUI();
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            Destroy(gameObject);
         }
     }   
 }

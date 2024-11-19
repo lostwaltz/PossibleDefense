@@ -16,90 +16,18 @@ MonoBehaviour:
   - currentValue: 0
     name: "\uC5C5\uC801 \uB370\uC774\uD130"
     description: "\uC5C5\uC801 \uB370\uC774\uD130 \uD14C\uC2A4\uD2B8\uC785\uB2C8\uB2E4."
-    targetValue: 10
+    targetValue: 20
     targetId: 0
+    isReset: 0
+    icon: {fileID: 1596636647, guid: a5e645d0b2507ac42807ef8e886f7d45, type: 3}
+    action: 0
+    target: 5
+  - currentValue: 0
+    name: "\uBAAC\uC2A4\uD130\uB97C 10\uB9C8\uB9AC \uC8FD\uC774\uC138\uC694"
+    description: "\uC5C5\uC801 \uB370\uC774\uD130 \uD14C\uC2A4\uD2B8\uC785\uB2C8\uB2E4."
+    targetValue: 15
+    targetId: 100
     isReset: 0
     icon: {fileID: 1596636647, guid: a5e645d0b2507ac42807ef8e886f7d45, type: 3}
     action: 4
     target: 0
-  - currentValue: 0
-    name: "\uC5C5\uC801 \uB370\uC774\uD130"
-    description: 3463464
-    targetValue: 10
-    targetId: 0
-    isReset: 0
-    icon: {fileID: -1402544341, guid: a5e645d0b2507ac42807ef8e886f7d45, type: 3}
-    action: 4
-    target: 0
-  - currentValue: 0
-    name: "\uC5C5\uC801 \uB370\uC774\uD130"
-    description: "\uC5C5\uC801 \uB370\uC774\uD130 \uD14C\uC2A4\uD2B8\uC785\uB2C8\uB2E4."
-    targetValue: 10
-    targetId: 0
-    isReset: 0
-    icon: {fileID: -1402544341, guid: a5e645d0b2507ac42807ef8e886f7d45, type: 3}
-    action: 4
-    target: 0
-  - currentValue: 0
-    name: "\uC5C5\uC801 \uB370\uC774\uD130"
-    description: "\uC5C5\uC801 \uB370\uC774\uD130 \uD14C\uC2A4\uD2B8\uC785\uB2C8\uB2E4."
-    targetValue: 10
-    targetId: 0
-    isReset: 0
-    icon: {fileID: -1402544341, guid: a5e645d0b2507ac42807ef8e886f7d45, type: 3}
-    action: 4
-    target: 0
-  - currentValue: 0
-    name: "\uC5C5\uC801 \uB370\uC774\uD130"
-    description: 152125
-    targetValue: 10
-    targetId: 0
-    isReset: 0
-    icon: {fileID: -1402544341, guid: a5e645d0b2507ac42807ef8e886f7d45, type: 3}
-    action: 0
-    target: 0
-  - currentValue: 0
-    name: "\uC5C5\uC801 \uB370\uC774\uD130"
-    description: "\uC5C5\uC801 \uB370\uC774\uD130 \uD14C\uC2A4\uD2B8\uC785\uB2C8\uB2E4."
-    targetValue: 10
-    targetId: 0
-    isReset: 0
-    icon: {fileID: -1402544341, guid: a5e645d0b2507ac42807ef8e886f7d45, type: 3}
-    action: 4
-    target: 0
-  - currentValue: 0
-    name: "\uC5C5\uC801 \uB370\uC774\uD130"
-    description: "\uC5C5\uC801 \uB370\uC774\uD130 \uD14C\uC2A4\uD2B8\uC785\uB2C8\uB2E4."
-    targetValue: 10
-    targetId: 0
-    isReset: 0
-    icon: {fileID: -1402544341, guid: a5e645d0b2507ac42807ef8e886f7d45, type: 3}
-    action: 4
-    target: 0
-  - currentValue: 0
-    name: "\uC5C5\uC801 \uB370\uC774\uD130"
-    description: "\uC5C5\uC801 \uB370\uC774\uD130 \uD14C\uC2A4\uD2B8\uC785\uB2C8\uB2E4."
-    targetValue: 10
-    targetId: 0
-    isReset: 0
-    icon: {fileID: -1402544341, guid: a5e645d0b2507ac42807ef8e886f7d45, type: 3}
-    action: 4
-    target: 0
-  - currentValue: 0
-    name: "\uC5C5\uC801 \uB370\uC774\uD130"
-    description: "\uC5C5\uC801 \uB370\uC774\uD130 \uD14C\uC2A4\uD2B8\uC785\uB2C8\uB2E4\u3141\u3134\u3147\u3141\u3134\u3147"
-    targetValue: 10
-    targetId: 0
-    isReset: 0
-    icon: {fileID: -158120734, guid: a5e645d0b2507ac42807ef8e886f7d45, type: 3}
-    action: 2
-    target: 5
-  - currentValue: 0
-    name: "\uC5C5\uC801 \uB370\uC774\uD130"
-    description: 123123
-    targetValue: 10
-    targetId: 0
-    isReset: 0
-    icon: {fileID: 1064545691, guid: a5e645d0b2507ac42807ef8e886f7d45, type: 3}
-    action: 0
-    target: 2

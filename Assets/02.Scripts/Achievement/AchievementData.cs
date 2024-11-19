@@ -10,32 +10,34 @@ namespace Achievement
         {
             name = achievementData.name;
             description = achievementData.description;
-            
+
             target = achievementData.target;
             action = achievementData.action;
-            
+
             targetValue = achievementData.targetValue;
             targetId = achievementData.targetId;
-            
-            icon = achievementData.icon;;
-            
+
+            icon = achievementData.icon;
+            ;
+
             isReset = achievementData.isReset;
-            
+
             currentValue = 0;
         }
+
         [HideInInspector] public float currentValue;
-        
+
         public string name;
         public string description;
-        
+
         public float targetValue;
-        public int  targetId;
+        public int targetId;
 
         public bool isReset;
-        
+
         public Sprite icon;
-        
-        
+
+
         public Action action;
         public Target target;
 

@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37757908-2c54-49be-8d2e-c87ce56dd95e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/UI/UIBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/UI/UIBase.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/TestScene_KMC.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scenes/TestScene_KMC.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementInfoContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementDataContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementInfoContainer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementDataContainer.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/UI/Achievements/UIAchievements.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/UI/Achievements/UIAchievements.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/04.Sos/AchievementDataSheet/AchievementsData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04.Sos/AchievementDataSheet/AchievementsData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/Belevich/Hyper casual mobile GUI/Sprites/icons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/Belevich/Hyper casual mobile GUI/Sprites/icons.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/Belevich/Hyper casual mobile GUI/Sprites/popups.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/Belevich/Hyper casual mobile GUI/Sprites/popups.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Font/Hakgyoansim Dunggeunmiso TTF B SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Font/Hakgyoansim Dunggeunmiso TTF B SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,10 +83,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="37960">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="37960" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -120,7 +110,8 @@
       <workItem from="1731827521559" duration="4339000" />
       <workItem from="1731850385433" duration="84000" />
       <workItem from="1731891883596" duration="8323000" />
-      <workItem from="1731912002786" duration="7134000" />
+      <workItem from="1731912002786" duration="11328000" />
+      <workItem from="1731982582003" duration="2354000" />
     </task>
     <servers />
   </component>
