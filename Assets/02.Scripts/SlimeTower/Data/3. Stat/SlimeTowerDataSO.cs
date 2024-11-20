@@ -3,8 +3,8 @@ using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "SlimeTowerData", menuName = "SlimeTower/Data/SlimeTowerData")]
 public class SlimeTowerDataSO : ScriptableObject
-{
-    public string name; 
+{ 
+    public string towerName; 
    [SerializeField] private SlimeTowerGradeInfo slimeTowerGradeInfo;
    [SerializeField] private SlimeTowerStatUpgradeData slimeTowerUpgradeDataData;
    public SlimeTowerStats SlimeTowerStats;
