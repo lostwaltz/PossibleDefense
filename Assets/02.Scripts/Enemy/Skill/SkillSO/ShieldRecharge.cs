@@ -19,7 +19,7 @@ public class ShieldRecharge : BaseSkillSO
                 enemyHealth.ShieldRecharge(shieldAmount);
 
                 //buff effect's duration 3sec
-                if(SpawnManager.Instance.ObjectPool.SpawnFromPool("Shield").TryGetComponent<ParticleController>(out ParticleController particle))
+                if(SpawnManager.Instance.ObjectPoolLegacy.SpawnFromPool("Shield").TryGetComponent<ParticleController>(out ParticleController particle))
                     particle.Initialize(slime.transform, 3f);   
             }
         }

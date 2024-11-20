@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 using Achievement;
 using UnityEngine;
 
-public class ObjectPool : MonoBehaviour
+public class ObjectPoolLegacy : MonoBehaviour
 {
     [System.Serializable]
     public class Pool

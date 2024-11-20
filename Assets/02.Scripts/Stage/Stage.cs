@@ -35,7 +35,7 @@ public class Stage : MonoBehaviour
 
             for (int x = 0; x < curMapMatrix[z].Count; x++)
             {
-                BaseTile tile = StageManager.Instance.TileObjectPool.SpawnFromPool(curMapMatrix[z][x].ToString()).GetComponent<BaseTile>();
+                BaseTile tile = StageManager.Instance.TileObjectPoolLegacy.SpawnFromPool(curMapMatrix[z][x].ToString()).GetComponent<BaseTile>();
                 tile.transform.position = SetTileWorldPos(x, z);
 
                 CoulumnTileWorldPos.Add(tile);

@@ -1,12 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PoolManagerForTest: Singleton<PoolManagerForTest>
 {
-    public  ObjectPool Pool;
+    [FormerlySerializedAs("Pool")] public  ObjectPoolLegacy poolLegacy;
 
     private void Start()
     {
-        Pool = GetComponent<ObjectPool>();
+        poolLegacy = GetComponent<ObjectPoolLegacy>();
     }
 }
