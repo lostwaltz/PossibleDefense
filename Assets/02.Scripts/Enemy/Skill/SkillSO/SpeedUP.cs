@@ -17,9 +17,9 @@ public class SpeedUP : BaseSkillSO
             if(slime.TryGetComponent<ForceReceiver>(out ForceReceiver force))
             {
                 force.SpeedBuff(percentage, duration, true);
-                if (SpawnManager.Instance.ObjectPoolLegacy.SpawnFromPool("Speed").TryGetComponent<ParticleController>(out ParticleController particle))
+                if (SpawnManager.Instance.ObjectPoolLegacy.SpawnFromPool("Speed").TryGetComponent<BaseParticle>(out BaseParticle particle))
                 {
-                    particle.Initialize(slime.transform, duration);
+                    particle.Setting(slime.transform);
                 }
                 SoundPlay("Magic", slime.transform.position);
             }
