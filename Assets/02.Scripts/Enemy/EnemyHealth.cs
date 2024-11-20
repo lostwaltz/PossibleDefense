@@ -50,10 +50,11 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        //쉴드데미지 처리 => 회피 => 체력데미지 처리
+        float remainingDamage = Shield.AbsorbDamage(damage);
+
         float evasionPercentage = Random.Range(0f, 100f);
         if (evasionPercentage < Evasion) return;
-
-        float remainingDamage = Shield.AbsorbDamage(damage);
 
         if (remainingDamage > 0)
         {

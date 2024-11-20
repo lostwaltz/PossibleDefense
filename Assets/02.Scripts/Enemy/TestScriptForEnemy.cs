@@ -10,8 +10,8 @@ public class TestScriptForEnemy : MonoBehaviour
 
         foreach (Enemy enemy in monsters)
         {
-            if(enemy.gameObject.activeSelf.Equals(true))
-            enemy.TakeDamage(30);
+            if (enemy.gameObject.activeSelf.Equals(true))
+                enemy.TakeDamage(5);
         }
     }
 
@@ -25,8 +25,13 @@ public class TestScriptForEnemy : MonoBehaviour
             {
                 //slow enemy
             }
-                
+
         }
+    }
+
+    public void BossSpawn()
+    {
+        SpawnManager.Instance.BossSpawn();
     }
 
     public void SpawnMonster(int id)

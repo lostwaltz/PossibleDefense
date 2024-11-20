@@ -5,10 +5,6 @@ using UnityEngine.UI;
 
 public class StageSelect : UIBase
 {
-    //CSV 파일 갯수만큼의 자물쇠 표시
-    //현재 클리어한 최대 스테이지가 몇인지 표시
-    //최대 클리어한 스테이지 + 1까지만 Stage N
-
     [SerializeField] private StageButton StageButton;
     [SerializeField] private GameObject StageLocked;
     [SerializeField] private GameObject GridLayout;
@@ -35,6 +31,7 @@ public class StageSelect : UIBase
         {
             if(i < curStage)
             {
+                //현재까지 클리어한 스테이지는 번호로 표시
                 StageButton btn = Instantiate(StageButton, GridLayout.transform);
                 btn.SetButton(i);
             }
