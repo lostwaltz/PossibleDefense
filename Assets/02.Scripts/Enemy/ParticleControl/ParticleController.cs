@@ -28,6 +28,7 @@ public class ParticleController : MonoBehaviour
     public void Initialize(Transform target, float duration)
     {
         particle.Stop();
+        SoundManager.Instance.PlayClip("Magic", target.position);
         
         isAlive = true;
         this.Target = target;
