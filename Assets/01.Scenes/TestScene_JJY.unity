@@ -3699,7 +3699,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2062032378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3798,7 +3798,10 @@ MonoBehaviour:
   _towerChanceData: {fileID: 11400000, guid: 70b35abe377d9bb4a8bff72665d4e49c, type: 2}
   tile: []
   spawnButton: {fileID: 1970578226}
-  SlimeTowers: []
+  SlimeTowers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &2106617330
 GameObject:
   m_ObjectHideFlags: 0
