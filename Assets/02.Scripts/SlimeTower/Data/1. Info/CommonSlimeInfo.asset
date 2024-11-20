@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d776e04426f2481789d594b71c23e292, type: 3}
   m_Name: CommonSlimeInfo
   m_EditorClassIdentifier: 
-  id: 0
   grade: 0
-  sellPrice: 100
+  sellPrice: 50
