@@ -8,7 +8,7 @@ public class SoundManager : SingletonDontDestroy<SoundManager>
     [Header ("Volumes")]
     [SerializeField][Range(0f, 1f)] private float soundEffectVolume;
     [SerializeField][Range(0f, 1f)] private float soundEffectPitchVariance;
-    [SerializeField][Range(0f, 1f)] private float musicVolume;
+    [SerializeField][Range(0f, 1f)] private float BGMVolume;
 
     [Header("BGM")]
     [SerializeField] private AudioSource BGMSource;  //for BGM
@@ -27,8 +27,11 @@ public class SoundManager : SingletonDontDestroy<SoundManager>
     {
         base.Awake();
 
-        BGMSource.volume = musicVolume;
+        BGMSource.volume = BGMVolume;
         BGMSource.loop = true;
+
+        InitPool();
+        InitDictionary();
     }
     
     private void Start()
@@ -72,23 +75,37 @@ public class SoundManager : SingletonDontDestroy<SoundManager>
     public void PlayClip(string id, Vector3 position)
     {
         if (!soundDictionary.ContainsKey(id))
+        {
+            Debug.Log("don't have " + id);
             return;
+        }
 
         AudioClip clip = soundDictionary[id];
-        if(audioSourcePool.Count <= 0)
+        AudioSource _audioSource = GetAudioSource();
+        _audioSource.transform.position = position;
+
+        //Play Clip
+        _audioSource.clip = clip;
+        _audioSource.volume = soundEffectVolume;
+        _audioSource.Play();
+        _audioSource.pitch = 1f + Random.Range(-soundEffectPitchVariance, soundEffectPitchVariance);
+
+        //Stop after playing
+        StartCoroutine(ReturnToPoolAfterPlaying(_audioSource));
+    }
+
+    private AudioSource GetAudioSource()
+    {
+        AudioSource newSource;
+
+        if (audioSourcePool.Count <= 0)
         {
             CreateAudioSource();
         }
+        newSource = audioSourcePool.Dequeue();
+        newSource.gameObject.SetActive(true);
 
-        AudioSource _audioSource = audioSourcePool.Dequeue();
-        _audioSource.gameObject.SetActive(true);
-        _audioSource.transform.position = position;
-
-        _audioSource.volume = soundEffectVolume;
-        _audioSource.PlayOneShot(clip);
-        _audioSource.pitch = 1f + Random.Range(-soundEffectPitchVariance, soundEffectPitchVariance);
-
-        StartCoroutine(ReturnToPoolAfterPlaying(_audioSource));
+        return newSource;
     }
 
     private IEnumerator ReturnToPoolAfterPlaying(AudioSource audioSource)
@@ -102,7 +119,7 @@ public class SoundManager : SingletonDontDestroy<SoundManager>
 
     public void SetBgmVolume(float volume)
     {
-        musicVolume = volume;
+        BGMVolume = volume;
     }
     
     public void SetEffectVolume(float volume)
