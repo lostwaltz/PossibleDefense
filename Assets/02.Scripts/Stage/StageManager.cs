@@ -6,12 +6,13 @@ using System.Threading;
 using System.Xml;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
 public class StageManager : Singleton<StageManager>
 {
     [SerializeField] private Stage stage; //현재 사용될 Stage 변수
-    [SerializeField] private ObjectPool tileObjectPool; //타일을 꺼내는 오브젝트 Pool
+    [FormerlySerializedAs("tileObjectPool")] [SerializeField] private ObjectPoolLegacy tileObjectPoolLegacy; //타일을 꺼내는 오브젝트 Pool
 
     [SerializeField] private int callStageNum = 0; //호출할 스테이지 넘버링 
     [SerializeField] private UpgradesController upgradeController;
@@ -35,7 +36,7 @@ public class StageManager : Singleton<StageManager>
 
 
     public Stage Stage { get => stage; }
-    public ObjectPool TileObjectPool { get => tileObjectPool; }
+    public ObjectPoolLegacy TileObjectPoolLegacy { get => tileObjectPoolLegacy; }
     public int CurGold { get => curGold; set => curGold = value; }
     public int SummonTowerCost { get => summonTowerCost; }
     public int CurEnemyCount { get => curEnemyCount; set => curEnemyCount = value; }
@@ -47,9 +48,9 @@ public class StageManager : Singleton<StageManager>
         base.Awake();
 
         //ObjectPool이 Inspector에서 참조가 안된경우 체크
-        if (tileObjectPool == null)
+        if (tileObjectPoolLegacy == null)
         {
-            tileObjectPool = GetComponent<ObjectPool>();
+            tileObjectPoolLegacy = GetComponent<ObjectPoolLegacy>();
         }
 
         if(upgradeController == null)
