@@ -16,13 +16,13 @@ public class StageManager : Singleton<StageManager>
 
     [SerializeField] private int callStageNum = 0; //호출할 스테이지 넘버링 
     [SerializeField] private UpgradesController upgradeController;
+    [SerializeField] private WaveSkip waveSkip;
 
     private int curEnemyCount = 0; // 현재 필드에 있는 적의 갯수
     private int finishEnemyCount = 100; // 필드에 해당 Enemy 갯수 이상되면 게임오버되는 갯수
 
     private float waveTimer;
     private WaveStageData curWave; //현재 Wave Data
-    private Coroutine waveCoroutine;
     private bool allWaveFinish = false; //모든 웨이브가 소환 된 경우 체크하는 변수
 
     private int curGold = 100000;
@@ -58,6 +58,11 @@ public class StageManager : Singleton<StageManager>
         {
             upgradeController = GetComponent<UpgradesController>();
         }
+
+        if(waveSkip == null)
+        {
+            waveSkip = GetComponent<WaveSkip>();     
+        }
     }
 
     private void Start()
@@ -90,12 +95,6 @@ public class StageManager : Singleton<StageManager>
 
     private void WaveSetting()
     {
-        //if (waveCoroutine != null)
-        //{
-        //    StopCoroutine(waveCoroutine);
-        //    waveCoroutine = null;
-        //}
-
         if (curWaveStageData.Count != 0)
         {
             curWave = curWaveStageData.Dequeue();
