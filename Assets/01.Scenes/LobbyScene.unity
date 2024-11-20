@@ -960,7 +960,6 @@ GameObject:
   m_Component:
   - component: {fileID: 617799940}
   - component: {fileID: 617799939}
-  - component: {fileID: 617799941}
   - component: {fileID: 617799942}
   m_Layer: 0
   m_Name: SoundManager
@@ -983,10 +982,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundEffectVolume: 0
   soundEffectPitchVariance: 0
-  musicVolume: 0
-  musicAudioSource: {fileID: 617799942}
-  musicClip: {fileID: 0}
-  objectPool: {fileID: 617799941}
+  BGMVolume: 0
+  BGMSource: {fileID: 617799942}
+  BGM: {fileID: 8300000, guid: 232e77919cccf49498d23e09ab448705, type: 3}
+  soundDatas: []
+  initSize: 10
+  audioSourcePrefab: {fileID: 2530917215578964213, guid: 6591a24c44b51d5428532e544e9e35ad,
+    type: 3}
 --- !u!4 &617799940
 Transform:
   m_ObjectHideFlags: 0
@@ -1002,23 +1004,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &617799941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 617799938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6bb10d372ebdc440868c5029e1dcd84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pools:
-  - tag: SoundSource
-    prefab: {fileID: 1602887027058565226, guid: 6591a24c44b51d5428532e544e9e35ad,
-      type: 3}
-    size: 10
 --- !u!82 &617799942
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1674,7 +1659,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -37.3, y: -57.7}
+  m_AnchoredPosition: {x: -37.30005, y: -57.69995}
   m_SizeDelta: {x: 150, y: 120}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1654809564
