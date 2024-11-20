@@ -22,6 +22,7 @@ public class StageManager : Singleton<StageManager>
     private float waveTimer;
     private WaveStageData curWave; //현재 Wave Data
     private Coroutine waveCoroutine;
+    private bool allWaveFinish = false; //모든 웨이브가 소환 된 경우 체크하는 변수
 
     private int curGold = 100000;
     private int summonTowerCost = 100;
@@ -88,21 +89,29 @@ public class StageManager : Singleton<StageManager>
 
     private void WaveSetting()
     {
-        if (waveCoroutine != null)
+        //if (waveCoroutine != null)
+        //{
+        //    StopCoroutine(waveCoroutine);
+        //    waveCoroutine = null;
+        //}
+
+        if (curWaveStageData.Count != 0)
         {
-            StopCoroutine(waveCoroutine);
-            waveCoroutine = null;
+            curWave = curWaveStageData.Dequeue();
+            waveTimer = curWave.WaveTime;
+
+            ICollection<int> keys = curWave.WaveSpawnData.Keys;
+
+            foreach (int id in keys)
+            {
+                SpawnEnemy(id);
+            }
         }
-
-        curWave = curWaveStageData.Dequeue();
-        waveTimer = curWave.WaveTime;
-
-        ICollection<int> keys = curWave.WaveSpawnData.Keys;
-
-        foreach(int id in keys)
+        else
         {
-            SpawnEnemy(id);
-        } 
+            Debug.Log("모든 웨이브 완료");
+            allWaveFinish = true;
+        }
     }
 
     private void CrateWaveData()
@@ -192,11 +201,14 @@ public class StageManager : Singleton<StageManager>
 
     private void Update()
     {
-        waveTimer -= Time.deltaTime;
-
-        if (waveTimer <= 0)
+        if (!allWaveFinish)
         {
-            WaveSetting();
+            waveTimer -= Time.deltaTime;
+
+            if (waveTimer <= 0)
+            {
+                WaveSetting();
+            }
         }
     }
 

@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 128455485}
   - component: {fileID: 128455484}
   - component: {fileID: 128455483}
+  - component: {fileID: 128455486}
   m_Layer: 5
   m_Name: EpicUpgradeBtn
   m_TagString: Untagged
@@ -154,17 +155,17 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1113263170}
-  - {fileID: 1961267643}
+  - {fileID: 725700628}
   - {fileID: 348940974}
   - {fileID: 1304373573}
-  - {fileID: 725700628}
+  - {fileID: 1961267643}
+  - {fileID: 1113263170}
   m_Father: {fileID: 1120728187}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 120, y: 270}
+  m_SizeDelta: {x: 120, y: 253.2794}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &128455483
 MonoBehaviour:
@@ -248,6 +249,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128455480}
   m_CullTransparentMesh: 1
+--- !u!114 &128455486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128455480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8a486dbb7eff9d40bfbca1e2ca1dc56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: {fileID: 1304373574}
+  level: {fileID: 1113263171}
 --- !u!1 &153560506
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,7 +870,7 @@ GameObject:
   - component: {fileID: 348940976}
   - component: {fileID: 348940975}
   m_Layer: 5
-  m_Name: Cost
+  m_Name: CostType
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1469,11 +1484,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 61042a82a4f415e4fa2fa6c894e9e03b, type: 2}
   - {fileID: 11400000, guid: 79c601b725b45d641acae4f7a73602e7, type: 2}
   buttons:
-  - {fileID: 1378062321}
-  - {fileID: 993458401}
-  - {fileID: 128455483}
+  - {fileID: 1378062324}
+  - {fileID: 993458404}
+  - {fileID: 128455486}
   gradeCost: 320000006400000096000000
   maxUpgradeLevel: 10
+  upgradeModifier: 1.2
 --- !u!1 &583952490
 GameObject:
   m_ObjectHideFlags: 0
@@ -2135,6 +2151,7 @@ GameObject:
   - component: {fileID: 993458403}
   - component: {fileID: 993458402}
   - component: {fileID: 993458401}
+  - component: {fileID: 993458404}
   m_Layer: 5
   m_Name: RarelUpgradeBtn
   m_TagString: Untagged
@@ -2154,17 +2171,17 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 495664777}
-  - {fileID: 1570768835}
+  - {fileID: 2092963246}
   - {fileID: 1070867184}
   - {fileID: 2071142556}
-  - {fileID: 2092963246}
+  - {fileID: 1570768835}
+  - {fileID: 495664777}
   m_Father: {fileID: 1120728187}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 120, y: 270}
+  m_SizeDelta: {x: 120, y: 253.2794}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &993458401
 MonoBehaviour:
@@ -2248,6 +2265,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993458398}
   m_CullTransparentMesh: 1
+--- !u!114 &993458404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993458398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8a486dbb7eff9d40bfbca1e2ca1dc56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: {fileID: 2071142557}
+  level: {fileID: 495664778}
 --- !u!1 &997629023
 GameObject:
   m_ObjectHideFlags: 0
@@ -2291,7 +2322,7 @@ GameObject:
   - component: {fileID: 1070867186}
   - component: {fileID: 1070867185}
   m_Layer: 5
-  m_Name: Cost
+  m_Name: CostType
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2603,7 +2634,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: 6
     m_Bottom: 0
   m_ChildAlignment: 0
   m_Spacing: 12
@@ -3109,6 +3140,7 @@ GameObject:
   - component: {fileID: 1378062323}
   - component: {fileID: 1378062322}
   - component: {fileID: 1378062321}
+  - component: {fileID: 1378062324}
   m_Layer: 5
   m_Name: CommonUpgradeBtn
   m_TagString: Untagged
@@ -3128,17 +3160,17 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2140008015}
-  - {fileID: 583952491}
+  - {fileID: 1591700708}
   - {fileID: 2088453014}
   - {fileID: 185981273}
-  - {fileID: 1591700708}
+  - {fileID: 583952491}
+  - {fileID: 2140008015}
   m_Father: {fileID: 1120728187}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 120, y: 270}
+  m_SizeDelta: {x: 120, y: 253.2794}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1378062321
 MonoBehaviour:
@@ -3222,6 +3254,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378062318}
   m_CullTransparentMesh: 1
+--- !u!114 &1378062324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378062318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8a486dbb7eff9d40bfbca1e2ca1dc56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: {fileID: 185981274}
+  level: {fileID: 2140008016}
 --- !u!1 &1384138083
 GameObject:
   m_ObjectHideFlags: 0
@@ -5192,7 +5238,7 @@ GameObject:
   - component: {fileID: 2088453016}
   - component: {fileID: 2088453015}
   m_Layer: 5
-  m_Name: Cost
+  m_Name: CostType
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
