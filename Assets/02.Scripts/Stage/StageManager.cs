@@ -41,6 +41,7 @@ public class StageManager : Singleton<StageManager>
     public int CurGold { get => curGold; set => curGold = value; }
     public int SummonTowerCost { get => summonTowerCost; }
     public int CurEnemyCount { get => curEnemyCount; set => curEnemyCount = value; }
+    public Queue<WaveStageData> CurWaveStageData { get => curWaveStageData; }
 
     StringBuilder stringBuilder = new StringBuilder(); //문자열 최적화를 위한 스트링빌더 멤버변수로 선언
 
@@ -93,7 +94,7 @@ public class StageManager : Singleton<StageManager>
         CrateWaveData();
     }
 
-    private void WaveSetting()
+    public void WaveSetting()
     {
         if (curWaveStageData.Count != 0)
         {
