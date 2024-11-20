@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051ef85106d94558a357eeafa44f8f37, type: 3}
   m_Name: SlimeTowerData
   m_EditorClassIdentifier: 
-  name: slime
+  name: Slime
   slimeTowerGradeInfo: {fileID: 11400000, guid: 488ff5a0ea58f6d4781ae63b8179e1b4,
     type: 2}
   slimeTowerUpgradeDataData: {fileID: 11400000, guid: fb3503099ce8c1b46bcaa00f4547c485,

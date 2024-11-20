@@ -45,7 +45,7 @@ public class BaseProjectile : MonoBehaviour
     {
         if ((_enemyLayerMask & (1 << other.gameObject.layer)) != 0)
         {
-            _hitStrategy.Execute();
+            _hitStrategy?.Execute();
             other.GetComponent<EnemyHealth>().TakeDamage(_damage);
             gameObject.SetActive(false);
         }
