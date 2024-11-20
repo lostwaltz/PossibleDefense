@@ -22,7 +22,7 @@ public class WaveSkip : MonoBehaviour
         }
         else
         {
-            Debug.Log("필드에 몹이 남아있습니다.");
+            Debug.Log("필드에 몹이 남아있거나 마지막 웨이브입니다.");
         }
     }
 }

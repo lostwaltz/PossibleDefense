@@ -15,9 +15,9 @@ MonoBehaviour:
   towerChances:
   - towerGrade: 0
     probability: 500
-  - towerGrade: 3
-    probability: 10
   - towerGrade: 1
     probability: 400
   - towerGrade: 2
     probability: 30
+  - towerGrade: 3
+    probability: 10

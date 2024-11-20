@@ -1789,6 +1789,7 @@ GameObject:
   - component: {fileID: 527513481}
   - component: {fileID: 527513482}
   - component: {fileID: 527513483}
+  - component: {fileID: 527513484}
   m_Layer: 0
   m_Name: StageManager
   m_TagString: Untagged
@@ -1813,6 +1814,7 @@ MonoBehaviour:
   callStageNum: 2
   upgradeController: {fileID: 527513482}
   waveSkip: {fileID: 0}
+  testTowerSpawner: {fileID: 527513484}
   curEnmeyWayPointData: []
   uI_WaveIndicator: {fileID: 2046388852}
   uI_EnemyCount: {fileID: 1467468907}
@@ -1897,6 +1899,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1878336935}
+--- !u!114 &527513484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527513478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3cda99ff74acb4e8f0d7a8cd86124d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _towerChanceData: {fileID: 11400000, guid: 70b35abe377d9bb4a8bff72665d4e49c, type: 2}
+  tile: []
 --- !u!1 &583952490
 GameObject:
   m_ObjectHideFlags: 0
@@ -2174,7 +2190,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 639096400}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 527513479}
+        m_TargetAssemblyTypeName: StageManager, Assembly-CSharp
+        m_MethodName: Test
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &639096400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4696,54 +4724,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 80}
   m_Pivot: {x: 0, y: 1}
---- !u!1 &1628669690
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1628669692}
-  - component: {fileID: 1628669691}
-  m_Layer: 0
-  m_Name: TestTowerSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1628669691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1628669690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f3cda99ff74acb4e8f0d7a8cd86124d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _towerChanceData: {fileID: 11400000, guid: 70b35abe377d9bb4a8bff72665d4e49c, type: 2}
-  tile: []
-  spawnButton: {fileID: 639096399}
-  SlimeTowers: []
---- !u!4 &1628669692
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1628669690}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1646452224
 GameObject:
   m_ObjectHideFlags: 0
@@ -6935,6 +6915,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140008014}
   m_CullTransparentMesh: 1
+--- !u!4 &365265821211631482
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6748247553319534026}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &489634798113711685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6748247553319534026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6bb10d372ebdc440868c5029e1dcd84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: Bullet
+    prefab: {fileID: 2239365987951896150, guid: 2bd8e4da673842742a0f79e0e8c0185e,
+      type: 3}
+    size: 10
+  - tag: HitParticle
+    prefab: {fileID: 2059766538212976467, guid: 4146ae7f5f311ce44b1f388563d9c2fb,
+      type: 3}
+    size: 10
+  - tag: SplashParticle
+    prefab: {fileID: 8939984208906321761, guid: 1edf7898249d1a84e9f12a1aa515283b,
+      type: 3}
+    size: 10
 --- !u!1 &943483767159502600
 GameObject:
   m_ObjectHideFlags: 0
@@ -7201,6 +7221,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &6748247553319534026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 365265821211631482}
+  - component: {fileID: 6907300130751957387}
+  - component: {fileID: 489634798113711685}
+  m_Layer: 0
+  m_Name: BulletObjectPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!222 &6871580404292288657
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7249,6 +7287,19 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &6907300130751957387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6748247553319534026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a8a307ae0542628b337f5a8e2b38b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolLegacy: {fileID: 489634798113711685}
 --- !u!114 &7326260148882491007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7366,4 +7417,4 @@ SceneRoots:
   - {fileID: 2026347957}
   - {fileID: 527513480}
   - {fileID: 9020239629721173248}
-  - {fileID: 1628669692}
+  - {fileID: 365265821211631482}
