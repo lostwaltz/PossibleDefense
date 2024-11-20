@@ -26,6 +26,7 @@ public class EnemyMovement : MonoBehaviour
     public void SetUp(Vector3[] waypoints, EnemySO data)
     {
         this.wayPoints = waypoints;
+        //this.model = data.modelPrefab;
         forceReceiver.Initialize(data.baseSpeed * data.speedModifier);
 
         curWayPointIndex = 0;

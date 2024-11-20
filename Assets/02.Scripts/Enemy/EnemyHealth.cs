@@ -92,8 +92,8 @@ public class EnemyHealth : MonoBehaviour
 
     private void UpdateUI()
     {
-        HPBar.fillAmount = Health.CurrentHealth / Health.MaxHealth;
-        shieldImage.fillAmount = Shield.CurrentShield / Shield.MaxShield;
+        HPBar.fillAmount = Health.GetHealthPercentage;
+        shieldImage.fillAmount = Shield.GetShieldPercentage;
     }
 }
 

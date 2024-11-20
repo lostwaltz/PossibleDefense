@@ -20,3 +20,5 @@ MonoBehaviour:
   <shield>k__BackingField: 100
   <maxHPModifier>k__BackingField: 1
   <speedModifier>k__BackingField: 1
+  <modelPrefab>k__BackingField: {fileID: 3105966040528353855, guid: 57bd208945756d2409e834eb3963d3a3,
+    type: 3}
