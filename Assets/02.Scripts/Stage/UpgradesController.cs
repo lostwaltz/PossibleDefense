@@ -1,40 +1,64 @@
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using System.Collections.Generic;
-using Unity.Burst.Intrinsics;
 
-public class UpgradesController : MonoBehaviour 
+[System.Serializable]
+public class StageTowerUpgradeLevel
+{
+    public TowerGrade Grade;
+    public int Level;
+
+    public StageTowerUpgradeLevel(TowerGrade Grade, int Level)
+    {
+        this.Grade = Grade;
+        this.Level = Level;
+    }
+}
+
+public class UpgradesController : MonoBehaviour
 {
     [SerializeField] private SlimeTowerStatUpgradeData[] _upgradeDatas;
     [SerializeField] private Button[] buttons;
 
-    private Dictionary<Button, TowerGrade> upgradeButtonMappings;
+    [SerializeField] private int maxUpgradeLevel = 10;
+    private Dictionary<Button, StageTowerUpgradeLevel> upgradeButtonMappings;
 
     private void Awake()
     {
-        upgradeButtonMappings = new Dictionary<Button, TowerGrade>
+        upgradeButtonMappings = new Dictionary<Button, StageTowerUpgradeLevel>
         {
-            { buttons[0], TowerGrade.Common},
-            { buttons[1], TowerGrade.Rare},
-            { buttons[2], TowerGrade.Epic},            
+
+            { buttons[0], new StageTowerUpgradeLevel(TowerGrade.Common, 1)},
+            { buttons[1], new StageTowerUpgradeLevel(TowerGrade.Rare, 1)},
+            { buttons[2], new StageTowerUpgradeLevel(TowerGrade.Epic, 1)},
         };
 
-        foreach(KeyValuePair<Button, TowerGrade> pair in upgradeButtonMappings)
+
+        foreach (KeyValuePair<Button, StageTowerUpgradeLevel> pair in upgradeButtonMappings)
         {
+            TextMeshProUGUI LevelText = pair.Key.GetComponentInChildren<TextMeshProUGUI>();
+
             pair.Key.onClick.AddListener(() => UpgradeTowerByGrade(pair.Value));
+            pair.Key.onClick.AddListener(() =>
+            LevelText.text = maxUpgradeLevel == pair.Value.Level ? StageUpgradeConstain.MaxUpgrade : pair.Value.Level.ToString()); //UI 출력 로직 
+
         }
     }
 
     //버튼 누르면 해당 등급에 따라 강화 
-    public void UpgradeTowerByGrade(TowerGrade grade)
+    public void UpgradeTowerByGrade(StageTowerUpgradeLevel upgradeTarget)
     {
-        foreach (var data in _upgradeDatas)
+        if (maxUpgradeLevel > upgradeTarget.Level)
         {
-            if (data.Grade == grade)
+            foreach (SlimeTowerStatUpgradeData data in _upgradeDatas)
             {
-                data.OnUpgrade();
-                break;
+                if (data.Grade == upgradeTarget.Grade)
+                {
+                    upgradeTarget.Level++;
+                    data.OnUpgrade();
+                    break;
+                }
             }
         }
     }
