@@ -20,7 +20,15 @@ public class Shield
 
     public void Recharge(float amount)
     {
+        if(MaxShield < CurrentShield + amount)
+        {
+            MaxShield = amount;
+        }
+
         CurrentShield = Mathf.Clamp(CurrentShield + amount, 0, MaxShield);
     }
+
+    public float GetShieldPercentage => CurrentShield / MaxShield;
+
 }
 
