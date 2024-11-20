@@ -15,6 +15,13 @@ public static class StageConstain
 
 }
 
+public static class StageUpgradeConstain
+{
+    public static readonly string MaxUpgrade = "MAX";
+   
+
+}
+
 public enum StageTileTag
 {
     EnemyWayTile,

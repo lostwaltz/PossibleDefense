@@ -6,6 +6,7 @@ using System.Threading;
 using System.Xml;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class StageManager : Singleton<StageManager>
@@ -17,7 +18,7 @@ public class StageManager : Singleton<StageManager>
     [SerializeField] private UpgradesController upgradeController;
 
     private int curEnemyCount = 0; // 현재 필드에 있는 적의 갯수
-    private int finishEnemyCount = 100; // 필드에 해당 Enemy 갯수 이상되면 게임오버되는 갯수
+    [SerializeField] private int finishEnemyCount = 100; // 필드에 해당 Enemy 갯수 이상되면 게임오버되는 갯수
 
     private float waveTimer;
     private WaveStageData curWave; //현재 Wave Data
@@ -61,7 +62,7 @@ public class StageManager : Singleton<StageManager>
     private void Start()
     {
         //Debug
-        GameStartInit(callStageNum);
+        //GameStartInit(callStageNum);
     }
 
     //외부 Scene에서 게임 씬 동작하는 코드입니다. 
@@ -197,6 +198,11 @@ public class StageManager : Singleton<StageManager>
         if (waveTimer <= 0)
         {
             WaveSetting();
+        }
+
+        if(GameOverCheck())
+        {
+            SceneLoadManager.Instance.LoadScene("LobbyScene");
         }
     }
 
