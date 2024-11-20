@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class TowerSpawner : MonoBehaviour
 {
@@ -25,20 +26,35 @@ public class TowerSpawner : MonoBehaviour
     {
         float randomValue = UnityEngine.Random.Range(0f, 1f);
         float cumulativeChance = 0f;
-        GameObject gameObject = new GameObject();
+        GameObject tower = new GameObject();
         
         for (int i = 0; i < _chanceList.Count; i++)
         {
             cumulativeChance += _chanceList[i];
             if (randomValue <= cumulativeChance)
             {
-                  break;  
+                  //tower = In
             }
         }
-        return gameObject;
+        return tower;
     }
 
+    public GameObject InstantiateRandomTower(TowerGrade grade)
+    {
+         GameObject[] towers = Resources.LoadAll<GameObject>($"Towers/{grade}");
     
+        if (towers.Length == 0)
+        {
+            Debug.LogWarning($"해당 등급에 타워가 존재하지 ㅇ낫습니다: {grade}");
+            return null;
+        }
+
+         var randomIndex = Random.Range(0, towers.Length);
+        GameObject selectedTower = towers[randomIndex];
+
+         return Instantiate(selectedTower);
+    }
+
     private void NormalizeTowerProbabilities()
     {
         float totalProbability = 0f;

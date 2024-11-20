@@ -5,7 +5,7 @@ using UnityEngine;
 public enum TowerGrade
 {
     Common,
-    Normal,
+    Rare,
     Epic,
     Legendary
 }

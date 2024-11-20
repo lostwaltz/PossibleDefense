@@ -1,48 +1,125 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class SoundManager : SingletonDontDestroy<SoundManager>
 {
+    [Header ("Volumes")]
     [SerializeField][Range(0f, 1f)] private float soundEffectVolume;
     [SerializeField][Range(0f, 1f)] private float soundEffectPitchVariance;
-    [SerializeField][Range(0f, 1f)] private float musicVolume;
+    [SerializeField][Range(0f, 1f)] private float BGMVolume;
 
-    [SerializeField] private AudioSource musicAudioSource;
-    [SerializeField] private AudioClip musicClip;
-    
-    [SerializeField] private ObjectPool objectPool;
+    [Header("BGM")]
+    [SerializeField] private AudioSource BGMSource;  //for BGM
+    [SerializeField] private AudioClip BGM;
+
+    [Header ("SFX")]
+    [SerializeField] private List<SoundData> soundDatas;
+    [SerializeField] private int initSize = 30;
+    [SerializeField] private AudioSource audioSourcePrefab;  //only has AudioSource
+
+    private Dictionary<string, AudioClip> soundDictionary = new Dictionary<string, AudioClip>();
+    private Queue<AudioSource> audioSourcePool = new Queue<AudioSource>();
 
 
     protected override void Awake()
     {
         base.Awake();
 
-        musicAudioSource.volume = musicVolume;
-        musicAudioSource.loop = true;
+        BGMSource.volume = BGMVolume;
+        BGMSource.loop = true;
+
+        InitPool();
+        InitDictionary();
     }
     
     private void Start()
     {
-        ChangeBackGroundMusic(musicClip);
+        ChangeBackGroundMusic(BGM);
+    }
+
+    private void InitPool()
+    {
+        for(int i = 0; i < initSize; i++)
+        {
+            CreateAudioSource();
+        }
+    }
+
+    private void CreateAudioSource()
+    {
+        AudioSource newAudio = Instantiate(audioSourcePrefab, this.transform);
+        newAudio.gameObject.SetActive(false);
+        audioSourcePool.Enqueue(newAudio);
+    }
+
+    private void InitDictionary()
+    {
+        foreach(var sound in soundDatas)
+        {
+            if (!soundDictionary.ContainsKey(sound.id))
+            {
+                soundDictionary.Add(sound.id, sound.clip);
+            }
+        }
     }
 
     private void ChangeBackGroundMusic(AudioClip music)
     {
-        musicAudioSource.Stop();
-        musicAudioSource.clip = music;
-        musicAudioSource.Play();
+        BGMSource.Stop();
+        BGMSource.clip = music;
+        BGMSource.Play();
     }
 
-    public void PlayClip(AudioClip clip)
+    public void PlayClip(string id, Vector3 position)
     {
-        GameObject obj = objectPool.SpawnFromPool("SoundSource");
-        obj.SetActive(true);
-        SoundSource soundSource = obj.GetComponent<SoundSource>();
-        soundSource.Play(clip, soundEffectVolume, soundEffectPitchVariance);
+        if (!soundDictionary.ContainsKey(id))
+        {
+            Debug.Log("don't have " + id);
+            return;
+        }
+
+        AudioClip clip = soundDictionary[id];
+        AudioSource _audioSource = GetAudioSource();
+        _audioSource.transform.position = position;
+
+        //Play Clip
+        _audioSource.clip = clip;
+        _audioSource.volume = soundEffectVolume;
+        _audioSource.Play();
+        _audioSource.pitch = 1f + Random.Range(-soundEffectPitchVariance, soundEffectPitchVariance);
+
+        //Stop after playing
+        StartCoroutine(ReturnToPoolAfterPlaying(_audioSource));
+    }
+
+    private AudioSource GetAudioSource()
+    {
+        AudioSource newSource;
+
+        if (audioSourcePool.Count <= 0)
+        {
+            CreateAudioSource();
+        }
+        newSource = audioSourcePool.Dequeue();
+        newSource.gameObject.SetActive(true);
+
+        return newSource;
+    }
+
+    private IEnumerator ReturnToPoolAfterPlaying(AudioSource audioSource)
+    {
+        yield return new WaitForSeconds(audioSource.clip.length + 1);
+        audioSource.Stop();
+        audioSource.clip = null;
+        audioSource.gameObject.SetActive(false);
+        audioSourcePool.Enqueue(audioSource);
     }
 
     public void SetBgmVolume(float volume)
     {
-        musicVolume = volume;
+        BGMVolume = volume;
     }
     
     public void SetEffectVolume(float volume)

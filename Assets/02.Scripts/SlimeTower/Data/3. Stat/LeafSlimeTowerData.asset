@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 051ef85106d94558a357eeafa44f8f37, type: 3}
-  m_Name: SproutSlimeTowerData
+  m_Name: LeafSlimeTowerData
   m_EditorClassIdentifier: 
   name: SproutSlime
-  slimeTowerGradeInfo: {fileID: 11400000, guid: 9fbf50f968f4bdd4f8828a0dbd2d1cdc,
+  slimeTowerGradeInfo: {fileID: 11400000, guid: 9828850f21865bb468f2f530a2424fd1,
     type: 2}
-  slimeTowerUpgradeDataData: {fileID: 11400000, guid: 61042a82a4f415e4fa2fa6c894e9e03b,
+  slimeTowerUpgradeDataData: {fileID: 11400000, guid: 8f641119a5ba63b44849739c5c0930f0,
     type: 2}
   SlimeTowerStats:
-    AttackSpeed: 1
-    AttackPower: 10
+    AttackSpeed: 1.2
+    AttackPower: 15
     AttackRange: 50

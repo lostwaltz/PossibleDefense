@@ -16,7 +16,7 @@ public class UpgradesController : MonoBehaviour
         upgradeButtonMappings = new Dictionary<Button, TowerGrade>
         {
             { buttons[0], TowerGrade.Common},
-            { buttons[1], TowerGrade.Normal},
+            { buttons[1], TowerGrade.Rare},
             { buttons[2], TowerGrade.Epic},            
         };
 

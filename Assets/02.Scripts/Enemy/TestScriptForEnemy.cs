@@ -31,8 +31,15 @@ public class TestScriptForEnemy : MonoBehaviour
 
     public void SpawnMonster(int id)
     {
+        SoundManager.Instance.PlayClip("Click", transform.position);
+
         Vector3 start = Vector3.zero;
         Vector3[] ways = SpawnManager.Instance.wayPoints;
         SpawnManager.Instance.SetSpawner(start, 2, ways, id, 10);
+    }
+
+    public void TestSound()
+    {
+        SoundManager.Instance.PlayClip("Click", transform.position);
     }
 }
