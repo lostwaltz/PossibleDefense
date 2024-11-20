@@ -32,7 +32,7 @@ public class SplashHitStrategy : IHitStrategy
             if (enemy != null)
             {
                 enemy.TakeDamage(_damage);
-                GameObject particle = PoolManagerForTest.Instance.Pool.SpawnFromPool("SplashParticle");
+                GameObject particle = PoolManagerForTest.Instance.poolLegacy.SpawnFromPool("SplashParticle");
                 DamageParticle damageParticle = particle.GetComponent<DamageParticle>();
                 damageParticle.Setting(_projectilePos,_damage);
                 damageParticle.StartParticleLifeCycle();

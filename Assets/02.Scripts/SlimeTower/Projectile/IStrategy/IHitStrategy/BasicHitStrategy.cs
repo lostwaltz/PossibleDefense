@@ -12,7 +12,7 @@ public class BasicHitStrategy : IHitStrategy
 
     public void Execute()
     {
-        GameObject particle = PoolManagerForTest.Instance.Pool.SpawnFromPool("HitParticle");
+        GameObject particle = PoolManagerForTest.Instance.poolLegacy.SpawnFromPool("HitParticle");
         BaseParticle baseParticle = particle.GetComponent<BaseParticle>();
         baseParticle.Setting(_projectilePos);
         baseParticle.StartParticleLifeCycle();

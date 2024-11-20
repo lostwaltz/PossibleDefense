@@ -232,7 +232,6 @@ MonoBehaviour:
   _towerChanceData: {fileID: 11400000, guid: 70b35abe377d9bb4a8bff72665d4e49c, type: 2}
   tile: []
   spawnButton: {fileID: 639096399}
-  SlimeTowers: []
 --- !u!4 &117554205
 Transform:
   m_ObjectHideFlags: 0
@@ -1484,7 +1483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage: {fileID: 7579750480079828766, guid: 6d7a9d68a4729454386ad0de83da7955, type: 3}
-  tileObjectPool: {fileID: 527513481}
+  tileObjectPoolLegacy: {fileID: 527513481}
   callStageNum: 2
   upgradeController: {fileID: 0}
   curEnmeyWayPointData: []
@@ -1550,7 +1549,7 @@ MonoBehaviour:
   _upgradeDatas:
   - {fileID: 11400000, guid: fb3503099ce8c1b46bcaa00f4547c485, type: 2}
   - {fileID: 11400000, guid: 61042a82a4f415e4fa2fa6c894e9e03b, type: 2}
-  - {fileID: 11400000, guid: 8f641119a5ba63b44849739c5c0930f0, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: 050f144c24653d54b956334f3d337d77, type: 2}
   buttons:
   - {fileID: 1378062321}
@@ -1866,19 +1865,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 639096400}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 117554204}
-        m_TargetAssemblyTypeName: TowerSpawner, Assembly-CSharp
-        m_MethodName: SpawnTowerByProbability
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &639096400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2261,9 +2248,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 813094492}
-  - component: {fileID: 813094491}
-  - component: {fileID: 813094490}
   - component: {fileID: 813094489}
+  - component: {fileID: 813094494}
+  - component: {fileID: 813094493}
   m_Layer: 0
   m_Name: ObjectPool
   m_TagString: Untagged
@@ -2292,44 +2279,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &813094490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813094488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85a8a307ae0542628b337f5a8e2b38b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Pool: {fileID: 0}
---- !u!114 &813094491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813094488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6bb10d372ebdc440868c5029e1dcd84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pools:
-  - tag: Bullet
-    prefab: {fileID: 1910584242399356749, guid: cd6ca909c5f7d6e44b8065581ea54303,
-      type: 3}
-    size: 10
-  - tag: SplashParticle
-    prefab: {fileID: 8939984208906321761, guid: 1edf7898249d1a84e9f12a1aa515283b,
-      type: 3}
-    size: 10
-  - tag: HitParticle
-    prefab: {fileID: 2059766538212976467, guid: 4146ae7f5f311ce44b1f388563d9c2fb,
-      type: 3}
-    size: 10
 --- !u!4 &813094492
 Transform:
   m_ObjectHideFlags: 0
@@ -2345,6 +2294,44 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &813094493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813094488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6bb10d372ebdc440868c5029e1dcd84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: Bullet
+    prefab: {fileID: 2239365987951896150, guid: 2bd8e4da673842742a0f79e0e8c0185e,
+      type: 3}
+    size: 10
+  - tag: HitParticle
+    prefab: {fileID: 2059766538212976467, guid: 4146ae7f5f311ce44b1f388563d9c2fb,
+      type: 3}
+    size: 10
+  - tag: SplashParticle
+    prefab: {fileID: 8939984208906321761, guid: 1edf7898249d1a84e9f12a1aa515283b,
+      type: 3}
+    size: 10
+--- !u!114 &813094494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813094488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a8a307ae0542628b337f5a8e2b38b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolLegacy: {fileID: 813094493}
 --- !u!1 &849338559
 GameObject:
   m_ObjectHideFlags: 0
@@ -4506,37 +4493,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710915134}
   m_CullTransparentMesh: 1
---- !u!1 &1759814789
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1759814790}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1759814790
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1759814789}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.461335, y: 2.072525, z: -9.734957}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1850540860
 GameObject:
   m_ObjectHideFlags: 0
@@ -15906,4 +15862,3 @@ SceneRoots:
   - {fileID: 69658936}
   - {fileID: 460106695}
   - {fileID: 2132610677269411247}
-  - {fileID: 1759814790}

@@ -7,19 +7,9 @@
     <list default="true" id="786d4d7f-6565-4eb2-bafb-1618cb383218" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Enemy/EnemyFactory/EnemyFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Enemy/EnemyFactory/EnemyFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Enemy/Skill/SkillSO/ShieldRecharge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Enemy/Skill/SkillSO/ShieldRecharge.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Enemy/Skill/SkillSO/SpeedUP.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Enemy/Skill/SkillSO/SpeedUP.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/EnemySpawn/SpawnManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/EnemySpawn/SpawnManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/ObjectPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/ObjectPoolLegacy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Manager/ObjectPool.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Manager/ObjectPoolLegacy.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/AttackStrategy/SingleTargetAttackByProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/AttackStrategy/SingleTargetAttackByProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/AttackStrategy/SlowDebuffSingleTargetAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/AttackStrategy/SlowDebuffSingleTargetAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/AttackStrategy/SplashAttackByProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/AttackStrategy/SplashAttackByProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/PoolManagerForTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/PoolManagerForTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Stage/Stage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Stage/Stage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Stage/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Stage/StageManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/NewStageTest _jjy.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scenes/NewStageTest _jjy.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/IStrategy/IHitStrategy/BasicHitStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/IStrategy/IHitStrategy/BasicHitStrategy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/IStrategy/IHitStrategy/SplashHitStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/IStrategy/IHitStrategy/SplashHitStrategy.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,18 +46,25 @@
     "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "featrue__kmc",
+    "git-widget-placeholder": "Feature__JJY",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\정준영\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\정준영\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\정준영\\AppData\\Local\\Symbols\\src"
+    ]
   }
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.17f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\WorkSpace\Unity\UnityLearning\3D_Project\PossibleDefense -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\WorkSpace\Unity\UnityLearning\3D_Project\PossibleDefense" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -75,7 +72,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.17f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\WorkSpace\Unity\UnityLearning\3D_Project\PossibleDefense -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\WorkSpace\Unity\UnityLearning\3D_Project\PossibleDefense" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -123,6 +120,7 @@
       <workItem from="1732030507717" duration="594000" />
       <workItem from="1732072637765" duration="7803000" />
       <workItem from="1732090601737" duration="764000" />
+      <workItem from="1732100085172" duration="320000" />
     </task>
     <servers />
   </component>
