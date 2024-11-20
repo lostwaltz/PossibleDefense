@@ -1195,7 +1195,7 @@ MonoBehaviour:
   _upgradeDatas:
   - {fileID: 11400000, guid: fb3503099ce8c1b46bcaa00f4547c485, type: 2}
   - {fileID: 11400000, guid: 61042a82a4f415e4fa2fa6c894e9e03b, type: 2}
-  - {fileID: 11400000, guid: a521e1271f0b12442ae525fbda2d36bc, type: 2}
+  - {fileID: 11400000, guid: 79c601b725b45d641acae4f7a73602e7, type: 2}
   buttons:
   - {fileID: 1378062321}
   - {fileID: 993458401}
@@ -1862,7 +1862,7 @@ GameObject:
   - component: {fileID: 993458402}
   - component: {fileID: 993458401}
   m_Layer: 5
-  m_Name: RareUpgradeBtn
+  m_Name: NormalUpgradeBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3306,7 +3306,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB178\uB9D0\n\uAC15\uD654\n"
+  m_text: "\uCEE4\uBA3C\n\uAC15\uD654\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5cd5e4053c3dc0c47b64cddbf336fbc3, type: 2}
   m_sharedMaterial: {fileID: 6032210142692126989, guid: 5cd5e4053c3dc0c47b64cddbf336fbc3,
@@ -4554,7 +4554,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB808\uC5B4\n\uAC15\uD654"
+  m_text: "\uB178\uB9D0\n\uAC15\uD654"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5cd5e4053c3dc0c47b64cddbf336fbc3, type: 2}
   m_sharedMaterial: {fileID: 6032210142692126989, guid: 5cd5e4053c3dc0c47b64cddbf336fbc3,
