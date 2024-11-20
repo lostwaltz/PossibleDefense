@@ -120,6 +120,7 @@ public class SoundManager : SingletonDontDestroy<SoundManager>
     public void SetBgmVolume(float volume)
     {
         BGMVolume = volume;
+        BGMSource.volume = BGMVolume;
     }
     
     public void SetEffectVolume(float volume)
