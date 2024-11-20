@@ -17,12 +17,15 @@ public class EnemySkillController : MonoBehaviour
 
     private void OnEnable()
     {
-        isAlive = true;
-        if(SkillCoroutine != null)
+        if (!isAlive)
         {
-            StopCoroutine(SkillCoroutine);
+            isAlive = true;
+            if (SkillCoroutine != null)
+            {
+                StopCoroutine(SkillCoroutine);
+            }
+            SkillCoroutine = StartCoroutine(UseSkills());
         }
-        SkillCoroutine = StartCoroutine(UseSkills());
     }
 
     private void OnDisable()
