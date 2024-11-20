@@ -15,11 +15,12 @@ public class SplashHitStrategy : IHitStrategy
     }
 
 
+    
+    //TODO 파티클 생성 위치를 변경해야함. ENEMY딴에서 하는게 더 좋아 보임
     public void Execute()
     {
         
-        //TODO: 파티클이 생긴다면 파티클에 COLIIDER를 달고 거기에 부딪히면 데미지 주는 방식으로 변경! 
-        int count = Physics.OverlapSphereNonAlloc(_projectilePos.position, 5f, colls);
+         int count = Physics.OverlapSphereNonAlloc(_projectilePos.position, 5f, colls);
 
         for (int i = 0; i < count; i++)
         {
@@ -31,6 +32,10 @@ public class SplashHitStrategy : IHitStrategy
             if (enemy != null)
             {
                 enemy.TakeDamage(_damage);
+                GameObject particle = PoolManagerForTest.Instance.Pool.SpawnFromPool("SplashParticle");
+                DamageParticle damageParticle = particle.GetComponent<DamageParticle>();
+                damageParticle.Setting(_projectilePos,_damage);
+                damageParticle.StartParticleLifeCycle();
             }
         }
     }

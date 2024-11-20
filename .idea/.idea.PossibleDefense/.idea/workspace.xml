@@ -5,20 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="786d4d7f-6565-4eb2-bafb-1618cb383218" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/HitParticle/BaseParticle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/HitParticle/ExecuteParticle.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/HitParticle/ExecuteParticle/DamageParticle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/HitParticle/ExecuteParticle/DamageParticle.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/HitParticle/ExecuteParticle/ExecuteParticle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/HitParticle/ExecuteParticle/ExecuteParticle.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/HitParticle/Interface.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/HitParticle/Interface/IExecute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/HitParticle/Interface/IExecute.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/NewStageTest _jjy.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scenes/NewStageTest _jjy.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/03.Prefabs/Projectile/BaseProjectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/03.Prefabs/Projectile/BaseProjectile.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/Strategy/AttackStrategy/SingleTargetAttackByProjectileSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/Strategy/AttackStrategy/SingleTargetAttackByProjectileSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/97.Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/97.Prefabs/GradeCircle.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/97.Prefabs/GradeCircle/CommonCircle.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/97.Prefabs/GradeCircle/CommonCircle.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/97.Prefabs/GradeCircle/EpicCircle.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/97.Prefabs/GradeCircle/EpicCircle.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/97.Prefabs/GradeCircle/LegendaryCircle.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/97.Prefabs/GradeCircle/LegendaryCircle.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/97.Prefabs/GradeCircle/RareCircle.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/97.Prefabs/GradeCircle/RareCircle.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/AttackStrategy/SingleTargetAttackByProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/AttackStrategy/SingleTargetAttackByProjectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/KingSlimeTowerData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/KingSlimeTowerData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/SlimeTowerData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/SlimeTowerData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/SlimeTowerDataSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/SlimeTowerDataSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/SproutSlimeTowerData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/SproutSlimeTowerData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/TowerChance/TowerChanceData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/TowerChance/TowerChanceData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/TowerChance/TowerChanceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/TowerChance/TowerChanceData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/HitParticle/BaseHitParticle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/HitParticle/BaseHitParticle.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/HitParticle/BaseParticle.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/BaseProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/BaseProjectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/IStrategy/IHitStrategy/BasicHitStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/IStrategy/IHitStrategy/BasicHitStrategy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/IStrategy/IHitStrategy/SplashHitStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/IStrategy/IHitStrategy/SplashHitStrategy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Spawner/TowerSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Spawner/TowerSpawner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,10 +109,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="6140">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="6140" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -127,7 +138,7 @@
       <workItem from="1731993190549" duration="93000" />
       <workItem from="1731996393792" duration="5312000" />
       <workItem from="1732030507717" duration="594000" />
-      <workItem from="1732072637765" duration="7803000" />
+      <workItem from="1732072637765" duration="22115000" />
     </task>
     <servers />
   </component>
