@@ -17,7 +17,7 @@ public class SlowDebuffSingleTargetAttack : IAttackStrategy
 
     public void Execute(Transform  target)
     { 
-        GameObject projectile = PoolManagerForTest.Instance.Pool.SpawnFromPool("Bullet");
+        GameObject projectile = PoolManagerForTest.Instance.poolLegacy.SpawnFromPool("Bullet");
         projectile.transform.position = _firePos.position;
         projectile.GetComponent<BaseProjectile>().SetProjectile(_fireStrategy,_hitStrategy,target,_damage);
     }

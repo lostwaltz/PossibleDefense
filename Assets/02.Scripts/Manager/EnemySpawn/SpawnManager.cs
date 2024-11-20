@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SpawnManager : Singleton<SpawnManager> 
 {
-    public ObjectPool ObjectPool {  get; private set; }
+    public ObjectPoolLegacy ObjectPoolLegacy {  get; private set; }
     [SerializeField] private EnemyDatabase enemyDatabase;
     private EnemyFactory enemyFactory;
 
@@ -19,7 +19,7 @@ public class SpawnManager : Singleton<SpawnManager>
 
     protected override void Awake()
     {
-        ObjectPool = GetComponent<ObjectPool>();
+        ObjectPoolLegacy = GetComponent<ObjectPoolLegacy>();
         enemyFactory = new EnemyFactory(enemyDatabase);
 
         //SetSpawner(SpawnPoint, SpawnDelay, wayPoints, 103, maxSpawnCount);
