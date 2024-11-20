@@ -23,5 +23,6 @@ public class Health
     }
 
     public bool IsDead => CurrentHealth <= 0;
+    public float GetHealthPercentage => CurrentHealth/MaxHealth;
 }
 

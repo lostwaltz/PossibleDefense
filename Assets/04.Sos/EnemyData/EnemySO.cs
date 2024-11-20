@@ -13,6 +13,7 @@ public class EnemySO : ScriptableObject
     [field: SerializeField] public float shield { get; private set; }
     [field: SerializeField] public float maxHPModifier { get; private set; } = 1f;
     [field: SerializeField] public float speedModifier { get; private set; } = 1f;
+    [field: SerializeField] public GameObject modelPrefab { get; private set; }
 
     public void ChangeHPModifier(float amount)
     {
