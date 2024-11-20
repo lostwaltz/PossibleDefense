@@ -8,3 +8,4 @@ public class SingleTargetAttackByProjectileSO : AttackStrategySO
         return new SingleTargetAttackByProjectile();
     }
 }
+
