@@ -26,22 +26,28 @@ public class TowerChanceData : ScriptableObject
     public List<float> GetChanceList()
     {
         List<float> chanceList = new List<float>();
-        foreach (var towerChance in towerChances)
+
+        var grades = Enum.GetValues(typeof(TowerGrade));
+
+        foreach (TowerGrade grade in grades)
         {
-            chanceList.Add(towerChance.probability);
+            float probability = 0f; 
+
+            foreach (var towerChance in towerChances)
+            {
+                if (towerChance.towerGrade == grade)
+                {
+                    probability = towerChance.probability;
+                    break; 
+                }
+            }
+
+            chanceList.Add(probability);
         }
+
         return chanceList;
     }
 
     
-    public Dictionary<TowerGrade, float> GetChanceDictionary()
-    {
-        Dictionary<TowerGrade, float> chanceDictionary = new Dictionary<TowerGrade, float>();
-        foreach (var towerChance in towerChances)
-        {
-            chanceDictionary[towerChance.towerGrade] = towerChance.probability;
-        }
-        return chanceDictionary;
-    }
     
 }
