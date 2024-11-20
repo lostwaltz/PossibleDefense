@@ -19,6 +19,7 @@ public class EnemyHealth : MonoBehaviour
     private bool isDamaging = false;
     private Camera cam;
     private Vector3 camDirection;
+    private bool isDead = false;
 
     public event Action OnDamage;
     public event Action OnDead;
@@ -44,16 +45,20 @@ public class EnemyHealth : MonoBehaviour
         Shield.Initialize(enemy.shield);
         Evasion = enemy.evasion;
 
+        isDead = false;
         UpdateUI();
         HPCanvas.transform.rotation = Quaternion.LookRotation(-cam.transform.forward, Vector3.up);
     }
 
     public void TakeDamage(float damage)
     {
+        if (isDead) return;
+
+        //쉴드데미지 처리 => 회피 => 체력데미지 처리
+        float remainingDamage = Shield.AbsorbDamage(damage);
+
         float evasionPercentage = Random.Range(0f, 100f);
         if (evasionPercentage < Evasion) return;
-
-        float remainingDamage = Shield.AbsorbDamage(damage);
 
         if (remainingDamage > 0)
         {
@@ -62,7 +67,10 @@ public class EnemyHealth : MonoBehaviour
             isDamaging = true;
 
             if (Health.IsDead)
+            {
                 OnDead?.Invoke();
+                isDead = true;
+            }
             else
                 OnDamage?.Invoke();
         }

@@ -8,7 +8,7 @@ public class BaseParticle : MonoBehaviour
 {
     [SerializeField] protected float particleLifetimeDuration = 0;
     private Coroutine particleCoroutine;
-    private ParticleSystem particle;
+    protected ParticleSystem particle;
     
     
     protected virtual void Awake()
@@ -27,7 +27,7 @@ public class BaseParticle : MonoBehaviour
         }
     }
 
-    public void Setting(Transform startPos)
+    public virtual void Setting(Transform startPos)
     {
         transform.position = startPos.position;
     }
