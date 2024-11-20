@@ -23,7 +23,7 @@ public class StageManager : Singleton<StageManager>
     private WaveStageData curWave; //현재 Wave Data
     private Coroutine waveCoroutine;
 
-    private int curGold = 1000;
+    private int curGold = 100000;
     private int summonTowerCost = 100;
 
     private List<List<StageTileTag>> curMapMatrixData; //현재 스테이지 타일 데이터를 저장한 변수 (맵 데이터,월드좌표x,배열좌표o)
@@ -211,7 +211,6 @@ public class StageManager : Singleton<StageManager>
         uI_EnemyCount.UIPrint(finishEnemyCount, curEnemyCount);
         uI_CurGoldIndicator.UIPrint(curGold);
     }
-
 
     private void SpawnEnemy(int id)
     {
