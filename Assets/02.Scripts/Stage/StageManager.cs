@@ -308,7 +308,6 @@ public class StageManager : Singleton<StageManager>
         if(finishEnemyCount <= curEnemyCount)
         {
             UIReslut.UpdateUI(false, maxWaveCount - curWaveStageData.Count, callStageNum * (maxWaveCount - curWaveStageData.Count));
-            GameManager.Instance.curClearStageNum = callStageNum;
             GameManager.Instance.PlayerGold += callStageNum * curStageMapData.Length;
 
             Debug.Log("게임 오버");

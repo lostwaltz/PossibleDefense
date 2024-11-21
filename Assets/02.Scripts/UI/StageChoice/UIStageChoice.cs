@@ -29,7 +29,7 @@ public class StageSelect : UIBase
     {
         for(int i = 0; i < numOfStage; i++)
         {
-            if(i < curStage)
+            if(i < GameManager.Instance.curClearStageNum + 1)
             {
                 //현재까지 클리어한 스테이지는 번호로 표시
                 StageButton btn = Instantiate(StageButton, GridLayout.transform);
