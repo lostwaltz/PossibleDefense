@@ -15,10 +15,10 @@ public class SpeedUpgrade : BaseUpgrade
 
     public override void Upgrade()
     {
-        var modifier = Mathf.Pow(1 + data.SpeedUp * 0.1f, 2);   //ratio
-        data.TowersData.SlimeTowerStats.AttackSpeed *= modifier;    //caculate stat
+        var modifier = data.SpeedUp++;   //ratio
+        data.TowersData.SlimeTowerStats.AttackSpeed += modifier;    //caculate stat
         data.SpeedUpgradeGold = (int)(data.SpeedUpgradeGold * modifier);    //caculate gold
-        data.SpeedUp++;
+        
     }
 
     public override bool IsMaxLevel()

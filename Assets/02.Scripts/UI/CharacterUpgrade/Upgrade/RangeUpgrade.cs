@@ -15,10 +15,10 @@ public class RangeUpgrade : BaseUpgrade
 
     public override void Upgrade()
     {
-        var modifier = Mathf.Pow(1 + data.RangeUp * 0.1f, 2);
-        data.TowersData.SlimeTowerStats.AttackRange *= modifier;
+        var modifier = data.RangeUp++;
+        data.TowersData.SlimeTowerStats.AttackRange += modifier;
         data.RangeUpgradeGold = (int)(data.RangeUpgradeGold * modifier);
-        data.RangeUp++;
+        
     }
 
     public override bool IsMaxLevel()
