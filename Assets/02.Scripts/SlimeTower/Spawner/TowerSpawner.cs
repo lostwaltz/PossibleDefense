@@ -11,6 +11,8 @@ public class TowerSpawner : MonoBehaviour
     [SerializeField] private Transform[] tile;
     [SerializeField] private Button spawnButton;
     
+    
+    
     private Dictionary<TowerGrade, GameObject[]> towerPrefabsDictionary = new Dictionary<TowerGrade, GameObject[]>();
     private List<float> _chanceList;
     
@@ -39,7 +41,8 @@ public class TowerSpawner : MonoBehaviour
             towerPrefabsDictionary[grade] = gradePrefabs;
         }
     }
-
+    
+    //생성된 타워를 게임오브젝트로 받는 메서드 -> 스테이지매니저에서 사용될 메서드
     public GameObject SpawnTowerByProbability()
     {
         float randomValue = Random.Range(0f, 1f);

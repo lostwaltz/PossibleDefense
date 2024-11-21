@@ -10,4 +10,8 @@ public abstract class BaseSkillSO : ScriptableObject
     public LayerMask TargetLayer;
 
     public abstract void Execute(Enemy enemy);
+    public virtual void SoundPlay(string id, Vector3 position)
+    {
+        SoundManager.Instance.PlayClip(id, position);
+    }
 }

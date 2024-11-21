@@ -5,7 +5,9 @@ public class SlimeTowerWalkState : SlimeTowerBaseState
     public Transform target; // 타워 컨트롤러에서 설정 해줌! 
     private float moveSpeed = 5f;
     private float threshold = 0.1f;
-
+    
+    
+    
     public SlimeTowerWalkState(SlimeStateMachine _stateMachine) : base(_stateMachine)
     {
     }
