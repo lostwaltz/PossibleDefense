@@ -64,13 +64,12 @@ public class UpgradesController : MonoBehaviour
     //버튼 누르면 해당 등급에 따라 강화 
     public void UpgradeTowerByGrade(StageTowerUpgradeLevel upgradeTarget)
     {
-        if (StageManager.Instance.CurGold >= upgradeTarget.Cost && maxUpgradeLevel > upgradeTarget.Level)
+        if (StageManager.Instance.UseGold(upgradeTarget.Cost) && maxUpgradeLevel > upgradeTarget.Level)
         {
             foreach (SlimeTowerStatUpgradeData data in _upgradeDatas)
             {
                 if (data.Grade == upgradeTarget.Grade)
                 {
-                    StageManager.Instance.CurGold -= upgradeTarget.Cost;
                     upgradeTarget.Level++;
                     upgradeTarget.Cost = Mathf.FloorToInt(upgradeTarget.Cost * upgradeModifier);
                     data.OnUpgrade();
