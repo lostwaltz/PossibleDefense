@@ -4,7 +4,7 @@ using System;
 public class SlimeTowerStats
 {
     
-    //½½¶óÀÓ Å¸¿ö °íÀ¯ ½ºÅÈ -
+    //ìŠ¬ë¼ì„ íƒ€ì›Œ ê³ ìœ  ìŠ¤íƒ¯ -
     public float AttackSpeed;
     public float AttackPower;
     public float AttackRange;
