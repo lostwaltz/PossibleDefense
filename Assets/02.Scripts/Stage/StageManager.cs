@@ -283,7 +283,7 @@ public class StageManager : Singleton<StageManager>
     public UI_WaveIndicator uI_WaveIndicator;
     public UI_EnemyCount uI_EnemyCount;
     public UI_CurGoldIndicator uI_CurGoldIndicator;
-
+    public UIReslut UIReslut;
     private void LateUpdate()
     {
         uI_WaveIndicator.UIPrint(waveTimer, curWave.WaveNum, curEnemyCount);
@@ -294,6 +294,8 @@ public class StageManager : Singleton<StageManager>
         {
             //TODO : 결과창 팝업
             //
+            UIReslut.gameObject.SetActive(true);
+
         }
     }
 

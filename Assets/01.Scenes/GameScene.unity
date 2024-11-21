@@ -2727,9 +2727,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1535484183986155340, guid: 8d0e0ad2e5e2bfd40b88bd36d2c8c706,
         type: 3}
+      propertyPath: UIReslut
+      value: 
+      objectReference: {fileID: 505929399}
+    - target: {fileID: 1535484183986155340, guid: 8d0e0ad2e5e2bfd40b88bd36d2c8c706,
+        type: 3}
       propertyPath: spawnButton
       value: 
       objectReference: {fileID: 1677761831}
+    - target: {fileID: 1535484183986155340, guid: 8d0e0ad2e5e2bfd40b88bd36d2c8c706,
+        type: 3}
+      propertyPath: callStageNum
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1535484183986155340, guid: 8d0e0ad2e5e2bfd40b88bd36d2c8c706,
         type: 3}
       propertyPath: uI_EnemyCount
@@ -3362,6 +3372,13 @@ MonoBehaviour:
     prefab: {fileID: 6225746359989207501, guid: 033e12133b158894d8fd86154003b61c,
       type: 3}
     size: 100
+  - tag: Magic
+    prefab: {fileID: 120031675813633919, guid: 7d2fb187c6d85ab41b60dfc6d6f53baf, type: 3}
+    size: 10
+  - tag: Shield
+    prefab: {fileID: 7167014899758627192, guid: c026356b7b9a01f49a4e177bf2a6cc5b,
+      type: 3}
+    size: 10
 --- !u!1 &6650093501456952075
 GameObject:
   m_ObjectHideFlags: 0

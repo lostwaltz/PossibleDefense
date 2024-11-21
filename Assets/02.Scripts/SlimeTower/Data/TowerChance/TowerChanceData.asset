@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerChances:
   - towerGrade: 0
-    probability: 0
+    probability: 500
   - towerGrade: 1
-    probability: 0
+    probability: 300
   - towerGrade: 2
-    probability: 0
+    probability: 100
   - towerGrade: 3
-    probability: 1000
+    probability: 1

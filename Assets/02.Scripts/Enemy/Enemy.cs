@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Achievement;
 public interface IDamagable
 {
     void TakeDamage(float damage);
@@ -75,6 +75,8 @@ public class Enemy : MonoBehaviour, IDamagable
     private void ReturnToPool()
     {
         StageManager.Instance.CurEnemyCount--;
+        EventManager.Instance.Publish(EventManager.Channel.Achievement, new Achievement.EventAchievement(Achievement.Action.Kill, Target.Monster, 1f, 0));
+       
         gameObject.SetActive(false);
     }
 }
