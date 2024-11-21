@@ -10,15 +10,23 @@ namespace Achievement
     public class UIAchievements : UIBase, IPointerClickHandler
     {
         private AchievementManager _achievementManager;
+        private Fader fader;
+        
         
         [SerializeField] private UIAchievementsSlot uiAchievementsSlot;
         [SerializeField] private Transform content;
 
         private UIAchievementsSlot[] _uiAchievementsSlotArray;
-        
+
+        private void Awake()
+        {
+            fader = GetComponent<Fader>();
+        }
+
         private void Start()
         {
             _achievementManager = AchievementManager.Instance;
+            
             
             InitUI();
         }
@@ -56,7 +64,24 @@ namespace Achievement
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            gameObject.SetActive(false);
+            CloseUI();
+        }
+
+        public void OpenUI()
+        {
+            gameObject.SetActive(true);
+            fader.FadeTo(0f, 1f, 0.3f);
+        }
+
+        private void CloseUI()
+        {
+            fader.FadeTo(1f, 0f, 0.3f).
+                OnComplete(() => SetActive(false));
+        }
+
+        private void SetActive(bool active)
+        {
+            gameObject.SetActive(active);
         }
     }   
 }

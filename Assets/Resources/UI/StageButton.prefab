@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StageNum: {fileID: 4971675241805296248}
+  uiFade: {fileID: 4514919766200591451, guid: 4a75c54f0e1458a42aa0b9388942466e, type: 3}
 --- !u!1 &4866149244375764579
 GameObject:
   m_ObjectHideFlags: 0
