@@ -1949,19 +1949,19 @@ MonoBehaviour:
   - tag: Bullet
     prefab: {fileID: 2239365987951896150, guid: 2bd8e4da673842742a0f79e0e8c0185e,
       type: 3}
-    size: 10
+    size: 300
   - tag: HitParticle
     prefab: {fileID: 2059766538212976467, guid: 4146ae7f5f311ce44b1f388563d9c2fb,
       type: 3}
-    size: 10
+    size: 300
   - tag: SplashParticle
     prefab: {fileID: 8939984208906321761, guid: 1edf7898249d1a84e9f12a1aa515283b,
       type: 3}
-    size: 10
+    size: 300
   - tag: SlowParticle
     prefab: {fileID: 5643183245246694505, guid: cd592e4fcc6750d40b1a4cb35eabd92e,
       type: 3}
-    size: 10
+    size: 300
   - tag: RangeDisplayIndicator
     prefab: {fileID: 3652493329028602389, guid: e8d785788d074194ebb362f3d04ae0df,
       type: 3}
@@ -1969,7 +1969,7 @@ MonoBehaviour:
   - tag: AllAttackParticle
     prefab: {fileID: 1047037317203625562, guid: a3593bca6b571804494f533a7781315b,
       type: 3}
-    size: 10
+    size: 100
 --- !u!114 &1877163599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3372,17 +3372,13 @@ MonoBehaviour:
     prefab: {fileID: 6225746359989207501, guid: 033e12133b158894d8fd86154003b61c,
       type: 3}
     size: 20
-  - tag: Magic
+  - tag: Speed
     prefab: {fileID: 120031675813633919, guid: 7d2fb187c6d85ab41b60dfc6d6f53baf, type: 3}
     size: 20
   - tag: Shield
     prefab: {fileID: 7167014899758627192, guid: c026356b7b9a01f49a4e177bf2a6cc5b,
       type: 3}
     size: 20
-  - tag: Shield
-    prefab: {fileID: 7167014899758627192, guid: c026356b7b9a01f49a4e177bf2a6cc5b,
-      type: 3}
-    size: 10
 --- !u!1 &6650093501456952075
 GameObject:
   m_ObjectHideFlags: 0
