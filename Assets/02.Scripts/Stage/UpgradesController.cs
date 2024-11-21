@@ -53,7 +53,7 @@ public class UpgradesController : MonoBehaviour
         }
     }
 
-    private void InitUpgradeData()
+    public void InitUpgradeData()
     {
         foreach (var data in _upgradeDatas)
         {

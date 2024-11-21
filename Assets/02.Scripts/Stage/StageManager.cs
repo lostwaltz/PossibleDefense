@@ -84,10 +84,15 @@ public class StageManager : Singleton<StageManager>
             towerSell = GetComponent<TowerSell>();
         }
 
+        upgradeController.InitUpgradeData();
         //Debug
         spawnButton.onClick.AddListener(() => SpawnSlimeTower());
         //SellModeButton.onClick.AddListener(() => IsSellMode = !IsSellMode);
     }
+
+
+ 
+
 
     public bool UseGold(int useGoldAmount)
     {
