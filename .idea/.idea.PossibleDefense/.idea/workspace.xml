@@ -6,14 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="786d4d7f-6565-4eb2-bafb-1618cb383218" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scenes/GameScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/LobbyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scenes/LobbyScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/03.Prefabs/UI/UIAchievements.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/03.Prefabs/UI/UIAchievements.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/01.Core/Scene/SceneLoadManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/01.Core/Scene/SceneLoadManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Scene/GameScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Scene/GameScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/UI/Achievements/UIAchievements.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/UI/Achievements/UIAchievements.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Scene/LobbyScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Scene/LobbyScene.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/UI/StageChoice/StageButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/UI/StageChoice/StageButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/StageButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/StageButton.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_login3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_login3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIFade.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIFade.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,21 +47,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;featrue__kmc&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "dev",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.17f1\Editor\Unity.exe" />
