@@ -47,7 +47,7 @@ public class StageManager : Singleton<StageManager>
     public Queue<WaveStageData> CurWaveStageData { get => curWaveStageData; }
 
     //타워 판매 필드
-    public bool IsSellMode = false; //타워를 판매하는 모드에 진입체크 변수 
+    public bool IsSellMode; //타워를 판매하는 모드에 진입체크 변수 
     public TowerSell TowerSell { get => towerSell; }
     [SerializeField] private Button SellModeButton;
 
@@ -86,7 +86,7 @@ public class StageManager : Singleton<StageManager>
 
         //Debug
         spawnButton.onClick.AddListener(() => SpawnSlimeTower());
-       // SellModeButton.onClick.AddListener(() => IsSellMode = !IsSellMode);
+        //SellModeButton.onClick.AddListener(() => IsSellMode = !IsSellMode);
     }
 
     public bool UseGold(int useGoldAmount)
@@ -110,7 +110,7 @@ public class StageManager : Singleton<StageManager>
                 if (stage.TowerTiles[i].SlimeTower == null)
                 {
                     stage.TowerTiles[i].SlimeTower = obj;
-                    obj.transform.position = stage.TowerTiles[i].transform.position;
+                    obj.transform.position = stage.TowerTiles[i].transform.position + (Vector3.up * 1.6f);
                     obj.GetComponent<BaseSlimeTower>().CurTowerTileIndex = stage.TowerTiles[i].Index;
                     break;
                 }
