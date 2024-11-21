@@ -91,7 +91,6 @@ public class BaseSlimeTower : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     
     //여기서 그냥 UI를 열어 줌
     //기획에 따라서 예외 처리가 필요할 수 있음. 
-    
     private IEnumerator CheckPressDuration()
     {
         while (true)

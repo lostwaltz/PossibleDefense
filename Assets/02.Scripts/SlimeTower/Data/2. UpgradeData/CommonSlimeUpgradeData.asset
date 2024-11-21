@@ -16,3 +16,6 @@ MonoBehaviour:
   InGameAttackSpeedIncrease: 1.1
   InGameAttackPowerIncrease: 1.1
   InGameAttackRangeIncrease: 1.1
+  AttackOptionSpeed: 1
+  AttackOptionPower: 1
+  AttackOptionRange: 1
