@@ -4,13 +4,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public enum UpgradeType
-{
-    Speed,
-    Power,
-    Range
-}
-
 public class CharacterUpgrade : MonoBehaviour
 {
     [SerializeField] private List<UpgradeData> UpgradeDataList;
@@ -28,7 +21,7 @@ public class CharacterUpgrade : MonoBehaviour
 
     private void Awake()
     {
-        Init();
+        //Init();
     }
 
     public void OnEnable()
