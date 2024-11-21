@@ -1102,9 +1102,9 @@ MonoBehaviour:
   soundDatas:
   - id: Magic
     clip: {fileID: 8300000, guid: 78419f98379502c4dbfb2774bc94e7c1, type: 3}
-  - id: Select2
+  - id: Select
     clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
-  - id: Select1
+  - id: Hit
     clip: {fileID: 8300000, guid: f3e33380d7888154abab87d52e6313d7, type: 3}
   initSize: 10
   audioSourcePrefab: {fileID: 2530917215578964213, guid: 6591a24c44b51d5428532e544e9e35ad,

@@ -21,6 +21,7 @@ public class SoundManager : SingletonDontDestroy<SoundManager>
 
     private Dictionary<string, AudioClip> soundDictionary = new Dictionary<string, AudioClip>();
     private Queue<AudioSource> audioSourcePool = new Queue<AudioSource>();
+    private HashSet<AudioClip> playingAudioClips = new HashSet<AudioClip>();
 
 
     protected override void Awake()
@@ -81,6 +82,11 @@ public class SoundManager : SingletonDontDestroy<SoundManager>
         }
 
         AudioClip clip = soundDictionary[id];
+        //if (playingAudioClips.Contains(clip))
+        //{
+        //    return;
+        //}
+        playingAudioClips.Add(clip);
         AudioSource _audioSource = GetAudioSource();
         _audioSource.transform.position = position;
 
@@ -91,7 +97,12 @@ public class SoundManager : SingletonDontDestroy<SoundManager>
         _audioSource.pitch = 1f + Random.Range(-soundEffectPitchVariance, soundEffectPitchVariance);
 
         //Stop after playing
-        StartCoroutine(ReturnToPoolAfterPlaying(_audioSource));
+        StartCoroutine(ReturnToPoolAfterPlaying(_audioSource, clip));
+    }
+
+    public void PlayClipDuplicated(string id, Vector3 position)
+    {
+
     }
 
     private AudioSource GetAudioSource()
@@ -108,9 +119,10 @@ public class SoundManager : SingletonDontDestroy<SoundManager>
         return newSource;
     }
 
-    private IEnumerator ReturnToPoolAfterPlaying(AudioSource audioSource)
+    private IEnumerator ReturnToPoolAfterPlaying(AudioSource audioSource, AudioClip clip)
     {
         yield return new WaitForSeconds(audioSource.clip.length + 1);
+        playingAudioClips.Remove(clip);
         audioSource.Stop();
         audioSource.clip = null;
         audioSource.gameObject.SetActive(false);
