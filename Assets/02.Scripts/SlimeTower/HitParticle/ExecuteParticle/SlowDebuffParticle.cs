@@ -36,7 +36,6 @@ public class SlowDebuffParticle : ExecuteParticle
         {
             var collider = _results[i];
             if ((_targetLayerMask & (1 << collider.gameObject.layer)) == 0) continue;
-            Debug.Log("디버프 파티클");
 
             collider.GetComponent<EnemyMovement>().forceReceiver.SpeedBuff(speedReductionPercent, particleLifetimeDuration, false);
         }

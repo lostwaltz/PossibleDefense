@@ -6,18 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="786d4d7f-6565-4eb2-bafb-1618cb383218" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/StageTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scenes/StageTest.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/StageTest_JJY.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scenes/StageTest_JJY.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/StageTest_JJY.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scenes/StageTest_JJY.unity.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Enemy/ForceReceiver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Enemy/ForceReceiver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/TowerChance/TowerChanceData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/TowerChance/TowerChanceData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/BaseProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/BaseProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/IStrategy/IHitStrategy/DebuffHitStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/IStrategy/IHitStrategy/DebuffHitStrategy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Stage/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Stage/StageManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Particle/HitParticle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Particle/HitParticle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Particle/SlowParticle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Particle/SlowParticle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Particle/SplashParticle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Particle/SplashParticle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Projectile/Bullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Projectile/Bullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/BaseSlimeTower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/BaseSlimeTower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Controller/TowerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Controller/TowerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/SlimeTowerStatUpgradeData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/3. Stat/SlimeTowerStatUpgradeData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/HitParticle/ExecuteParticle/SlowDebuffParticle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/HitParticle/ExecuteParticle/SlowDebuffParticle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Towers/Epic/LeafSlimeTower(Epic) .prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Towers/Epic/LeafSlimeTower(Epic) .prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +29,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/02.Scripts/Manager/ObjectPool/ObjectPoolManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/TowerChance/TowerChanceData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Handler/SlimeTowerStatHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TowerAttackRange.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.8.11/Tests/Runtime/Shared/084-Loops.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/AspectRatioFitterEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
@@ -131,7 +127,7 @@
       <workItem from="1732090601737" duration="764000" />
       <workItem from="1732150631295" duration="1816000" />
       <workItem from="1732152479223" duration="1832000" />
-      <workItem from="1732172232595" duration="1803000" />
+      <workItem from="1732172232595" duration="6295000" />
     </task>
     <servers />
   </component>

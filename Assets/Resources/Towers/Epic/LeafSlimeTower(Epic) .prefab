@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1364751421914462611}
   - component: {fileID: 7360661639089996695}
   - component: {fileID: 3727376216273800238}
+  - component: {fileID: 3195100477459158144}
   m_Layer: 7
   m_Name: 'LeafSlimeTower(Epic) '
   m_TagString: Untagged
@@ -71,6 +72,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6, y: 0.65, z: 0.6000001}
   m_Center: {x: 0, y: 0.33, z: 0}
+--- !u!114 &3195100477459158144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801539699462966581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 356446fe709849cfae64ae12c8ae3384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1970339317635358524
 GameObject:
   m_ObjectHideFlags: 0
