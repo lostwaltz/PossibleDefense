@@ -5,17 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="786d4d7f-6565-4eb2-bafb-1618cb383218" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/LobbyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scenes/LobbyScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/01.Core/Scene/SceneLoadManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/01.Core/Scene/SceneLoadManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Scene/GameScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Scene/GameScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Scene/LobbyScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Scene/LobbyScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/UI/StageChoice/StageButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/UI/StageChoice/StageButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_login3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/simple UI &amp; icons/box/box_login3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UIFade.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UIFade.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/StageTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scenes/StageTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/StageTest_JJY.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scenes/StageTest_JJY.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/StageTest_JJY.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scenes/StageTest_JJY.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Enemy/ForceReceiver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Enemy/ForceReceiver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/TowerChance/TowerChanceData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Data/TowerChance/TowerChanceData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/BaseProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/BaseProjectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/IStrategy/IHitStrategy/DebuffHitStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Projectile/IStrategy/IHitStrategy/DebuffHitStrategy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Stage/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Stage/StageManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Particle/HitParticle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Particle/HitParticle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Particle/SlowParticle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Particle/SlowParticle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Particle/SplashParticle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Particle/SplashParticle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Projectile/Bullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Projectile/Bullet.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +54,7 @@
     "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "Feature__JJY",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -60,11 +62,18 @@
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.sourceCode.C#",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\정준영\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\정준영\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\정준영\\AppData\\Local\\Symbols\\src"
+    ]
   }
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.17f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\WorkSpace\Unity\UnityLearning\3D_Project\PossibleDefense -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\WorkSpace\Unity\UnityLearning\3D_Project\PossibleDefense" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -72,7 +81,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.17f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\WorkSpace\Unity\UnityLearning\3D_Project\PossibleDefense -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\WorkSpace\Unity\UnityLearning\3D_Project\PossibleDefense" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -122,6 +131,7 @@
       <workItem from="1732090601737" duration="764000" />
       <workItem from="1732150631295" duration="1816000" />
       <workItem from="1732152479223" duration="1832000" />
+      <workItem from="1732172232595" duration="1803000" />
     </task>
     <servers />
   </component>

@@ -86,7 +86,7 @@ public class StageManager : Singleton<StageManager>
 
         //Debug
         spawnButton.onClick.AddListener(() => SpawnSlimeTower());
-        SellModeButton.onClick.AddListener(() => IsSellMode = !IsSellMode);
+       // SellModeButton.onClick.AddListener(() => IsSellMode = !IsSellMode);
     }
 
     public bool UseGold(int useGoldAmount)

@@ -9655,4 +9655,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleLifetimeDuration: 1.5
   debuffRange: 4
-  speedReductionPercent: 30
+  speedReductionPercent: 70

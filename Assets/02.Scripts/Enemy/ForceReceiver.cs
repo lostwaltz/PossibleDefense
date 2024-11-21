@@ -40,6 +40,6 @@ public class ForceReceiver : MonoBehaviour  //only speed about
         Debug.Log("ChangeSpeed");
         yield return new WaitForSeconds(duration);
 
-        currentSpeed = originSpeed;
+        currentSpeed = baseSpeed;
     }
 }

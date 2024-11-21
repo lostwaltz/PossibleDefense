@@ -26,7 +26,7 @@ public class DebuffHitStrategy : IHitStrategy
     {
         GameObject debuffParticle =
             PoolManagerForTest.Instance.poolLegacy.SpawnFromPool(_stringBuilder.Insert(0, _type).ToString());
-        ExecuteParticle executeParticle = debuffParticle.GetComponent<ExecuteParticle>();
+        SlowDebuffParticle executeParticle = debuffParticle.GetComponent<SlowDebuffParticle>();
         Vector3 offset = Vector3.up * 3f;
         executeParticle.Setting(_projectilePos, offset);
         executeParticle.StartParticleLifeCycle();

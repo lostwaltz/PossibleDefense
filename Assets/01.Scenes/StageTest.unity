@@ -2087,6 +2087,8 @@ MonoBehaviour:
   waveSkip: {fileID: 527513483}
   towerSell: {fileID: 527513485}
   curEnmeyWayPointData: []
+  IsSellMode: 0
+  SellModeButton: {fileID: 0}
   slimeTowerSpawner: {fileID: 527513484}
   spawnButton: {fileID: 639096399}
   uI_WaveIndicator: {fileID: 2046388852}
@@ -2198,6 +2200,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59f60dcb8206d514ea62527d13b5ab9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SellTowerPanel: {fileID: 237156322}
+  SellButton: {fileID: 237156324}
   target: {fileID: 0}
 --- !u!1 &583952490
 GameObject:
