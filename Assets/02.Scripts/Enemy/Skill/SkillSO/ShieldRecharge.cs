@@ -21,7 +21,6 @@ public class ShieldRecharge : BaseSkillSO
                 
                 if(SpawnManager.Instance.ObjectPoolLegacy.SpawnFromPool("Shield").TryGetComponent<BaseParticle>(out BaseParticle particle))
                     particle.Setting(slime.transform);
-                SoundPlay("Magic", slime.transform.position);
             }
         }
     }

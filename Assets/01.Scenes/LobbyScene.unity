@@ -1094,12 +1094,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21120cfd71d7534fb6482579cde19f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffectVolume: 0
-  soundEffectPitchVariance: 0
-  BGMVolume: 0
+  soundEffectVolume: 0.8
+  soundEffectPitchVariance: 0.1
+  BGMVolume: 0.2
   BGMSource: {fileID: 617799942}
   BGM: {fileID: 8300000, guid: 232e77919cccf49498d23e09ab448705, type: 3}
-  soundDatas: []
+  soundDatas:
+  - id: Magic
+    clip: {fileID: 8300000, guid: 78419f98379502c4dbfb2774bc94e7c1, type: 3}
+  - id: Select2
+    clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+  - id: Select1
+    clip: {fileID: 8300000, guid: f3e33380d7888154abab87d52e6313d7, type: 3}
   initSize: 10
   audioSourcePrefab: {fileID: 2530917215578964213, guid: 6591a24c44b51d5428532e544e9e35ad,
     type: 3}
