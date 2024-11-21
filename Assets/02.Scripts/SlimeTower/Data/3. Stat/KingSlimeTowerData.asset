@@ -18,9 +18,9 @@ MonoBehaviour:
   slimeTowerUpgradeDataData: {fileID: 11400000, guid: 050f144c24653d54b956334f3d337d77,
     type: 2}
   SlimeTowerStats:
-    AttackSpeed: 0.5
+    AttackSpeed: 1
     AttackPower: 100
-    AttackRange: 20
+    AttackRange: 10
   originSlimeTowerStats:
     AttackSpeed: 0
     AttackPower: 0

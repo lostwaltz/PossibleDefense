@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Serialization;
 using UnityEngine.Assertions.Must;
+using System.Linq;
 
 public class StageManager : Singleton<StageManager>
 {
@@ -32,9 +33,11 @@ public class StageManager : Singleton<StageManager>
     private int curGold = 100000;
     private int summonTowerCost = 100;
 
+    private int curTowerCount = 0; //현재 설치된 타워의 갯수 
     private List<List<StageTileTag>> curMapMatrixData; //현재 스테이지 타일 데이터를 저장한 변수 (맵 데이터,월드좌표x,배열좌표o)
     private List<Vector3> curStageEnmeyWayPointData; //현재 스테이지의 Enemy의 WayPoint 데이터를 저장한 변수 (월드좌표x,배열좌표o)
     private Queue<WaveStageData> curWaveStageData; //현재 스테이지의 Wave데이터
+    private int maxWaveCount;
 
     public StageTileTag[][] curStageMapData; //현재 진행중인 스테이지의 맵 2차월 배열 
     [HideInInspector] public Vector3[] curEnmeyWayPointData; //현재 진행중인 스테이지의 웨이포인트 배열
@@ -49,11 +52,19 @@ public class StageManager : Singleton<StageManager>
     //타워 판매 필드
     public bool IsSellMode; //타워를 판매하는 모드에 진입체크 변수 
     public TowerSell TowerSell { get => towerSell; }
+    public int CurTowerCount { get => curTowerCount; set => curTowerCount = value; }
+
     [SerializeField] private Button SellModeButton;
 
     //타워 생성 필드
     [SerializeField] private SlimeTowerSpawner slimeTowerSpawner;
     [SerializeField] private Button spawnButton;
+
+    //Debug : UI 매니저가 없기에 현재 Inspector로 연결 해놓은상태 
+    public UI_WaveIndicator uI_WaveIndicator;
+    public UI_EnemyCount uI_EnemyCount;
+    public UI_CurGoldIndicator uI_CurGoldIndicator;
+    public UIReslut UIReslut;
 
     protected override void Awake()
     {
@@ -99,8 +110,6 @@ public class StageManager : Singleton<StageManager>
         
     }
  
-
-
     public bool UseGold(int useGoldAmount)
     {
         if (curGold >= useGoldAmount)
@@ -113,9 +122,10 @@ public class StageManager : Singleton<StageManager>
 
     private void SpawnSlimeTower()
     {
-        if (UseGold(summonTowerCost))
+        if (curTowerCount < stage.TowerTiles.Count && UseGold(summonTowerCost))
         {
             GameObject obj = slimeTowerSpawner.SpawnTowerByProbability();
+            curTowerCount++;
 
             for (int i = 0; i < stage.TowerTiles.Count; i++)
             {
@@ -186,6 +196,7 @@ public class StageManager : Singleton<StageManager>
         StringBuilderSet(StageConstain.StageWaveStageDBPath, callStageNum);
 
         curWaveStageData = CSVReader.LoadWaveStageFromCSV(stringBuilder.ToString());
+        maxWaveCount = curWaveStageData.Count;
     }
 
     //월드 좌표에 외부데이터(CSV)를 토대로 맵을 생성하는 코드
@@ -229,22 +240,6 @@ public class StageManager : Singleton<StageManager>
         stringBuilder.Append(stageNum.ToString());
     }
 
-    ////Enemy의 WayPoint 월드좌표 리스트 반환(외부클래스에서 반환)
-    //public Vector3[] GetCurEnemyWayPointWorldPos()
-    //{
-    //    Vector3[] EnemyWayPointWorldPos;
-    //    EnemyWayPointWorldPos = stage.WayPointWorldPos.ToArray();
-    //    return EnemyWayPointWorldPos;
-    //}
-
-    ////SlimeTower 배치가 가능한 타일 배열 반환하기 
-    //public Vector3[] GetCuPlayerTowerWorldPos()
-    //{
-    //    Vector3[] PlayerTowerWorldPos;
-    //    PlayerTowerWorldPos = stage.WayPointWorldPos.ToArray();
-    //    return PlayerTowerWorldPos;
-    //}
-
     //2차원 List를 2차원 배열로 변경하는 코드 (외부에서 사용 할수 있게 만든 코드)
     public static StageTileTag[][] convertToArray(List<List<StageTileTag>> list)
     {
@@ -279,11 +274,6 @@ public class StageManager : Singleton<StageManager>
         }
     }
 
-    //Debug : UI 매니저가 없기에 현재 Inspector로 연결 해놓은상태 
-    public UI_WaveIndicator uI_WaveIndicator;
-    public UI_EnemyCount uI_EnemyCount;
-    public UI_CurGoldIndicator uI_CurGoldIndicator;
-    public UIReslut UIReslut;
     private void LateUpdate()
     {
         uI_WaveIndicator.UIPrint(waveTimer, curWave.WaveNum, curEnemyCount);
@@ -317,6 +307,10 @@ public class StageManager : Singleton<StageManager>
         //필드에 적갯수가 초과 됬을때
         if(finishEnemyCount <= curEnemyCount)
         {
+            UIReslut.UpdateUI(false, maxWaveCount - curWaveStageData.Count, callStageNum * (maxWaveCount - curWaveStageData.Count));
+            GameManager.Instance.curClearStageNum = callStageNum;
+            GameManager.Instance.PlayerGold += callStageNum * curStageMapData.Length;
+
             Debug.Log("게임 오버");
             this.enabled = false;
             return true;
@@ -331,7 +325,10 @@ public class StageManager : Singleton<StageManager>
     {
         if (curEnemyCount <= 0 && curWaveStageData.Count == 0)
         {
-            Debug.Log("게임 클리어");
+            UIReslut.UpdateUI(true, maxWaveCount, callStageNum * maxWaveCount);
+            GameManager.Instance.curClearStageNum = callStageNum;
+            GameManager.Instance.PlayerGold += callStageNum * curStageMapData.Length;
+
             this.enabled = false;
             return true;
         }

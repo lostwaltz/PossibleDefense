@@ -23,6 +23,8 @@ public class TowerSell : MonoBehaviour
     {
         if (target != null)
         {
+            StageManager.Instance.CurTowerCount--;
+
             StageManager.Instance.Stage.TowerTiles[target.CurTowerTileIndex].SlimeTower = null; // 스테이지의 타일 데이터 초기화
             target.CurTowerTileIndex = -1; //타워의 타일 Index 초기화
 
