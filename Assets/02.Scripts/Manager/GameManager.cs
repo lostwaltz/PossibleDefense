@@ -14,4 +14,8 @@ public class GameManager : SingletonDontDestroy<GameManager>
         base.Awake();
     }
 
+    public void DataSave()
+    {
+
+    }
 }

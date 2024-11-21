@@ -21,7 +21,7 @@ public class CharacterUpgrade : MonoBehaviour
 
     private void Awake()
     {
-        //Init();
+        Init();
     }
 
     public void OnEnable()
@@ -54,6 +54,9 @@ public class CharacterUpgrade : MonoBehaviour
         {
             data.Init();
         }
+
+        //데이터 불러오기
+        UpgradeDataManager.LoadUpgradeData(UpgradeDataList);
     }
 
     public void NextButton()
@@ -101,15 +104,21 @@ public class CharacterUpgrade : MonoBehaviour
     {
         ExecuteUpgrade(UpgradeDataList[curIndex].SpeedUpgrade);
         SetButtonText();
+
+        UpgradeDataManager.SaveUpgradeData(UpgradeDataList);
     }
     public void UpgradePower()
     {
         ExecuteUpgrade(UpgradeDataList[curIndex].PowerUpgrade);
         SetButtonText();
+
+        UpgradeDataManager.SaveUpgradeData(UpgradeDataList);
     }
     public void UpgradeRange()
     {
         ExecuteUpgrade(UpgradeDataList[curIndex].RangeUpgrade);
         SetButtonText();
+
+        UpgradeDataManager.SaveUpgradeData(UpgradeDataList);
     }
 }
