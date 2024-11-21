@@ -3355,26 +3355,30 @@ MonoBehaviour:
   - tag: 100
     prefab: {fileID: 6326314167467352298, guid: c1fad5efa9a02234a872bb4c7752191b,
       type: 3}
-    size: 100
+    size: 120
   - tag: 101
     prefab: {fileID: 1623919874087134373, guid: 00ca0f16ab3481241a654f15e33247f2,
       type: 3}
-    size: 100
+    size: 120
   - tag: 102
     prefab: {fileID: 1992421350420483643, guid: 13882899bf918994ca87812bdc9e3913,
       type: 3}
-    size: 100
+    size: 120
   - tag: 103
     prefab: {fileID: 7482104599443176226, guid: a6f39964d6927744a8498a76c9947f4c,
       type: 3}
-    size: 100
+    size: 120
   - tag: 200
     prefab: {fileID: 6225746359989207501, guid: 033e12133b158894d8fd86154003b61c,
       type: 3}
-    size: 100
+    size: 20
   - tag: Magic
     prefab: {fileID: 120031675813633919, guid: 7d2fb187c6d85ab41b60dfc6d6f53baf, type: 3}
-    size: 10
+    size: 20
+  - tag: Shield
+    prefab: {fileID: 7167014899758627192, guid: c026356b7b9a01f49a4e177bf2a6cc5b,
+      type: 3}
+    size: 20
   - tag: Shield
     prefab: {fileID: 7167014899758627192, guid: c026356b7b9a01f49a4e177bf2a6cc5b,
       type: 3}
