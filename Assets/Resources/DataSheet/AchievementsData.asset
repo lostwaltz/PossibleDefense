@@ -26,7 +26,16 @@ MonoBehaviour:
     name: "\uBAAC\uC2A4\uD130\uB97C 10\uB9C8\uB9AC \uC8FD\uC774\uC138\uC694"
     description: "\uC5C5\uC801 \uB370\uC774\uD130 \uD14C\uC2A4\uD2B8\uC785\uB2C8\uB2E4."
     targetValue: 15
-    targetId: 100
+    targetId: 0
+    isReset: 0
+    icon: {fileID: 1596636647, guid: a5e645d0b2507ac42807ef8e886f7d45, type: 3}
+    action: 4
+    target: 0
+  - currentValue: 0
+    name: "\uD0B9 \uC2AC\uB77C\uC784 \uCC98\uCE58 1\uD68C"
+    description: "\uC5C5\uC801 \uB370\uC774\uD130 \uD14C\uC2A4\uD2B8\uC785\uB2C8\uB2E4."
+    targetValue: 1
+    targetId: 200
     isReset: 0
     icon: {fileID: 1596636647, guid: a5e645d0b2507ac42807ef8e886f7d45, type: 3}
     action: 4

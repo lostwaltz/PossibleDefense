@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Achievement.SO;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -7,15 +8,15 @@ namespace Achievement
 {
     public class AchievementManager : SingletonDontDestroy<AchievementManager>
     {
-        public SO.AchievementDataContainer achievementDataContainer;
+        private SO.AchievementDataContainer achievementDataContainer;
         private Dictionary<int, List<AchievementData>>[,] _achievementDataArray;
         private EventManager _eventManager;
 
         public int AchievementCount { get; private set; }
 
-        protected override void Awake()
+        public void Init()
         {
-            base.Awake();
+            achievementDataContainer = Resources.Load<AchievementDataContainer>("DataSheet/AchievementsData");
 
             _achievementDataArray = new Dictionary<int, List<AchievementData>>[(int)Action.Count, (int)Target.Count];
 
@@ -23,10 +24,7 @@ namespace Achievement
                 GetOrAddList(info.action, info.target, info.targetId).Add(new AchievementData(info));
 
             AchievementCount = achievementDataContainer.achievementsDataList.Count;
-        }
-
-        private void Start()
-        {
+            
             _eventManager = EventManager.Instance;
             EventManager.Instance.Subscribe<EventAchievement>(EventManager.Channel.Achievement, OnAchievement);
         }
@@ -63,7 +61,7 @@ namespace Achievement
 
             _achievementDataArray[actionIndex, targetIndex] ??= new Dictionary<int, List<AchievementData>>();
 
-            if (!_achievementDataArray[actionIndex, targetIndex].TryGetValue(key, out var achievementDataList))
+             if (!_achievementDataArray[actionIndex, targetIndex].TryGetValue(key, out var achievementDataList))
                 _achievementDataArray[actionIndex, targetIndex][key] =
                     achievementDataList = new List<AchievementData>();
 
