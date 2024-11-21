@@ -11,6 +11,8 @@ public class TowerSpawner : MonoBehaviour
     [SerializeField] private Transform[] tile;
     [SerializeField] private Button spawnButton;
     
+    
+    
     private Dictionary<TowerGrade, GameObject[]> towerPrefabsDictionary = new Dictionary<TowerGrade, GameObject[]>();
     private List<float> _chanceList;
     
