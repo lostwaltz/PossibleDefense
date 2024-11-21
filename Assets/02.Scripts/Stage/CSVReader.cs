@@ -24,6 +24,8 @@ public static class CSVReader
 
         for (int i = 0; i < lines.Length; i++)
         {
+            if (lines.Length == 0 || lines[0] == "") continue; //정보가 없으면 다음 행으로 이동
+
             List<StageTileTag> columnTileTag = new List<StageTileTag>();
 
             string line = lines[i].Trim(); // 공백 제거

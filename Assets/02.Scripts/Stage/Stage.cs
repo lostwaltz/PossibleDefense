@@ -43,6 +43,8 @@ public class Stage : MonoBehaviour
                 switch (curMapMatrix[z][x])
                 {
                     case StageTileTag.TowerTile:
+                        TowerTile towerTile = tile as TowerTile;
+                        towerTile.Index = towerTiles.Count;
                         towerTiles.Add(tile as TowerTile);
                         break;
 
@@ -59,14 +61,6 @@ public class Stage : MonoBehaviour
             stageTiles.Add(CoulumnTileWorldPos);
         }
 
-    }
-
-
-    //Tile의 position값을 배열좌표 -> 월드좌표롤 변경하는 코드 + 해당 타일의 위치 이동 
-    private Vector3 SetTileWorldPos(Vector3 tile, int x, int z)
-    {
-        Vector3 worldPos = new Vector3((x * tileHalfWidth) + SpacingColumn + offsetColumn, 0, (-z * tileHalfHeight) + SpacingRow + offsetRow);
-        return worldPos;
     }
 
     //Tile의 position값을 배열좌표 -> 월드좌표롤 변경하는 코드
