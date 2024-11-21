@@ -34,6 +34,6 @@ public class StageButton : MonoBehaviour
         //해당 스테이지번호로 넘어가는 매서드
         Instantiate(uiFade).
             FadeTo(0f, 1f, 0.3f).
-            OnComplete(() => SceneManager.LoadScene("GameScene"));
+            OnComplete(() => SceneLoadManager.Instance.LoadScene("GameScene"));
     }
 }

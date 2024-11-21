@@ -5,27 +5,18 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class TestTowerSpawner : MonoBehaviour
+public class SlimeTowerSpawner : MonoBehaviour
 {
     [SerializeField] private TowerChanceData _towerChanceData;
     [SerializeField] private Transform[] tile;
 
-
     private Dictionary<TowerGrade, GameObject[]> towerPrefabsDictionary = new Dictionary<TowerGrade, GameObject[]>();
     private List<float> _chanceList;
-
-    //TODO TILE정보를 받아와서 처리할 수 있도록 변경
 
     private void Awake()
     {
         SetTowerPrefabs();
-        NormalizeTowerProbabilities();
-      
-    }
-
-    public void Initialize(Func<GameObject> _spawnTowerEvent)
-    {
-        _spawnTowerEvent += SpawnTowerByProbability;
+        NormalizeTowerProbabilities();    
     }
 
     private void SetTowerPrefabs()

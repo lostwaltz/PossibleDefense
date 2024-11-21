@@ -39,7 +39,7 @@ public class SceneLoadManager : SingletonDontDestroy<SceneLoadManager>
 
             _sceneDic.Add(data.sceneAsset.name, (SceneBase)method.Invoke(null, null));
         }
-
+        
         CurrentScene = SceneManager.GetActiveScene().name;
         _sceneDic[CurrentScene].OnEnter();
     }
