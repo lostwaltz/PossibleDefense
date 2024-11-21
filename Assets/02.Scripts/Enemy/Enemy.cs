@@ -75,8 +75,7 @@ public class Enemy : MonoBehaviour, IDamagable
     private void ReturnToPool()
     {
         StageManager.Instance.CurEnemyCount--;
-        EventManager.Instance.Publish(EventManager.Channel.Achievement, new Achievement.EventAchievement(Achievement.Action.Kill, Target.Monster, 1f, 0));
-       
+        EventManager.Instance.Publish(EventManager.Channel.Achievement, new EventAchievement(Achievement.Action.Kill, Target.Monster, 1f, enemyData.id));
         gameObject.SetActive(false);
     }
 }

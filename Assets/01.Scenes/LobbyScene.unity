@@ -394,52 +394,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db68c9494896d2a4fb6210191cd73ebd, type: 3}
---- !u!1 &70052957
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 70052959}
-  - component: {fileID: 70052958}
-  m_Layer: 0
-  m_Name: AchivementManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &70052958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 70052957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f84f556115b5404282fa9c5e1c853cf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  achievementDataContainer: {fileID: 11400000, guid: 8a65149e9b589d740be567de6f22e363,
-    type: 2}
---- !u!4 &70052959
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 70052957}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.57947433, y: 1.19548, z: 0.20929697}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &88431778
 GameObject:
   m_ObjectHideFlags: 0
@@ -2308,6 +2262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CallStageNum: 0
+  curClearStageNum: 0
   PlayerGold: 0
 --- !u!1 &1922822385
 GameObject:
@@ -3435,7 +3390,6 @@ SceneRoots:
   - {fileID: 599029629}
   - {fileID: 1856254352}
   - {fileID: 1365224627}
-  - {fileID: 70052959}
   - {fileID: 1992506240743401545}
   - {fileID: 443170577}
   - {fileID: 617799940}

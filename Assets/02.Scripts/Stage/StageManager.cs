@@ -155,6 +155,7 @@ public class StageManager : Singleton<StageManager>
         upgradeController.InitUpgradeData();
         MapSetting();
         WaveSetting();
+        TowerController.Instance.Init();
     }
 
     //게임 시작전 맵 세팅하는 코드 

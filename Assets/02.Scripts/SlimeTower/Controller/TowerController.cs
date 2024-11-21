@@ -8,10 +8,10 @@ public class TowerController : Singleton<TowerController>
 
     [SerializeField] private TowerTile _targetTile;
     [SerializeField] private TowerAttackRangeIndicator _attackRangeIndicator;
+    
 
-    protected override void Awake()
+    public void Init()
     {
-        base.Awake();
         _attackRangeIndicator = PoolManagerForTest.Instance.poolLegacy.SpawnFromPool("RangeDisplayIndicator")
             .GetComponent<TowerAttackRangeIndicator>();
     }
