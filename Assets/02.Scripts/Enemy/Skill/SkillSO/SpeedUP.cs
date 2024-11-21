@@ -21,7 +21,6 @@ public class SpeedUP : BaseSkillSO
                 {
                     particle.Setting(slime.transform);
                 }
-                SoundPlay("Magic", slime.transform.position);
             }
         }
     }
