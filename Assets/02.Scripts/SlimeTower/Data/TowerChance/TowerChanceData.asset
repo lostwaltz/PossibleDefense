@@ -18,6 +18,6 @@ MonoBehaviour:
   - towerGrade: 1
     probability: 0
   - towerGrade: 2
-    probability: 1000
-  - towerGrade: 3
     probability: 0
+  - towerGrade: 3
+    probability: 1000

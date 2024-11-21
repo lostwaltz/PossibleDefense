@@ -18,12 +18,14 @@ public class SlimeTowerWalkState : SlimeTowerBaseState
     {
         base.Enter();
         StartAnimation(stateMachine.SlimeTower.AnimatorHashData.WalkParameterHash);
+        stateMachine.SlimeTower.IsWalking = true;
     }
 
     public override void Exit()
     {
         base.Exit();
         StopAnimation(stateMachine.SlimeTower.AnimatorHashData.WalkParameterHash);
+        stateMachine.SlimeTower.IsWalking = false;
     }
 
 

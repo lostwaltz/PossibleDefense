@@ -35,6 +35,10 @@ public class BaseParticle : MonoBehaviour
     {
         transform.position = startPos.position + offset;
     }
+    public virtual void Setting(Vector3 offset)
+    {
+        transform.position =  offset;
+    }
 
     
     [ContextMenu("파티클 실행")]

@@ -20,7 +20,7 @@ public class BaseSlimeTower : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     public IAttackStrategy AttackStrategy { get; private set; }
     public SlimeTowerStatHandler StatHandler { get; private set; }
     public int CurTowerTileIndex { get; set; } //Debug
-
+    public bool IsWalking { get; set; } = false;
 
     // --- 읽기 전용 데이터 ---
     public readonly AnimatorHashData AnimatorHashData = new AnimatorHashData();

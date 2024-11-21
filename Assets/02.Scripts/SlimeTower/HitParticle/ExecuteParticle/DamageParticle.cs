@@ -6,7 +6,7 @@ public class DamageParticle : ExecuteParticle
     [SerializeField] private int damageRange;
 
     private float _damage;
-    private Collider[] _results = new Collider[50]; //상수 ? 사용 
+    private Collider[] _results = new Collider[100]; //상수 ? 사용 
     private int _targetLayerMask;
 
     protected override void Awake()
@@ -20,7 +20,12 @@ public class DamageParticle : ExecuteParticle
     {
         transform.position = new Vector3(startPos.position.x, 3f, startPos.position.z);
         _damage = damage;
-        Debug.Log(damage);
+    }
+
+    public void Setting(Vector3 offset, float damage)
+    {
+        transform.position = offset;
+        _damage = damage;
     }
 
     public override void Execute()
@@ -47,9 +52,9 @@ public class DamageParticle : ExecuteParticle
     }
 
 
-    // private void OnDrawGizmos()
-    // {
-    //     Gizmos.color = new Color(0, 1, 0, 0.5f); 
-    //     Gizmos.DrawSphere(transform.position, damageRange);
-    // }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0, 1, 0, 0.5f); 
+        Gizmos.DrawSphere(transform.position, damageRange);
+    }
 }
