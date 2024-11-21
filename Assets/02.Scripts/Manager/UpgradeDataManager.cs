@@ -30,8 +30,8 @@ public static class UpgradeDataManager
             };
             container.saveDatas.Add(saveData);
         }
-        container.curClearStage = GameManager.Instance.curClearStageNum;
-        container.playerGold = GameManager.Instance.PlayerGold;
+        //container.curClearStage = GameManager.Instance.curClearStageNum;
+        //container.playerGold = GameManager.Instance.PlayerGold;
 
         var json = JsonUtility.ToJson(container, true);
         File.WriteAllText(SavePath, json);
@@ -67,7 +67,7 @@ public static class UpgradeDataManager
             }
         }
 
-        GameManager.Instance.curClearStageNum = container.curClearStage;
-        GameManager.Instance.PlayerGold = container.playerGold;
+        //GameManager.Instance.curClearStageNum = container.curClearStage;
+        //GameManager.Instance.PlayerGold = container.playerGold;
     }
 }

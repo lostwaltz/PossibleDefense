@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class SingletonDontDestroy<T> : MonoBehaviour where T : Component
 {
@@ -47,11 +47,20 @@ public class SingletonDontDestroy<T> : MonoBehaviour where T : Component
 
         foreach (var old in oldInstances)
         {
-            if (old.GetComponent<SingletonDontDestroy<T>>().InitializationTime < InitializationTime)
+            if (old.GetComponent<SingletonDontDestroy<T>>().InitializationTime > InitializationTime)
                 Destroy(old.gameObject);
         }
 
         if (_instance == null)
             _instance = this as T;
+
+        //if(_instance != null && _instance != this)
+        //{
+        //    Destroy(gameObject);
+        //    return;
+        //}
+
+        //_instance = this as T;
+        //DontDestroyOnLoad(gameObject);
     }
 }
