@@ -44,9 +44,9 @@ public class TowerController : Singleton<TowerController>
 
     public void SetTargetTile(TowerTile tile)
     {
-        if (_selectedTower == null)
+        if (_selectedTower == null || tile.SlimeTower != null)
             return;
-
+        
         _targetTile = tile;
         MoveSlimeTower();
         _attackRangeIndicator.OffAttackRangeIndicator();
