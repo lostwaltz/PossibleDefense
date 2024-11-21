@@ -42,8 +42,7 @@ public class SlimeTowerStatUpgradeData : ScriptableObject
     public void Reset()
     {
         Init();
-        Debug.Log("초기화");
-    }
+     }
 
     //빌드하고 나면 so값이 변경되도 저장이 안됨 
     //그래서 읽기용으로 사용하는거임 플레이 중에 거쳐가는 느낌으로 

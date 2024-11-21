@@ -39,6 +39,6 @@ public class ForceReceiver : MonoBehaviour  //only speed about
 
         yield return new WaitForSeconds(duration);
 
-        currentSpeed = originSpeed;
+        currentSpeed = baseSpeed;
     }
 }

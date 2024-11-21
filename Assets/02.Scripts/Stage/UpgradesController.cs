@@ -38,8 +38,8 @@ public class UpgradesController : MonoBehaviour
             { buttons[1], new StageTowerUpgradeLevel(TowerGrade.Rare, 1, gradeCost[1]) },
             { buttons[2], new StageTowerUpgradeLevel(TowerGrade.Epic, 1, gradeCost[2]) },
         };
-        
-        _upgradeDatas[0].Reset();
+
+        InitUpgradeData();
 
         foreach (KeyValuePair<UI_UpgradeButton, StageTowerUpgradeLevel> pair in upgradeButtonMappings)
         {
@@ -50,6 +50,14 @@ public class UpgradesController : MonoBehaviour
                 maxUpgradeLevel == pair.Value.Level ? StageUpgradeConstain.MaxUpgrade : pair.Value.Level.ToString()) 
             ) ; //UI 출력 로직 
 
+        }
+    }
+
+    public void InitUpgradeData()
+    {
+        foreach (var data in _upgradeDatas)
+        {
+            data.Reset();
         }
     }
 

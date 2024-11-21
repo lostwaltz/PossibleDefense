@@ -8,3 +8,5 @@ public class SplashAttackByProjectileSO : AttackStrategySO
         return new SplashAttackByProjectile();
     }
 }
+
+

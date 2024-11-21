@@ -11,7 +11,19 @@ public class BaseProjectile : MonoBehaviour
     private Transform _target;
     private float _damage;
     private int _enemyLayerMask;
-    
+  
+    private void OnEnable()
+    {
+        Init();
+    }
+
+    private void Init()
+    {
+        _hitStrategy = null;
+        _fireStrategy = null;
+        _target = null;
+    }
+
     private void Start()
     {
         _enemyLayerMask = 1 << LayerMask.NameToLayer("Enemy");  
@@ -50,11 +62,10 @@ public class BaseProjectile : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
-
+    
     private void OnDisable()
     {
-        _hitStrategy = null;
-        _fireStrategy = null;
+        Init();
     }
+    
 }

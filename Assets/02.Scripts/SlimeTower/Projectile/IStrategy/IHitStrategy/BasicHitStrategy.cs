@@ -1,5 +1,5 @@
 
-//정석적으로는 Execute를 안쓰는 경우에는 상속 받으면 안됨! - SOLID 원칙 위배 리스코프 치환 원칙 위배 
+
 using UnityEngine;
 public class BasicHitStrategy : IHitStrategy
 {    
@@ -14,8 +14,10 @@ public class BasicHitStrategy : IHitStrategy
     {
         GameObject particle = PoolManagerForTest.Instance.poolLegacy.SpawnFromPool("HitParticle");
         BaseParticle baseParticle = particle.GetComponent<BaseParticle>();
-        baseParticle.Setting(_projectilePos);
+        Vector3 offset = Vector3.up * 3f;
+        baseParticle.Setting(_projectilePos,offset);
         baseParticle.StartParticleLifeCycle();
     }
     
 }
+

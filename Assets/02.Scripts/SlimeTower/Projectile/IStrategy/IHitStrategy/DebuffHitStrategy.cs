@@ -1,3 +1,6 @@
+using System.Text;
+using UnityEngine;
+
 public enum DebuffType
 {
     Slow, // 느려지게 하는 디버프
@@ -6,18 +9,26 @@ public enum DebuffType
 
 public class DebuffHitStrategy : IHitStrategy
 {
-    private float slowAmount;
+   // private float slowAmount; 지금은 파티클에서 설정 해당 부분 관련해서 기획적으로 고민
+    private Transform _projectilePos;
     private DebuffType _type;
 
-    public DebuffHitStrategy(float slowAmount , DebuffType type)
+    private StringBuilder _stringBuilder = new StringBuilder("Particle");
+
+    public DebuffHitStrategy(Transform projectilePos,DebuffType type)
     {
-        this.slowAmount = slowAmount;
+        _projectilePos = projectilePos;
+        _type = type;
     }
 
 
     public void Execute()
     {
-        // 디버프 파티클을 생성해서 적용하기 
+        GameObject debuffParticle =
+            PoolManagerForTest.Instance.poolLegacy.SpawnFromPool(_stringBuilder.Insert(0, _type).ToString());
+        SlowDebuffParticle executeParticle = debuffParticle.GetComponent<SlowDebuffParticle>();
+        Vector3 offset = Vector3.up * 3f;
+        executeParticle.Setting(_projectilePos, offset);
+        executeParticle.StartParticleLifeCycle();
     }
-    
 }

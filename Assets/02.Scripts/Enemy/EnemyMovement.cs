@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour
 
     private bool isDead = false;
 
-    private ForceReceiver forceReceiver;
+    public ForceReceiver forceReceiver;
     private float speed => forceReceiver.GetSpeed();
 
     private void Awake()
