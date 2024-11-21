@@ -32,6 +32,11 @@ public class Fader : MonoBehaviour
         
         return this;
     }
+
+    public void Release()
+    {
+        Destroy(gameObject);
+    }
     
 
     private IEnumerator FadeCoroutine(float startAlpha, float targetAlpha,  float duration)
