@@ -270,7 +270,7 @@ public class StageManager : Singleton<StageManager>
         uI_EnemyCount.UIPrint(finishEnemyCount, curEnemyCount);
         uI_CurGoldIndicator.UIPrint(curGold);
 
-        if(GameOverCheck() || GameClearCheck())
+        if (GameOverCheck() || GameClearCheck())
         {
             //TODO : 결과창 팝업
             //
