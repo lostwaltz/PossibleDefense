@@ -3050,8 +3050,12 @@ MonoBehaviour:
   callStageNum: 2
   upgradeController: {fileID: 0}
   waveSkip: {fileID: 0}
-  testTowerSpawner: {fileID: 1628669691}
+  towerSell: {fileID: 0}
   curEnmeyWayPointData: []
+  IsSellMode: 0
+  SellModeButton: {fileID: 0}
+  slimeTowerSpawner: {fileID: 0}
+  spawnButton: {fileID: 0}
   uI_WaveIndicator: {fileID: 2046388852}
   uI_EnemyCount: {fileID: 1467468907}
   uI_CurGoldIndicator: {fileID: 1384138085}
@@ -4037,7 +4041,7 @@ GameObject:
   m_Component:
   - component: {fileID: 619893233}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: BackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9354,7 +9358,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913b3acbf8eb4fa45b2054d13e95d334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Slime: {fileID: 2320459595813285762, guid: a08d95c0db599024ea7630f9be298320, type: 3}
 --- !u!114 &1710915137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10726,7 +10729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1977769797}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: BackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
