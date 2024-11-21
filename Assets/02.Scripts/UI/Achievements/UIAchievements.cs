@@ -22,17 +22,11 @@ namespace Achievement
         private void Awake()
         {
             fader = GetComponent<Fader>();
-        }
-
-        private void Start()
-        {
             _achievementManager = AchievementManager.Instance;
-            
-            
             InitUI();
         }
 
-        
+
         public void InitUI()
         {
             _uiAchievementsSlotArray = new UIAchievementsSlot[_achievementManager.AchievementCount];
@@ -72,6 +66,7 @@ namespace Achievement
         {
             gameObject.SetActive(true);
             fader.FadeTo(0f, 1f, 0.3f);
+            UpdateUI();
             isClosed = false;
         }
 
