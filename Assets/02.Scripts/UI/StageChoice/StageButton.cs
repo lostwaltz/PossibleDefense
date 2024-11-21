@@ -32,6 +32,8 @@ public class StageButton : MonoBehaviour
     {
         Debug.Log($"input index : {index}");
         //해당 스테이지번호로 넘어가는 매서드
+
+        GameManager.Instance.CallStageNum = index + 1;
         Instantiate(uiFade).
             FadeTo(0f, 1f, 0.3f).
             OnComplete(() => SceneLoadManager.Instance.LoadScene("GameScene"));

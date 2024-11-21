@@ -59,6 +59,8 @@ public class StageManager : Singleton<StageManager>
     {
         base.Awake();
 
+        callStageNum = GameManager.Instance.CallStageNum;
+
         //ObjectPool이 Inspector에서 참조가 안된경우 체크
         if (tileObjectPoolLegacy == null)
         {
@@ -84,13 +86,18 @@ public class StageManager : Singleton<StageManager>
             towerSell = GetComponent<TowerSell>();
         }
 
-        upgradeController.InitUpgradeData();
+      
         //Debug
-        spawnButton.onClick.AddListener(() => SpawnSlimeTower());
+    
         //SellModeButton.onClick.AddListener(() => IsSellMode = !IsSellMode);
     }
 
-
+    private void Start()
+    {
+        spawnButton.onClick.AddListener(() => SpawnSlimeTower());
+        GameStartInit(callStageNum);
+        
+    }
  
 
 
@@ -130,17 +137,12 @@ public class StageManager : Singleton<StageManager>
         oldTile.SlimeTower = tmp;   
     }
 
-    private void Start()
-    {
-        //Debug
-        GameStartInit(callStageNum);
-    }
-
     //외부 Scene에서 게임 씬 동작하는 코드입니다. 
     public void GameStartInit(int callStageNum)
     {
         this.callStageNum = callStageNum;
 
+        upgradeController.InitUpgradeData();
         MapSetting();
         WaveSetting();
     }

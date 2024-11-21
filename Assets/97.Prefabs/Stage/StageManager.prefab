@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9186706753560052803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6453612816800217600}
+  - component: {fileID: 1535484183986155340}
+  - component: {fileID: 5126239279763973481}
+  - component: {fileID: 7731218067034004532}
+  - component: {fileID: 2421859216738206295}
+  - component: {fileID: 8662342934954505551}
+  - component: {fileID: 6354059354784197497}
+  m_Layer: 0
+  m_Name: StageManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6453612816800217600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9186706753560052803}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1535484183986155340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9186706753560052803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 455e1ea5c8ad57246afa609d5207481a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stage: {fileID: 7579750480079828766, guid: 6d7a9d68a4729454386ad0de83da7955, type: 3}
+  tileObjectPoolLegacy: {fileID: 5126239279763973481}
+  callStageNum: 2
+  upgradeController: {fileID: 7731218067034004532}
+  waveSkip: {fileID: 2421859216738206295}
+  towerSell: {fileID: 6354059354784197497}
+  curEnmeyWayPointData: []
+  IsSellMode: 0
+  SellModeButton: {fileID: 0}
+  slimeTowerSpawner: {fileID: 8662342934954505551}
+  spawnButton: {fileID: 0}
+  uI_WaveIndicator: {fileID: 0}
+  uI_EnemyCount: {fileID: 0}
+  uI_CurGoldIndicator: {fileID: 0}
+--- !u!114 &5126239279763973481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9186706753560052803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6bb10d372ebdc440868c5029e1dcd84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: EnemyWayTile
+    prefab: {fileID: 6414579781571261687, guid: 10da8d3decc49e74fb92772f5841ae8b,
+      type: 3}
+    size: 50
+  - tag: TowerTile
+    prefab: {fileID: 6414579781571261687, guid: 6eed7e551e14d55439a0ad10d092028f,
+      type: 3}
+    size: 50
+  - tag: SpawnTile
+    prefab: {fileID: 6414579781571261687, guid: 6cdfa3c8d71929b43b9efce7b7f35dc8,
+      type: 3}
+    size: 50
+  - tag: EndTile
+    prefab: {fileID: 6414579781571261687, guid: 148eaa3808672c743b66b88f26435e8f,
+      type: 3}
+    size: 50
+--- !u!114 &7731218067034004532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9186706753560052803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc02df265e886048b6bd9f69dc800c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _upgradeDatas:
+  - {fileID: 11400000, guid: fb3503099ce8c1b46bcaa00f4547c485, type: 2}
+  - {fileID: 11400000, guid: 61042a82a4f415e4fa2fa6c894e9e03b, type: 2}
+  - {fileID: 11400000, guid: 79c601b725b45d641acae4f7a73602e7, type: 2}
+  buttons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  gradeCost: 320000006400000096000000
+  maxUpgradeLevel: 10
+  upgradeModifier: 1.2
+--- !u!114 &2421859216738206295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9186706753560052803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f359cf52aef75b46bb142fa80f567c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
+--- !u!114 &8662342934954505551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9186706753560052803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3cda99ff74acb4e8f0d7a8cd86124d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _towerChanceData: {fileID: 11400000, guid: 70b35abe377d9bb4a8bff72665d4e49c, type: 2}
+  tile: []
+--- !u!114 &6354059354784197497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9186706753560052803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f60dcb8206d514ea62527d13b5ab9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SellTowerPanel: {fileID: 0}
+  SellButton: {fileID: 0}
+  target: {fileID: 0}
