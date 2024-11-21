@@ -30,6 +30,8 @@ public class UpgradesController : MonoBehaviour
 
     private void Start()
     {
+        
+        
         upgradeButtonMappings = new Dictionary<UI_UpgradeButton, StageTowerUpgradeLevel>
         {
             { buttons[0], new StageTowerUpgradeLevel(TowerGrade.Common, 1, gradeCost[0]) },
@@ -37,6 +39,7 @@ public class UpgradesController : MonoBehaviour
             { buttons[2], new StageTowerUpgradeLevel(TowerGrade.Epic, 1, gradeCost[2]) },
         };
         
+        _upgradeDatas[0].Reset();
 
         foreach (KeyValuePair<UI_UpgradeButton, StageTowerUpgradeLevel> pair in upgradeButtonMappings)
         {
