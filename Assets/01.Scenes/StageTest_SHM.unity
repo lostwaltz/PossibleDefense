@@ -1401,6 +1401,8 @@ MonoBehaviour:
   tileObjectPoolLegacy: {fileID: 527513481}
   callStageNum: 2
   upgradeController: {fileID: 0}
+  waveSkip: {fileID: 0}
+  testTowerSpawner: {fileID: 1628669691}
   curEnmeyWayPointData: []
   uI_WaveIndicator: {fileID: 2046388852}
   uI_EnemyCount: {fileID: 1467468907}
@@ -1456,7 +1458,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527513478}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cc02df265e886048b6bd9f69dc800c1, type: 3}
   m_Name: 
@@ -1466,10 +1468,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 61042a82a4f415e4fa2fa6c894e9e03b, type: 2}
   - {fileID: 11400000, guid: a521e1271f0b12442ae525fbda2d36bc, type: 2}
   buttons:
-  - {fileID: 1378062321}
-  - {fileID: 993458401}
-  - {fileID: 128455483}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  gradeCost: 
   maxUpgradeLevel: 10
+  upgradeModifier: 1.2
 --- !u!1 &542441067
 GameObject:
   m_ObjectHideFlags: 0
@@ -3985,8 +3989,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _towerChanceData: {fileID: 11400000, guid: 70b35abe377d9bb4a8bff72665d4e49c, type: 2}
   tile: []
-  spawnButton: {fileID: 639096399}
-  SlimeTowers: []
 --- !u!4 &1628669692
 Transform:
   m_ObjectHideFlags: 0
