@@ -8,7 +8,7 @@ public class GameScene : SceneBase
         base.OnEnter();
         
         var fader = Object.Instantiate(Resources.Load<Fader>("UI/UIFade"));
-        fader.FadeTo(0f, 1f, 0.3f);
+        fader.FadeTo(1f, 0f, 0.3f).OnComplete( fader.Release );
         
         Debug.Log("EnterMainScene");
     }

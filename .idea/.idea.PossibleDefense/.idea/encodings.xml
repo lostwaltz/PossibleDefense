@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Assets/02.Scripts/01.Core/Scene/SceneLoadManager.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/02.Scripts/Enemy/Enemy.cs" charset="x-windows-949" />
     <file url="file://$PROJECT_DIR$/Assets/02.Scripts/Enemy/EnemyHealth.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/02.Scripts/Enemy/EnemyMovement.cs" charset="x-windows-949" />
     <file url="file://$PROJECT_DIR$/Assets/02.Scripts/Scene/GameScene.cs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Assets/02.Scripts/Scene/LobbyScene.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/02.Scripts/Scene/SceneBase.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/Controller/TowerController.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/HitParticle/BaseParticle.cs" charset="UTF-8" />

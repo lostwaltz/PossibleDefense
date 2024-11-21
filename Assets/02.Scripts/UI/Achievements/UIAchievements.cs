@@ -11,7 +11,8 @@ namespace Achievement
     {
         private AchievementManager _achievementManager;
         private Fader fader;
-        
+
+        private bool isClosed;
         
         [SerializeField] private UIAchievementsSlot uiAchievementsSlot;
         [SerializeField] private Transform content;
@@ -71,10 +72,15 @@ namespace Achievement
         {
             gameObject.SetActive(true);
             fader.FadeTo(0f, 1f, 0.3f);
+            isClosed = false;
         }
 
         private void CloseUI()
         {
+            if (true == isClosed) return;
+
+            isClosed = true;
+            
             fader.FadeTo(1f, 0f, 0.3f).
                 OnComplete(() => SetActive(false));
         }
