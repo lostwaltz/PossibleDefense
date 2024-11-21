@@ -3,10 +3,11 @@ using UnityEngine.UI;
 
 public class UI_SellModeBtn : UIBase
 {
-    private bool isToggled = false; // 버튼 상태
+    private bool isToggled; // 버튼 상태
     private Button button; // 버튼 참조
     private Image buttonImage; // 버튼 이미지 
 
+    [SerializeField] private GameObject SellTowerBax;
     [SerializeField] private Color toggledColor = Color.green;  // 눌렸을 때 색상
     [SerializeField] private Color defaultColor = Color.white;  // 기본 색상
 
@@ -24,6 +25,7 @@ public class UI_SellModeBtn : UIBase
         if (isToggled)
         {
             StageManager.Instance.IsSellMode = true;
+            SellTowerBax.SetActive(true);
             // 눌린 상태
             buttonImage.color = toggledColor;
             Debug.Log("Button is toggled ON");
@@ -31,6 +33,8 @@ public class UI_SellModeBtn : UIBase
         else
         {
             StageManager.Instance.IsSellMode = false;
+            SellTowerBax.SetActive(false);
+
             // 기본 상태
             buttonImage.color = defaultColor;
             Debug.Log("Button is toggled OFF");

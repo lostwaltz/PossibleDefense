@@ -41,7 +41,7 @@ namespace Achievement
         {
             foreach (AchievementData achievementData in GetOrAddList(data.Action, data.Target, data.TargetId))
             {
-                achievementData.currentValue += data.ProgressValue;
+                achievementData.IncrementValue(data.ProgressValue);
 
                 Debug.Log(achievementData.currentValue);
             }
@@ -50,7 +50,7 @@ namespace Achievement
 
             foreach (AchievementData achievementData in GetOrAddList(data.Action, data.Target, 0))
             {
-                achievementData.currentValue += data.ProgressValue;
+                achievementData.IncrementValue(data.ProgressValue);
 
                 Debug.Log(achievementData.currentValue);
             }
