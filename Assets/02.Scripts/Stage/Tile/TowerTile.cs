@@ -11,7 +11,7 @@ public class TowerTile : BaseTile
     public override void OnPointerClick(PointerEventData eventData)
     {
         //타일 클릭하여 이동시에 해당 타일에 Tower가 없는경우에만 이동가능
-        if (SlimeTower == null)
+        if (!StageManager.Instance.IsSellMode)
         {
             TowerController.Instance.SetTargetTile(this);
         }

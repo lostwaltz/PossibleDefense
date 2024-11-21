@@ -71,12 +71,26 @@ public class BaseSlimeTower : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         Debug.Log("판매 가격" + slimeTowerDataSo.SlimeTowerGradeInfo.sellPrice);
         Destroy(gameObject);
     }
-    
-    
+
+    public int TestExecuteTowerSell()
+    {
+        //StageManager 재화를 올려주기 
+        Debug.Log("판매 가격" + slimeTowerDataSo.SlimeTowerGradeInfo.sellPrice);
+        Destroy(gameObject);
+
+        return slimeTowerDataSo.SlimeTowerGradeInfo.sellPrice;
+    }
     public void OnPointerDown(PointerEventData eventData)
     {
-        _pressStartTime = Time.time;
-        _pressCheckCoroutine = StartCoroutine(CheckPressDuration());
+        if (!StageManager.Instance.IsSellMode)
+        {
+            _pressStartTime = Time.time;
+            _pressCheckCoroutine = StartCoroutine(CheckPressDuration());
+        }
+        else
+        {
+            StageManager.Instance.TowerSell.SellTowerTarget(gameObject);
+        }
     }
 
     //Stage에서 데이터를 가져오기 보다는 

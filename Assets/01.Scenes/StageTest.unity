@@ -2060,6 +2060,7 @@ GameObject:
   - component: {fileID: 527513482}
   - component: {fileID: 527513483}
   - component: {fileID: 527513484}
+  - component: {fileID: 527513485}
   m_Layer: 0
   m_Name: StageManager
   m_TagString: Untagged
@@ -2084,6 +2085,7 @@ MonoBehaviour:
   callStageNum: 2
   upgradeController: {fileID: 527513482}
   waveSkip: {fileID: 527513483}
+  towerSell: {fileID: 527513485}
   curEnmeyWayPointData: []
   slimeTowerSpawner: {fileID: 527513484}
   spawnButton: {fileID: 639096399}
@@ -2184,6 +2186,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _towerChanceData: {fileID: 11400000, guid: 70b35abe377d9bb4a8bff72665d4e49c, type: 2}
   tile: []
+--- !u!114 &527513485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527513478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f60dcb8206d514ea62527d13b5ab9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &583952490
 GameObject:
   m_ObjectHideFlags: 0
@@ -5263,9 +5278,8 @@ GameObject:
   - component: {fileID: 1710915139}
   - component: {fileID: 1710915138}
   - component: {fileID: 1710915137}
-  - component: {fileID: 1710915136}
   m_Layer: 5
-  m_Name: SummonBtn (2)
+  m_Name: SellBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5291,18 +5305,6 @@ RectTransform:
   m_AnchoredPosition: {x: 16, y: 14}
   m_SizeDelta: {x: 190.8233, y: 226.8636}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1710915136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710915134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913b3acbf8eb4fa45b2054d13e95d334, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1710915137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5346,19 +5348,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1710915138}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1710915136}
-        m_TargetAssemblyTypeName: UI_StartBtn, Assembly-CSharp
-        m_MethodName: OnClickSummon
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1710915138
 MonoBehaviour:
   m_ObjectHideFlags: 0

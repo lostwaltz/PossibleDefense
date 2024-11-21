@@ -8,7 +8,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Serialization;
-
+using UnityEngine.Assertions.Must;
 
 public class StageManager : Singleton<StageManager>
 {
@@ -18,6 +18,9 @@ public class StageManager : Singleton<StageManager>
     [SerializeField] private int callStageNum = 0; //호출할 스테이지 넘버링 
     [SerializeField] private UpgradesController upgradeController;
     [SerializeField] private WaveSkip waveSkip;
+    [SerializeField] private TowerSell towerSell;
+
+    StringBuilder stringBuilder = new StringBuilder(); //문자열 최적화를 위한 스트링빌더 멤버변수로 선언
 
     private int curEnemyCount = 0; // 현재 필드에 있는 적의 갯수
     private int finishEnemyCount = 100; // 필드에 해당 Enemy 갯수 이상되면 게임오버되는 갯수
@@ -43,8 +46,12 @@ public class StageManager : Singleton<StageManager>
     public int CurEnemyCount { get => curEnemyCount; set => curEnemyCount = value; }
     public Queue<WaveStageData> CurWaveStageData { get => curWaveStageData; }
 
-    StringBuilder stringBuilder = new StringBuilder(); //문자열 최적화를 위한 스트링빌더 멤버변수로 선언
+    //타워 판매 필드
+    public bool IsSellMode = false; //타워를 판매하는 모드에 진입체크 변수 
+    public TowerSell TowerSell { get => towerSell; }
+    [SerializeField] private Button SellModeButton;
 
+    //타워 생성 필드
     [SerializeField] private SlimeTowerSpawner slimeTowerSpawner;
     [SerializeField] private Button spawnButton;
 
@@ -72,9 +79,14 @@ public class StageManager : Singleton<StageManager>
         {
             slimeTowerSpawner = GetComponent<SlimeTowerSpawner>();
         }
+        if(towerSell == null)
+        {
+            towerSell = GetComponent<TowerSell>();
+        }
 
         //Debug
         spawnButton.onClick.AddListener(() => SpawnSlimeTower());
+        SellModeButton.onClick.AddListener(() => IsSellMode = !IsSellMode);
     }
 
     public bool UseGold(int useGoldAmount)
@@ -264,6 +276,7 @@ public class StageManager : Singleton<StageManager>
     public UI_WaveIndicator uI_WaveIndicator;
     public UI_EnemyCount uI_EnemyCount;
     public UI_CurGoldIndicator uI_CurGoldIndicator;
+
     private void LateUpdate()
     {
         uI_WaveIndicator.UIPrint(waveTimer, curWave.WaveNum, curEnemyCount);
