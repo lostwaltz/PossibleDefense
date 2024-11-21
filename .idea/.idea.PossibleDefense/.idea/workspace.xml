@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="786d4d7f-6565-4eb2-bafb-1618cb383218" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/LobbyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scenes/LobbyScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Enemy/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Scene/LobbyScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Scene/LobbyScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/UI/Achievements/UIAchievements.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/UI/Achievements/UIAchievements.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04.Sos/AchievementDataSheet.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04.Sos/AchievementDataSheet/AchievementsData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04.Sos/AchievementDataSheet/AchievementsData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/State/SlimeTowerAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/SlimeTower/BaseSlimeTower/State/SlimeTowerAttackState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +45,7 @@
     "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "featrue__kmc",
+    "git-widget-placeholder": "Feature__JJY",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -96,10 +89,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="40132">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="40132" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -152,14 +145,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/02.Scripts/Enemy/Enemy.cs</url>
           <line>77</line>
-          <properties documentPath="C:\WorkSpace\Unity\UnityLearning\3D_Project\PossibleDefense\Assets\02.Scripts\Enemy\Enemy.cs" containingFunctionPresentation="Method 'ReturnToPool'">
-            <startOffsets>
-              <option value="1873" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2018" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\WorkSpace\Unity\UnityLearning\3D_Project\PossibleDefense\Assets\02.Scripts\Enemy\Enemy.cs" containingFunctionPresentation="Method 'ReturnToPool'" />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
