@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051ef85106d94558a357eeafa44f8f37, type: 3}
   m_Name: KingSlimeTowerData
   m_EditorClassIdentifier: 
-  towerName: 
+  towerName: "\uD0B9 \uC2AC\uB77C\uC784"
   slimeTowerGradeInfo: {fileID: 11400000, guid: 99ded64c035ec7240af83df5dde998f0,
     type: 2}
   slimeTowerUpgradeDataData: {fileID: 11400000, guid: 050f144c24653d54b956334f3d337d77,
     type: 2}
   SlimeTowerStats:
-    AttackSpeed: 1.5
-    AttackPower: 30
+    AttackSpeed: 10.475319
+    AttackPower: 16635.002
     AttackRange: 20
   originSlimeTowerStats:
     AttackSpeed: 0

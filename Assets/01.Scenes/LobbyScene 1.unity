@@ -356,6 +356,76 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 724381513766805778, guid: db68c9494896d2a4fb6210191cd73ebd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 724381513766805778, guid: db68c9494896d2a4fb6210191cd73ebd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 724381513766805778, guid: db68c9494896d2a4fb6210191cd73ebd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 616408150}
+    - target: {fileID: 724381513766805778, guid: db68c9494896d2a4fb6210191cd73ebd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 724381513766805778, guid: db68c9494896d2a4fb6210191cd73ebd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 724381513766805778, guid: db68c9494896d2a4fb6210191cd73ebd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CharacterUpgrade, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 724381513766805778, guid: db68c9494896d2a4fb6210191cd73ebd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 929627602683426028, guid: db68c9494896d2a4fb6210191cd73ebd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 929627602683426028, guid: db68c9494896d2a4fb6210191cd73ebd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 929627602683426028, guid: db68c9494896d2a4fb6210191cd73ebd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 616408150}
+    - target: {fileID: 929627602683426028, guid: db68c9494896d2a4fb6210191cd73ebd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 929627602683426028, guid: db68c9494896d2a4fb6210191cd73ebd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradePower
+      objectReference: {fileID: 0}
+    - target: {fileID: 929627602683426028, guid: db68c9494896d2a4fb6210191cd73ebd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CharacterUpgrade, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 929627602683426028, guid: db68c9494896d2a4fb6210191cd73ebd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2451009996877103608, guid: db68c9494896d2a4fb6210191cd73ebd,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -480,6 +550,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604135535874651802, guid: db68c9494896d2a4fb6210191cd73ebd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604135535874651802, guid: db68c9494896d2a4fb6210191cd73ebd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604135535874651802, guid: db68c9494896d2a4fb6210191cd73ebd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 616408150}
+    - target: {fileID: 3604135535874651802, guid: db68c9494896d2a4fb6210191cd73ebd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604135535874651802, guid: db68c9494896d2a4fb6210191cd73ebd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeRange
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604135535874651802, guid: db68c9494896d2a4fb6210191cd73ebd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CharacterUpgrade, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604135535874651802, guid: db68c9494896d2a4fb6210191cd73ebd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5757931282540417657, guid: db68c9494896d2a4fb6210191cd73ebd,
         type: 3}
@@ -898,6 +1003,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 20.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3322666285441159120, guid: 9d68d91a227a11d458ed47a13ca6ff23,
+        type: 3}
+      propertyPath: m_Value
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4512753409580102212, guid: 9d68d91a227a11d458ed47a13ca6ff23,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1007,6 +1117,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5289424123814627767, guid: 9d68d91a227a11d458ed47a13ca6ff23,
+        type: 3}
+      propertyPath: m_Value
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5301264826919974127, guid: 9d68d91a227a11d458ed47a13ca6ff23,
         type: 3}
@@ -1149,6 +1264,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 320095756}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &616408150 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6108994159633189484, guid: db68c9494896d2a4fb6210191cd73ebd,
+    type: 3}
+  m_PrefabInstance: {fileID: 320095756}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616408149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ba916252e802a4988c0655044ed2a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &617799938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,9 +1306,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21120cfd71d7534fb6482579cde19f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffectVolume: 0
-  soundEffectPitchVariance: 0
-  BGMVolume: 0
+  soundEffectVolume: 0.2
+  soundEffectPitchVariance: 0.1
+  BGMVolume: 0.1
   BGMSource: {fileID: 617799942}
   BGM: {fileID: 8300000, guid: 232e77919cccf49498d23e09ab448705, type: 3}
   soundDatas: []
