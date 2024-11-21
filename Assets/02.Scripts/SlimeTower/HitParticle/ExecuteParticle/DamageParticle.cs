@@ -16,9 +16,9 @@ public class DamageParticle : ExecuteParticle
     }
 
 
-    public void Setting(Transform startPos, float damage)
+    public void Setting(Transform startPos, Vector3 offset ,float damage)
     {
-        transform.position = new Vector3(startPos.position.x, 1.5f, startPos.position.z);
+        transform.position = new Vector3(startPos.position.x, 3f, startPos.position.z);
         _damage = damage;
         Debug.Log(damage);
     }

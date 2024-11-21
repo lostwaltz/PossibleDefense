@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePos: {fileID: 7926281058282812173}
-  attackStrategyData: {fileID: 11400000, guid: ccc787b4a6856e943a36a95a9b668699, type: 2}
-  slimeTowerDataSo: {fileID: 11400000, guid: 4d896ed49a035ae489563ab6f6012d03, type: 2}
+  attackStrategyData: {fileID: 11400000, guid: 8b38a2cea05da0040bfe2fb04f3cbc04, type: 2}
+  slimeTowerDataSo: {fileID: 11400000, guid: 1ecffd788ea91f7428297d9892e27bef, type: 2}
 --- !u!65 &3727376216273800238
 BoxCollider:
   m_ObjectHideFlags: 0
