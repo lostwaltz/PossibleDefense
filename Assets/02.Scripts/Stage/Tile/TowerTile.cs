@@ -3,12 +3,17 @@ using UnityEngine.EventSystems;
 
 public class TowerTile : BaseTile
 {
-    //private BaseSlimeTower SlimeTower = null;
+    public GameObject SlimeTower = null;
+
+    private int index;
+    public int Index {  get { return index; } set { index = value; } }
 
     public override void OnPointerClick(PointerEventData eventData)
     {
-        TowerController.Instance.SetTargetTile(transform);
-        Debug.Log($"isTower : {isTower}");
-        Debug.Log($"isTower : {transform.position}");
+        //타일 클릭하여 이동시에 해당 타일에 Tower가 없는경우에만 이동가능
+        if (SlimeTower == null)
+        {
+            TowerController.Instance.SetTargetTile(this);
+        }
     }
 }

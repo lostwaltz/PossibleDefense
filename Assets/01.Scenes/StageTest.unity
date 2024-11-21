@@ -1813,9 +1813,10 @@ MonoBehaviour:
   tileObjectPoolLegacy: {fileID: 527513481}
   callStageNum: 2
   upgradeController: {fileID: 527513482}
-  waveSkip: {fileID: 0}
-  testTowerSpawner: {fileID: 527513484}
+  waveSkip: {fileID: 527513483}
   curEnmeyWayPointData: []
+  slimeTowerSpawner: {fileID: 527513484}
+  spawnButton: {fileID: 639096399}
   uI_WaveIndicator: {fileID: 2046388852}
   uI_EnemyCount: {fileID: 1467468907}
   uI_CurGoldIndicator: {fileID: 1384138085}
@@ -2141,7 +2142,7 @@ GameObject:
   - component: {fileID: 639096400}
   - component: {fileID: 639096399}
   m_Layer: 5
-  m_Name: TestSummonBtn
+  m_Name: TowerSummonBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

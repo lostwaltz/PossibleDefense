@@ -18,6 +18,8 @@ public class BaseSlimeTower : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     public SlimeStateMachine SlimeStateMachine { get; private set; } 
     public IAttackStrategy AttackStrategy { get; private set; } 
     public SlimeTowerStatHandler StatHandler { get; private set; } 
+    public int CurTowerTileIndex { get; set; } //Debug
+
 
     // --- 읽기 전용 데이터 ---
     public readonly AnimatorHashData AnimatorHashData = new AnimatorHashData(); 
@@ -100,6 +102,7 @@ public class BaseSlimeTower : MonoBehaviour, IPointerDownHandler, IPointerUpHand
             if (Time.time - _pressStartTime >= 0.3f)
             {
                 TowerController.Instance.SetSlimeTower(gameObject);
+
                 yield break;
             }
 

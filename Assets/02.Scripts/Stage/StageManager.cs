@@ -6,8 +6,9 @@ using System.Threading;
 using System.Xml;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Serialization;
-using UnityEngine.UIElements;
+
 
 public class StageManager : Singleton<StageManager>
 {
@@ -17,7 +18,6 @@ public class StageManager : Singleton<StageManager>
     [SerializeField] private int callStageNum = 0; //호출할 스테이지 넘버링 
     [SerializeField] private UpgradesController upgradeController;
     [SerializeField] private WaveSkip waveSkip;
-    [SerializeField] private TestTowerSpawner testTowerSpawner; //테스트용 타워 생성기 (나중에 처리할것)
 
     private int curEnemyCount = 0; // 현재 필드에 있는 적의 갯수
     private int finishEnemyCount = 100; // 필드에 해당 Enemy 갯수 이상되면 게임오버되는 갯수
@@ -45,9 +45,8 @@ public class StageManager : Singleton<StageManager>
 
     StringBuilder stringBuilder = new StringBuilder(); //문자열 최적화를 위한 스트링빌더 멤버변수로 선언
 
-    //Debug
+    [SerializeField] private SlimeTowerSpawner slimeTowerSpawner;
     [SerializeField] private Button spawnButton;
-    public event Func<GameObject> OnEventTowerSpawn;
 
     protected override void Awake()
     {
@@ -69,10 +68,49 @@ public class StageManager : Singleton<StageManager>
             waveSkip = GetComponent<WaveSkip>();     
         }
 
-        //Debug
-        testTowerSpawner.Initialize(OnEventTowerSpawn);
+        if(slimeTowerSpawner == null)
+        {
+            slimeTowerSpawner = GetComponent<SlimeTowerSpawner>();
+        }
 
-        
+        //Debug
+        spawnButton.onClick.AddListener(() => SpawnSlimeTower());
+    }
+
+    public bool UseGold(int useGoldAmount)
+    {
+        if (curGold >= useGoldAmount)
+        {
+            curGold = Mathf.Max(0, curGold - useGoldAmount);
+            return true;
+        }
+        return false;
+    }
+
+    private void SpawnSlimeTower()
+    {
+        if (UseGold(summonTowerCost))
+        {
+            GameObject obj = slimeTowerSpawner.SpawnTowerByProbability();
+
+            for (int i = 0; i < stage.TowerTiles.Count; i++)
+            {
+                if (stage.TowerTiles[i].SlimeTower == null)
+                {
+                    stage.TowerTiles[i].SlimeTower = obj;
+                    obj.transform.position = stage.TowerTiles[i].transform.position;
+                    obj.GetComponent<BaseSlimeTower>().CurTowerTileIndex = stage.TowerTiles[i].Index;
+                    break;
+                }
+            }
+        }
+    }
+
+    public void TowerTileSwap(TowerTile oldTile,TowerTile newTile)
+    {
+        GameObject tmp = newTile.SlimeTower;
+        newTile.SlimeTower = oldTile.SlimeTower;
+        oldTile.SlimeTower = tmp;   
     }
 
     private void Start()
@@ -226,15 +264,20 @@ public class StageManager : Singleton<StageManager>
     public UI_WaveIndicator uI_WaveIndicator;
     public UI_EnemyCount uI_EnemyCount;
     public UI_CurGoldIndicator uI_CurGoldIndicator;
-
-    
     private void LateUpdate()
     {
-        //UIManager.Instance.UIContainer[UI_WaveIndicator].UI_Print;
         uI_WaveIndicator.UIPrint(waveTimer, curWave.WaveNum, curEnemyCount);
         uI_EnemyCount.UIPrint(finishEnemyCount, curEnemyCount);
         uI_CurGoldIndicator.UIPrint(curGold);
+
+        if(GameOverCheck() || GameClearCheck())
+        {
+            //TODO : 결과창 팝업
+            //
+        }
     }
+
+
 
     private void SpawnEnemy(int id)
     {
@@ -244,15 +287,6 @@ public class StageManager : Singleton<StageManager>
         int spawnCount = curWave.WaveSpawnData[id].EnemyCount;
 
         SpawnManager.Instance.SetSpawner(spawnWorldPos, SpawnDelay, waypoints, id, spawnCount);
-    }
-
-
-    //Debug
-    public void Test()
-    {
-        GameObject obj = testTowerSpawner.SpawnTowerByProbability();
-        obj.transform.position = stage.TowerTiles[8].transform.position;
-        obj.transform.position += Vector3.up * 2;
     }
 
     //게임 오버 조건
@@ -273,7 +307,7 @@ public class StageManager : Singleton<StageManager>
     //게임 클리어 조건
     private bool GameClearCheck()
     {
-        if (finishEnemyCount <= curEnemyCount)
+        if (curEnemyCount <= 0 && curWaveStageData.Count == 0)
         {
             Debug.Log("게임 클리어");
             this.enabled = false;
