@@ -356,31 +356,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2451009996877103608, guid: db68c9494896d2a4fb6210191cd73ebd,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2451009996877103608, guid: db68c9494896d2a4fb6210191cd73ebd,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2451009996877103608, guid: db68c9494896d2a4fb6210191cd73ebd,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2451009996877103608, guid: db68c9494896d2a4fb6210191cd73ebd,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2451009996877103608, guid: db68c9494896d2a4fb6210191cd73ebd,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2819557370405176398, guid: db68c9494896d2a4fb6210191cd73ebd,
         type: 3}
       propertyPath: m_Pivot.x
@@ -485,56 +460,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UIUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 6255393942464608364, guid: db68c9494896d2a4fb6210191cd73ebd,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6255393942464608364, guid: db68c9494896d2a4fb6210191cd73ebd,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6255393942464608364, guid: db68c9494896d2a4fb6210191cd73ebd,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6255393942464608364, guid: db68c9494896d2a4fb6210191cd73ebd,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6255393942464608364, guid: db68c9494896d2a4fb6210191cd73ebd,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7481389384941190963, guid: db68c9494896d2a4fb6210191cd73ebd,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7481389384941190963, guid: db68c9494896d2a4fb6210191cd73ebd,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7481389384941190963, guid: db68c9494896d2a4fb6210191cd73ebd,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7481389384941190963, guid: db68c9494896d2a4fb6210191cd73ebd,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7481389384941190963, guid: db68c9494896d2a4fb6210191cd73ebd,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -898,6 +823,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 20.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3322666285441159120, guid: 9d68d91a227a11d458ed47a13ca6ff23,
+        type: 3}
+      propertyPath: m_Value
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4512753409580102212, guid: 9d68d91a227a11d458ed47a13ca6ff23,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1007,6 +937,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5289424123814627767, guid: 9d68d91a227a11d458ed47a13ca6ff23,
+        type: 3}
+      propertyPath: m_Value
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5301264826919974127, guid: 9d68d91a227a11d458ed47a13ca6ff23,
         type: 3}
@@ -1179,9 +1114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21120cfd71d7534fb6482579cde19f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffectVolume: 0
-  soundEffectPitchVariance: 0
-  BGMVolume: 0
+  soundEffectVolume: 0.2
+  soundEffectPitchVariance: 0.1
+  BGMVolume: 0.1
   BGMSource: {fileID: 617799942}
   BGM: {fileID: 8300000, guid: 232e77919cccf49498d23e09ab448705, type: 3}
   soundDatas: []

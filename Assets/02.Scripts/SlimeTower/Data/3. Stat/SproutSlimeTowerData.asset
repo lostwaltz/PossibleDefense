@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051ef85106d94558a357eeafa44f8f37, type: 3}
   m_Name: SproutSlimeTowerData
   m_EditorClassIdentifier: 
-  name: SproutSlime
+  towerName: "\uC0C8\uC2F9 \uC2AC\uB77C\uC784"
   slimeTowerGradeInfo: {fileID: 11400000, guid: 9fbf50f968f4bdd4f8828a0dbd2d1cdc,
     type: 2}
   slimeTowerUpgradeDataData: {fileID: 11400000, guid: 61042a82a4f415e4fa2fa6c894e9e03b,
     type: 2}
   SlimeTowerStats:
-    AttackSpeed: 1
-    AttackPower: 10
+    AttackSpeed: 1.21
+    AttackPower: 12.1
     AttackRange: 50
+  originSlimeTowerStats:
+    AttackSpeed: 0
+    AttackPower: 0
+    AttackRange: 0

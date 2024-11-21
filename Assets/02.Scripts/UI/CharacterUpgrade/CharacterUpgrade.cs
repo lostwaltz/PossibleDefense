@@ -1,42 +1,66 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-[System.Serializable]
-public class UpgradeData
+public enum UpgradeType
 {
-    public SlimeTowerDataSO TowersData;
-    public GameObject CharacterPrefab;
-
-    public int SpeedUp;
-    public int PowerUp;
-    public int RangeUp;
-
-    public void SpeedUpgrade()
-    {
-
-    }
-    public void PowerUpgrade()
-    {
-
-    }
-    public void RangeUpgrade()
-    {
-
-    }
+    Speed,
+    Power,
+    Range
 }
 
 public class CharacterUpgrade : MonoBehaviour
 {
     [SerializeField] private List<UpgradeData> UpgradeDataList;
+    [SerializeField] private TextMeshProUGUI nameLabel;
+
+    [SerializeField] private TextMeshProUGUI SpeedGold; 
+    [SerializeField] private TextMeshProUGUI SpeedUpgrade;
+    [SerializeField] private TextMeshProUGUI PowerGold;
+    [SerializeField] private TextMeshProUGUI PowerUpgrade;
+    [SerializeField] private TextMeshProUGUI RangeGold;
+    [SerializeField] private TextMeshProUGUI RangeUpgrade;
 
     private int curIndex = 0;
+    private int LobbyGold = 1000000000;
+
+    private void Awake()
+    {
+        Init();
+    }
 
     public void OnEnable()
     {
-        gameObject.SetActive(true);
         ShowCharacter(curIndex);
+    }
+
+    public void ResetButtonText()
+    {
+        SpeedGold   .text = UpgradeDataList[curIndex].SpeedUpgradeGold.ToString() + "G";
+        SpeedUpgrade.text = UpgradeDataList[curIndex].SpeedUp.ToString();
+        PowerGold   .text = UpgradeDataList[curIndex].PowerUpgradeGold.ToString() + "G";
+        PowerUpgrade.text = UpgradeDataList[curIndex].PowerUp.ToString();
+        RangeGold   .text = UpgradeDataList[curIndex].RangeUpgradeGold.ToString() + "G";
+        RangeUpgrade.text = UpgradeDataList[curIndex].RangeUp.ToString();
+    }
+
+    [ContextMenu("ResetTowerUpgrade")]
+    public void ResetSOs()
+    {
+        foreach(var data in UpgradeDataList)
+        {
+            data.ResetSO();
+        }
+    }
+
+    public void Init()
+    {
+        foreach (var data in UpgradeDataList)
+        {
+            data.Init();
+        }
     }
 
     public void NextButton()
@@ -47,7 +71,7 @@ public class CharacterUpgrade : MonoBehaviour
 
     public void PreviousButton()
     {
-        if(curIndex.Equals(0))
+        if (curIndex.Equals(0))
         {
             curIndex = UpgradeDataList.Count;
         }
@@ -57,15 +81,42 @@ public class CharacterUpgrade : MonoBehaviour
 
     private void OffAllCharacter()
     {
-        foreach( var data in UpgradeDataList)
+        foreach (var data in UpgradeDataList)
         {
             data.CharacterPrefab.SetActive(false);
         }
+        nameLabel.text = string.Empty;
     }
 
     private void ShowCharacter(int index)
     {
         OffAllCharacter();
+        nameLabel.text = UpgradeDataList[index].GetTowerName();
         UpgradeDataList[index].CharacterPrefab.gameObject.SetActive(true);
+        ResetButtonText();
+    }
+
+    private void ExecuteUpgrade(IUpgradeable upgrade)
+    {
+        if (!upgrade.CanUpgrade(LobbyGold)) return;
+
+        LobbyGold -= upgrade.GetUpgradeCost();
+        upgrade.Upgrade();
+    }
+
+    public void UpgradeSpeed()
+    {
+        ExecuteUpgrade(UpgradeDataList[curIndex].SpeedUpgrade);
+        ResetButtonText();
+    }
+    public void UpgradePower()
+    {
+        ExecuteUpgrade(UpgradeDataList[curIndex].PowerUpgrade);
+        ResetButtonText();
+    }
+    public void UpgradeRange()
+    {
+        ExecuteUpgrade(UpgradeDataList[curIndex].RangeUpgrade);
+        ResetButtonText();
     }
 }
