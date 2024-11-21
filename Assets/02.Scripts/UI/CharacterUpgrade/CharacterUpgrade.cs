@@ -4,13 +4,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public enum UpgradeType
-{
-    Speed,
-    Power,
-    Range
-}
-
 public class CharacterUpgrade : MonoBehaviour
 {
     [SerializeField] private List<UpgradeData> UpgradeDataList;
@@ -28,7 +21,7 @@ public class CharacterUpgrade : MonoBehaviour
 
     private void Awake()
     {
-        Init();
+        //Init();
     }
 
     public void OnEnable()
@@ -36,7 +29,7 @@ public class CharacterUpgrade : MonoBehaviour
         ShowCharacter(curIndex);
     }
 
-    public void ResetButtonText()
+    public void SetButtonText()
     {
         SpeedGold   .text = UpgradeDataList[curIndex].SpeedUpgradeGold.ToString() + "G";
         SpeedUpgrade.text = UpgradeDataList[curIndex].SpeedUp.ToString();
@@ -93,7 +86,7 @@ public class CharacterUpgrade : MonoBehaviour
         OffAllCharacter();
         nameLabel.text = UpgradeDataList[index].GetTowerName();
         UpgradeDataList[index].CharacterPrefab.gameObject.SetActive(true);
-        ResetButtonText();
+        SetButtonText();
     }
 
     private void ExecuteUpgrade(IUpgradeable upgrade)
@@ -107,16 +100,16 @@ public class CharacterUpgrade : MonoBehaviour
     public void UpgradeSpeed()
     {
         ExecuteUpgrade(UpgradeDataList[curIndex].SpeedUpgrade);
-        ResetButtonText();
+        SetButtonText();
     }
     public void UpgradePower()
     {
         ExecuteUpgrade(UpgradeDataList[curIndex].PowerUpgrade);
-        ResetButtonText();
+        SetButtonText();
     }
     public void UpgradeRange()
     {
         ExecuteUpgrade(UpgradeDataList[curIndex].RangeUpgrade);
-        ResetButtonText();
+        SetButtonText();
     }
 }

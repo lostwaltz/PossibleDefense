@@ -20,9 +20,9 @@ public class PowerUpgrade : BaseUpgrade
 
     public override void Upgrade()
     {
-        var modifier = Mathf.Pow(1 + data.PowerUp * 0.1f, 2);   //ratio
-        data.TowersData.SlimeTowerStats.AttackPower *= modifier;    //caculate stat
+        var modifier = data.PowerUp++;   //ratio
+        data.TowersData.SlimeTowerStats.AttackPower += modifier;    //caculate stat
         data.PowerUpgradeGold = (int)(data.PowerUpgradeGold * modifier);    //caculate gold
-        data.PowerUp++;
+        
     }
 }
