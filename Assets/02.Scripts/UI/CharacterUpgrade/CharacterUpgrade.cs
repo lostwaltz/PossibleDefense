@@ -24,7 +24,7 @@ public class CharacterUpgrade : MonoBehaviour
     [SerializeField] private TextMeshProUGUI RangeUpgrade;
 
     private int curIndex = 0;
-    private int LobbyGold = 10000;
+    private int LobbyGold = 1000000000;
 
     private void Awake()
     {

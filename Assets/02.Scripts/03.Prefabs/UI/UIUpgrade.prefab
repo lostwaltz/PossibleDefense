@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 2084314254213098084}
   - component: {fileID: 1862595984174992087}
   m_Layer: 5
-  m_Name: LevelNum (1)
+  m_Name: RangeLevelNum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1573,7 +1573,7 @@ GameObject:
   - component: {fileID: 157486465774002666}
   - component: {fileID: 3604135535874651802}
   m_Layer: 5
-  m_Name: EpicUpgradeBtn
+  m_Name: RangeUpgradeBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1683,7 +1683,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 157486465774002666}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6108994159633189484}
+        m_TargetAssemblyTypeName: CharacterUpgrade, Assembly-CSharp
+        m_MethodName: UpgradeRange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5237158516761842553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,7 +1708,7 @@ GameObject:
   - component: {fileID: 1687279684470143457}
   - component: {fileID: 1425296442694895181}
   m_Layer: 5
-  m_Name: LevelNum
+  m_Name: SpeedLevelNum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1886,7 +1898,7 @@ GameObject:
   - component: {fileID: 7295873986221910325}
   - component: {fileID: 738788605544119846}
   m_Layer: 5
-  m_Name: Gold
+  m_Name: PowerGold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2128,9 +2140,9 @@ MonoBehaviour:
   UpgradeDataList:
   - TowersData: {fileID: 11400000, guid: 7a5d82db9d1f4d749b10cad90b9d1391, type: 2}
     CharacterPrefab: {fileID: 6927666929029733389}
-    SpeedUp: 0
-    PowerUp: 0
-    RangeUp: 0
+    SpeedUp: 1
+    PowerUp: 1
+    RangeUp: 1
     MaxSpeedUp: 10
     MaxPowerUp: 10
     MaxRangeUp: 10
@@ -2142,9 +2154,9 @@ MonoBehaviour:
     originRange: 0
   - TowersData: {fileID: 11400000, guid: 3380a8e36b17a414491e6f48c4719d67, type: 2}
     CharacterPrefab: {fileID: 3055394556087301902}
-    SpeedUp: 0
-    PowerUp: 0
-    RangeUp: 0
+    SpeedUp: 1
+    PowerUp: 1
+    RangeUp: 1
     MaxSpeedUp: 10
     MaxPowerUp: 10
     MaxRangeUp: 10
@@ -2156,9 +2168,9 @@ MonoBehaviour:
     originRange: 0
   - TowersData: {fileID: 11400000, guid: 1ecffd788ea91f7428297d9892e27bef, type: 2}
     CharacterPrefab: {fileID: 1403519145355419804}
-    SpeedUp: 0
-    PowerUp: 0
-    RangeUp: 0
+    SpeedUp: 1
+    PowerUp: 1
+    RangeUp: 1
     MaxSpeedUp: 10
     MaxPowerUp: 10
     MaxRangeUp: 10
@@ -2170,9 +2182,9 @@ MonoBehaviour:
     originRange: 0
   - TowersData: {fileID: 11400000, guid: 4d896ed49a035ae489563ab6f6012d03, type: 2}
     CharacterPrefab: {fileID: 8657042552615483427}
-    SpeedUp: 0
-    PowerUp: 0
-    RangeUp: 0
+    SpeedUp: 1
+    PowerUp: 1
+    RangeUp: 1
     MaxSpeedUp: 10
     MaxPowerUp: 10
     MaxRangeUp: 10
@@ -2337,7 +2349,7 @@ GameObject:
   - component: {fileID: 508992169989627864}
   - component: {fileID: 724381513766805778}
   m_Layer: 5
-  m_Name: CommonUpgradeBtn
+  m_Name: SpeedUpgradeBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2447,7 +2459,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 508992169989627864}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6108994159633189484}
+        m_TargetAssemblyTypeName: CharacterUpgrade, Assembly-CSharp
+        m_MethodName: UpgradeSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6279596777693426364
 GameObject:
   m_ObjectHideFlags: 0
@@ -3031,7 +3055,7 @@ GameObject:
   - component: {fileID: 2349917467929373632}
   - component: {fileID: 6571268579613178209}
   m_Layer: 5
-  m_Name: LevelNum (2)
+  m_Name: PowerLevelNum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3167,7 +3191,7 @@ GameObject:
   - component: {fileID: 7841204432668460224}
   - component: {fileID: 929627602683426028}
   m_Layer: 5
-  m_Name: RareUpgradeBtn
+  m_Name: PowerUpgradeBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3277,7 +3301,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7841204432668460224}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6108994159633189484}
+        m_TargetAssemblyTypeName: CharacterUpgrade, Assembly-CSharp
+        m_MethodName: UpgradePower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7237436848122665808
 GameObject:
   m_ObjectHideFlags: 0
@@ -3435,7 +3471,7 @@ GameObject:
   - component: {fileID: 6381649247292174886}
   - component: {fileID: 2415612684229269904}
   m_Layer: 5
-  m_Name: Gold
+  m_Name: SpeedGold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3570,7 +3606,7 @@ GameObject:
   - component: {fileID: 2061999885580633053}
   - component: {fileID: 9068109394136805100}
   m_Layer: 5
-  m_Name: Gold
+  m_Name: RangeGold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

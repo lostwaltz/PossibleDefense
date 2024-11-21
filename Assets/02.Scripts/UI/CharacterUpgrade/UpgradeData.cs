@@ -7,9 +7,9 @@ public class UpgradeData
     public SlimeTowerDataSO TowersData;
     public GameObject CharacterPrefab;
 
-    public int SpeedUp;
-    public int PowerUp;
-    public int RangeUp;
+    public int SpeedUp = 1;
+    public int PowerUp = 1;
+    public int RangeUp = 1;
 
     public int MaxSpeedUp = 10;
     public int MaxPowerUp = 10;
