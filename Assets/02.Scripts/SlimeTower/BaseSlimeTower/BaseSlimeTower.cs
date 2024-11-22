@@ -116,7 +116,7 @@ public class BaseSlimeTower : MonoBehaviour, IPointerDownHandler, IPointerUpHand
             if (Time.time - _pressStartTime >= 0.05f)
             {
                 TowerController.Instance.SetSlimeTower(gameObject);
-
+                StageManager.Instance.Stage.TowerTiles[CurTowerTileIndex].Select.SetActive(true);
                 yield break;
             }
 

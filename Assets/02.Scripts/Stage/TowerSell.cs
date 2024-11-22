@@ -1,6 +1,7 @@
 using System;
 using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 //타워 판매 기능 클래스 
 public class TowerSell : MonoBehaviour
@@ -8,6 +9,10 @@ public class TowerSell : MonoBehaviour
     [SerializeField] private GameObject SellTowerPanel;
     [SerializeField] private Button SellButton;
     [SerializeField] private BaseSlimeTower target; //판매하는 타워 
+
+    [SerializeField] private TextMeshProUGUI attackStatText;
+    [SerializeField] private TextMeshProUGUI speedStatText;
+    [SerializeField] private TextMeshProUGUI rangeStatText;
 
     private void Awake()
     {
@@ -17,6 +22,10 @@ public class TowerSell : MonoBehaviour
     public void SellTowerTarget(GameObject _target) //판매모드에서 타워 클릭시 저정 되는 메서드
     {
         target = _target.GetComponent<BaseSlimeTower>();
+        StageManager.Instance.Stage.TowerTiles[target.CurTowerTileIndex].Select.SetActive(true);
+        attackStatText.text = target.StatHandler.AttackPower.ToString("N2");
+        speedStatText.text = target.StatHandler.AttackSpeed.ToString("N2");
+        rangeStatText.text = target.StatHandler.AttackRange.ToString("N2");
     }
 
     public void SellTower() //버튼을 누르면 타워가 판매됨
