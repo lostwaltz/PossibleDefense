@@ -25,11 +25,11 @@ public class SceneLoadManager : SingletonDontDestroy<SceneLoadManager>
 
         foreach (var data in _dataBase.sceneDataList)
         {
-            Type type = Type.GetType(data.sceneAsset.name);
+            Type type = Type.GetType(data.sceneName);
 
             if (type == null || !typeof(SceneBase).IsAssignableFrom(type))
             {
-                Debug.LogError($"Can't find scene type {data.sceneAsset.name}");
+                Debug.LogError($"Can't find scene type {data.sceneName}");
                 continue;
             }
 
@@ -37,7 +37,7 @@ public class SceneLoadManager : SingletonDontDestroy<SceneLoadManager>
 
             if (method == null) return;
 
-            _sceneDic.Add(data.sceneAsset.name, (SceneBase)method.Invoke(null, null));
+            _sceneDic.Add(data.sceneName, (SceneBase)method.Invoke(null, null));
         }
         
         CurrentScene = SceneManager.GetActiveScene().name;

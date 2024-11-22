@@ -4,10 +4,10 @@ using UnityEngine.SceneManagement;
 [System.Serializable]
 public class SceneData
 {
-    public SceneAsset sceneAsset;
+    public string sceneName;
 
     public void Test()
     {
-        SceneManager.LoadScene(sceneAsset.name);
+        SceneManager.LoadScene(sceneName);
     }
 }
