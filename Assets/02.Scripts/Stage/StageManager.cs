@@ -27,6 +27,8 @@ public class StageManager : Singleton<StageManager>
     private int finishEnemyCount = 100; // 필드에 해당 Enemy 갯수 이상되면 게임오버되는 갯수
 
     private float waveTimer;
+    private int curWaveNum = 0; //현재 Wave Count
+    private int maxWaveCount; //현재 Wave의 최대 크기 
     private WaveStageData curWave; //현재 Wave Data
     private bool allWaveFinish = false; //모든 웨이브가 소환 된 경우 체크하는 변수
 
@@ -37,7 +39,7 @@ public class StageManager : Singleton<StageManager>
     private List<List<StageTileTag>> curMapMatrixData; //현재 스테이지 타일 데이터를 저장한 변수 (맵 데이터,월드좌표x,배열좌표o)
     private List<Vector3> curStageEnmeyWayPointData; //현재 스테이지의 Enemy의 WayPoint 데이터를 저장한 변수 (월드좌표x,배열좌표o)
     private Queue<WaveStageData> curWaveStageData; //현재 스테이지의 Wave데이터
-    private int maxWaveCount;
+
 
     public StageTileTag[][] curStageMapData; //현재 진행중인 스테이지의 맵 2차월 배열 
     [HideInInspector] public Vector3[] curEnmeyWayPointData; //현재 진행중인 스테이지의 웨이포인트 배열
@@ -147,6 +149,7 @@ public class StageManager : Singleton<StageManager>
         oldTile.SlimeTower = tmp;   
     }
 
+
     //외부 Scene에서 게임 씬 동작하는 코드입니다. 
     public void GameStartInit(int callStageNum)
     {
@@ -173,10 +176,11 @@ public class StageManager : Singleton<StageManager>
 
     public void WaveSetting()
     {
-        if (curWaveStageData.Count != 0)
+        if (curWaveStageData.Count > 0)
         {
             curWave = curWaveStageData.Dequeue();
             waveTimer = curWave.WaveTime;
+            curWaveNum++;
 
             ICollection<int> keys = curWave.WaveSpawnData.Keys;
 
@@ -184,12 +188,24 @@ public class StageManager : Singleton<StageManager>
             {
                 SpawnEnemy(id);
             }
+
+            if(curWaveStageData.Count == 0)
+            {
+                Debug.Log("모든 웨이브 완료");
+                allWaveFinish = true;
+            }
+
         }
-        else
-        {
-            Debug.Log("모든 웨이브 완료");
-            allWaveFinish = true;
-        }
+    }
+
+    private void SpawnEnemy(int id)
+    {
+        Vector3 spawnWorldPos = stage.SpawnTiles[0].transform.position;
+        float SpawnDelay = curWave.WaveSpawnData[id].EnemySpawnTimer;
+        Vector3[] waypoints = curEnmeyWayPointData;
+        int spawnCount = curWave.WaveSpawnData[id].EnemyCount;
+
+        SpawnManager.Instance.SetSpawner(spawnWorldPos, SpawnDelay, waypoints, id, spawnCount);
     }
 
     private void CrateWaveData()
@@ -284,7 +300,6 @@ public class StageManager : Singleton<StageManager>
         if (GameOverCheck() || GameClearCheck())
         {
             //TODO : 결과창 팝업
-            //
             UIReslut.gameObject.SetActive(true);
 
         }
@@ -292,15 +307,7 @@ public class StageManager : Singleton<StageManager>
 
 
 
-    private void SpawnEnemy(int id)
-    {
-        Vector3 spawnWorldPos = stage.SpawnTiles[0].transform.position;
-        float SpawnDelay = curWave.WaveSpawnData[id].EnemySpawnTimer;
-        Vector3[] waypoints = curEnmeyWayPointData;
-        int spawnCount = curWave.WaveSpawnData[id].EnemyCount;
 
-        SpawnManager.Instance.SetSpawner(spawnWorldPos, SpawnDelay, waypoints, id, spawnCount);
-    }
 
     //게임 오버 조건
     private bool GameOverCheck()
@@ -323,7 +330,7 @@ public class StageManager : Singleton<StageManager>
     //게임 클리어 조건
     private bool GameClearCheck()
     {
-        if (curEnemyCount <= 0 && curWaveStageData.Count == 0)
+        if (allWaveFinish && curEnemyCount <= 0 && curWaveStageData.Count == 0 )
         {
             UIReslut.UpdateUI(true, maxWaveCount, callStageNum * maxWaveCount);
             GameManager.Instance.curClearStageNum = callStageNum;
@@ -335,5 +342,4 @@ public class StageManager : Singleton<StageManager>
 
         return false;
     }
-    //스테이지의 유닛 강화 조건
 }

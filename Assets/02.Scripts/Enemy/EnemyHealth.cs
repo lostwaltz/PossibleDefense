@@ -72,7 +72,10 @@ public class EnemyHealth : MonoBehaviour
                 isDead = true;
             }
             else
+            {
+                SoundManager.Instance.PlayClip("Hit", transform.position);
                 OnDamage?.Invoke();
+            }
         }
         UpdateUI();
     }

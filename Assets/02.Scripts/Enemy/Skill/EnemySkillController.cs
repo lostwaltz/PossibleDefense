@@ -46,6 +46,8 @@ public class EnemySkillController : MonoBehaviour
             if (Skills.Length > 0)
             {
                 Skills[index].Execute(enemy);
+                SoundManager.Instance.PlayClip("Magic", transform.position);
+
                 cooldown = new WaitForSeconds(Skills[index].cooldown);
 
                 yield return cooldown;

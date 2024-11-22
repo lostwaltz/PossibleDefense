@@ -10,7 +10,7 @@ public class StageSelect : UIBase
     [SerializeField] private GameObject GridLayout;
 
     private int numOfStage = 1;
-    private int curStage = 1;   //StageManager에서 Get
+    private int curStage => GameManager.Instance.curClearStageNum;
 
     private void Awake()
     {
