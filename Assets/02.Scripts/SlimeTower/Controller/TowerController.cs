@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TowerController : Singleton<TowerController>
@@ -46,8 +47,10 @@ public class TowerController : Singleton<TowerController>
     {
         if (_selectedTower == null || tile.SlimeTower != null)
             return;
-        
+
         _targetTile = tile;
+        StageManager.Instance.Stage.SelectTileClear();
+        _targetTile.Select.SetActive(true);
         MoveSlimeTower();
         _attackRangeIndicator.OffAttackRangeIndicator();
     }
@@ -55,6 +58,7 @@ public class TowerController : Singleton<TowerController>
     public void MoveSlimeTower()
     {
         var stateMachine = _selectedTower.GetComponent<BaseSlimeTower>().SlimeStateMachine;
+        StageManager.Instance.Stage.TowerTiles[stateMachine.SlimeTower.CurTowerTileIndex].Select.SetActive(false);
         stateMachine.WalkState.target = _targetTile;
         stateMachine.ChangeState(stateMachine.WalkState);
 

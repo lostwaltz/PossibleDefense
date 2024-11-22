@@ -1,15 +1,9 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-using System.Threading;
-using System.Xml;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Serialization;
-using UnityEngine.Assertions.Must;
-using System.Linq;
+
 
 public class StageManager : Singleton<StageManager>
 {
@@ -27,7 +21,6 @@ public class StageManager : Singleton<StageManager>
     private int finishEnemyCount = 100; // 필드에 해당 Enemy 갯수 이상되면 게임오버되는 갯수
 
     private float waveTimer;
-    private int curWaveNum = 0; //현재 Wave Count
     private int maxWaveCount; //현재 Wave의 최대 크기 
     private WaveStageData curWave; //현재 Wave Data
     private bool allWaveFinish = false; //모든 웨이브가 소환 된 경우 체크하는 변수
@@ -180,7 +173,6 @@ public class StageManager : Singleton<StageManager>
         {
             curWave = curWaveStageData.Dequeue();
             waveTimer = curWave.WaveTime;
-            curWaveNum++;
 
             ICollection<int> keys = curWave.WaveSpawnData.Keys;
 

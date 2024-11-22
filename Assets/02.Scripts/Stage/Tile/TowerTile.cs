@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 public class TowerTile : BaseTile
 {
     public GameObject SlimeTower = null;
+    [SerializeField] public GameObject Select;
 
     private int index;
     public int Index {  get { return index; } set { index = value; } }

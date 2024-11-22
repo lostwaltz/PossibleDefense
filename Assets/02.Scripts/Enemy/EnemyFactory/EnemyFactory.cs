@@ -8,7 +8,7 @@ public class EnemyFactory
     {
         this.database = database;
     }
-
+    
     public GameObject CreateEnemy(int id, Vector3 spawnPos, Vector3[] waypoints)
     {
         //TODO :: 자식오브젝트로 database에서 해당 자식오브젝트로 변경?
