@@ -39,28 +39,28 @@ public class SingletonDontDestroy<T> : MonoBehaviour where T : Component
     {
         if (!Application.isPlaying) return;
 
-        InitializationTime = Time.time;
+        //InitializationTime = Time.time;
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
-        var oldInstances = FindObjectsByType<T>(FindObjectsSortMode.None);
+        //var oldInstances = FindObjectsByType<T>(FindObjectsSortMode.None);
 
-        foreach (var old in oldInstances)
-        {
-            if (old.GetComponent<SingletonDontDestroy<T>>().InitializationTime < InitializationTime)
-                Destroy(old.gameObject);
-        }
-
-        if (_instance == null)
-            _instance = this as T;
-
-        //if(_instance != null && _instance != this)
+        //foreach (var old in oldInstances)
         //{
-        //    Destroy(gameObject);
-        //    return;
+        //    if (old.GetComponent<SingletonDontDestroy<T>>().InitializationTime < InitializationTime)
+        //        Destroy(old.gameObject);
         //}
 
-        //_instance = this as T;
-        //DontDestroyOnLoad(gameObject);
+        //if (_instance == null)
+        //    _instance = this as T;
+
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        _instance = this as T;
+        DontDestroyOnLoad(gameObject);
     }
 }

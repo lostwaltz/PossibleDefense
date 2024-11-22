@@ -20,4 +20,4 @@ MonoBehaviour:
   - towerGrade: 2
     probability: 100
   - towerGrade: 3
-    probability: 1
+    probability: 100
