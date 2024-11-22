@@ -2840,6 +2840,11 @@ PrefabInstance:
       propertyPath: buttons.Array.data[2]
       value: 
       objectReference: {fileID: 1677761830}
+    - target: {fileID: 8662342934954505551, guid: 8d0e0ad2e5e2bfd40b88bd36d2c8c706,
+        type: 3}
+      propertyPath: alertMinGrade
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9186706753560052803, guid: 8d0e0ad2e5e2bfd40b88bd36d2c8c706,
         type: 3}
       propertyPath: m_Name
