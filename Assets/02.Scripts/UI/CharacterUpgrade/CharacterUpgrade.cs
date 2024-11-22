@@ -17,7 +17,7 @@ public class CharacterUpgrade : MonoBehaviour
     [SerializeField] private TextMeshProUGUI RangeUpgrade;
 
     private int curIndex = 0;
-    private int LobbyGold = 1000000000;
+    private int LobbyGold => GameManager.Instance.PlayerGold;
 
     private void Awake()
     {
@@ -96,7 +96,7 @@ public class CharacterUpgrade : MonoBehaviour
     {
         if (!upgrade.CanUpgrade(LobbyGold)) return;
 
-        LobbyGold -= upgrade.GetUpgradeCost();
+        GameManager.Instance.ChangeGold(-upgrade.GetUpgradeCost()); 
         upgrade.Upgrade();
     }
 
@@ -104,21 +104,18 @@ public class CharacterUpgrade : MonoBehaviour
     {
         ExecuteUpgrade(UpgradeDataList[curIndex].SpeedUpgrade);
         SetButtonText();
-
         UpgradeDataManager.SaveUpgradeData(UpgradeDataList);
     }
     public void UpgradePower()
     {
         ExecuteUpgrade(UpgradeDataList[curIndex].PowerUpgrade);
         SetButtonText();
-
         UpgradeDataManager.SaveUpgradeData(UpgradeDataList);
     }
     public void UpgradeRange()
     {
         ExecuteUpgrade(UpgradeDataList[curIndex].RangeUpgrade);
         SetButtonText();
-
         UpgradeDataManager.SaveUpgradeData(UpgradeDataList);
     }
 }
