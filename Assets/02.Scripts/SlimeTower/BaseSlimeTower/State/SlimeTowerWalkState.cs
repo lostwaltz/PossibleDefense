@@ -45,6 +45,7 @@ public class SlimeTowerWalkState : SlimeTowerBaseState
 
         if (Vector3.Distance(currentPosition, targetPosition) <= threshold)
         {
+            target.Select.SetActive(false);
             TowerTile curTowerTile = StageManager.Instance.Stage.TowerTiles[stateMachine.SlimeTower.CurTowerTileIndex];
             StageManager.Instance.TowerTileSwap(curTowerTile, target);
             stateMachine.SlimeTower.CurTowerTileIndex = target.Index;
