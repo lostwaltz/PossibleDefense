@@ -19,9 +19,17 @@ public class TowerSell : MonoBehaviour
         SellButton.onClick.AddListener(() => SellTower());
     }
 
+    public void OnEnable()
+    {
+        attackStatText.text = "0";
+        speedStatText.text = "0";
+        rangeStatText.text = "0";
+    }
+
     public void SellTowerTarget(GameObject _target) //판매모드에서 타워 클릭시 저정 되는 메서드
     {
         target = _target.GetComponent<BaseSlimeTower>();
+        StageManager.Instance.Stage.SelectTileClear();
         StageManager.Instance.Stage.TowerTiles[target.CurTowerTileIndex].Select.SetActive(true);
         attackStatText.text = target.StatHandler.AttackPower.ToString("N2");
         speedStatText.text = target.StatHandler.AttackSpeed.ToString("N2");

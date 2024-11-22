@@ -23,7 +23,19 @@ public class Stage : MonoBehaviour
     public List<TowerTile> TowerTiles { get => towerTiles; }
     public List<SpawnTile> SpawnTiles { get => spawnTiles; }
     public List<EnemyWayTile> EemyWayTiles { get => enemyWayTiles; }
-    
+
+    //최적화 정말 안좋은 코드 ,하지만 시간이 없으니 구현이 먼저
+    public void SelectTileClear()
+    {
+        for(int i = 0; i < towerTiles.Count; i++)
+        {
+            if (towerTiles[i].Select.activeSelf)
+            {
+                towerTiles[i].Select.SetActive(false);
+                break;
+            }
+        }
+    }
 
     //맵 세팅 : Tile을 월드좌표로 변환하여 월드좌표에 설치하기 기능 
     public void MapInitialize(List<List<StageTileTag>> curMapMatrix)

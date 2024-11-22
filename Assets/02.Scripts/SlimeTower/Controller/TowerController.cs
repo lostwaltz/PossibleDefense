@@ -49,6 +49,7 @@ public class TowerController : Singleton<TowerController>
             return;
 
         _targetTile = tile;
+        StageManager.Instance.Stage.SelectTileClear();
         _targetTile.Select.SetActive(true);
         MoveSlimeTower();
         _attackRangeIndicator.OffAttackRangeIndicator();

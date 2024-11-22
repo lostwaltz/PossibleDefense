@@ -21,6 +21,7 @@ public class UI_SellModeBtn : UIBase
     private void OnButtonClick()
     {
         isToggled = !isToggled; // 상태 전환
+        StageManager.Instance.Stage.SelectTileClear();
 
         if (isToggled)
         {
