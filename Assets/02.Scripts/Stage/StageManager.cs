@@ -1,15 +1,9 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-using System.Threading;
-using System.Xml;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Serialization;
-using UnityEngine.Assertions.Must;
-using System.Linq;
+
 
 public class StageManager : Singleton<StageManager>
 {
