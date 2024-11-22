@@ -47,7 +47,7 @@ public class SingletonDontDestroy<T> : MonoBehaviour where T : Component
 
         foreach (var old in oldInstances)
         {
-            if (old.GetComponent<SingletonDontDestroy<T>>().InitializationTime > InitializationTime)
+            if (old.GetComponent<SingletonDontDestroy<T>>().InitializationTime < InitializationTime)
                 Destroy(old.gameObject);
         }
 
