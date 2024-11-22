@@ -4,7 +4,7 @@ public class SlimeTowerAttackState : SlimeTowerBaseState
 {
     private float _attackSpeed;
     private float _attackCoolTime = 0f;
-    private float _lastAttackTime = 0f;  
+    private float _lastAttackTime = 0f;
 
     public SlimeTowerAttackState(SlimeStateMachine _stateMachine) : base(_stateMachine)
     {
@@ -13,9 +13,10 @@ public class SlimeTowerAttackState : SlimeTowerBaseState
     public override void Enter()
     {
         base.Enter();
+        _lastAttackTime = 0f;
         SetAttackSpeed();
-         stateMachine.SlimeTower.StatHandler.OnIncreaseStatEvent += SetAttackSpeed;
-     }
+        stateMachine.SlimeTower.StatHandler.OnIncreaseStatEvent += SetAttackSpeed;
+    }
 
 
     public override void Exit()

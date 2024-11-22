@@ -10,12 +10,13 @@ public class TowerSpawner : MonoBehaviour
     [SerializeField] private TowerChanceData _towerChanceData;
     [SerializeField] private Transform[] tile;
     [SerializeField] private Button spawnButton;
-    
-    
-    
+    [SerializeField] private TowerGrade alertMinGrade;
+    public event Action<BaseSlimeTower> OnAlertTowerEvent ;
+
+
     private Dictionary<TowerGrade, GameObject[]> towerPrefabsDictionary = new Dictionary<TowerGrade, GameObject[]>();
     private List<float> _chanceList;
-    
+
 
     private void Awake()
     {
@@ -80,6 +81,13 @@ public class TowerSpawner : MonoBehaviour
             return null;
         }
 
+        if ((int)alertMinGrade <= gradeIndex)
+        {
+            OnAlertTowerEvent?.Invoke(selectedPrefab.GetComponent<BaseSlimeTower>());
+            Debug.Log($"{grade}타워 뽑기");
+        }
+
+        
         return Instantiate(selectedPrefab);
     }
     
