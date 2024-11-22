@@ -9,7 +9,9 @@ public class PlayerGold : UIBase
 
     private void Awake()
     {
-
+        SetGold();
+        GameManager.Instance.GoldChanged -= SetGold;
+        GameManager.Instance.GoldChanged += SetGold;
     }
 
     public void SetGold()
