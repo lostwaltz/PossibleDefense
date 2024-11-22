@@ -98,24 +98,20 @@ public class CharacterUpgrade : MonoBehaviour
 
         GameManager.Instance.ChangeGold(-upgrade.GetUpgradeCost()); 
         upgrade.Upgrade();
+        SetButtonText();
+        UpgradeDataManager.SaveUpgradeData(UpgradeDataList);
     }
 
     public void UpgradeSpeed()
     {
         ExecuteUpgrade(UpgradeDataList[curIndex].SpeedUpgrade);
-        SetButtonText();
-        UpgradeDataManager.SaveUpgradeData(UpgradeDataList);
     }
     public void UpgradePower()
     {
         ExecuteUpgrade(UpgradeDataList[curIndex].PowerUpgrade);
-        SetButtonText();
-        UpgradeDataManager.SaveUpgradeData(UpgradeDataList);
     }
     public void UpgradeRange()
     {
         ExecuteUpgrade(UpgradeDataList[curIndex].RangeUpgrade);
-        SetButtonText();
-        UpgradeDataManager.SaveUpgradeData(UpgradeDataList);
     }
 }
