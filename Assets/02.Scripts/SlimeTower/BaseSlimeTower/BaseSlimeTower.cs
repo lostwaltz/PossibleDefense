@@ -21,6 +21,10 @@ public class BaseSlimeTower : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     public SlimeTowerStatHandler StatHandler { get; private set; }
     public int CurTowerTileIndex { get; set; } //Debug
     public bool IsWalking { get; set; } = false;
+    public SlimeTowerDataSO SlimeTowerDataSo => slimeTowerDataSo;
+    
+
+
 
     // --- 읽기 전용 데이터 ---
     public readonly AnimatorHashData AnimatorHashData = new AnimatorHashData();

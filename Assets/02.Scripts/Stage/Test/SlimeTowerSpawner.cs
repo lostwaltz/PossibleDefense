@@ -9,9 +9,11 @@ public class SlimeTowerSpawner : MonoBehaviour
 {
     [SerializeField] private TowerChanceData _towerChanceData;
     [SerializeField] private Transform[] tile;
+    [SerializeField] private TowerGrade alertMinGrade;
 
     private Dictionary<TowerGrade, GameObject[]> towerPrefabsDictionary = new Dictionary<TowerGrade, GameObject[]>();
     private List<float> _chanceList;
+    public event Action<BaseSlimeTower> OnAlertTowerEvent ;
 
     private void Awake()
     {
@@ -73,8 +75,14 @@ public class SlimeTowerSpawner : MonoBehaviour
         {
             Debug.LogWarning($"선택된 타워 프리팹이 null입니다: Grade={grade}, PrefabIndex={randomIndex}");
             return null;
+        }   
+        
+        if ((int)alertMinGrade <= gradeIndex)
+        {
+            OnAlertTowerEvent?.Invoke(selectedPrefab.GetComponent<BaseSlimeTower>());
+            Debug.Log($"{grade}타워 뽑기");
         }
-
+        
         return Instantiate(selectedPrefab);
     }
 
