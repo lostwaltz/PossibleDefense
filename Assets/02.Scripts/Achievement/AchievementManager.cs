@@ -9,33 +9,26 @@ namespace Achievement
     public class AchievementManager : SingletonDontDestroy<AchievementManager>
     {
         private SO.AchievementDataContainer achievementDataContainer;
-        private Dictionary<int, List<AchievementData>>[,] _achievementDataArray;
-        private EventManager _eventManager;
+        private Dictionary<int, List<AchievementData>>[,] achievementDataArray;
+        private EventManager eventManager;
 
         public int AchievementCount { get; private set; }
 
         public void Init()
         {
             achievementDataContainer = Resources.Load<AchievementDataContainer>("DataSheet/AchievementsData");
-
-            _achievementDataArray = new Dictionary<int, List<AchievementData>>[(int)Action.Count, (int)Target.Count];
+            
+            achievementDataArray = new Dictionary<int, List<AchievementData>>[(int)Action.Count, (int)Target.Count];
 
             foreach (var info in achievementDataContainer.achievementsDataList)
                 GetOrAddList(info.action, info.target, info.targetId).Add(new AchievementData(info));
 
             AchievementCount = achievementDataContainer.achievementsDataList.Count;
             
-            _eventManager = EventManager.Instance;
-            EventManager.Instance.Subscribe<EventAchievement>(EventManager.Channel.Achievement, OnAchievement);
+            eventManager = EventManager.Instance;
+            EventManager.Instance.Subscribe<EventAchievement>(EventManager.Channel.Achievement, OnTriggerAchievement);
         }
-
-        private void Update()
-        {
-            if(Input.GetKeyDown(KeyCode.Space))
-                _eventManager.Publish(EventManager.Channel.Achievement, new Achievement.EventAchievement(Action.Kill, Target.Monster, 1f, 100));
-        }
-
-        private void OnAchievement(EventAchievement data)
+        private void OnTriggerAchievement(EventAchievement data)
         {
             foreach (AchievementData achievementData in GetOrAddList(data.Action, data.Target, data.TargetId))
             {
@@ -59,10 +52,10 @@ namespace Achievement
             var actionIndex = (int)action;
             var targetIndex = (int)target;
 
-            _achievementDataArray[actionIndex, targetIndex] ??= new Dictionary<int, List<AchievementData>>();
+            achievementDataArray[actionIndex, targetIndex] ??= new Dictionary<int, List<AchievementData>>();
 
-             if (!_achievementDataArray[actionIndex, targetIndex].TryGetValue(key, out var achievementDataList))
-                _achievementDataArray[actionIndex, targetIndex][key] =
+             if (!achievementDataArray[actionIndex, targetIndex].TryGetValue(key, out var achievementDataList))
+                achievementDataArray[actionIndex, targetIndex][key] =
                     achievementDataList = new List<AchievementData>();
 
             return achievementDataList;
@@ -72,7 +65,7 @@ namespace Achievement
         {
             List<AchievementData> achievementDataList = new();
 
-            foreach (var dataDictionary in _achievementDataArray)
+            foreach (var dataDictionary in achievementDataArray)
             {
                 if (null == dataDictionary) continue;
 
@@ -80,7 +73,6 @@ namespace Achievement
                 {
                     foreach (AchievementData data in keyValuePair.Value)
                         achievementDataList.Add(data);
-
                 }
             }
 

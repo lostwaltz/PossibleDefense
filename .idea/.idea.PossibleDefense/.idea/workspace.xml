@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="786d4d7f-6565-4eb2-bafb-1618cb383218" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PossibleDefense/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/LobbyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scenes/LobbyScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/AchievementManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Enemy/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Scene/LobbyScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Scene/LobbyScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/UI/Achievements/UIAchievements.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/UI/Achievements/UIAchievements.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04.Sos/AchievementDataSheet.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04.Sos/AchievementDataSheet/AchievementsData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04.Sos/AchievementDataSheet/AchievementsData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/EnumType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Achievement/EnumType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Enemy/EnemyFactory/EnemyFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Enemy/EnemyFactory/EnemyFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/99.Assets/External/UI/Belevich/Hyper casual mobile GUI/Original artwork/icons.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Assets/External/UI/Belevich/Hyper casual mobile GUI/Original artwork/icons.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DataSheet/AchievementsData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DataSheet/AchievementsData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Projectile/Bullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Projectile/Bullet.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +37,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventTrigger.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Graphic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Graphic/GraphicTests.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -60,13 +61,6 @@
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.sourceCode.C#",
     "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\정준영\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\정준영\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\정준영\\AppData\\Local\\Symbols\\src"
-    ]
   }
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -96,10 +90,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="40132">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="40132" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -130,6 +124,7 @@
       <workItem from="1732150631295" duration="1816000" />
       <workItem from="1732152479223" duration="1832000" />
       <workItem from="1732172232595" duration="9085000" />
+      <workItem from="1732234911482" duration="1952000" />
     </task>
     <servers />
   </component>
